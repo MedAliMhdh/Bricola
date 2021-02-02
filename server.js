@@ -1,13 +1,19 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const config = require("config");
-const connectDB = require("./config/db");
+const config = require('config');
+const connectDB = require('./config/db');
 
-PORT = config.get("PORT");
+PORT = config.get('PORT');
 connectDB();
 
-app.get("/", (req, res) => {
-  res.send("Welcome to home page");
+//Init middleware
+app.use(express.json({ extended: false }));
+
+//Define Routes
+app.use('/api/user', require('./routes/api/user'));
+
+app.get('/', (req, res) => {
+  res.send('Welcome to home page');
 });
 
 app.listen(PORT, () => {
