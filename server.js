@@ -13,6 +13,7 @@ app.use(express.json({ extended: false }));
 //Routes middleware
 app.use("/api/user", require("./routes/api/user"));
 app.use("/api/person", require("./routes/api/person"));
+app.use("/api/auth", require("./routes/api/auth"));
 
 app.get("/", (req, res) => {
   res.send("API is running");
