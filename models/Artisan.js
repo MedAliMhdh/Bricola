@@ -6,27 +6,21 @@ const artisanSchema = new Schema({
     type: mongoose.Schema.Type.ObjectId,
     ref: "user",
   },
-  adress: {
-    street: {
-      type: String,
-      required: true,
-    },
-    city: {
-      type: String,
-      required: true,
-    },
-    zipcode: {
-      type: Number,
-      required: true,
-    },
-  },
-  profilephoto: {
+  street: {
     type: String,
+    required: true,
   },
-
+  city: {
+    type: String,
+    required: true,
+  },
+  zipcode: {
+    type: Number,
+    required: true,
+  },
   bio: {
     type: String,
   },
 });
 
-module.exports = Artisan = mongoose.model('"artisan', artisanSchema);
+module.exports = Artisan = mongoose.model("artisan", artisanSchema);
