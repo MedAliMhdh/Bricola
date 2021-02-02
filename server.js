@@ -5,11 +5,10 @@ const connectDB = require("./config/db");
 
 PORT = config.get("PORT") || 5000;
 
-// const personRoute = ;
 connectDB();
 
 //Body parser middleware
-app.use(express.json());
+app.use(express.json);
 
 app.get("/", (req, res) => {
   res.send("Welcome to home page");
