@@ -5,22 +5,14 @@ const personSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
   },
-  address: {
-    street: {
-      type: String,
-      required: true,
-    },
-    city: {
-      type: String,
-      required: true,
-    },
-    zipcode: {
-      type: Number,
-      required: true,
-    },
-  },
-  profilephoto: {
+  street: {
     type: String,
+  },
+  city: {
+    type: String,
+  },
+  zipcode: {
+    type: Number,
   },
 });
 
