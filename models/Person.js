@@ -5,7 +5,7 @@ const personSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
   },
-  adress: {
+  address: {
     street: {
       type: String,
       required: true,
