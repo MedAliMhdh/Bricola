@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 const config = require("config");
+const connectDB = require("./config/db");
 
-PORT = 5000;
+PORT = config.get("PORT");
+connectDB();
 
 app.get("/", (req, res) => {
   res.send("Welcome to home page");
