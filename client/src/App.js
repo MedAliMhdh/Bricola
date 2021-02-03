@@ -1,7 +1,12 @@
 import "./App.css";
+import Navb from "./components/Navb";
 
-function App() {
-  return <div className='App'></div>;
-}
+const App = () => {
+  return (
+    <div className='App'>
+      <Navb />
+    </div>
+  );
+};
 
 export default App;
