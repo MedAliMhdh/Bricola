@@ -205,7 +205,7 @@ router.post(
 router.delete('/comment/:post_id/:comment_id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.post_id);
-
+    const user = await User.findById(req.user.id).select('-password');
     //Pull out comment
     const comment = post.comments.find(
       (comment) => comment.id === req.params.comment_id
@@ -217,10 +217,7 @@ router.delete('/comment/:post_id/:comment_id', auth, async (req, res) => {
     }
 
     //Check user
-    if (
-      comment.user.toString() !== req.user.id &&
-      post.user.toString() !== req.user.id
-    ) {
+    if (comment.user.toString() !== req.user.id && user.role !== 'Admin') {
       return res.status(401).json({ msg: 'User not authorized' });
     }
 
