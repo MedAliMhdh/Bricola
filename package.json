@@ -4,6 +4,7 @@
   "description": "Projet de fin de bootcamp",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
