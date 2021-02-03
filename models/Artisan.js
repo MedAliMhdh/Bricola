@@ -3,8 +3,12 @@ const Schema = mongoose.Schema;
 
 const artisanSchema = new Schema({
   user: {
-    type: mongoose.Schema.Type.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "user",
+  },
+  profession: {
+    type: String,
+    required: true,
   },
   street: {
     type: String,
@@ -21,6 +25,18 @@ const artisanSchema = new Schema({
   bio: {
     type: String,
   },
+  rate: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: "users",
+      },
+      value: {
+        type: Number,
+        default: 0,
+      },
+    },
+  ],
 });
 
 module.exports = Artisan = mongoose.model("artisan", artisanSchema);

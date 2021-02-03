@@ -4,10 +4,9 @@ const Person = require("../../models/Person");
 const User = require("../../models/User");
 const auth = require("../../middlewares/auth");
 // const { body, validationResult } = require("express-validator");
-const config = require("config");
 
 // @route    GET  api/profile/me
-// @desc     Get current person's profile
+// @desc     Get current user profile
 // @access   Private
 router.get("/me", auth, async (req, res) => {
   try {
@@ -39,7 +38,6 @@ router.post("/", auth, async (req, res) => {
 
   try {
     let person = await Person.findOne({ user: req.user.id });
-    console.log(req.user.id);
 
     //update if person exists
     if (person) {
