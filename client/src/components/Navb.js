@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navb = () => {
   return (
@@ -7,12 +7,17 @@ const Navb = () => {
       <div class='container-fluid'>
         <a class='navbar-brand'>Bricola</a>
         <form class='d-flex'>
-          <button class='btn btn-outline-success' type='submit'>
-            <Link to='/register'>Register</Link>
-          </button>
-          <button class='btn btn-outline-success' type='submit'>
-            <Link to='/login'>Log In</Link>
-          </button>
+          <Link to='/register'>
+            <button class='btn btn-outline-success' type='submit'>
+              Register
+            </button>
+          </Link>
+
+          <Link to='/login'>
+            <button class='btn btn-outline-success' type='submit'>
+              Log In
+            </button>
+          </Link>
         </form>
       </div>
     </nav>
