@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navb = () => {
   return (
@@ -7,10 +8,10 @@ const Navb = () => {
         <a class='navbar-brand'>Bricola</a>
         <form class='d-flex'>
           <button class='btn btn-outline-success' type='submit'>
-            Sign in
+            <Link to='/register'>Register</Link>
           </button>
           <button class='btn btn-outline-success' type='submit'>
-            Log in
+            <Link to='/login'>Log In</Link>
           </button>
         </form>
       </div>
