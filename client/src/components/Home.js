@@ -4,7 +4,7 @@ import Search from "./Search";
 
 const Home = () => {
   return (
-    <div>
+    <div className='container-fluid mx-0 px-0'>
       <Navb />
       <Search />
     </div>
