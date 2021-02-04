@@ -8,12 +8,12 @@ const Search = () => {
     i < rate
       ? thumbs.push(
           <span onClick={() => setRate(i + 1)} key={i}>
-            <i class='fas fa-thumbs-up'></i>
+            <i className='fas fa-thumbs-up fa-4x'></i>
           </span>
         )
       : thumbs.push(
           <span onClick={() => setRate(i + 1)} key={i}>
-            <i class='far fa-thumbs-up'></i>
+            <i className='far fa-thumbs-up'></i>
           </span>
         );
   }
