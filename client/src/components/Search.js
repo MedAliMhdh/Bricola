@@ -7,7 +7,7 @@ const Search = () => {
       <div className='rowContainer row d-flex justify-content-center flex-wrap align-items-center '>
         <div className='col-md-3'>
           <select className='form-control'>
-            <option selected=''> Select job type </option>
+            <option value=''> Select job type </option>
             <option value='Bricklayer'>Bricklayer</option>
             <option value='Electrician'>Electrician</option>
             <option value='Painter'>Painter</option>
@@ -19,7 +19,7 @@ const Search = () => {
         </div>
         <div className='col-md-3 p-3'>
           <select className='form-control'>
-            <option selected=''> city </option>
+            <option value=''> city </option>
             <option value='Ariana'>Ariana</option>
             <option value='Beja'>Beja</option>
             <option value='Ben Arous'>Ben Arous</option>
@@ -52,7 +52,7 @@ const Search = () => {
       </div>
       <div className='rowContainer2 '>
         <div className='col-md-12 p-3 row d-flex justify-content-center'>
-          <button type='button' class='btn btn-dark col-md-3 '>
+          <button type='button' className='btn btn-dark col-md-3 '>
             Search
           </button>
         </div>
