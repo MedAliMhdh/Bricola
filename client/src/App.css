@@ -4,8 +4,8 @@ button.btn.btn-outline-success {
 }
 
 /************searchCard************/
-.searchCard {
-  margin-top: 60px;
+.container {
+  margin-top: 50px;
+  background-color: blue;
   height: 200px;
-  background-color: red;
 }
