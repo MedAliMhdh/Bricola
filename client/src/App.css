@@ -30,11 +30,49 @@ button.btn.btn-outline-success {
   z-index: 2;
 }
 .divider-text:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   border-bottom: 1px solid #ddd;
   top: 55%;
   left: 0;
   z-index: 1;
+}
+
+/******************** ArtisanCard *********************/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  background-color: #eee;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card {
+  background-color: #b9f6ca;
+  width: 700px;
+  border-radius: 20px;
+}
+
+.heading {
+  font-weight: 700;
+}
+
+.hour {
+  margin-top: 1px;
+  color: green;
+  font-size: 12px;
+}
+
+.ratings i {
+  color: #388e3c;
+}
+
+.btn {
+  border-radius: 15px !important;
+}
+
+.line-color {
+  color: green;
+  height: 3px;
 }
