@@ -1,0 +1,23 @@
+import React, { useState } from "react";
+
+const Thumbs = () => {
+  let thumbs = [];
+  const [rate, setRate] = useState(0);
+
+  for (let i = 0; i < 5; i++) {
+    i < rate
+      ? thumbs.push(
+          <span onClick={() => setRate(i + 1)} key={i}>
+            <i className='fas fa-thumbs-up fa-2x p-1'></i>
+          </span>
+        )
+      : thumbs.push(
+          <span onClick={() => setRate(i + 1)} key={i}>
+            <i className='far fa-thumbs-up fa-2x p-1'></i>
+          </span>
+        );
+  }
+  return <div className='md-3'>{thumbs}</div>;
+};
+
+export default Thumbs;
