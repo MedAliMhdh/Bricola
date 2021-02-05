@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navb = () => {
   return (
-    <nav className='navbar navbar-light bg-dark mx-0'>
+    <nav className='navbar fixed-top navbar-light bg-dark mx-0'>
       <div className='container-fluid d-felx align-content-around mx-0'>
         <Link to='/'>
           <a className='navbar-brand'>Bricola</a>

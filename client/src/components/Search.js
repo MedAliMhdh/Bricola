@@ -3,7 +3,7 @@ import Thumbs from "./Thumbs";
 
 const Search = () => {
   return (
-    <div className='myContainer container d-flelx align-content-center'>
+    <div className='myContainer container d-flelx align-content-between mt-5'>
       <div className='rowContainer row d-flex justify-content-center align-items-center'>
         <div className='col-md-3'>
           <select className='form-control'>
@@ -46,13 +46,13 @@ const Search = () => {
             <option value='Zaghouane'>Zaghouane</option>
           </select>
         </div>
-        <div className='col-md-3 p-3'>
-          <Thumbs />
+        <div className='col-md-3'>
+          <Thumbs className='d-flex no wrap' />
         </div>
       </div>
-      <div className='rowContainer2 '>
-        <div className='col-md-12 p-3 row d-flex no-wrap align-content-center justify-content-center '>
-          <button type='button' className='btn btn-dark col-md-3 '>
+      <div className='rowContainer2 d-flex align-items-center'>
+        <div className='col-md-12 p-3 row d-flex no-wrap align-items-end justify-content-center '>
+          <button type='button' className='btn btn-dark col-md-3'>
             Search
           </button>
         </div>

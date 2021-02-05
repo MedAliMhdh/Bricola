@@ -6,7 +6,7 @@ import CategoriiesCarousel from "./CategoriesCarousel";
 const Home = () => {
   return (
     <div className='container-fluid mx-0 px-0'>
-      <Navb className='Navb' />
+      <Navb />
       <Search />
       <CategoriiesCarousel />
     </div>

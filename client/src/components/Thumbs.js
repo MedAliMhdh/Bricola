@@ -17,7 +17,7 @@ const Thumbs = () => {
           </span>
         );
   }
-  return <div className='md-3'>{thumbs}</div>;
+  return <div className='md-lg-3 d-flex flex-nowrap '>{thumbs}</div>;
 };
 
 //declaring default props in case we click on thumbs of Artisans Card and we don't have a setRate function
