@@ -1,12 +1,14 @@
 import React from "react";
 import Navb from "./Navb";
 import Search from "./Search";
+import CategoriiesCarousel from "./CategoriesCarousel";
 
 const Home = () => {
   return (
     <div className='container-fluid mx-0 px-0'>
-      <Navb />
+      <Navb className='Navb' />
       <Search />
+      <CategoriiesCarousel />
     </div>
   );
 };

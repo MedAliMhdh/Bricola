@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div className='container-fluid mx-0 px-0'>
       <div className='container-fluid mx-0 px-0'></div>
-      <Navb />
+      <Navb className='Navb' />
 
       <div className='container d-flex justify-content-center p-3'>
         <br />
@@ -19,8 +19,7 @@ const Login = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-envelope'></i>{" "}
+                    <i className='fa fa-envelope'></i>
                   </span>
                 </div>
                 <input
