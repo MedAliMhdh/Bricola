@@ -1,9 +1,11 @@
-const ArtisanCard = () => {
+import Thumbs from './Thumbs';
+
+const ArtisanCard = ({ name, job, adress, bio, postsNumber }) => {
   return (
     <div className='container mt-5 d-flex justify-content-center'>
       <div className='card p-4 mt-3'>
         <div className='first'>
-          <h6 className='heading'>Job type</h6>
+          <h6 className='heading'>{job}</h6>
         </div>
         <div className='second d-flex flex-row mt-2'>
           <div className='image mr-3'>
@@ -18,16 +20,14 @@ const ArtisanCard = () => {
             <div className='md-col-6 px-3'>
               <div className='d-flex flex-row mb-1'>
                 {' '}
-                <span>Full Name</span>
+                <span>{name}</span>
                 <div className='ratings ml-2'>
                   {' '}
-                  <i className='fa fa-star'></i> <i className='fa fa-star'></i>{' '}
-                  <i className='fa fa-star'></i> <i className='fa fa-star'></i>{' '}
-                  <i className='fa fa-star'></i>{' '}
+                  <Thumbs />
                 </div>
               </div>
               <div>
-                <span>Adress</span>
+                <span>{adress}</span>
               </div>
               <div>
                 {' '}
@@ -40,12 +40,12 @@ const ArtisanCard = () => {
               </div>
             </div>
             <div className='md-col-6 px-3'>
-              <span>Bio</span>
+              <span>{bio}</span>
             </div>
           </div>
         </div>
         <hr className='line-color' />
-        <h6>48 posts</h6>
+        <h6>{postsNumber}</h6>
         <div className='third mt-4'>
           {' '}
           <button className='btn btn-success btn-block'>
