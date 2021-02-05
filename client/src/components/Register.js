@@ -7,7 +7,7 @@ const Register = () => {
   return (
     <div className='container-fluid mx-0 px-0'>
       <div className='container-fluid mx-0 px-0'>
-        <Navb />
+        <Navb className='Navb' />
       </div>
       <div className='container d-flex justify-content-center p-3 '>
         <br />
