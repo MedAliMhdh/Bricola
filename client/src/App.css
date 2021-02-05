@@ -38,18 +38,10 @@ button.btn.btn-outline-success {
   height: 40%;
 }
 
-<<<<<<< HEAD
-/************Register / Login*************/
-
-/* .fieldForm {
-  width: 400px;
-} */
-=======
 select,
 span {
   cursor: pointer;
 }
->>>>>>> master
 
 /***************Categories Carousel**************/
 .carousel {
