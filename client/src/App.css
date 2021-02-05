@@ -21,7 +21,11 @@ button.btn.btn-outline-success {
   height: 50%;
 }
 
-/************Register*************/
+/************Register / Login*************/
+
+/* .fieldForm {
+  width: 400px;
+} */
 
 .divider-text {
   position: relative;
@@ -36,7 +40,7 @@ button.btn.btn-outline-success {
   z-index: 2;
 }
 .divider-text:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   border-bottom: 1px solid #ddd;
@@ -47,11 +51,11 @@ button.btn.btn-outline-success {
 
 /******************** ArtisanCard *********************/
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
   background-color: #eee;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card {
