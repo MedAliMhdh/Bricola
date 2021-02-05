@@ -9,10 +9,20 @@ button.btn.btn-outline-success {
   margin-left: 15px;
 }
 
+/************Login************/
+.loginContainer {
+  margin-top: 120px;
+}
+
+/************Signin************/
+.registerContainer {
+  margin-top: 120px;
+}
+
 /************searchCard************/
 .myContainer {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 120px;
   height: 250px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
@@ -42,31 +52,36 @@ span {
 }
 
 /***************Categories Carousel**************/
-.carousel {
-  position: relative;
+
+.card {
+  height: 200px;
+}
+
+.card-img-top {
+  height: 200px;
 }
 
 .btn-floating-left {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 0px;
   z-index: 1000;
 }
 
 .btn-floating-right {
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 0px;
   z-index: 1000;
 }
 
 /******************** ArtisanCard *********************/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
   background-color: #eee;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .card {

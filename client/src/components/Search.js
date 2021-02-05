@@ -3,7 +3,7 @@ import Thumbs from "./Thumbs";
 
 const Search = () => {
   return (
-    <div className='myContainer container d-flelx align-content-between mt-5'>
+    <div className='myContainer container d-flelx align-content-between'>
       <div className='rowContainer row d-flex justify-content-center align-items-center'>
         <div className='col-md-3'>
           <select className='form-control'>

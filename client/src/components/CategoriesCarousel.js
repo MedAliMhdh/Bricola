@@ -2,7 +2,7 @@ import React from "react";
 
 const CategoriiesCarousel = () => {
   return (
-    <div className='container my-4'>
+    <div className=' container my-4'>
       <hr className='my-4' />
 
       {/* Carousel Wrapper */}

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Navb from './Navb';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Navb from "./Navb";
 
 const Register = () => {
-  const [role, setRole] = useState('Person');
+  const [role, setRole] = useState("Person");
   return (
-    <div className='container-fluid mx-0 px-0'>
+    <div className='registerContainer container-fluid mx-0 px-0'>
       <div className='container-fluid mx-0 px-0'>
         <Navb />
       </div>
@@ -13,7 +13,7 @@ const Register = () => {
         <br />
 
         <div className='card bg-light'>
-          <article className='card-body mx-auto' style={{ maxWidth: '400' }}>
+          <article className='card-body mx-auto' style={{ maxWidth: "400" }}>
             <h4 className='card-title mt-3 text-center'>Create Account</h4>
 
             <form>
@@ -34,8 +34,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fa fa-envelope'></i>{' '}
+                    {" "}
+                    <i className='fa fa-envelope'></i>{" "}
                   </span>
                 </div>
                 <input
@@ -49,8 +49,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fa fa-phone'></i>{' '}
+                    {" "}
+                    <i className='fa fa-phone'></i>{" "}
                   </span>
                 </div>
                 <input
@@ -64,8 +64,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fas fa-user-tag'></i>{' '}
+                    {" "}
+                    <i className='fas fa-user-tag'></i>{" "}
                   </span>
                 </div>
                 <select
@@ -80,11 +80,11 @@ const Register = () => {
                 </select>
               </div>
               {/* <!-- form-group// --> */}
-              {role === 'Artisan' && (
+              {role === "Artisan" && (
                 <div className='form-group input-group'>
                   <div className='input-group-prepend'>
                     <span className='input-group-text'>
-                      {' '}
+                      {" "}
                       <i className='fas fa-paint-roller'></i>
                     </span>
                   </div>
@@ -105,8 +105,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fa fa-lock'></i>{' '}
+                    {" "}
+                    <i className='fa fa-lock'></i>{" "}
                   </span>
                 </div>
                 <input
@@ -119,8 +119,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fa fa-lock'></i>{' '}
+                    {" "}
+                    <i className='fa fa-lock'></i>{" "}
                   </span>
                 </div>
                 <input
@@ -132,13 +132,13 @@ const Register = () => {
               {/* <!-- form-group// -->  */}
               <div className='form-group'>
                 <button type='submit' className='btn btn-primary btn-block'>
-                  {' '}
-                  Create Account{' '}
+                  {" "}
+                  Create Account{" "}
                 </button>
               </div>
               {/* <!-- form-group// -->       */}
               <p className='text-center'>
-                Have an account? <Link to='/login'>Log In</Link>{' '}
+                Have an account? <Link to='/login'>Log In</Link>{" "}
               </p>
             </form>
           </article>
