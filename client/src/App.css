@@ -54,13 +54,8 @@ span {
   left: 0px;
   z-index: 1000;
 }
-<<<<<<< HEAD
-.divider-text:after {
-  content: '';
-=======
 
 .btn-floating-right {
->>>>>>> master
   position: absolute;
   top: 50%;
   right: 0px;
