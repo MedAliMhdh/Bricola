@@ -20,4 +20,9 @@ const Thumbs = () => {
   return <div className='md-3'>{thumbs}</div>;
 };
 
+//declaring default props in case we click on thumbs of Artisans Card and we don't have a setRate function
+// Thumbs.defaultPros = {
+//   setRate: () => {},
+// };
+
 export default Thumbs;
