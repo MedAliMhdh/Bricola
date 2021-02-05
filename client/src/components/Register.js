@@ -7,7 +7,7 @@ const Register = () => {
   return (
     <div className='container-fluid mx-0 px-0'>
       <div className='container-fluid mx-0 px-0'>
-        <Navb className='Navb' />
+        <Navb />
       </div>
       <div className='container d-flex justify-content-center p-3 '>
         <br />
@@ -16,7 +16,7 @@ const Register = () => {
           <article className='card-body mx-auto' style={{ maxWidth: '400' }}>
             <h4 className='card-title mt-3 text-center'>Create Account</h4>
 
-            <form className='fieldForm'>
+            <form>
               <div className='form-group input-group '>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>

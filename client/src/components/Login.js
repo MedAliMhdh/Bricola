@@ -19,12 +19,8 @@ const Login = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-<<<<<<< HEAD
                     {' '}
                     <i className='fa fa-envelope'></i>{' '}
-=======
-                    <i className='fa fa-envelope'></i>
->>>>>>> master
                   </span>
                 </div>
                 <input
