@@ -2,6 +2,7 @@ import './App.css';
 import Register from './components/Register';
 import Login from './components/Login';
 import ArtisanCard from './components/ArtisanCard';
+import Post from './components/Post';
 import { Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import ArtisanProfile from './components/ArtisanProfile';
