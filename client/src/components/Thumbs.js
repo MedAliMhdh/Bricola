@@ -8,12 +8,12 @@ const Thumbs = () => {
     i < rate
       ? thumbs.push(
           <span onClick={() => setRate(i + 1)} key={i}>
-            <i className='fas fa-thumbs-up fa-2x p-1'></i>
+            <i className='fas fa-star fa-2x p-1'></i>
           </span>
         )
       : thumbs.push(
           <span onClick={() => setRate(i + 1)} key={i}>
-            <i className='far fa-thumbs-up fa-2x p-1'></i>
+            <i className='far fa-star fa-2x p-1'></i>
           </span>
         );
   }

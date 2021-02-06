@@ -9,7 +9,7 @@ const ArtisanProfile = () => {
           <div className='profile-nav col-lg-3'>
             <div className='panel'>
               <div className='user-heading round'>
-                <a href='#'>
+                <a href='/'>
                   <img
                     src='https://bootdey.com/img/Content/avatar/avatar3.png'
                     alt=''
@@ -21,18 +21,18 @@ const ArtisanProfile = () => {
 
               <ul className='nav nav-pills nav-stacked'>
                 <li className='active '>
-                  <a href='#'>
+                  <a href='/'>
                     <i className='fa fa-user'></i> Profile
                   </a>
                 </li>
                 <li>
-                  <a href='#'>
+                  <a href='/'>
                     <i className='fa fa-calendar'></i> Recent Activity
                     <span className='label label-warning r-activity'></span>
                   </a>
                 </li>
                 <li>
-                  <a href='#'>
+                  <a href='/'>
                     <i className='fa fa-edit'></i> Edit profile
                   </a>
                 </li>
@@ -52,22 +52,22 @@ const ArtisanProfile = () => {
                 <button className='btn btn-warning '>Post</button>
                 <ul className='nav nav-pills'>
                   <li>
-                    <a href='#'>
+                    <a href='/'>
                       <i className='fa fa-map-marker mx-1'></i>
                     </a>
                   </li>
                   <li>
-                    <a href='#'>
+                    <a href='/'>
                       <i className='fa fa-camera mx-1'></i>
                     </a>
                   </li>
                   <li>
-                    <a href='#'>
+                    <a href='/'>
                       <i className=' fa fa-film mx-1'></i>
                     </a>
                   </li>
                   <li>
-                    <a href='#'>
+                    <a href='/'>
                       <i className='fa fa-microphone mx-1'></i>
                     </a>
                   </li>
