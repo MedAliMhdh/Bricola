@@ -37,6 +37,10 @@ const artisanSchema = new Schema({
       },
     },
   ],
+  equipment: {
+    type: boolean,
+    default: true,
+  },
 });
 
 module.exports = Artisan = mongoose.model("artisan", artisanSchema);

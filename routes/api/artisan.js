@@ -50,6 +50,7 @@ router.post(
     if (zipcode) artisanFields.zipcode = zipcode;
     if (city) artisanFields.city = city;
     if (bio) artisanFields.bio = bio;
+    if (equipment) artisanFields = equipment;
 
     try {
       let artisan = await Artisan.findOne({ user: req.user.id });

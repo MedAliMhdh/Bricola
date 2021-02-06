@@ -54,7 +54,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>
@@ -64,7 +64,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>
@@ -74,7 +74,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>
@@ -90,7 +90,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>
@@ -100,7 +100,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>
@@ -110,7 +110,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>
@@ -126,7 +126,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>
@@ -136,7 +136,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>
@@ -146,7 +146,7 @@ const CategoriiesCarousel = () => {
                   <img
                     className='card-img-top'
                     src='https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg'
-                    alt='Card image cap'
+                    alt='Card cap'
                   />
                 </div>
               </div>

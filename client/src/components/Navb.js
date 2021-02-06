@@ -6,7 +6,9 @@ const Navb = () => {
     <nav className='navbar navbar-expand-md fixed-top navbar-light bg-light mx-0'>
       <div className='container-fluid d-felx align-content-around mx-0'>
         <Link to='/'>
-          <a className='navbar-brand'>Bricola</a>
+          <a href='/' className='navbar-brand'>
+            Bricola
+          </a>
         </Link>
 
         <button
