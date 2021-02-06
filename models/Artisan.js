@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const artisanSchema = new Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
+    ref: 'user',
   },
   profession: {
     type: String,
@@ -29,7 +29,7 @@ const artisanSchema = new Schema({
     {
       user: {
         type: Schema.Types.ObjectId,
-        ref: "users",
+        ref: 'users',
       },
       value: {
         type: Number,
@@ -38,9 +38,9 @@ const artisanSchema = new Schema({
     },
   ],
   equipment: {
-    type: boolean,
+    type: Boolean,
     default: true,
   },
 });
 
-module.exports = Artisan = mongoose.model("artisan", artisanSchema);
+module.exports = Artisan = mongoose.model('artisan', artisanSchema);
