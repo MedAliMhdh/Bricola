@@ -3,9 +3,9 @@ import Thumbs from "./Thumbs";
 
 const Search = () => {
   return (
-    <div className='myContainer container d-flelx align-content-between mt-5'>
-      <div className='rowContainer row d-flex justify-content-center align-items-center'>
-        <div className='col-md-3'>
+    <div className='myContainer container d-flelx align-content-between'>
+      <div className='rowContainer row d-flex justify-content-center align-items-center ml-4 flex-wrap'>
+        <div className='col-md-3 col-sm-3 p-1 m-0'>
           <select className='form-control'>
             <option value=''> Select job type </option>
             <option value='Bricklayer'>Bricklayer</option>
@@ -17,7 +17,14 @@ const Search = () => {
             <option value='Carpenter'>Carpenter</option>
           </select>
         </div>
-        <div className='col-md-3 p-3'>
+        <div className='col-lg-3 col-sm-3 p-1 m-0'>
+          <select className='form-control'>
+            <option value=''> equipment </option>
+            <option value='true'>With materiel</option>
+            <option value='false'>Without materiel</option>
+          </select>
+        </div>
+        <div className='col-md-3 col-sm-3 p-1 m-0'>
           <select className='form-control'>
             <option value=''> city </option>
             <option value='Ariana'>Ariana</option>
