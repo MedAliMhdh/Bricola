@@ -1,5 +1,4 @@
 import './App.css';
-
 import Register from './components/Register';
 import Login from './components/Login';
 import ArtisanCard from './components/ArtisanCard';
@@ -23,7 +22,10 @@ const App = () => {
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
         <Route path='/artisan' component={ArtisanCard} />
+        {/*should be deleted***** just for test*/}
         <Route path='/artisanprofile' component={ArtisanProfile} />
+        <Route path='/post' component={Post} />
+        {/*should be deleted***** just for test*/}
       </Switch>
     </div>
     // </Provider>
