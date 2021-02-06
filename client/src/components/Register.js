@@ -1,9 +1,33 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Navb from "./Navb";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Navb from './Navb';
+
+import { setAlert } from '../actions/alert';
+
+import { useDispatch } from 'react-redux';
 
 const Register = () => {
-  const [role, setRole] = useState("Person");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
+  const [role, setRole] = useState('Person');
+  const [job, setJob] = useState('');
+  const [phone, setPhone] = useState();
+
+  const dispatch = useDispatch();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (password !== password2) {
+      dispatch(
+        setAlert({ msg: 'Passwords do not match', alertType: 'danger' })
+      );
+    } else {
+      dispatch(setAlert({ msg: 'SUCCESS', alertType: 'success' }));
+    }
+  };
+
   return (
     <div className='registerContainer container-fluid mx-0 px-0'>
       <div className='container-fluid mx-0 px-0'>
@@ -13,10 +37,10 @@ const Register = () => {
         <br />
 
         <div className='card bg-light'>
-          <article className='card-body mx-auto' style={{ maxWidth: "400" }}>
+          <article className='card-body mx-auto' style={{ maxWidth: '400' }}>
             <h4 className='card-title mt-3 text-center'>Create Account</h4>
 
-            <form>
+            <form onSubmit={(e) => onSubmit(e)}>
               <div className='form-group input-group '>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
@@ -24,52 +48,63 @@ const Register = () => {
                   </span>
                 </div>
                 <input
-                  name=''
+                  name='name'
                   className='form-control'
                   placeholder='Full name *'
                   type='text'
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-envelope'></i>{" "}
+                    {' '}
+                    <i className='fa fa-envelope'></i>{' '}
                   </span>
                 </div>
                 <input
-                  name=''
+                  name='email'
                   className='form-control'
                   placeholder='Email address *'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   type='email'
+                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-phone'></i>{" "}
+                    {' '}
+                    <i className='fa fa-phone'></i>{' '}
                   </span>
                 </div>
                 <input
-                  name=''
+                  name='phone'
                   className='form-control'
                   placeholder='Phone number'
-                  type='text'
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  type='number'
+                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fas fa-user-tag'></i>{" "}
+                    {' '}
+                    <i className='fas fa-user-tag'></i>{' '}
                   </span>
                 </div>
                 <select
+                  name='role'
                   className='form-control'
+                  value={role}
                   onChange={(e) => {
                     setRole(e.target.value);
                   }}
@@ -80,15 +115,20 @@ const Register = () => {
                 </select>
               </div>
               {/* <!-- form-group// --> */}
-              {role === "Artisan" && (
+              {role === 'Artisan' && (
                 <div className='form-group input-group'>
                   <div className='input-group-prepend'>
                     <span className='input-group-text'>
-                      {" "}
+                      {' '}
                       <i className='fas fa-paint-roller'></i>
                     </span>
                   </div>
-                  <select className='form-control'>
+                  <select
+                    className='form-control'
+                    name='job'
+                    value={job}
+                    onChange={(e) => setJob(e.target.value)}
+                  >
                     <option selected=''> Select job type *</option>
                     <option value='Bricklayer'>Bricklayer</option>
                     <option value='Electrician'>Electrician</option>
@@ -105,40 +145,48 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-lock'></i>{" "}
+                    {' '}
+                    <i className='fa fa-lock'></i>{' '}
                   </span>
                 </div>
                 <input
+                  name='password'
                   className='form-control'
                   placeholder='Create password *'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   type='password'
+                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-lock'></i>{" "}
+                    {' '}
+                    <i className='fa fa-lock'></i>{' '}
                   </span>
                 </div>
                 <input
+                  name='password2'
                   className='form-control'
                   placeholder='Repeat password *'
+                  value={password2}
+                  onChange={(e) => setPassword2(e.target.value)}
                   type='password'
+                  required
                 />
               </div>
               {/* <!-- form-group// -->  */}
               <div className='form-group'>
                 <button type='submit' className='btn btn-primary btn-block'>
-                  {" "}
-                  Create Account{" "}
+                  {' '}
+                  Create Account{' '}
                 </button>
               </div>
               {/* <!-- form-group// -->       */}
               <p className='text-center'>
-                Have an account? <Link to='/login'>Log In</Link>{" "}
+                Have an account? <Link to='/login'>Log In</Link>{' '}
               </p>
             </form>
           </article>
