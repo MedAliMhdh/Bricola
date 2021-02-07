@@ -11,11 +11,11 @@ export const register = ({ name, email, password, role, job, phone }) => async (
       "Content-Type": "application/json",
     },
   };
-  const body = JSON.stringify({ name, email, password, role, job, phone });
+  const body = { name, email, password, role, job, phone };
 
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/user",
+      `${process.env.REACT_APP_API_URL}api/user`,
       body,
       config
     );
@@ -25,7 +25,8 @@ export const register = ({ name, email, password, role, job, phone }) => async (
       payload: res.data,
     });
   } catch (err) {
-    const errors = err.response.data.error;
+    console.log(err);
+    const errors = err.response.data.errors;
 
     if (errors) {
       errors.forEach((error) => {
