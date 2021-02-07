@@ -1,5 +1,5 @@
-import React from "react";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 const ArtisanProfile = () => {
   return (
     <div>
@@ -9,32 +9,32 @@ const ArtisanProfile = () => {
           <div className='profile-nav col-lg-3'>
             <div className='panel'>
               <div className='user-heading round'>
-                <a href='/'>
+                <Link to='/'>
                   <img
                     src='https://bootdey.com/img/Content/avatar/avatar3.png'
                     alt=''
                   />
-                </a>
+                </Link>
                 <h1>Camila Smith</h1>
                 <p>deydey@theEmail.com</p>
               </div>
 
               <ul className='nav nav-pills nav-stacked'>
                 <li className='active '>
-                  <a href='/'>
+                  <Link to='/'>
                     <i className='fa fa-user'></i> Profile
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/'>
+                  <Link to='/'>
                     <i className='fa fa-calendar'></i> Recent Activity
                     <span className='label label-warning r-activity'></span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href='/'>
+                  <Link to='/'>
                     <i className='fa fa-edit'></i> Edit profile
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -52,24 +52,24 @@ const ArtisanProfile = () => {
                 <button className='btn btn-warning '>Post</button>
                 <ul className='nav nav-pills'>
                   <li>
-                    <a href='/'>
+                    <Link to='/'>
                       <i className='fa fa-map-marker mx-1'></i>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href='/'>
+                    <Link to='/'>
                       <i className='fa fa-camera mx-1'></i>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href='/'>
+                    <Link to='/'>
                       <i className=' fa fa-film mx-1'></i>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href='/'>
+                    <Link to='/'>
                       <i className='fa fa-microphone mx-1'></i>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </footer>
