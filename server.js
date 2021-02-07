@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const config = require("config");
 const connectDB = require("./config/db");
+const cors = require("cors");
 
 PORT = config.get("PORT") || 5000;
 
@@ -9,6 +10,7 @@ connectDB();
 
 //Init middleware
 app.use(express.json({ extended: false }));
+app.use(cors());
 
 //Routes middleware
 app.use("/api/user", require("./routes/api/user"));
