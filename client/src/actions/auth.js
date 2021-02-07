@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { REGISTER_FAIL, REGISTER_SUCCESS } from './types';
+import { setAlert } from './alert';
 
 // Register User
 export const register = ({ name, email, password, role, job, phone }) => async (
@@ -13,7 +14,7 @@ export const register = ({ name, email, password, role, job, phone }) => async (
   const body = JSON.stringify({ name, email, password, role, job, phone });
 
   try {
-    const res = await axios.post('/api/users', body, config);
+    const res = await axios.post('/api/user', body, config);
 
     dispatch({
       type: REGISTER_SUCCESS,
