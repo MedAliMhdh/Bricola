@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navb from './Navb';
 
 import { setAlert } from '../actions/alert';
+import { register } from '../actions/auth';
 
 import { useDispatch } from 'react-redux';
 
@@ -12,8 +13,8 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
   const [role, setRole] = useState('Person');
-  const [job, setJob] = useState('');
-  const [phone, setPhone] = useState();
+  const [job, setJob] = useState('No Job');
+  const [phone, setPhone] = useState('');
 
   const dispatch = useDispatch();
 
@@ -24,7 +25,7 @@ const Register = () => {
         setAlert({ msg: 'Passwords do not match', alertType: 'danger' })
       );
     } else {
-      dispatch(setAlert({ msg: 'SUCCESS', alertType: 'success' }));
+      dispatch(register({ name, email, password, role, job, phone }));
     }
   };
 
@@ -109,7 +110,7 @@ const Register = () => {
                     setRole(e.target.value);
                   }}
                 >
-                  <option selected=''> Select your role</option>
+                  <option value='choose'> Select your role</option>
                   <option value='Person'>Person</option>
                   <option value='Artisan'>Artisan</option>
                 </select>
@@ -156,7 +157,7 @@ const Register = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type='password'
-                  required
+                  minLength='6'
                 />
               </div>
               {/* <!-- form-group// --> */}
@@ -174,7 +175,7 @@ const Register = () => {
                   value={password2}
                   onChange={(e) => setPassword2(e.target.value)}
                   type='password'
-                  required
+                  minLength='6'
                 />
               </div>
               {/* <!-- form-group// -->  */}
