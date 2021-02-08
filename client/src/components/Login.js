@@ -71,8 +71,7 @@ const Login = () => {
 
               <div className='form-group'>
                 <button type='submit' className='btn btn-primary btn-block'>
-                  {' '}
-                  Log In{' '}
+                  Log In
                 </button>
               </div>
               {/* <!-- form-group// -->       */}

@@ -1,6 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getCurrentProfile } from "../actions/artisanProfile";
+
 const ArtisanProfile = () => {
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  console.log(state);
+
+  useEffect(() => {
+    dispatch(getCurrentProfile);
+  }, []);
+
   return (
     <div>
       <link rel='stylesheet' />
