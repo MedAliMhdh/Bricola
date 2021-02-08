@@ -1,21 +1,20 @@
-import "./App.css";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import ArtisanCard from "./components/ArtisanCard";
-import Post from "./components/Post";
-import { Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
-import ArtisanProfile from "./components/ArtisanProfile";
-import Alert from "./components/Alert";
+import './App.css';
+import Register from './components/Register';
+import Login from './components/Login';
+import ArtisanCard from './components/ArtisanCard';
+import Post from './components/Post';
+import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import ArtisanProfile from './components/ArtisanProfile';
+
 //Redux
-import store from "./store";
-import { Provider } from "react-redux";
+import store from './store';
+import { Provider } from 'react-redux';
 
 const App = () => {
   return (
     <Provider store={store}>
       <div className='App'>
-        <Alert />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/register' component={Register} />

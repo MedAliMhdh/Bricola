@@ -1,6 +1,6 @@
-import axios from "axios";
-import { REGISTER_FAIL, REGISTER_SUCCESS } from "./types";
-import { setAlert } from "./alert";
+import axios from 'axios';
+import { REGISTER_FAIL, REGISTER_SUCCESS } from './types';
+import { setAlert } from './alert';
 
 // Register User
 export const register = ({ name, email, password, role, job, phone }) => async (
@@ -8,7 +8,7 @@ export const register = ({ name, email, password, role, job, phone }) => async (
 ) => {
   const config = {
     header: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   };
   const body = { name, email, password, role, job, phone };
@@ -25,12 +25,12 @@ export const register = ({ name, email, password, role, job, phone }) => async (
       payload: res.data,
     });
   } catch (err) {
-    console.log(err);
+    console.log(err.response.data.errors);
     const errors = err.response.data.errors;
 
     if (errors) {
       errors.forEach((error) => {
-        dispatch(setAlert(error.msg, "danger"));
+        dispatch(setAlert({ msg: error.msg, alertType: 'danger' }));
       });
     }
 

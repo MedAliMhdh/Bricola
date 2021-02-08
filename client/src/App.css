@@ -53,7 +53,7 @@ span {
 
 /***************Categories Carousel**************/
 
-.card {
+.artisanCard {
   height: 200px;
 }
 
@@ -77,11 +77,11 @@ span {
 
 /******************** ArtisanCard *********************/
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
   background-color: #eee;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card {
@@ -118,7 +118,7 @@ body {
 body {
   color: #797979;
   background: #f1f2f7;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   padding: 0px !important;
   margin: 0px !important;
   font-size: 13px;
@@ -523,7 +523,7 @@ ul.summary-list > li:last-child {
 
 .profile-content:after,
 .profile-content:before {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -588,7 +588,7 @@ ul.summary-list > li:last-child {
 
 .profile-section:after,
 .profile-section:before {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -734,7 +734,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .timeline:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 5px;
   bottom: 5px;
@@ -807,7 +807,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .timeline .timeline-body:before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   border: 10px solid transparent;
@@ -864,7 +864,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .timeline-content:after,
 .timeline-content:before {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -955,4 +955,67 @@ select.form-control:not([size]):not([multiple]) {
 .text-danger,
 .text-red {
   color: #ff5b57 !important;
+}
+
+/********************************** from dev connector *****************************/
+
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+  background: var(--light-color);
+  color: #333;
+}
+
+.btn-dark,
+.bg-dark,
+.badge-dark,
+.alert-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-danger,
+.bg-danger,
+.badge-danger,
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+.btn-success,
+.bg-success,
+.badge-success,
+.alert-success {
+  background: var(--success-color);
+  color: #fff;
+}
+
+.btn-white,
+.bg-white,
+.badge-white,
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+
+.btn:hover {
+  opacity: 0.8;
 }

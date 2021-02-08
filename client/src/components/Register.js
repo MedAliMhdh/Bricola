@@ -1,31 +1,39 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Navb from "./Navb";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Navb from './Navb';
 
-import { setAlert } from "../actions/alert";
-import { register } from "../actions/auth";
+import { setAlert } from '../actions/alert';
+import { register } from '../actions/auth';
 
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { set } from 'mongoose';
 
 const Register = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [role, setRole] = useState("Person");
-  const [job, setJob] = useState("No Job");
-  const [phone, setPhone] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
+  const [role, setRole] = useState('Person');
+  const [job, setJob] = useState('');
+  const [phone, setPhone] = useState('');
 
   const dispatch = useDispatch();
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
       dispatch(
-        setAlert({ msg: "Passwords do not match", alertType: "danger" })
+        setAlert({ msg: 'Passwords do not match', alertType: 'danger' })
       );
     } else {
       dispatch(register({ name, email, password, role, job, phone }));
+      setName('');
+      setEmail('');
+      setPassword('');
+      setPassword2('');
+      setJob('');
+      setRole('Person');
+      setPhone('');
     }
   };
 
@@ -38,7 +46,7 @@ const Register = () => {
         <br />
 
         <div className='card bg-light'>
-          <article className='card-body mx-auto' style={{ maxWidth: "400" }}>
+          <article className='card-body mx-auto' style={{ maxWidth: '400' }}>
             <h4 className='card-title mt-3 text-center'>Create Account</h4>
 
             <form onSubmit={(e) => onSubmit(e)}>
@@ -55,15 +63,14 @@ const Register = () => {
                   type='text'
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-envelope'></i>{" "}
+                    {' '}
+                    <i className='fa fa-envelope'></i>{' '}
                   </span>
                 </div>
                 <input
@@ -73,14 +80,13 @@ const Register = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   type='email'
-                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    <i className='fa fa-phone'></i>{" "}
+                    <i className='fa fa-phone'></i>{' '}
                   </span>
                 </div>
                 <input
@@ -96,8 +102,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fas fa-user-tag'></i>{" "}
+                    {' '}
+                    <i className='fas fa-user-tag'></i>{' '}
                   </span>
                 </div>
                 <select
@@ -114,11 +120,11 @@ const Register = () => {
                 </select>
               </div>
               {/* <!-- form-group// --> */}
-              {role === "Artisan" && (
+              {role === 'Artisan' && (
                 <div className='form-group input-group'>
                   <div className='input-group-prepend'>
                     <span className='input-group-text'>
-                      {" "}
+                      {' '}
                       <i className='fas fa-paint-roller'></i>
                     </span>
                   </div>
@@ -128,7 +134,7 @@ const Register = () => {
                     value={job}
                     onChange={(e) => setJob(e.target.value)}
                   >
-                    <option selected=''> Select job type *</option>
+                    <option value='select'> Select job type *</option>
                     <option value='Bricklayer'>Bricklayer</option>
                     <option value='Electrician'>Electrician</option>
                     <option value='Painter'>Painter</option>
@@ -144,8 +150,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-lock'></i>{" "}
+                    {' '}
+                    <i className='fa fa-lock'></i>{' '}
                   </span>
                 </div>
                 <input
@@ -155,15 +161,14 @@ const Register = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type='password'
-                  minLength='8'
                 />
               </div>
               {/* <!-- form-group// --> */}
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-lock'></i>{" "}
+                    {' '}
+                    <i className='fa fa-lock'></i>{' '}
                   </span>
                 </div>
                 <input
@@ -173,19 +178,18 @@ const Register = () => {
                   value={password2}
                   onChange={(e) => setPassword2(e.target.value)}
                   type='password'
-                  minLength='6'
                 />
               </div>
               {/* <!-- form-group// -->  */}
               <div className='form-group'>
                 <button type='submit' className='btn btn-primary btn-block'>
-                  {" "}
-                  Create Account{" "}
+                  {' '}
+                  Create Account{' '}
                 </button>
               </div>
               {/* <!-- form-group// -->       */}
               <p className='text-center'>
-                Have an account? <Link to='/login'>Log In</Link>{" "}
+                Have an account? <Link to='/login'>Log In</Link>{' '}
               </p>
             </form>
           </article>
