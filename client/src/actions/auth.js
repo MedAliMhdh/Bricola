@@ -1,13 +1,12 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
   USER_LOADED,
   AUTH_ERROR,
-} from './types';
-import { setAlert } from './alert';
-
-import setAuthToken from '../utils/setAuthToken';
+} from "./types";
+import { setAlert } from "./alert";
+import setAuthToken from "../utils/setAuthToken";
 
 // Load User
 export const loadUser = () => async (dispatch) => {
@@ -15,13 +14,15 @@ export const loadUser = () => async (dispatch) => {
     setAuthToken(localStorage.token);
   }
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}api/auth`);
+    const res = await axios.get("http://localhost:5000/api/auth");
 
+    console.log(res);
     dispatch({
       type: USER_LOADED,
       payload: res.data,
     });
   } catch (err) {
+    console.log("hi");
     dispatch({
       type: AUTH_ERROR,
     });
@@ -34,7 +35,7 @@ export const register = ({ name, email, password, role, job, phone }) => async (
 ) => {
   const config = {
     header: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
   const body = { name, email, password, role, job, phone };
@@ -51,12 +52,11 @@ export const register = ({ name, email, password, role, job, phone }) => async (
       payload: res.data,
     });
   } catch (err) {
-    console.log(err.response.data.errors);
     const errors = err.response.data.errors;
 
     if (errors) {
       errors.forEach((error) => {
-        dispatch(setAlert({ msg: error.msg, alertType: 'danger' }));
+        dispatch(setAlert({ msg: error.msg, alertType: "danger" }));
       });
     }
 
