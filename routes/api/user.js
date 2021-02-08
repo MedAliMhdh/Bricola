@@ -19,7 +19,19 @@ router.post(
     'password',
     'Please enter a password with 8 or more characters'
   ).isLength({ min: 8 }),
-  body('job', 'Job is required').not().isEmpty(),
+
+  body('role').custom((value, { req }) => {
+    if (value === 'Artisan') {
+      if (req.body.job === '') {
+        throw new Error('Job is required');
+      } else {
+        return true;
+      }
+      // return body('job', 'Job is required').not().isEmpty();
+    } else {
+      return true;
+    }
+  }),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

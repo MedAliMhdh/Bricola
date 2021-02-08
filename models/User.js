@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
   job: {
     type: String,
     required: function () {
-      return this.role === 'Artison';
+      return this.role === 'Artisan';
     },
   },
   phone: {
