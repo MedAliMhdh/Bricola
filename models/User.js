@@ -21,6 +21,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 'Person',
   },
+  job: {
+    type: String,
+    required: function () {
+      return this.role === 'Artison';
+    },
+  },
   phone: {
     type: Number,
   },
