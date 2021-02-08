@@ -5,7 +5,7 @@ const User = require("../../models/User");
 const auth = require("../../middlewares/auth");
 const { body, validationResult } = require("express-validator");
 
-// @route    GET  api/Artisan/me
+// @route    GET  api/artisan/me
 // @desc     get current user profile
 // @access   Private
 router.get("/me", auth, async (req, res) => {

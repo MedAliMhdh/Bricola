@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Navb from './Navb';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Navb from "./Navb";
 
-import { setAlert } from '../actions/alert';
-import { register } from '../actions/auth';
-
-import { useDispatch } from 'react-redux';
-import { set } from 'mongoose';
+import { setAlert } from "../actions/alert";
+import { register } from "../actions/auth";
+import { useDispatch } from "react-redux";
 
 const Register = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [password2, setPassword2] = useState('');
-  const [role, setRole] = useState('Person');
-  const [job, setJob] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [role, setRole] = useState("Person");
+  const [job, setJob] = useState("");
+  const [phone, setPhone] = useState("");
 
   const dispatch = useDispatch();
 
@@ -23,17 +21,17 @@ const Register = () => {
     e.preventDefault();
     if (password !== password2) {
       dispatch(
-        setAlert({ msg: 'Passwords do not match', alertType: 'danger' })
+        setAlert({ msg: "Passwords do not match", alertType: "danger" })
       );
     } else {
       dispatch(register({ name, email, password, role, job, phone }));
-      setName('');
-      setEmail('');
-      setPassword('');
-      setPassword2('');
-      setJob('');
-      setRole('Person');
-      setPhone('');
+      setName("");
+      setEmail("");
+      setPassword("");
+      setPassword2("");
+      setJob("");
+      setRole("Person");
+      setPhone("");
     }
   };
 
@@ -46,7 +44,7 @@ const Register = () => {
         <br />
 
         <div className='card bg-light'>
-          <article className='card-body mx-auto' style={{ maxWidth: '400' }}>
+          <article className='card-body mx-auto' style={{ maxWidth: "400" }}>
             <h4 className='card-title mt-3 text-center'>Create Account</h4>
 
             <form onSubmit={(e) => onSubmit(e)}>
@@ -69,8 +67,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fa fa-envelope'></i>{' '}
+                    {" "}
+                    <i className='fa fa-envelope'></i>{" "}
                   </span>
                 </div>
                 <input
@@ -86,7 +84,7 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    <i className='fa fa-phone'></i>{' '}
+                    <i className='fa fa-phone'></i>{" "}
                   </span>
                 </div>
                 <input
@@ -102,8 +100,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fas fa-user-tag'></i>{' '}
+                    {" "}
+                    <i className='fas fa-user-tag'></i>{" "}
                   </span>
                 </div>
                 <select
@@ -120,11 +118,11 @@ const Register = () => {
                 </select>
               </div>
               {/* <!-- form-group// --> */}
-              {role === 'Artisan' && (
+              {role === "Artisan" && (
                 <div className='form-group input-group'>
                   <div className='input-group-prepend'>
                     <span className='input-group-text'>
-                      {' '}
+                      {" "}
                       <i className='fas fa-paint-roller'></i>
                     </span>
                   </div>
@@ -150,8 +148,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fa fa-lock'></i>{' '}
+                    {" "}
+                    <i className='fa fa-lock'></i>{" "}
                   </span>
                 </div>
                 <input
@@ -167,8 +165,8 @@ const Register = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {' '}
-                    <i className='fa fa-lock'></i>{' '}
+                    {" "}
+                    <i className='fa fa-lock'></i>{" "}
                   </span>
                 </div>
                 <input
@@ -182,14 +180,15 @@ const Register = () => {
               </div>
               {/* <!-- form-group// -->  */}
               <div className='form-group'>
-                <button type='submit' className='btn btn-primary btn-block'>
-                  {' '}
-                  Create Account{' '}
-                </button>
+                <Link to='/artisanprofile'>
+                  <button type='submit' className='btn btn-primary btn-block'>
+                    Create Account
+                  </button>
+                </Link>
               </div>
               {/* <!-- form-group// -->       */}
               <p className='text-center'>
-                Have an account? <Link to='/login'>Log In</Link>{' '}
+                Have an account? <Link to='/login'>Log In</Link>{" "}
               </p>
             </form>
           </article>
