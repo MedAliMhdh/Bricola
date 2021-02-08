@@ -77,7 +77,6 @@ const Register = () => {
                   placeholder='Email address *'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  type='email'
                 />
               </div>
               {/* <!-- form-group// --> */}
@@ -180,11 +179,9 @@ const Register = () => {
               </div>
               {/* <!-- form-group// -->  */}
               <div className='form-group'>
-                <Link to='/artisanprofile'>
-                  <button type='submit' className='btn btn-primary btn-block'>
-                    Create Account
-                  </button>
-                </Link>
+                <button type='submit' className='btn btn-primary btn-block'>
+                  Create Account
+                </button>
               </div>
               {/* <!-- form-group// -->       */}
               <p className='text-center'>
