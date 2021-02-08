@@ -6,7 +6,6 @@ import { setAlert } from '../actions/alert';
 import { register } from '../actions/auth';
 
 import { useDispatch } from 'react-redux';
-import { set } from 'mongoose';
 
 const Register = () => {
   const [name, setName] = useState('');
