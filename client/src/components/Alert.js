@@ -12,7 +12,7 @@ const Alert = () => {
       </div>
     ));
   } else {
-    return 'pass';
+    return <></>;
   }
 };
 
