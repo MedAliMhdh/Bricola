@@ -2,14 +2,21 @@ import React, { useState } from 'react';
 import Navb from './Navb';
 
 import { Link } from 'react-router-dom';
+
+import { login } from '../actions/auth';
+
+import { useDispatch } from 'react-redux';
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const dispatch = useDispatch();
+
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log({ email, password });
+    dispatch(login(email, password));
   };
 
   return (
@@ -38,8 +45,6 @@ const Login = () => {
                   placeholder='Email address'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  type='email'
-                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
@@ -60,7 +65,6 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type='password'
-                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
