@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import Navb from "./Navb";
+import React, { useState } from 'react';
+import Navb from './Navb';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
+import { login } from '../actions/auth';
+
+import { useDispatch } from 'react-redux';
+
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log({ email, password });
+    dispatch(login(email, password));
   };
 
   return (
@@ -21,15 +28,15 @@ const Login = () => {
         <br />
 
         <div className='card bg-light'>
-          <article className='card-body mx-auto' style={{ maxWidth: "400" }}>
+          <article className='card-body mx-auto' style={{ maxWidth: '400' }}>
             <h4 className='card-title mt-3 text-center'>Log In</h4>
 
             <form onSubmit={(e) => onSubmit(e)}>
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-envelope'></i>{" "}
+                    {' '}
+                    <i className='fa fa-envelope'></i>{' '}
                   </span>
                 </div>
                 <input
@@ -38,8 +45,6 @@ const Login = () => {
                   placeholder='Email address'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  type='email'
-                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
@@ -49,8 +54,8 @@ const Login = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-lock'></i>{" "}
+                    {' '}
+                    <i className='fa fa-lock'></i>{' '}
                   </span>
                 </div>
                 <input
@@ -60,7 +65,6 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type='password'
-                  required
                 />
               </div>
               {/* <!-- form-group// --> */}
@@ -72,7 +76,7 @@ const Login = () => {
               </div>
               {/* <!-- form-group// -->       */}
               <p className='text-center'>
-                Not registred yet? <Link to='/register'>Register</Link>{" "}
+                Not registred yet? <Link to='/register'>Register</Link>{' '}
               </p>
             </form>
           </article>
