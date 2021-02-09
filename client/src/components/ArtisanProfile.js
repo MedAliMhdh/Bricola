@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCurrentProfile } from "../actions/artisanProfile";
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
+  const profileState = useSelector((store) => store.profile);
+  console.log(profileState);
+
+  const defaultImg =
+    "/www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
 
   useEffect(() => {
-    dispatch(getCurrentProfile);
+    dispatch(getCurrentProfile());
   }, []);
+
+  //   const { city, equipement, rate, street, zipcode } = profileState.profile;
+  //   const { avatar, name, bio, email } = profileState.profile.user;
 
   return (
     <div>
@@ -19,28 +27,40 @@ const ArtisanProfile = () => {
               <div className='user-heading round'>
                 <Link to='/'>
                   <img
-                    src='https://bootdey.com/img/Content/avatar/avatar3.png'
+                    src={
+                      profileState.loading
+                        ? defaultImg
+                        : profileState.profile.user.avatar
+                    }
                     alt=''
                   />
                 </Link>
-                <h1>Camila Smith</h1>
-                <p>deydey@theEmail.com</p>
+                <h1>
+                  {profileState.loading
+                    ? "Name"
+                    : profileState.profile.user.name}
+                </h1>
+                <p>
+                  {profileState.loading
+                    ? "artisan@bricola.pro"
+                    : profileState.profile.user.email}
+                </p>
               </div>
 
-              <ul className='nav nav-pills nav-stacked'>
-                <li className='active '>
-                  <Link to='/'>
+              <ul className='nav nav-pills nav-stacked '>
+                <li className='nav-item d-block text-white active w-100'>
+                  <Link className='nav-link' to='/artisanprofile'>
                     <i className='fa fa-user'></i> Profile
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to='/'>
                     <i className='fa fa-calendar'></i> Recent Activity
                     <span className='label label-warning r-activity'></span>
                   </Link>
-                </li>
-                <li>
-                  <Link to='/'>
+                </li> */}
+                <li className='nav-item d-block  text-white w-100 '>
+                  <Link className='nav-link' to='#'>
                     <i className='fa fa-edit'></i> Edit profile
                   </Link>
                 </li>
@@ -84,15 +104,17 @@ const ArtisanProfile = () => {
             </div>
             <div className='panel'>
               <div className='bio-graph-heading'>
-                Bio Bio Bio Bio Bio Bio Bio Bio Bio Bio Bio Bio Bio Bio Bio Bio
-                Bio Bio Bio Bio Bio Bio Bio
+                {profileState.loading ? "Bio" : profileState.profile.bio}
               </div>
               <div className='panel-body bio-graph-info'>
                 <h1>Bio Graph</h1>
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-                      <span>First Name </span>: Camila
+                      <span>First Name </span>{" "}
+                      {profileState.loading
+                        ? "Artisan's name"
+                        : profileState.profile.user.name}
                     </p>
                   </div>
                   <div className='bio-row'>
@@ -100,34 +122,37 @@ const ArtisanProfile = () => {
                       <span>Last Name </span>: Smith
                     </p>
                   </div>
+
                   <div className='bio-row'>
                     <p>
-                      <span>Country </span>: Australia
+                      <span>Profession </span>:{" "}
+                      {profileState.loading
+                        ? "Artisan's profession"
+                        : profileState.profile.user.job}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Birthday</span>: 13 July 1983
+                      <span>E-mail </span>:{" "}
+                      {profileState.loading
+                        ? "artisan@bricola.pro"
+                        : profileState.profile.user.email}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Occupation </span>: UI Designer
+                      <span>Mobile </span>:{" "}
+                      {profileState.loading
+                        ? "Artisan's phone number"
+                        : profileState.profile.user.phone}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Email </span>: jsmith@flatlab.com
-                    </p>
-                  </div>
-                  <div className='bio-row'>
-                    <p>
-                      <span>Mobile </span>: (12) 03 4567890
-                    </p>
-                  </div>
-                  <div className='bio-row'>
-                    <p>
-                      <span>Phone </span>: 88 (02) 123456
+                      <span>Address </span>:{" "}
+                      {profileState.loading
+                        ? "artisan's address"
+                        : ` ${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode} `}
                     </p>
                   </div>
                 </div>

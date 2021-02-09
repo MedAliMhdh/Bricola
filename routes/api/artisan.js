@@ -12,7 +12,7 @@ router.get("/me", auth, async (req, res) => {
   try {
     const myProfile = await Artisan.findOne({
       user: req.user.id,
-    }).populate("user", ["avatar", "name"]);
+    }).populate("user", ["avatar", "name", "email", "role", "job", "phone"]);
     if (!myProfile) {
       res.status(400).json({ message: "There is no profile for this user" });
     }
@@ -81,7 +81,14 @@ router.post(
 // @access   Public
 router.get("/", auth, async (req, res) => {
   try {
-    const artisans = await Artisan.find().populate("user", ["avatar", "name"]);
+    const artisans = await Artisan.find().populate("user", [
+      "avatar",
+      "name",
+      "email",
+      "role",
+      "job",
+      "phone",
+    ]);
     res.json(artisans);
   } catch (error) {
     console.error(error.message);
@@ -96,7 +103,7 @@ router.get("/:user_id", async (req, res) => {
   try {
     const artisan = await Artisan.findOne({
       user: req.params.user_id,
-    }).populate("user", ["name", "avatar"]);
+    }).populate("user", ["avatar", "name", "email", "role", "job", "phone"]);
 
     if (!artisan) res.status(400).json({ message: "Profile not found" });
 
