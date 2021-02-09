@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getCurrentProfile } from "../actions/artisanProfile";
 
 const ArtisanProfile = () => {
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
-  console.log(state);
 
   useEffect(() => {
     dispatch(getCurrentProfile);
@@ -14,7 +12,7 @@ const ArtisanProfile = () => {
 
   return (
     <div>
-      <div className='container bootstrap snippets bootdey'>
+      <div className='container artisanProfileContainer bootstrap snippets bootdey'>
         <div className='row'>
           <div className='profile-nav col-lg-3'>
             <div className='panel'>
