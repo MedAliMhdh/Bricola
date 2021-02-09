@@ -54,6 +54,8 @@ export const register = ({ name, email, password, role, job, phone }) => async (
       type: REGISTER_SUCCESS,
       payload: res.data,
     });
+
+    dispatch(loadUser());
   } catch (err) {
     const errors = err.response.data.errors;
 
