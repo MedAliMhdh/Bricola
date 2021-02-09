@@ -6,7 +6,9 @@ import 'jquery';
 import 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import { BrowserRouter } from 'react-router-dom';
+
+import { BrowserRouter } from "react-router-dom";
+
 
 ReactDOM.render(
   <BrowserRouter>
