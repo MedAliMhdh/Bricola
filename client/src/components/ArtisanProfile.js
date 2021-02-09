@@ -14,7 +14,6 @@ const ArtisanProfile = () => {
 
   return (
     <div>
-      <link rel='stylesheet' />
       <div className='container bootstrap snippets bootdey'>
         <div className='row'>
           <div className='profile-nav col-lg-3'>
