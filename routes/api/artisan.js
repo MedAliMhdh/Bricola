@@ -30,7 +30,7 @@ router.post(
   "/",
   [
     auth,
-    body("profession", "Profession is required").not().isEmpty(),
+
     body("street", "Street is required").not().isEmpty(),
     body("zipcode", "Zipcode is required").not().isEmpty(),
     body("city", "City is required").not().isEmpty(),
@@ -40,12 +40,12 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { profession, street, zipcode, city, bio } = req.body;
+    const { street, zipcode, city, bio } = req.body;
 
     //Build person object
     const artisanFields = {};
     artisanFields.user = req.user.id;
-    if (profession) artisanFields.profession = profession;
+
     if (street) artisanFields.street = street;
     if (zipcode) artisanFields.zipcode = zipcode;
     if (city) artisanFields.city = city;

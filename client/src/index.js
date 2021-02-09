@@ -8,9 +8,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 import { BrowserRouter } from "react-router-dom";
 
-//Redux
-import store from "./store";
-
 ReactDOM.render(
   <BrowserRouter>
     <App />
