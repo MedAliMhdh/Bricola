@@ -8,11 +8,11 @@ const PrivateRoute = ({ component = Component, ...rest }) => {
       {console.log('auth', auth.isAuthenticated, auth.loading)};
       <Route
         {...rest}
-        component={(props) => {
+        render={(props) => {
           if (!auth.isAuthenticated) {
             return <Redirect to='/login' />;
           } else {
-            console.log('pprops', props);
+            console.log('props', rest);
             return <Component {...props} />;
           }
         }}
