@@ -1,11 +1,13 @@
 import axios from "axios";
+import SET_ALERT from "./alert";
 import { GET_PROFILE, PROFILE_ERROR } from "./types";
 
 //GET current user profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get("api/artisan/me");
-    console.log(res.data);
+    const res = await axios.get(
+      `${process.env.REACT_APP_API_URL}api/artisan/me`
+    );
 
     dispatch({
       type: GET_PROFILE,

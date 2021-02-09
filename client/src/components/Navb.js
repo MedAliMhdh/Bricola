@@ -7,8 +7,10 @@ import { logout } from "../actions/auth";
 const Navb = () => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
-  console.log("is Auth:", authState.isAuthenticated);
-  console.log("loading:", authState.loading);
+  const profileState = useSelector((state) => state.profile);
+
+  const defaultImg =
+    "/www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
 
   const guestLinks = (
     <div
@@ -43,7 +45,20 @@ const Navb = () => {
       id='navbarNav'
     >
       <form className=' d-flex  '>
-        <Link to='/register'>
+        <Link to='/ArtisanProfile'>
+          {" "}
+          <img
+            src={
+              profileState.loading
+                ? defaultImg
+                : profileState.profile.user.avatar
+            }
+            className='rounded-circle mr-3'
+            width='40'
+            alt=''
+          />{" "}
+        </Link>
+        <Link to='/'>
           <button
             onClick={() => dispatch(logout())}
             className='btn btn-outline-success nav-item col-11 px-4 mx-2'
@@ -52,8 +67,6 @@ const Navb = () => {
             Logout
           </button>
         </Link>
-
-        <Link to='/login'></Link>
       </form>
     </div>
   );
