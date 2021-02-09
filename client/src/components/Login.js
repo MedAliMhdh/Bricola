@@ -1,23 +1,39 @@
 import React, { useState } from 'react';
 import Navb from './Navb';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import { login } from '../actions/auth';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const role = useSelector((state) => state.auth.user.role);
   const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(login(email, password));
+    dispatch(login({ email, password }));
+
+    setEmail('');
+    setPassword('');
   };
+
+  // Redirect if Logged in
+
+  if (isAuthenticated) {
+    if (role === 'Artisan') {
+      return <Redirect to='/artisonprofile' />;
+    }
+    if (role === 'Person') {
+      return <Redirect to='/personprofile' />;
+    }
+  }
 
   return (
     <div className=' loginContainer container-fluid mx-0 px-0'>
