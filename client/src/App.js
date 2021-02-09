@@ -11,6 +11,7 @@ import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 import store from './store';
 import { Provider } from 'react-redux';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 if (localStorage.token) {
   console.log(localStorage);
@@ -31,7 +32,11 @@ const App = () => {
           <Route path='/login' component={Login} />
           <Route path='/artisan' component={ArtisanCard} />
           {/*should be deleted***** just for test*/}
-          <Route path='/artisanprofile' component={ArtisanProfile} />
+          <PrivateRoute
+            exact
+            path='/artisanprofile'
+            component={ArtisanProfile}
+          />
           <Route path='/post' component={Post} />
           {/*should be deleted***** just for test*/}
         </Switch>
