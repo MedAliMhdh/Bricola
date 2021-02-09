@@ -12,7 +12,12 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  const role = useSelector((state) => state.auth.user.role);
+  const role = useSelector((state) => {
+    if (state.auth.user) {
+      return state.auth.user.role;
+    }
+    return '';
+  });
   const dispatch = useDispatch();
 
   const onSubmit = (e) => {
@@ -28,7 +33,7 @@ const Login = () => {
 
   if (isAuthenticated) {
     if (role === 'Artisan') {
-      return <Redirect to='/artisonprofile' />;
+      return <Redirect to='/artisanprofile' />;
     }
     if (role === 'Person') {
       return <Redirect to='/personprofile' />;

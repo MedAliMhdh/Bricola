@@ -1,24 +1,24 @@
-import { useEffect } from "react";
-import "./App.css";
-import Register from "./components/Register";
-import Login from "./components/Login";
-import ArtisanCard from "./components/ArtisanCard";
-import Post from "./components/Post";
-import { Switch, Route } from "react-router-dom";
-import Home from "./components/Home";
-import ArtisanProfile from "./components/ArtisanProfile";
-import { loadUser } from "./actions/auth";
-import setAuthToken from "./utils/setAuthToken";
-import store from "./store";
-import { Provider } from "react-redux";
+import { useEffect } from 'react';
+import './App.css';
+import Register from './components/Register';
+import Login from './components/Login';
+import ArtisanCard from './components/ArtisanCard';
+import Post from './components/Post';
+import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import ArtisanProfile from './components/ArtisanProfile';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
+import store from './store';
+import { Provider } from 'react-redux';
 
+if (localStorage.token) {
+  console.log(localStorage);
+  setAuthToken(localStorage.token);
+  console.log('hello');
+}
 const App = () => {
   useEffect(() => {
-    if (localStorage.token) {
-      console.log(localStorage);
-      setAuthToken(localStorage.token);
-      console.log("hello");
-    }
     store.dispatch(loadUser());
   }, []);
 
