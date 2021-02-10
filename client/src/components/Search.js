@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Thumbs from './Thumbs';
 
-const Search = ({ setRate, rate }) => {
+const Search = () => {
+  const [rate, setRate] = useState(0);
   return (
     <div className='myContainer container d-flelx align-content-between'>
       <div className='rowContainer row d-flex justify-content-center align-items-center ml-4 flex-wrap'>
