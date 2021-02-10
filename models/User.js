@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -19,12 +19,12 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    default: 'Person',
+    default: "Person",
   },
   job: {
     type: String,
     required: function () {
-      return this.role === 'Artisan';
+      return this.role === "Artisan";
     },
   },
   phone: {
@@ -36,4 +36,4 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-module.exports = User = mongoose.model('user', userSchema);
+module.exports = User = mongoose.model("user", userSchema);
