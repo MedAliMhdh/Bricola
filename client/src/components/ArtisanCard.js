@@ -4,7 +4,6 @@ const ArtisanCard = ({
   profile: {
     bio,
     city,
-    equipment,
     profession,
     rate,
     street,
@@ -22,7 +21,7 @@ const ArtisanCard = ({
           <div className='image mr-3'>
             {' '}
             <img
-              src='https://i.imgur.com/0LKZQYM.jpg'
+              src={avatar}
               className='rounded-circle'
               width='60'
               alt=''
@@ -35,7 +34,7 @@ const ArtisanCard = ({
                 <span>{name}</span>
                 <div className='ratings ml-2'>
                   {' '}
-                  <Thumbs />
+                  <Thumbs rate={rate} />
                 </div>
               </div>
               <div>

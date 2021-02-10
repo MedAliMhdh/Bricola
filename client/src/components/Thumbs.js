@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-
-const Thumbs = () => {
-  let thumbs = [];
-  const [rate, setRate] = useState(0);
-
-  for (let i = 0; i < 5; i++) {
-    i < rate
-      ? thumbs.push(
-          <span onClick={() => setRate(i + 1)} key={i}>
-            <i className='fas fa-star fa-2x p-1'></i>
-          </span>
-        )
-      : thumbs.push(
-          <span onClick={() => setRate(i + 1)} key={i}>
-            <i className='far fa-star fa-2x p-1'></i>
+const Thumbs = ({ rate, setRate }) => {
+  const stars = (x) => {
+    let array = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i <= x) {
+        array.push(
+          <span onClick={() => setRate(i)} key={i}>
+            ★
           </span>
         );
-  }
-  return <div className='md-lg-3 d-flex flex-nowrap '>{thumbs}</div>;
+      } else {
+        array.push(
+          <span onClick={() => setRate(i)} key={i}>
+            ☆
+          </span>
+        );
+      }
+    }
+    return array;
+  };
+  return <div>{stars(rate)}</div>;
 };
 
-//declaring default props in case we click on thumbs of Artisans Card and we don't have a setRate function
-// Thumbs.defaultPros = {
-//   setRate: () => {},
-// };
+Thumbs.defaultProps = {
+  setRate: () => {},
+};
 
 export default Thumbs;
