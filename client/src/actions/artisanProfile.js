@@ -30,7 +30,6 @@ export const getCurrentProfile = () => async (dispatch) => {
 
 // Get all profiles
 export const getProfiles = () => async (dispatch) => {
-  dispatch({ type: CLEAR_PROFILE });
   try {
     const res = await axios.get(`${process.env.REACT_APP_API_URL}api/artisan`);
 
@@ -51,7 +50,6 @@ export const getProfiles = () => async (dispatch) => {
 
 // Get profile by ID
 export const getProfileById = (artisanId) => async (dispatch) => {
-  dispatch({ type: CLEAR_PROFILE });
   try {
     const res = await axios.get(
       `${process.env.REACT_APP_API_URL}api/artisan/${artisanId}`
