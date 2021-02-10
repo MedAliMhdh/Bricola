@@ -36,7 +36,7 @@ const Login = () => {
       return <Redirect to='/artisanprofile' />;
     }
     if (role === 'Person') {
-      return <Redirect to='/personprofile' />;
+      return <Redirect to='/' />;
     }
   }
 

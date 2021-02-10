@@ -50,7 +50,7 @@ const Register = () => {
       return <Redirect to='/artisanprofile' />;
     }
     if (roleState === 'Person') {
-      return <Redirect to='/personprofile' />;
+      return <Redirect to='/' />;
     }
   }
 
