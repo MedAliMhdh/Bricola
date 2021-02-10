@@ -8,15 +8,9 @@ const ArtisanProfile = () => {
   const profileState = useSelector((store) => store.profile);
   console.log(profileState);
 
-  const defaultImg =
-    '/www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
-
   useEffect(() => {
     dispatch(getCurrentProfile());
   }, []);
-
-  //   const { city, equipement, rate, street, zipcode } = profileState.profile;
-  //   const { avatar, name, bio, email } = profileState.profile.user;
 
   return (
     <div>

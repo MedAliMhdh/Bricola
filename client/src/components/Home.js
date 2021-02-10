@@ -1,7 +1,7 @@
-import React from "react";
-import Navb from "./Navb";
-import Search from "./Search";
-import CategoriiesCarousel from "./CategoriesCarousel";
+import React from 'react';
+import Navb from './Navb';
+import Search from './Search';
+import CategoriesCarousel from './CategoriesCarousel';
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <Navb />
 
       <Search />
-      <CategoriiesCarousel />
+      <CategoriesCarousel />
     </div>
   );
 };
