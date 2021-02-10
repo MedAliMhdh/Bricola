@@ -23,7 +23,7 @@ router.get('/me', auth, async (req, res) => {
   }
 });
 
-// @route    POST  api/Artisan
+// @route    POST  api/artisan
 // @desc     Post/update artisan profile
 // @access   Private
 router.post(
@@ -76,10 +76,10 @@ router.post(
   }
 );
 
-// @route    get  api/Artisan
+// @route    get  api/artisan
 // @desc     get all artisan's profiles
 // @access   Public
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const artisans = await Artisan.find().populate('user', [
       'avatar',
@@ -96,7 +96,7 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
-// @route    get  api/Artisan/:artisan_id
+// @route    get  api/artisan/:artisan_id
 // @desc     get specific artisan'sprofile
 // @access   Public
 router.get('/:user_id', async (req, res) => {
