@@ -1,5 +1,4 @@
 import axios from 'axios';
-import SET_ALERT from './alert';
 import {
   GET_PROFILE,
   PROFILE_ERROR,
