@@ -23,6 +23,7 @@ export const artisanProfileReducer = (state = initialState, action) => {
         ...state,
         error: payload,
         loading: false,
+        profile: null,
       };
     default:
       return state;

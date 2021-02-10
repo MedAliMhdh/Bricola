@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentProfile } from '../actions/artisanProfile';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentProfile } from "../actions/artisanProfile";
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
   const profileState = useSelector((store) => store.profile);
-  console.log(profileState);
 
   useEffect(() => {
     dispatch(getCurrentProfile());
@@ -14,7 +13,9 @@ const ArtisanProfile = () => {
 
   return (
     <div>
-      {profileState.loading ? (
+      {!profileState.profile ? (
+        <h1 className='mt-5'>You don't have a profile yet</h1>
+      ) : profileState.loading ? (
         <div></div>
       ) : (
         <div className='container artisanProfileContainer bootstrap snippets bootdey'>
@@ -93,7 +94,7 @@ const ArtisanProfile = () => {
                   <div className='row'>
                     <div className='bio-row'>
                       <p>
-                        <span>First Name </span>{' '}
+                        <span>First Name </span>{" "}
                         {profileState.profile.user.name}
                       </p>
                     </div>
@@ -105,7 +106,7 @@ const ArtisanProfile = () => {
 
                     <div className='bio-row'>
                       <p>
-                        <span>Profession </span>:{' '}
+                        <span>Profession </span>:{" "}
                         {profileState.profile.user.job}
                       </p>
                     </div>
@@ -121,7 +122,7 @@ const ArtisanProfile = () => {
                     </div>
                     <div className='bio-row'>
                       <p>
-                        <span>Address </span>:{' '}
+                        <span>Address </span>:{" "}
                         {` ${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode} `}
                       </p>
                     </div>

@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import Alert from './Alert';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../actions/auth';
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
+import Alert from "./Alert";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../actions/auth";
 
 const Navb = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const Navb = () => {
   const profileState = useSelector((state) => state.profile);
 
   const defaultImg =
-    '/www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
+    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
 
   const guestLinks = (
     <div
@@ -46,17 +46,17 @@ const Navb = () => {
     >
       <form className=' d-flex  '>
         <Link to='/ArtisanProfile'>
-          {' '}
+          {" "}
           <img
             src={
-              profileState.profile
+              !!(profileState.profile && !profileState.loading)
                 ? profileState.profile.user.avatar
                 : defaultImg
             }
             className='rounded-circle mr-3'
             width='40'
-            alt=''
-          />{' '}
+            alt='hihihi'
+          />{" "}
         </Link>
         <Link to='/'>
           <button
