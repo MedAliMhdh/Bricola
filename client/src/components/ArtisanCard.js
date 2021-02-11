@@ -1,17 +1,27 @@
 import Thumbs from './Thumbs';
 
-const ArtisanCard = ({ name, job, adress, bio, postsNumber }) => {
+const ArtisanCard = ({
+  profile: {
+    bio,
+    city,
+    profession,
+    rate,
+    street,
+    user: { avatar, name },
+    zipcode,
+  },
+}) => {
   return (
     <div className='container mt-5 d-flex justify-content-center'>
       <div className='card artisanCard p-4 mt-3'>
         <div className='first'>
-          <h6 className='heading'>{job}</h6>
+          <h6 className='heading'>{profession}</h6>
         </div>
         <div className='second d-flex flex-row mt-2'>
           <div className='image mr-3'>
             {' '}
             <img
-              src='https://i.imgur.com/0LKZQYM.jpg'
+              src={avatar}
               className='rounded-circle'
               width='60'
               alt=''
@@ -24,11 +34,13 @@ const ArtisanCard = ({ name, job, adress, bio, postsNumber }) => {
                 <span>{name}</span>
                 <div className='ratings ml-2'>
                   {' '}
-                  <Thumbs />
+                  <Thumbs rate={rate} />
                 </div>
               </div>
               <div>
-                <span>{adress}</span>
+                <span>
+                  {city}/{street}
+                </span>
               </div>
               <div>
                 {' '}
@@ -46,7 +58,7 @@ const ArtisanCard = ({ name, job, adress, bio, postsNumber }) => {
           </div>
         </div>
         <hr className='line-color' />
-        <h6>{postsNumber}</h6>
+        <h6>{zipcode}</h6>
         <div className='third mt-4'>
           {' '}
           <button className='btn btn-success btn-block'>
