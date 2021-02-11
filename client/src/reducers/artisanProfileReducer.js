@@ -3,7 +3,7 @@ import {
   GET_PROFILE,
   CLEAR_PROFILE,
   GET_PROFILES,
-} from '../actions/types';
+} from "../actions/types";
 
 const initialState = {
   profile: null,
@@ -35,6 +35,7 @@ export const artisanProfileReducer = (state = initialState, action) => {
         ...state,
         error: payload,
         loading: false,
+        profile: null,
       };
     case CLEAR_PROFILE:
       return {

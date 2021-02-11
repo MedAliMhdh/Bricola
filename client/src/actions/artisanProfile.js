@@ -1,10 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
+
 import {
   GET_PROFILE,
   PROFILE_ERROR,
   CLEAR_PROFILE,
   GET_PROFILES,
-} from './types';
+} from "./types";
 
 //GET current user profile
 export const getCurrentProfile = () => async (dispatch) => {

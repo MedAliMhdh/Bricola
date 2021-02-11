@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { getProfiles } from '../actions/artisanProfile';
-
-import ArtisanCard from './ArtisanCard';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from "react";
+import { getProfiles } from "../actions/artisanProfile";
+import Spinner from "./Spinner";
+import ArtisanCard from "./ArtisanCard";
+import { useDispatch, useSelector } from "react-redux";
 
 const Profiles = () => {
   const profile = useSelector((state) => state.profile);
@@ -12,11 +12,13 @@ const Profiles = () => {
 
   useEffect(() => {
     dispatch(getProfiles());
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       {loading ? (
-        <div>spinner</div>
+        <div>
+          <Spinner />
+        </div>
       ) : (
         <div>
           {profiles.length > 0 ? (

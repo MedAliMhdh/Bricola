@@ -6,12 +6,16 @@ import "jquery";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap/js/dist/util.js";
+import store from "./store";
+import { Provider } from "react-redux";
 
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
