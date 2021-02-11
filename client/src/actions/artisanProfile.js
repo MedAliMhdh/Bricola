@@ -1,11 +1,10 @@
-import axios from 'axios';
-import SET_ALERT from './alert';
+import axios from "axios";
 import {
   GET_PROFILE,
   PROFILE_ERROR,
   CLEAR_PROFILE,
   GET_PROFILES,
-} from './types';
+} from "./types";
 
 //GET current user profile
 export const getCurrentProfile = () => async (dispatch) => {
@@ -31,7 +30,6 @@ export const getCurrentProfile = () => async (dispatch) => {
 
 // Get all profiles
 export const getProfiles = () => async (dispatch) => {
-  dispatch({ type: CLEAR_PROFILE });
   try {
     const res = await axios.get(`${process.env.REACT_APP_API_URL}api/artisan`);
 

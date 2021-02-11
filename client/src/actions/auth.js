@@ -8,6 +8,7 @@ import {
   LOGIN_FAIL,
   LOG_OUT,
   PROFILE_ERROR,
+  CLEAR_PROFILE,
 } from "./types";
 import { setAlert } from "./alert";
 
@@ -111,5 +112,5 @@ export const login = ({ email, password }) => async (dispatch) => {
 //Log out user/ clkear profile
 export const logout = () => (dispatch) => {
   dispatch({ type: LOG_OUT });
-  dispatch({ type: PROFILE_ERROR });
+  dispatch({ type: CLEAR_PROFILE });
 };
