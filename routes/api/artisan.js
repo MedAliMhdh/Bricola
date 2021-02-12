@@ -40,7 +40,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { street, zipcode, city, bio } = req.body;
+    const { street, zipcode, city, bio, equipment } = req.body;
 
     //Build person object
     const artisanFields = {};
@@ -50,7 +50,7 @@ router.post(
     if (zipcode) artisanFields.zipcode = zipcode;
     if (city) artisanFields.city = city;
     if (bio) artisanFields.bio = bio;
-    if (equipment) artisanFields = equipment;
+    if (equipment) artisanFields.equipment = equipment;
 
     try {
       let artisan = await Artisan.findOne({ user: req.user.id });
