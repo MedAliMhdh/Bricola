@@ -1,162 +1,121 @@
 import React from "react";
+import maçon from "../images/maçon.png";
+import architecte from "../images/architcte.png";
+import carpender from "../images/carpender.png";
+import electrician from "../images/electrician.png";
+import jardinier from "../images/jardinier.png";
+import painter from "../images/painter.png";
+import plambier from "../images/plambier.png";
+import welder from "../images/welder.png";
 
 const CategoriiesCarousel = () => {
   return (
-    <div className=' container my-4'>
-      <hr className='my-4' />
-
-      {/* Carousel Wrapper */}
+    <div className='container-fluid text-center my-4 '>
       <div
-        id='multi-item-example'
-        className='carousel slide carousel-multi-item'
+        id='recipeCarousel'
+        className='carousel slide w-100'
         data-ride='carousel'
       >
-        {/* <!--Controls--> */}
-        <div className='controls'>
-          {/* <!-- end right control --> */}
+        <div className='carousel-inner w-100' role='listbox'>
+          <div className='carousel-item row no-gutters active'>
+            <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
+              <img className='img-fluid' src={maçon} />
+              <div className='hover-2-content px-5 py-1'>
+                {" "}
+                <p className='hover-2-description text-uppercase mb-0'>
+                  Masonry <br />
+                </p>
+              </div>
+            </div>
 
-          <a
-            className='btn-floating-left'
-            href='#multi-item-example'
-            data-slide='prev'
-          >
-            <i className='control-left fas fa-chevron-left fa-3x'></i>
-          </a>
-          <a
-            className='btn-floating-right'
-            href='#multi-item-example'
-            data-slide='next'
-          >
-            <i className='coontrol-right fa fa-chevron-right fa-3x'></i>
-          </a>
+            <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
+              <img className='img-fluid' src={electrician} />
+              <div className='hover-2-content px-5 py-1'>
+                {" "}
+                <p className='hover-2-description text-uppercase mb-0'>
+                  Electricity <br />
+                </p>
+              </div>
+            </div>
+
+            <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
+              <img className='img-fluid' src={plambier} />
+              <div className='hover-2-content px-5 py-1'>
+                {" "}
+                <p className='hover-2-description text-uppercase mb-0'>
+                  plumbing <br />
+                </p>
+              </div>
+            </div>
+            <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
+              <img className='img-fluid' src={carpender} />
+              <div className='hover-2-content px-5 py-1'>
+                {" "}
+                <p className='hover-2-description text-uppercase mb-0'>
+                  carpentry <br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className='carousel-item row no-gutters'>
+            <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
+              <img className='img-fluid' src={welder} />
+              <div className='hover-2-content px-5 py-1'>
+                {" "}
+                <p className='hover-2-description text-uppercase mb-0'>
+                  welding
+                </p>
+              </div>
+            </div>
+
+            <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
+              <img className='img-fluid' src={painter} />
+              <div className='hover-2-content px-5 py-1'>
+                {" "}
+                <p className='hover-2-description text-uppercase mb-0'>
+                  Painting
+                </p>
+              </div>
+            </div>
+
+            <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
+              <img className='img-fluid' src={architecte} />
+              <div className='hover-2-content px-5 py-1'>
+                {" "}
+                <p className='hover-2-description text-uppercase mb-0'>
+                  architecture
+                </p>
+              </div>
+            </div>
+
+            <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
+              <img className='img-fluid' src={jardinier} />
+              <div className='hover-2-content px-5 py-1'>
+                {" "}
+                <p className='hover-2-description text-uppercase mb-0'>
+                  Gardening
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* <!--/.Controls--> */}
-
-        {/* <!--Indicators--> */}
-        <ol className='carousel-indicators'>
-          <li
-            data-target='#multi-item-example'
-            data-slide-to='0'
-            className='active'
-          ></li>
-          <li data-target='#multi-item-example' data-slide-to='1'></li>
-          <li data-target='#multi-item-example' data-slide-to='2'></li>
-        </ol>
-        {/* <!--/.Indicators--> */}
-
-        {/* <!--Slides--> */}
-        <div className='carousel-inner' role='listbox'>
-          {/* <!--First slide--> */}
-          <div className='carousel-item active'>
-            <div className='row'>
-              <div className='col-md-4'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-
-              <div className='col-md-4 clearfix d-none d-md-block'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-
-              <div className='col-md-4 clearfix d-none d-md-block'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* <!--/.First slide--> */}
-
-          {/* <!--Second slide--> */}
-          <div className='carousel-item'>
-            <div className='row'>
-              <div className='col-md-4'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-
-              <div className='col-md-4 clearfix d-none d-md-block'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-
-              <div className='col-md-4 clearfix d-none d-md-block'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* <!--/.Second slide--> */}
-
-          {/* <!--Third slide--> */}
-          <div className='carousel-item'>
-            <div className='row'>
-              <div className='col-md-4'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-
-              <div className='col-md-4 clearfix d-none d-md-block'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-
-              <div className='col-md-4 clearfix d-none d-md-block'>
-                <div className='card mb-2'>
-                  <img
-                    className='card-img-top'
-                    src='https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg'
-                    alt='Card cap'
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* <!--/.Third slide--> */}
-        </div>
-        {/* <!--/.Slides--> */}
+        <a
+          className='carousel-control-prev'
+          href='#recipeCarousel'
+          role='button'
+          data-slide='prev'
+        >
+          <i className='fas fa-chevron-left'></i>
+        </a>
+        <a
+          className='carousel-control-next'
+          href='#recipeCarousel'
+          role='button'
+          data-slide='next'
+        >
+          <i className='fas fa-chevron-right'></i>
+        </a>
       </div>
-      {/* <!--/.Carousel Wrapper--> */}
     </div>
   );
 };

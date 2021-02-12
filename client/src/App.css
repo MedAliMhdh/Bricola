@@ -60,6 +60,7 @@ button.btn.btn-outline-success {
 }
 
 /************searchCard************/
+
 .myContainer {
   width: 100%;
   margin-top: 120px;
@@ -84,28 +85,60 @@ span {
 
 /***************Categories Carousel**************/
 
-.artisanCard {
-  height: 200px;
-}
-
-.card-img-top {
-  height: 200px;
-}
-
-.btn-floating-left {
+.carousel-inner {
   position: absolute;
-  top: 40%;
+}
+
+.carousel-control-prev {
+  position: relative;
   left: 0px;
-  z-index: 1000;
+  top: 50%;
 }
 
-.btn-floating-right {
-  position: absolute;
-  top: 40%;
+.carousel-control-next {
+  width: 10px;
+  position: relative;
   right: 0px;
-  z-index: 1000;
+  top: 50%;
 }
 
+.hover-2 .hover-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+}
+
+.hover-2-title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.3s;
+}
+
+.hover-2-description {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+  transition: all 0.3s;
+}
+
+.hover-2:hover .hover-2-title {
+  transform: translateY(-1.5rem);
+}
+
+.hover-2:hover .hover-2-description {
+  bottom: 0.5rem;
+  opacity: 1;
+}
+
+.hover-2:hover .hover-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+}
 /******************** ArtisanCard *********************/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -113,6 +146,10 @@ span {
 body {
   background-color: #eee;
   font-family: 'Roboto', sans-serif;
+}
+
+.artisanCard {
+  height: 200px;
 }
 
 .card {
