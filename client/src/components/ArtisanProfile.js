@@ -52,7 +52,7 @@ const ArtisanProfile = () => {
                   </Link>
                 </li> */}
                   <li className='nav-item d-block  text-white w-100 '>
-                    <Link className='nav-link' to='#'>
+                    <Link className='nav-link' to='/edit-profile'>
                       <i className='fa fa-edit'></i> Edit profile
                     </Link>
                   </li>
