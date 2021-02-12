@@ -100,10 +100,7 @@ export const createProfile = (formData, history, edit = false) => async (
         alertType: 'success',
       })
     );
-
-    if (!edit) {
-      history.push('/artisanprofile');
-    }
+    history.push('/artisanprofile');
   } catch (err) {
     const errors = err.response.data.errors;
 
