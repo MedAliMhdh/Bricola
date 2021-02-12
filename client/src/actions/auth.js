@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
@@ -8,10 +8,10 @@ import {
   LOGIN_FAIL,
   LOG_OUT,
   CLEAR_PROFILE,
-} from './types';
-import { setAlert } from './alert';
+} from "./types";
+import { setAlert } from "./alert";
 
-import setAuthToken from '../utils/setAuthToken';
+import setAuthToken from "../utils/setAuthToken";
 
 // Load User
 export const loadUser = () => async (dispatch) => {
@@ -38,7 +38,7 @@ export const register = ({ name, email, password, role, job, phone }) => async (
 ) => {
   const config = {
     header: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
   const body = { name, email, password, role, job, phone };
@@ -61,7 +61,7 @@ export const register = ({ name, email, password, role, job, phone }) => async (
 
     if (errors) {
       errors.forEach((error) => {
-        dispatch(setAlert({ msg: error.msg, alertType: 'danger' }));
+        dispatch(setAlert({ msg: error.msg, alertType: "danger" }));
       });
     }
 
@@ -75,7 +75,7 @@ export const register = ({ name, email, password, role, job, phone }) => async (
 export const login = ({ email, password }) => async (dispatch) => {
   const config = {
     header: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
   const body = { email, password };
@@ -98,7 +98,7 @@ export const login = ({ email, password }) => async (dispatch) => {
 
     if (errors) {
       errors.forEach((error) => {
-        dispatch(setAlert({ msg: error.msg, alertType: 'danger' }));
+        dispatch(setAlert({ msg: error.msg, alertType: "danger" }));
       });
     }
 

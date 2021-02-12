@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Thumbs from './Thumbs';
+import React, { useState } from "react";
+import Thumbs from "./Thumbs";
 
 const Search = () => {
   const [rate, setRate] = useState(0);
   return (
-    <div className='myContainer container d-flelx align-content-between'>
+    <div className='myContainer  d-flelx align-content-between'>
       <div className='rowContainer row d-flex justify-content-center align-items-center ml-4 flex-wrap'>
         <div className='col-md-3 col-sm-3 p-1 m-0'>
-          <select className='form-control'>
-            <option value=''> Select job type </option>
+          <select className='form-control searchInput '>
+            <option value='1'> Select job type </option>
             <option value='Bricklayer'>Bricklayer</option>
             <option value='Electrician'>Electrician</option>
             <option value='Painter'>Painter</option>
@@ -19,14 +19,14 @@ const Search = () => {
           </select>
         </div>
         <div className='col-lg-3 col-sm-3 p-1 m-0'>
-          <select className='form-control'>
+          <select className='form-control searchInput'>
             <option value=''> equipment </option>
             <option value='true'>With materiel</option>
             <option value='false'>Without materiel</option>
           </select>
         </div>
         <div className='col-md-3 col-sm-3 p-1 m-0'>
-          <select className='form-control'>
+          <select className='form-control searchInput'>
             <option value=''> city </option>
             <option value='Ariana'>Ariana</option>
             <option value='Beja'>Beja</option>

@@ -10,7 +10,7 @@ import welder from "../images/welder.png";
 
 const CategoriiesCarousel = () => {
   return (
-    <div className='container-fluid text-center my-4 '>
+    <div className='container text-center my-4 '>
       <div
         id='recipeCarousel'
         className='carousel slide w-100'
@@ -19,7 +19,7 @@ const CategoriiesCarousel = () => {
         <div className='carousel-inner w-100' role='listbox'>
           <div className='carousel-item row no-gutters active'>
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
-              <img className='img-fluid' src={maçon} />
+              <img alt='' className='img-fluid' src={maçon} />
               <div className='hover-2-content px-5 py-1'>
                 {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
@@ -29,7 +29,7 @@ const CategoriiesCarousel = () => {
             </div>
 
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
-              <img className='img-fluid' src={electrician} />
+              <img alt='' className='img-fluid' src={electrician} />
               <div className='hover-2-content px-5 py-1'>
                 {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
@@ -39,7 +39,7 @@ const CategoriiesCarousel = () => {
             </div>
 
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
-              <img className='img-fluid' src={plambier} />
+              <img alt='' className='img-fluid' src={plambier} />
               <div className='hover-2-content px-5 py-1'>
                 {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
@@ -48,7 +48,7 @@ const CategoriiesCarousel = () => {
               </div>
             </div>
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
-              <img className='img-fluid' src={carpender} />
+              <img alt='' className='img-fluid' src={carpender} />
               <div className='hover-2-content px-5 py-1'>
                 {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
@@ -59,7 +59,7 @@ const CategoriiesCarousel = () => {
           </div>
           <div className='carousel-item row no-gutters'>
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
-              <img className='img-fluid' src={welder} />
+              <img alt='' className='img-fluid' src={welder} />
               <div className='hover-2-content px-5 py-1'>
                 {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
@@ -69,7 +69,7 @@ const CategoriiesCarousel = () => {
             </div>
 
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
-              <img className='img-fluid' src={painter} />
+              <img alt='' className='img-fluid' src={painter} />
               <div className='hover-2-content px-5 py-1'>
                 {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
@@ -79,7 +79,7 @@ const CategoriiesCarousel = () => {
             </div>
 
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
-              <img className='img-fluid' src={architecte} />
+              <img alt='' className='img-fluid' src={architecte} />
               <div className='hover-2-content px-5 py-1'>
                 {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
@@ -89,7 +89,7 @@ const CategoriiesCarousel = () => {
             </div>
 
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
-              <img className='img-fluid' src={jardinier} />
+              <img alt='' className='img-fluid' src={jardinier} />
               <div className='hover-2-content px-5 py-1'>
                 {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
