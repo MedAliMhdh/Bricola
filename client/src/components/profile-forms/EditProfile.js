@@ -24,7 +24,14 @@ const EditProfile = () => {
     setZipcode(loading || !profile.zipcode ? '' : profile.zipcode);
     setBio(loading || !profile.bio ? '' : profile.bio);
     setEquipment(loading || !profile.equipment ? '' : profile.equipment);
-  }, [loading]);
+  }, [
+    loading,
+    profile.city,
+    profile.street,
+    profile.zipcode,
+    profile.bio,
+    profile.equipment,
+  ]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
