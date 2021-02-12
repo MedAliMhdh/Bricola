@@ -2,12 +2,7 @@ import axios from 'axios';
 
 import { setAlert } from './alert';
 
-import {
-  GET_PROFILE,
-  PROFILE_ERROR,
-  CLEAR_PROFILE,
-  GET_PROFILES,
-} from './types';
+import { GET_PROFILE, PROFILE_ERROR, GET_PROFILES } from './types';
 
 //GET current user profile
 export const getCurrentProfile = () => async (dispatch) => {
@@ -100,10 +95,7 @@ export const createProfile = (formData, history, edit = false) => async (
         alertType: 'success',
       })
     );
-
-    if (!edit) {
-      history.push('/artisanprofile');
-    }
+    history.push('/artisanprofile');
   } catch (err) {
     const errors = err.response.data.errors;
 
