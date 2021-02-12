@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import Alert from './Alert';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../actions/auth';
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
+import Alert from "./Alert";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../actions/auth";
 
 const Navb = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const Navb = () => {
   const profileState = useSelector((state) => state.profile);
 
   const defaultImg =
-    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
+    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
 
   const guestLinks = (
     <div
@@ -44,29 +44,44 @@ const Navb = () => {
       className='collapse navbar-collapse d-flex justify-content-end  d-sm-none d-md-block'
       id='navbarNav'
     >
-      <form className=' d-flex  '>
-        <Link to='/ArtisanProfile'>
-          {' '}
-          <img
-            src={
-              !!(profileState.profile && !profileState.loading)
-                ? profileState.profile.user.avatar
-                : defaultImg
-            }
-            className='rounded-circle mr-3'
-            width='40'
-            alt='hihihi'
-          />{' '}
-        </Link>
-        <Link to='/'>
+      <form className='d-flex'>
+        {" "}
+        <div className='dropdown drpdwnMenuBtn'>
           <button
-            onClick={() => dispatch(logout())}
-            className='btn btn-outline-success nav-item col-11 px-4 mx-2'
-            type='submit'
+            className='btn dropdown-toggle px-0 py-0'
+            type='button'
+            id='dropdownMenuButton'
+            data-toggle='dropdown'
+            aria-haspopup='true'
+            aria-expanded='false'
           >
-            Logout
+            <img
+              src={
+                !!(profileState.profile && !profileState.loading)
+                  ? profileState.profile.user.avatar
+                  : defaultImg
+              }
+              className=' rounded-circle mr-3'
+              width='40'
+              alt='hihihi'
+            />
           </button>
-        </Link>
+          <div
+            className='dropdown-menu nvbDropdow'
+            aria-labelledby='dropdownMenuButton'
+          >
+            <Link className='dropdown-item px-3' to='/artisanprofile'>
+              View profile
+            </Link>
+            <Link
+              className='dropdown-item px-3'
+              onClick={() => dispatch(logout())}
+              to='/'
+            >
+              Logout
+            </Link>
+          </div>
+        </div>
       </form>
     </div>
   );

@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -49,6 +49,14 @@ button.btn.btn-outline-success {
   margin-left: 15px;
 }
 
+.drpdwnMenuBtn {
+  position: absolute;
+}
+
+.nvbDropdow {
+  position: relative;
+}
+
 /************Login************/
 .loginContainer {
   margin-top: 70px;
@@ -62,7 +70,8 @@ button.btn.btn-outline-success {
 /************searchCard************/
 
 .myContainer {
-  width: 100%;
+  margin: auto;
+  width: 70%;
   margin-top: 120px;
   height: 250px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
@@ -81,6 +90,11 @@ button.btn.btn-outline-success {
 select,
 span {
   cursor: pointer;
+}
+
+.searchInput option[value="1"] {
+  border: none;
+  color: red;
 }
 
 /***************Categories Carousel**************/
@@ -141,11 +155,11 @@ span {
 }
 /******************** ArtisanCard *********************/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 body {
   background-color: #eee;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .artisanCard {
@@ -189,7 +203,7 @@ body {
 body {
   color: #797979;
   background: #f1f2f7;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding: 0px !important;
   margin: 0px !important;
   font-size: 13px;
@@ -594,7 +608,7 @@ ul.summary-list > li:last-child {
 
 .profile-content:after,
 .profile-content:before {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -659,7 +673,7 @@ ul.summary-list > li:last-child {
 
 .profile-section:after,
 .profile-section:before {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -805,7 +819,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .timeline:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 5px;
   bottom: 5px;
@@ -878,7 +892,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .timeline .timeline-body:before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   border: 10px solid transparent;
@@ -935,7 +949,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .timeline-content:after,
 .timeline-content:before {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
