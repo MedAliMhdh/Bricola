@@ -112,7 +112,7 @@ const Navb = () => {
           )}
         </div>
       </nav>
-      <Alert />
+      <Alert className='alerts' />
     </div>
   );
 };

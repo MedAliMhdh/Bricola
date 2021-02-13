@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getPosts } from "../actions/post";
+import Spinner from "./Spinner";
 
 const Post = () => {
+  const posts = useSelector((state) => state.post.post);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPosts(), [getPosts]);
+  });
   return (
     <div className='container postContainer col-md-6'>
       {/* <!-- begin tab-content --> */}
