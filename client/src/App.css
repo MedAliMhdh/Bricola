@@ -1044,6 +1044,10 @@ select.form-control:not([size]):not([multiple]) {
 
 /********************************** alerts/ from brad *****************************/
 
+.alerts {
+  margin-top: 10px;
+}
+
 .alert {
   padding: 0.8rem;
   margin: 1rem 0;
