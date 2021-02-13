@@ -11,6 +11,11 @@ const ArtisanCard = ({
     zipcode,
   },
 }) => {
+  const rating =
+    rate.length > 0
+      ? rate.reduce((acc, rate) => acc + rate.value, 0) / rate.length
+      : 0;
+
   return (
     <div className='container mt-5 d-flex justify-content-center'>
       <div className='card artisanCard p-4 mt-3'>
@@ -34,7 +39,7 @@ const ArtisanCard = ({
                 <span>{name}</span>
                 <div className='ratings ml-2'>
                   {' '}
-                  <Thumbs rate={rate} />
+                  <Thumbs rate={rating} />
                 </div>
               </div>
               <div>

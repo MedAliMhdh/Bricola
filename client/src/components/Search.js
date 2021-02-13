@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import Thumbs from "./Thumbs";
+import React, { useState } from 'react';
+import Thumbs from './Thumbs';
 
-const Search = () => {
+const Search = ({ setSearch }) => {
   const [rate, setRate] = useState(0);
   return (
     <div className='myContainer  d-flelx align-content-between'>
@@ -60,7 +60,11 @@ const Search = () => {
       </div>
       <div className='rowContainer2 d-flex align-items-center'>
         <div className='col-md-12 p-3 row d-flex no-wrap align-items-end justify-content-center '>
-          <button type='button' className='btn btn-dark col-md-3'>
+          <button
+            type='button'
+            className='btn btn-dark col-md-3'
+            onClick={() => setSearch(true)}
+          >
             Search
           </button>
         </div>
