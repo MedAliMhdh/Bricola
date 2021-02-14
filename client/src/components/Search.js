@@ -12,7 +12,7 @@ const Search = ({ setSearch }) => {
   const dispatch = useDispatch();
 
   const search = () => {
-    dispatch(filterProfiles({ job, equipment, city }));
+    dispatch(filterProfiles({ job, equipment, city, rate }));
     setSearch(true);
   };
   return (
