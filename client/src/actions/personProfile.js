@@ -4,10 +4,10 @@ import { setAlert } from "./alert";
 import { GET_PROFILE, PROFILE_ERROR, GET_PROFILES } from "./types";
 
 //GET current user profile
-export const getArtisanCurrentProfile = () => async (dispatch) => {
+export const getPersonCurrentProfile = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}api/artisan/me`
+      `${process.env.REACT_APP_API_URL}api/person/me`
     );
 
     dispatch({
@@ -28,7 +28,7 @@ export const getArtisanCurrentProfile = () => async (dispatch) => {
 // Get all profiles
 export const getProfiles = () => async (dispatch) => {
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}api/artisan`);
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}api/person`);
 
     dispatch({
       type: GET_PROFILES,
@@ -46,10 +46,10 @@ export const getProfiles = () => async (dispatch) => {
 };
 
 // Get profile by ID
-export const getProfileById = (artisanId) => async (dispatch) => {
+export const getProfileById = (personId) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}api/artisan/${artisanId}`
+      `${process.env.REACT_APP_API_URL}api/person/${personId}`
     );
 
     dispatch({
@@ -68,7 +68,7 @@ export const getProfileById = (artisanId) => async (dispatch) => {
 };
 
 //Create or update profile
-export const createArtisanProfile = (formData, history, edit = false) => async (
+export const createPersonProfile = (formData, history, edit = false) => async (
   dispatch
 ) => {
   try {
@@ -79,7 +79,7 @@ export const createArtisanProfile = (formData, history, edit = false) => async (
     };
 
     const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/artisan`,
+      `${process.env.REACT_APP_API_URL}api/person`,
       formData,
       config
     );
@@ -95,7 +95,7 @@ export const createArtisanProfile = (formData, history, edit = false) => async (
       })
     );
 
-    history.push("/artisanprofile/me");
+    history.push("/personprofile/me");
   } catch (err) {
     const errors = err.response.data.errors;
 

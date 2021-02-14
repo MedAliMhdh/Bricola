@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getArtisanCurrentProfile } from "../actions/artisanProfile";
+import { getPersonCurrentProfile } from "../actions/personProfile";
 import Post from "./Post";
 import Spinner from "./Spinner";
-import { getPersonCurrentProfile } from "../actions/personProfile";
 
-const ArtisanProfile = () => {
+const PersonProfile = () => {
   const dispatch = useDispatch();
-  const profileState = useSelector((store) => store.artisan);
+  const profileState = useSelector((store) => store.person);
   const auth = useSelector((store) => store.auth);
 
   useEffect(() => {
-    dispatch(getArtisanCurrentProfile());
     dispatch(getPersonCurrentProfile());
   }, [dispatch]);
 
@@ -73,11 +71,7 @@ const ArtisanProfile = () => {
                       <span>Full Name </span>: {profileState.profile.user.name}
                     </p>
                   </div>
-                  <div className='bio-row'>
-                    <p>
-                      <span>Profession </span>: {profileState.profile.user.job}
-                    </p>
-                  </div>
+
                   <div className='bio-row'>
                     <p>
                       <span>Mobile </span>: {profileState.profile.user.phone}
@@ -93,64 +87,17 @@ const ArtisanProfile = () => {
                   <div className='bio-row'>
                     <p>
                       <span>Address </span>:{" "}
-                      {` ${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode} `}
-                    </p>
-                  </div>
-
-                  <div className='bio-row'>
-                    <p>
-                      <span>Equipments </span>:{" "}
-                      {profileState.profile.equipment ? "Yes" : "No"}
+                      {`${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode}`}
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className='panel'>
-                <div className='bio-graph-heading'>
-                  {profileState.profile.bio}
-                </div>
-              </div>
-              <div className='panel'>
-                <form>
-                  <textarea
-                    placeholder='Whats in your mind today?'
-                    rows='2'
-                    className='form-control input-lg p-text-area'
-                  ></textarea>
-                </form>
-                <footer className='panel-footer d-flex flex-row-reverse justify-content-between align-items-center'>
-                  <button className='btn btn-warning '>Post</button>
-                  <ul className='nav nav-pills'>
-                    <li>
-                      <Link to='/'>
-                        <i className='fa fa-map-marker mx-1'></i>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/'>
-                        <i className='fa fa-camera mx-1'></i>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/'>
-                        <i className=' fa fa-film mx-1'></i>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/'>
-                        <i className='fa fa-microphone mx-1'></i>
-                      </Link>
-                    </li>
-                  </ul>
-                </footer>
               </div>
             </div>
           </div>
         </div>
       )}
-      <Post />
     </div>
   );
 };
 
-export default ArtisanProfile;
+export default PersonProfile;

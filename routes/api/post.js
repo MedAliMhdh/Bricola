@@ -52,16 +52,36 @@ router.get("/", async (req, res) => {
   }
 });
 
-//@route    GET api/posts/:id
-//@desc     Get post by id
+//@route    GET api/posts/post/:id //
+//@desc     Get post by post id
 //@access   Public
-router.get("/:id", async (req, res) => {
+router.get("/post/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) {
       return res.status(404).json({ msg: "Post not found" });
     }
     res.json(post);
+  } catch (err) {
+    console.error(err.message);
+    if (err.kind === "ObjectId") {
+      return res.status(404).json({ msg: "Post not found" });
+    }
+    res.status(500).send("Server error");
+  }
+});
+
+//@route    GET api/posts/user/:id
+//@desc     Get post by user
+//@access   Public
+router.get("/user/:id", async (req, res) => {
+  try {
+    const posts = await Post.find({ user: req.params.id });
+
+    if (!posts) {
+      return res.status(404).json({ msg: "You have no Posts" });
+    }
+    res.json(posts);
   } catch (err) {
     console.error(err.message);
     if (err.kind === "ObjectId") {

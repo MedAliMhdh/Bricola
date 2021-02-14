@@ -16,12 +16,7 @@ const post_Reducer = (state = initialState, action) => {
         posts: payload,
         loading: false,
       };
-    case GET_POST:
-      return {
-        ...state,
-        error: payload,
-        loading: false,
-      };
+
     default:
       return state;
   }

@@ -1,14 +1,14 @@
-import React from 'react';
-import maçon from '../images/maçon.png';
-import architecte from '../images/architcte.png';
-import carpender from '../images/carpender.png';
-import electrician from '../images/electrician.png';
-import jardinier from '../images/jardinier.png';
-import painter from '../images/painter.png';
-import plambier from '../images/plambier.png';
-import welder from '../images/welder.png';
+import React from "react";
+import maçon from "../images/maçon.png";
+import architecte from "../images/architcte.png";
+import carpender from "../images/carpender.png";
+import electrician from "../images/electrician.png";
+import jardinier from "../images/jardinier.png";
+import painter from "../images/painter.png";
+import plambier from "../images/plambier.png";
+import welder from "../images/welder.png";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const CategoriiesCarousel = () => {
   return (
@@ -24,7 +24,7 @@ const CategoriiesCarousel = () => {
               <Link to='/masonry'>
                 <img alt='' className='img-fluid' src={maçon} />
                 <div className='hover-2-content px-5 py-1'>
-                  {' '}
+                  {" "}
                   <p className='hover-2-description text-uppercase mb-0'>
                     Masonry <br />
                   </p>
@@ -36,7 +36,7 @@ const CategoriiesCarousel = () => {
               <Link to='/electricity'>
                 <img alt='' className='img-fluid' src={electrician} />
                 <div className='hover-2-content px-5 py-1'>
-                  {' '}
+                  {" "}
                   <p className='hover-2-description text-uppercase mb-0'>
                     Electricity <br />
                   </p>
@@ -48,7 +48,7 @@ const CategoriiesCarousel = () => {
               <Link to='/plombing'>
                 <img alt='' className='img-fluid' src={plambier} />
                 <div className='hover-2-content px-5 py-1'>
-                  {' '}
+                  {" "}
                   <p className='hover-2-description text-uppercase mb-0'>
                     Plumbing <br />
                   </p>
@@ -59,7 +59,7 @@ const CategoriiesCarousel = () => {
               <Link to='/carpentry'>
                 <img alt='' className='img-fluid' src={carpender} />
                 <div className='hover-2-content px-5 py-1'>
-                  {' '}
+                  {" "}
                   <p className='hover-2-description text-uppercase mb-0'>
                     Carpentry <br />
                   </p>
@@ -72,7 +72,7 @@ const CategoriiesCarousel = () => {
               <Link to='/welding'>
                 <img alt='' className='img-fluid' src={welder} />
                 <div className='hover-2-content px-5 py-1'>
-                  {' '}
+                  {" "}
                   <p className='hover-2-description text-uppercase mb-0'>
                     Welding
                   </p>
@@ -84,7 +84,7 @@ const CategoriiesCarousel = () => {
               <Link to='/painting'>
                 <img alt='' className='img-fluid' src={painter} />
                 <div className='hover-2-content px-5 py-1'>
-                  {' '}
+                  {" "}
                   <p className='hover-2-description text-uppercase mb-0'>
                     Painting
                   </p>
@@ -96,7 +96,7 @@ const CategoriiesCarousel = () => {
               <Link to='/architecture'>
                 <img alt='' className='img-fluid' src={architecte} />
                 <div className='hover-2-content px-5 py-1'>
-                  {' '}
+                  {" "}
                   <p className='hover-2-description text-uppercase mb-0'>
                     Architecture
                   </p>
@@ -108,7 +108,7 @@ const CategoriiesCarousel = () => {
               <Link to='/gatdening'>
                 <img alt='' className='img-fluid' src={jardinier} />
                 <div className='hover-2-content px-5 py-1'>
-                  {' '}
+                  {" "}
                   <p className='hover-2-description text-uppercase mb-0'>
                     Gardening
                   </p>

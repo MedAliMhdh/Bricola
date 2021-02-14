@@ -13,6 +13,7 @@ const Profiles = () => {
   useEffect(() => {
     dispatch(getProfiles());
   }, [dispatch]);
+
   return (
     <div>
       {loading ? (
