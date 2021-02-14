@@ -8,6 +8,7 @@ import {
   SELECT_JOB,
   SELECT_EQUIPMENT,
   SELECT_CITY,
+  SELECT_RATE,
 } from './types';
 
 //GET current user profile
@@ -122,7 +123,7 @@ export const createProfile = (formData, history, edit = false) => async (
 };
 
 // Filter profile
-export const filterProfiles = ({ job, equipment, city }) => async (
+export const filterProfiles = ({ job, equipment, city, rate }) => async (
   dispatch
 ) => {
   try {
@@ -150,6 +151,12 @@ export const filterProfiles = ({ job, equipment, city }) => async (
       await dispatch({
         type: SELECT_EQUIPMENT,
         payload: equipment,
+      });
+    }
+    if (rate) {
+      await dispatch({
+        type: SELECT_RATE,
+        payload: rate,
       });
     }
   } catch (err) {

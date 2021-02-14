@@ -6,6 +6,7 @@ import {
   SELECT_JOB,
   SELECT_EQUIPMENT,
   SELECT_CITY,
+  SELECT_RATE,
 } from '../actions/types';
 
 const initialState = {
@@ -65,6 +66,18 @@ export const artisanProfileReducer = (state = initialState, action) => {
       return {
         ...state,
         profiles: state.profiles.filter((artisan) => artisan.city === payload),
+      };
+    case SELECT_RATE:
+      const rate = state.profiles.map((artisan) =>
+        artisan.rate.length > 0
+          ? artisan.rate.reduce((acc, rate) => acc + rate.value, 0) /
+            artisan.rate.length
+          : 0
+      );
+
+      return {
+        ...state,
+        profiles: state.profiles.filter((artisan, i) => rate[i] >= payload),
       };
 
     default:

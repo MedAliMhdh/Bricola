@@ -16,3 +16,4 @@ export const POST_ERROR = 'POST_ERROR';
 export const SELECT_JOB = 'SELECT_JOB';
 export const SELECT_EQUIPMENT = 'SELECT_EQUIPMENT';
 export const SELECT_CITY = 'SELECT_CITY';
+export const SELECT_RATE = 'SELECT_RATE';
