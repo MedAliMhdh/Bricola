@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Thumbs from './Thumbs';
 import { useDispatch } from 'react-redux';
-import { SelectJob, SelectEquipment, SelectCity } from '../actions/search';
+import { filterProfiles } from '../actions/artisanProfile';
 
 const Search = ({ setSearch }) => {
   const [rate, setRate] = useState(0);
@@ -12,10 +12,8 @@ const Search = ({ setSearch }) => {
   const dispatch = useDispatch();
 
   const search = () => {
+    dispatch(filterProfiles({ job, equipment, city }));
     setSearch(true);
-    dispatch(SelectJob(job));
-    dispatch(SelectEquipment(equipment));
-    dispatch(SelectCity(city));
   };
   return (
     <div className='myContainer  d-flelx align-content-between'>
@@ -40,7 +38,13 @@ const Search = ({ setSearch }) => {
           <select
             className='form-control searchInput'
             value={equipment}
-            onChange={(e) => setEquipment(e.target.value)}
+            onChange={(e) => {
+              e.target.value === 'true'
+                ? setEquipment(true)
+                : e.target.value === 'false'
+                ? setEquipment(false)
+                : setEquipment(e.target.value);
+            }}
           >
             <option value=''> equipment </option>
             <option value='true'>With materiel</option>

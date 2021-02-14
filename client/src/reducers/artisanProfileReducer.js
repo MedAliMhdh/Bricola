@@ -51,22 +51,20 @@ export const artisanProfileReducer = (state = initialState, action) => {
       return {
         ...state,
         profiles: state.profiles.filter(
-          (artisan) => (artisan.user.job = action.payload)
+          (artisan) => artisan.user.job === payload
         ),
       };
     case SELECT_EQUIPMENT:
       return {
         ...state,
         profiles: state.profiles.filter(
-          (artisan) => (artisan.equipment = action.payload)
+          (artisan) => artisan.equipment === payload
         ),
       };
     case SELECT_CITY:
       return {
         ...state,
-        profiles: state.profiles.filter(
-          (artisan) => (artisan.city = action.payload)
-        ),
+        profiles: state.profiles.filter((artisan) => artisan.city === payload),
       };
 
     default:
