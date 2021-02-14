@@ -1,16 +1,9 @@
 import Thumbs from './Thumbs';
 
 const ArtisanCard = ({
-  profile: {
-    bio,
-    city,
-    profession,
-    rate,
-    street,
-    user: { avatar, name },
-    zipcode,
-  },
+  artisan: { bio, city, profession, rate, street, user, zipcode },
 }) => {
+  console.log('artisan user', { user });
   const rating =
     rate.length > 0
       ? rate.reduce((acc, rate) => acc + rate.value, 0) / rate.length
@@ -26,7 +19,7 @@ const ArtisanCard = ({
           <div className='image mr-3'>
             {' '}
             <img
-              src={avatar}
+              src={user.avatar}
               className='rounded-circle'
               width='60'
               alt=''
@@ -36,7 +29,7 @@ const ArtisanCard = ({
             <div className='md-col-6 px-3'>
               <div className='d-flex flex-row mb-1'>
                 {' '}
-                <span>{name}</span>
+                <span>{user.name}</span>
                 <div className='ratings ml-2'>
                   {' '}
                   <Thumbs rate={rating} />
