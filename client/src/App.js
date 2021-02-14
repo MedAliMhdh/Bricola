@@ -7,7 +7,7 @@ import Post from "./components/Post";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import ArtisanProfile from "./components/ArtisanProfile";
-import PersonProfile from "./components/personProfile";
+import PersonProfile from "./components/PersonProfile";
 import CreateProfile from "./components/profile-forms/CreateProfile";
 import EditProfile from "./components/profile-forms/EditProfile";
 import { loadUser } from "./actions/auth";
