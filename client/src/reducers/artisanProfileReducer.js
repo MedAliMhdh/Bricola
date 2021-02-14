@@ -3,7 +3,10 @@ import {
   GET_PROFILE,
   CLEAR_PROFILE,
   GET_PROFILES,
-} from "../actions/types";
+  SELECT_JOB,
+  SELECT_EQUIPMENT,
+  SELECT_CITY,
+} from '../actions/types';
 
 const initialState = {
   profile: null,
@@ -43,6 +46,29 @@ export const artisanProfileReducer = (state = initialState, action) => {
         profile: null,
         loading: false,
       };
+
+    case SELECT_JOB:
+      return {
+        ...state,
+        profiles: state.profiles.filter(
+          (artisan) => (artisan.user.job = action.payload)
+        ),
+      };
+    case SELECT_EQUIPMENT:
+      return {
+        ...state,
+        profiles: state.profiles.filter(
+          (artisan) => (artisan.equipment = action.payload)
+        ),
+      };
+    case SELECT_CITY:
+      return {
+        ...state,
+        profiles: state.profiles.filter(
+          (artisan) => (artisan.city = action.payload)
+        ),
+      };
+
     default:
       return state;
   }
