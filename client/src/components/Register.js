@@ -46,7 +46,7 @@ const Register = () => {
 
   if (isAuthenticated) {
     if (roleState === "Artisan") {
-      return <Redirect to='/artisanprofile' />;
+      return <Redirect to='/artisanprofile/me' />;
     }
     if (roleState === "Person") {
       return <Redirect to='/' />;

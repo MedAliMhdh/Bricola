@@ -7,7 +7,7 @@ import { logout } from "../actions/auth";
 const Navb = () => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
-  const profileState = useSelector((state) => state.profile);
+  const profileState = useSelector((state) => state.artisan);
 
   const defaultImg =
     "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
@@ -70,9 +70,19 @@ const Navb = () => {
             className='dropdown-menu nvbDropdow'
             aria-labelledby='dropdownMenuButton'
           >
-            <Link className='dropdown-item px-3' to='/artisanprofile'>
-              View profile
-            </Link>
+            {authState.user ? (
+              authState.user.role === "Artisan" ? (
+                <Link className='dropdown-item px-3' to='/artisanprofile/me'>
+                  View profile
+                </Link>
+              ) : (
+                <Link className='dropdown-item px-3' to='/personprofile/me'>
+                  View profile
+                </Link>
+              )
+            ) : (
+              <div></div>
+            )}
             <Link
               className='dropdown-item px-3'
               onClick={() => dispatch(logout())}

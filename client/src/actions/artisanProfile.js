@@ -12,7 +12,7 @@ import {
 } from './types';
 
 //GET current user profile
-export const getCurrentProfile = () => async (dispatch) => {
+export const getArtisanCurrentProfile = () => async (dispatch) => {
   try {
     const res = await axios.get(
       `${process.env.REACT_APP_API_URL}api/artisan/me`
@@ -76,7 +76,7 @@ export const getProfileById = (artisanId) => async (dispatch) => {
 };
 
 //Create or update profile
-export const createProfile = (formData, history, edit = false) => async (
+export const createArtisanProfile = (formData, history, edit = false) => async (
   dispatch
 ) => {
   try {
@@ -102,7 +102,9 @@ export const createProfile = (formData, history, edit = false) => async (
         alertType: 'success',
       })
     );
-    history.push('/artisanprofile');
+
+    history.push("/artisanprofile/me");
+
   } catch (err) {
     const errors = err.response.data.errors;
 

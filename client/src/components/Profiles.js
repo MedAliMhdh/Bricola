@@ -6,6 +6,13 @@ const Profiles = () => {
   const profile = useSelector((state) => state.profile);
 
   const { profiles, loading } = profile;
+
+
+  useEffect(() => {
+    dispatch(getProfiles());
+  }, [dispatch]);
+
+
   return (
     <div>
       {loading ? (
