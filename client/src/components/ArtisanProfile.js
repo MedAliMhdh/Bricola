@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentProfile } from '../actions/artisanProfile';
-import Spinner from './Spinner';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentProfile } from "../actions/artisanProfile";
+import Post from "./Post";
+import Spinner from "./Spinner";
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
   const profileState = useSelector((store) => store.profile);
   const auth = useSelector((store) => store.auth);
+
   useEffect(() => {
     dispatch(getCurrentProfile());
   }, [dispatch]);
@@ -103,7 +105,7 @@ const ArtisanProfile = () => {
                   <div className='row'>
                     <div className='bio-row'>
                       <p>
-                        <span>First Name </span>{' '}
+                        <span>First Name </span>{" "}
                         {profileState.profile.user.name}
                       </p>
                     </div>
@@ -115,7 +117,7 @@ const ArtisanProfile = () => {
 
                     <div className='bio-row'>
                       <p>
-                        <span>Profession </span>:{' '}
+                        <span>Profession </span>:{" "}
                         {profileState.profile.user.job}
                       </p>
                     </div>
@@ -131,7 +133,7 @@ const ArtisanProfile = () => {
                     </div>
                     <div className='bio-row'>
                       <p>
-                        <span>Address </span>:{' '}
+                        <span>Address </span>:{" "}
                         {` ${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode} `}
                       </p>
                     </div>
@@ -142,6 +144,7 @@ const ArtisanProfile = () => {
           </div>
         </div>
       )}
+      <Post />
     </div>
   );
 };
