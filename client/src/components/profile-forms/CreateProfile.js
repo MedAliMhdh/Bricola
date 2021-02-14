@@ -1,34 +1,23 @@
-import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { createArtisanProfile } from "../../actions/artisanProfile";
-import { createPersonProfile } from "../../actions/personProfile";
+import { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { createArtisanProfile } from '../../actions/artisanProfile';
+import { createPersonProfile } from '../../actions/personProfile';
 
 const CreateProfile = () => {
   const userRole = useSelector((state) => state.auth.user.role);
-  const [city, setCity] = useState("");
-  const [street, setStreet] = useState("");
-  const [zipcode, setZipcode] = useState("");
-  const [bio, setBio] = useState("");
-  const [equipment, setEquipment] = useState("");
+  const [city, setCity] = useState('');
+  const [street, setStreet] = useState('');
+  const [zipcode, setZipcode] = useState('');
+  const [bio, setBio] = useState('');
+  const [equipment, setEquipment] = useState('');
 
   const dispatch = useDispatch();
   const history = useHistory();
 
-  // const onClick = async () => {
-  //   dispatch(
-  //     createArtisanProfile({ city, street, zipcode, bio, equipment }, history)
-  //   );
-
-  //   setCity("");
-  //   setStreet("");
-  //   setZipcode("");
-  //   setBio("");
-  //   setEquipment("");
-  // };
   return (
     <div className='container'>
-      {userRole === "Artisan" ? (
+      {userRole === 'Artisan' ? (
         <div>
           <h1 className='large text-primary'>Create Your Profile</h1>
           <p className='lead'>
@@ -129,11 +118,11 @@ const CreateProfile = () => {
                     )
                   );
 
-                  setCity("");
-                  setStreet("");
-                  setZipcode("");
-                  setBio("");
-                  setEquipment("");
+                  setCity('');
+                  setStreet('');
+                  setZipcode('');
+                  setBio('');
+                  setEquipment('');
                 }}
                 type='submit'
               >
@@ -223,9 +212,9 @@ const CreateProfile = () => {
                     )
                   );
 
-                  setCity("");
-                  setStreet("");
-                  setZipcode("");
+                  setCity('');
+                  setStreet('');
+                  setZipcode('');
                 }}
               >
                 Send

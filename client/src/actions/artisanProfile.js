@@ -103,8 +103,7 @@ export const createArtisanProfile = (formData, history, edit = false) => async (
       })
     );
 
-    history.push("/artisanprofile/me");
-
+    history.push('/artisanprofile/me');
   } catch (err) {
     const errors = err.response.data.errors;
 
