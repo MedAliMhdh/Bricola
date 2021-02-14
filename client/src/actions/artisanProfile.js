@@ -1,7 +1,15 @@
-import axios from "axios";
+import axios from 'axios';
 
-import { setAlert } from "./alert";
-import { GET_PROFILE, PROFILE_ERROR, GET_PROFILES } from "./types";
+import { setAlert } from './alert';
+import {
+  GET_PROFILE,
+  PROFILE_ERROR,
+  GET_PROFILES,
+  SELECT_JOB,
+  SELECT_EQUIPMENT,
+  SELECT_CITY,
+  SELECT_RATE,
+} from './types';
 
 //GET current user profile
 export const getArtisanCurrentProfile = () => async (dispatch) => {
@@ -74,7 +82,7 @@ export const createArtisanProfile = (formData, history, edit = false) => async (
   try {
     const config = {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     };
 
@@ -90,21 +98,70 @@ export const createArtisanProfile = (formData, history, edit = false) => async (
 
     dispatch(
       setAlert({
-        msg: edit ? "Profile Updated" : "Profile Cretated",
-        alertType: "success",
+        msg: edit ? 'Profile Updated' : 'Profile Cretated',
+        alertType: 'success',
       })
     );
 
     history.push("/artisanprofile/me");
+
   } catch (err) {
     const errors = err.response.data.errors;
 
     if (errors) {
       errors.forEach((error) => {
-        dispatch(setAlert({ msg: error.msg, alertType: "danger" }));
+        dispatch(setAlert({ msg: error.msg, alertType: 'danger' }));
       });
     }
 
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+      },
+    });
+  }
+};
+
+// Filter profile
+export const filterProfiles = ({ job, equipment, city, rate }) => async (
+  dispatch
+) => {
+  try {
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}api/artisan`);
+
+    dispatch({
+      type: GET_PROFILES,
+      payload: res.data,
+    });
+    if (city !== '') {
+      await dispatch({
+        type: SELECT_CITY,
+        payload: city,
+      });
+    }
+
+    if (job !== '') {
+      await dispatch({
+        type: SELECT_JOB,
+        payload: job,
+      });
+    }
+
+    if (equipment !== '') {
+      await dispatch({
+        type: SELECT_EQUIPMENT,
+        payload: equipment,
+      });
+    }
+    if (rate) {
+      await dispatch({
+        type: SELECT_RATE,
+        payload: rate,
+      });
+    }
+  } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
       payload: {

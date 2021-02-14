@@ -1,15 +1,32 @@
-import React, { useState } from "react";
-import Thumbs from "./Thumbs";
+
+import React, { useState } from 'react';
+import Thumbs from './Thumbs';
+import { useDispatch } from 'react-redux';
+import { filterProfiles } from '../actions/artisanProfile';
 
 const Search = ({ setSearch }) => {
   const [rate, setRate] = useState(0);
+  const [job, setJob] = useState('');
+  const [equipment, setEquipment] = useState('');
+  const [city, setCity] = useState('');
+
+  const dispatch = useDispatch();
+
+  const search = () => {
+    dispatch(filterProfiles({ job, equipment, city, rate }));
+    setSearch(true);
+  };
 
   return (
     <div className='myContainer  d-flelx align-content-between'>
       <div className='rowContainer row d-flex justify-content-center align-items-center ml-4 flex-wrap'>
         <div className='col-md-3 col-sm-3 p-1 m-0'>
-          <select className='form-control searchInput '>
-            <option value='1'> Select job type </option>
+          <select
+            className='form-control searchInput '
+            value={job}
+            onChange={(e) => setJob(e.target.value)}
+          >
+            <option value=''> Select job type </option>
             <option value='Bricklayer'>Bricklayer</option>
             <option value='Electrician'>Electrician</option>
             <option value='Painter'>Painter</option>
@@ -21,7 +38,17 @@ const Search = ({ setSearch }) => {
         </div>
 
         <div className='col-lg-3 col-sm-3 p-1 m-0'>
-          <select className='form-control searchInput'>
+          <select
+            className='form-control searchInput'
+            value={equipment}
+            onChange={(e) => {
+              e.target.value === 'true'
+                ? setEquipment(true)
+                : e.target.value === 'false'
+                ? setEquipment(false)
+                : setEquipment(e.target.value);
+            }}
+          >
             <option value=''> equipment </option>
             <option value='true'>With materiel</option>
             <option value='false'>Without materiel</option>
@@ -29,7 +56,11 @@ const Search = ({ setSearch }) => {
         </div>
 
         <div className='col-md-3 col-sm-3 p-1 m-0'>
-          <select className='form-control searchInput'>
+          <select
+            className='form-control searchInput'
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          >
             <option value=''> city </option>
             <option value='Ariana'>Ariana</option>
             <option value='Beja'>Beja</option>
@@ -68,7 +99,7 @@ const Search = ({ setSearch }) => {
           <button
             type='button'
             className='btn btn-dark col-md-3'
-            onClick={() => setSearch(true)}
+            onClick={() => search()}
           >
             Search
           </button>
