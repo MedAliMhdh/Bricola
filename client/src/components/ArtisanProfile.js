@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtisanCurrentProfile } from "../actions/artisanProfile";
-import PostCard from "./PostCard";
 import Spinner from "./Spinner";
+import PostCard from "./PostCard";
 import { getPosts } from "../actions/post";
 
 const ArtisanProfile = () => {
@@ -51,7 +51,7 @@ const ArtisanProfile = () => {
 
                 <ul className='nav nav-pills nav-stacked '>
                   <li className='nav-item d-block text-white active w-100'>
-                    <Link className='nav-link' to='/artisanprofile'>
+                    <Link className='nav-link' to='/artisanprofile/me'>
                       <i className='fa fa-user'></i> Profile
                     </Link>
                   </li>

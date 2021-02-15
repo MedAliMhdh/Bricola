@@ -13,6 +13,7 @@ import setAuthToken from "./utils/setAuthToken";
 import Navb from "./components/Navb";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import { useDispatch } from "react-redux";
+import VisitedProfile from "./components/VisitedProfile";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -33,6 +34,12 @@ const App = () => {
         <Route exact path='/' component={Home} />
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
+        <Route
+          path='/visitedartisanprofile/:profileId'
+          render={(props) => (
+            <VisitedProfile profileId={props.match.params.profileId} />
+          )}
+        />
         <PrivateRoute
           exact
           path={`/artisanprofile/me`}
