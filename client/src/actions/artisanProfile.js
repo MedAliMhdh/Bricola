@@ -9,6 +9,8 @@ import {
   SELECT_EQUIPMENT,
   SELECT_CITY,
   SELECT_RATE,
+  CLEAR_PROFILE,
+  LOG_OUT,
 } from './types';
 
 //GET current user profile
@@ -113,6 +115,24 @@ export const createArtisanProfile = (formData, history, edit = false) => async (
       });
     }
 
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+      },
+    });
+  }
+};
+
+// Delete profile
+export const deleteProfile = (history) => async (dispatch) => {
+  try {
+    await axios.delete(`${process.env.REACT_APP_API_URL}api/artisan/`);
+    dispatch({ type: CLEAR_PROFILE });
+    dispatch({ type: LOG_OUT });
+    history.push('/');
+  } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
       payload: {

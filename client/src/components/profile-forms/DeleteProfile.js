@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getArtisanCurrentProfile } from '../actions/artisanProfile';
-import Post from './Post';
-import Spinner from './Spinner';
+
+import { getArtisanCurrentProfile } from '../../actions/artisanProfile';
+
+import DeleteButton from './DeleteButton';
+import Spinner from '../Spinner';
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
@@ -41,7 +43,7 @@ const ArtisanProfile = () => {
                 </div>
 
                 <ul className='nav nav-pills nav-stacked '>
-                  <li className='nav-item d-block text-white active w-100'>
+                  <li className='nav-item d-block text-white w-100'>
                     <Link className='nav-link' to='/artisanprofile/me'>
                       <i className='fa fa-user'></i> Profile
                     </Link>
@@ -52,7 +54,7 @@ const ArtisanProfile = () => {
                       <i className='fa fa-edit'></i> Edit profile
                     </Link>
                   </li>
-                  <li className='nav-item d-block  text-white w-100 '>
+                  <li className='nav-item d-block text-white active w-100'>
                     <Link className='nav-link' to='/delete-profile'>
                       <i class='fas fa-trash-alt'></i> Delete profile
                       <span className='label label-warning r-activity'></span>
@@ -109,44 +111,12 @@ const ArtisanProfile = () => {
                 </div>
               </div>
               <div className='panel'>
-                <form>
-                  <textarea
-                    placeholder='Whats in your mind today?'
-                    rows='2'
-                    className='form-control input-lg p-text-area'
-                  ></textarea>
-                </form>
-                <footer className='panel-footer d-flex flex-row-reverse justify-content-between align-items-center'>
-                  <button className='btn btn-warning '>Post</button>
-                  <ul className='nav nav-pills'>
-                    <li>
-                      <Link to='/'>
-                        <i className='fa fa-map-marker mx-1'></i>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/'>
-                        <i className='fa fa-camera mx-1'></i>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/'>
-                        <i className=' fa fa-film mx-1'></i>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/'>
-                        <i className='fa fa-microphone mx-1'></i>
-                      </Link>
-                    </li>
-                  </ul>
-                </footer>
+                <DeleteButton />
               </div>
             </div>
           </div>
         </div>
       )}
-      <Post />
     </div>
   );
 };

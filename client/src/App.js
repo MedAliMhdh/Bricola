@@ -11,6 +11,7 @@ import PersonProfile from './components/PersonProfile';
 import VisitedProfile from './components/VisitedProfile';
 import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
+import DeleteProfile from './components/profile-forms/DeleteProfile';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 import Navb from './components/Navb';
@@ -54,6 +55,11 @@ const App = () => {
         <Route path='/post' component={Post} />
         <PrivateRoute exact path='/create-profile' component={CreateProfile} />
         <PrivateRoute exact path='/edit-profile' component={EditProfile} />
+        <PrivateRoute
+          exact
+          path={`/delete-profile`}
+          component={DeleteProfile}
+        />
       </Switch>
     </div>
   );
