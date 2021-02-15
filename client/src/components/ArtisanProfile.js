@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getArtisanCurrentProfile } from "../actions/artisanProfile";
-import Post from "./Post";
-import Spinner from "./Spinner";
-import { getPersonCurrentProfile } from "../actions/personProfile";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getArtisanCurrentProfile } from '../actions/artisanProfile';
+import Post from './Post';
+import Spinner from './Spinner';
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
@@ -13,9 +12,7 @@ const ArtisanProfile = () => {
 
   useEffect(() => {
     dispatch(getArtisanCurrentProfile());
-    dispatch(getPersonCurrentProfile());
-  }, [dispatch]);
-
+  }, []);
   return (
     <div>
       {profileState.loading && !profileState.profile ? (
@@ -45,7 +42,7 @@ const ArtisanProfile = () => {
 
                 <ul className='nav nav-pills nav-stacked '>
                   <li className='nav-item d-block text-white active w-100'>
-                    <Link className='nav-link' to='/artisanprofile'>
+                    <Link className='nav-link' to='/artisanprofile/me'>
                       <i className='fa fa-user'></i> Profile
                     </Link>
                   </li>
@@ -92,15 +89,15 @@ const ArtisanProfile = () => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{" "}
+                      <span>Address </span>:{' '}
                       {` ${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{" "}
-                      {profileState.profile.equipment ? "Yes" : "No"}
+                      <span>Equipments </span>:{' '}
+                      {profileState.profile.equipment ? 'Yes' : 'No'}
                     </p>
                   </div>
                 </div>
