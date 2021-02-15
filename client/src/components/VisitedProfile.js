@@ -1,19 +1,28 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProfileById } from '../actions/artisanProfile';
-import Post from './Post';
-import Spinner from './Spinner';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfileById, getProfiles } from "../actions/artisanProfile";
+import PostCard from "./PostCard";
+import Spinner from "./Spinner";
+import { getPosts } from "../actions/post";
 
 const VisitedProfile = ({ profileId }) => {
   const dispatch = useDispatch();
   const profile = useSelector((store) => store.artisan);
+  const posts = useSelector((state) => state.post);
+
   useEffect(() => {
     dispatch(getProfileById(profileId));
   }, []);
+
+  useEffect(() => {
+    if (profile.profile) {
+      dispatch(getPosts(profile.profile.user._id));
+    }
+  }, [profile.profile]);
   return (
     <div>
-      {!profile ? (
+      {!profile.profile ? (
         <Spinner />
       ) : (
         <div className='container artisanProfileContainer bootstrap snippets bootdey'>
@@ -58,15 +67,15 @@ const VisitedProfile = ({ profileId }) => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{' '}
+                      <span>Address </span>:{" "}
                       {` ${profile.profile.street}, ${profile.profile.city}, ${profile.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{' '}
-                      {profile.profile.equipment ? 'Yes' : 'No'}
+                      <span>Equipments </span>:{" "}
+                      {profile.profile.equipment ? "Yes" : "No"}
                     </p>
                   </div>
                 </div>
@@ -78,7 +87,18 @@ const VisitedProfile = ({ profileId }) => {
           </div>
         </div>
       )}
-      <Post />
+      {posts.posts ? (
+        posts.posts.map((post) => (
+          <PostCard
+            key={post._id}
+            photo={profile.profile.user.avatar}
+            fullName={profile.profile.user.name}
+            text={post.text}
+          />
+        ))
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };
