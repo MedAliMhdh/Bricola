@@ -2,25 +2,31 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtisanCurrentProfile } from "../actions/artisanProfile";
-import Post from "./Post";
+import PostCard from "./PostCard";
 import Spinner from "./Spinner";
-import { getPersonCurrentProfile } from "../actions/personProfile";
+import { getPosts } from "../actions/post";
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
-  const profileState = useSelector((store) => store.artisan);
+  const artisanProfileState = useSelector((store) => store.artisan);
+  const posts = useSelector((state) => state.post);
   const auth = useSelector((store) => store.auth);
 
   useEffect(() => {
     dispatch(getArtisanCurrentProfile());
-    dispatch(getPersonCurrentProfile());
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    if (artisanProfileState.profile) {
+      dispatch(getPosts(artisanProfileState.profile.user._id));
+    }
+  }, [artisanProfileState.profile]);
 
   return (
     <div>
-      {profileState.loading && !profileState.profile ? (
+      {artisanProfileState.loading && !artisanProfileState.profile ? (
         <Spinner />
-      ) : !profileState.profile ? (
+      ) : !artisanProfileState.profile ? (
         <div className='container artisanProfileContainer bootstrap snippets bootdey'>
           <p>
             <i className='fas fa user' /> Welcome {auth.user && auth.user.name}
@@ -37,10 +43,10 @@ const ArtisanProfile = () => {
               <div className='panel'>
                 <div className='user-heading round'>
                   <Link to='/'>
-                    <img src={profileState.profile.user.avatar} alt='' />
+                    <img src={artisanProfileState.profile.user.avatar} alt='' />
                   </Link>
-                  <h1>{profileState.profile.user.name}</h1>
-                  <p>{profileState.profile.user.email}</p>
+                  <h1>{artisanProfileState.profile.user.name}</h1>
+                  <p>{artisanProfileState.profile.user.email}</p>
                 </div>
 
                 <ul className='nav nav-pills nav-stacked '>
@@ -70,44 +76,48 @@ const ArtisanProfile = () => {
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-                      <span>Full Name </span>: {profileState.profile.user.name}
+                      <span>Full Name </span>:{" "}
+                      {artisanProfileState.profile.user.name}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Profession </span>: {profileState.profile.user.job}
+                      <span>Profession </span>:{" "}
+                      {artisanProfileState.profile.user.job}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Mobile </span>: {profileState.profile.user.phone}
+                      <span>Mobile </span>:{" "}
+                      {artisanProfileState.profile.user.phone}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>E-mail </span>: {profileState.profile.user.email}
+                      <span>E-mail </span>:{" "}
+                      {artisanProfileState.profile.user.email}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
                       <span>Address </span>:{" "}
-                      {` ${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode} `}
+                      {` ${artisanProfileState.profile.street}, ${artisanProfileState.profile.city}, ${artisanProfileState.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
                       <span>Equipments </span>:{" "}
-                      {profileState.profile.equipment ? "Yes" : "No"}
+                      {artisanProfileState.profile.equipment ? "Yes" : "No"}
                     </p>
                   </div>
                 </div>
               </div>
               <div className='panel'>
                 <div className='bio-graph-heading'>
-                  {profileState.profile.bio}
+                  {artisanProfileState.profile.bio}
                 </div>
               </div>
               <div className='panel'>
@@ -148,7 +158,18 @@ const ArtisanProfile = () => {
           </div>
         </div>
       )}
-      <Post />
+      {posts.posts ? (
+        posts.posts.map((post) => (
+          <PostCard
+            key={post._id}
+            photo={artisanProfileState.profile.user.avatar}
+            fullName={artisanProfileState.profile.user.name}
+            text={post.text}
+          />
+        ))
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };

@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import "./App.css";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import { useDispatch } from "react-redux";
-import Post from "./components/Post";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import ArtisanProfile from "./components/ArtisanProfile";
@@ -14,6 +12,7 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import Navb from "./components/Navb";
 import PrivateRoute from "./components/routing/PrivateRoute";
+import { useDispatch } from "react-redux";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -44,7 +43,6 @@ const App = () => {
           path={`/personprofile/me`}
           component={PersonProfile}
         />
-        <Route path='/post' component={Post} />
         <PrivateRoute exact path='/create-profile' component={CreateProfile} />
         <PrivateRoute exact path='/edit-profile' component={EditProfile} />
       </Switch>
