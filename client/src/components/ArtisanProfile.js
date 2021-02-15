@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getArtisanCurrentProfile } from "../actions/artisanProfile";
 import Spinner from "./Spinner";
 import PostCard from "./PostCard";
-import { getPosts } from "../actions/post";
+import { getPosts, addPost } from "../actions/post";
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
   const artisanProfileState = useSelector((store) => store.artisan);
   const posts = useSelector((state) => state.post);
   const auth = useSelector((store) => store.auth);
+  const [text, setText] = useState("");
 
   useEffect(() => {
     dispatch(getArtisanCurrentProfile());
@@ -124,12 +125,22 @@ const ArtisanProfile = () => {
                 <form>
                   <textarea
                     placeholder='Whats in your mind today?'
-                    rows='2'
+                    rows='5'
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
                     className='form-control input-lg p-text-area'
                   ></textarea>
                 </form>
                 <footer className='panel-footer d-flex flex-row-reverse justify-content-between align-items-center'>
-                  <button className='btn btn-warning '>Post</button>
+                  <button
+                    className='btn btn-warning'
+                    onClick={() => {
+                      dispatch(addPost({ text }));
+                      setText("");
+                    }}
+                  >
+                    Post
+                  </button>
                   <ul className='nav nav-pills'>
                     <li>
                       <Link to='/'>

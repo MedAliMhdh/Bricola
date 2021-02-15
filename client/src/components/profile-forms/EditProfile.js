@@ -1,24 +1,24 @@
-import { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   createArtisanProfile,
   getArtisanCurrentProfile,
-} from '../../actions/artisanProfile';
+} from "../../actions/artisanProfile";
 
 import {
   createPersonProfile,
   getPersonCurrentProfile,
-} from '../../actions/personProfile';
+} from "../../actions/personProfile";
 
 const EditProfile = () => {
   const userRole = useSelector((state) => state.auth.user.role);
 
-  const [city, setCity] = useState('');
-  const [street, setStreet] = useState('');
-  const [zipcode, setZipcode] = useState('');
-  const [bio, setBio] = useState('');
-  const [equipment, setEquipment] = useState('');
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [bio, setBio] = useState("");
+  const [equipment, setEquipment] = useState("");
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -28,18 +28,18 @@ const EditProfile = () => {
   const { profile, loading } = Profile;
 
   useEffect(() => {
-    if (Profile.profile.user.role === 'Artisan') {
+    if (Profile.profile.user.role === "Artisan") {
       dispatch(getArtisanCurrentProfile());
-      setCity(loading || !profile.city ? '' : profile.city);
-      setStreet(loading || !profile.street ? '' : profile.street);
-      setZipcode(loading || !profile.zipcode ? '' : profile.zipcode);
-      setBio(loading || !profile.bio ? '' : profile.bio);
-      setEquipment(loading || !profile.equipment ? '' : profile.equipment);
+      setCity(loading || !profile.city ? "" : profile.city);
+      setStreet(loading || !profile.street ? "" : profile.street);
+      setZipcode(loading || !profile.zipcode ? "" : profile.zipcode);
+      setBio(loading || !profile.bio ? "" : profile.bio);
+      setEquipment(loading || !profile.equipment ? "" : profile.equipment);
     } else {
       dispatch(getPersonCurrentProfile());
-      setCity(loading || !profile.city ? '' : profile.city);
-      setStreet(loading || !profile.street ? '' : profile.street);
-      setZipcode(loading || !profile.zipcode ? '' : profile.zipcode);
+      setCity(loading || !profile.city ? "" : profile.city);
+      setStreet(loading || !profile.street ? "" : profile.street);
+      setZipcode(loading || !profile.zipcode ? "" : profile.zipcode);
     }
   }, [
     dispatch,
@@ -63,7 +63,7 @@ const EditProfile = () => {
 
   return (
     <div>
-      {userRole === 'Artisan' ? (
+      {userRole === "Artisan" ? (
         <div>
           <h1 className='large text-primary'>Create Your Profile</h1>
           <p className='lead'>
