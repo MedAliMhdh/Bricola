@@ -1,8 +1,8 @@
 import {
-  PROFILE_ERROR,
-  GET_PROFILE,
-  CLEAR_PROFILE,
-  GET_PROFILES,
+  PROFILE_PERSON_ERROR,
+  GET_PERSON_PROFILE,
+  CLEAR_PERSON_PROFILE,
+  GET_PERSON_PROFILES,
 } from "../actions/types";
 
 const initialState = {
@@ -16,28 +16,28 @@ export const personProfileReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case GET_PROFILE:
+    case GET_PERSON_PROFILE:
       return {
         ...state,
         profile: payload,
         loading: false,
       };
 
-    case GET_PROFILES:
+    case GET_PERSON_PROFILES:
       return {
         ...state,
         profiles: payload,
         loading: false,
       };
 
-    case PROFILE_ERROR:
+    case PROFILE_PERSON_ERROR:
       return {
         ...state,
         error: payload,
         loading: false,
         profile: null,
       };
-    case CLEAR_PROFILE:
+    case CLEAR_PERSON_PROFILE:
       return {
         ...state,
         profile: null,

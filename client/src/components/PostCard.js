@@ -1,14 +1,6 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getPosts } from "../actions/post";
-import Spinner from "./Spinner";
+import React from "react";
 
-const Post = () => {
-  const posts = useSelector((state) => state.post.post);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getPosts(), [getPosts]);
-  });
+const PostCard = ({ photo, fullName, text }) => {
   return (
     <div className='container postContainer col-md-6'>
       {/* <!-- begin tab-content --> */}
@@ -25,22 +17,15 @@ const Post = () => {
           <div className='timeline-body'>
             <div className='timeline-header'>
               <span className='userimage'>
-                <img
-                  src='https://bootdey.com/img/Content/avatar/avatar3.png'
-                  alt=''
-                />
+                <img src={photo} alt='' />
               </span>
               <span className='username'>
-                <a href='/'>Sean Ngu</a> <small></small>
+                <a href='/'>{fullName}</a> <small></small>
               </span>
               <span className='pull-right text-muted'>18 Views</span>
             </div>
             <div className='timeline-content'>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                faucibus turpis quis tincidunt luctus. Nam sagittis dui in nunc
-                consequat, in imperdiet nunc sagittis.
-              </p>
+              <p>{text}</p>
               <img alt=''></img>
             </div>
             <div className='timeline-likes'>
@@ -65,10 +50,7 @@ const Post = () => {
             </div>
             <div className='timeline-comment-box col-md-11'>
               <div className='user'>
-                <img
-                  src='https://bootdey.com/img/Content/avatar/avatar3.png'
-                  alt=''
-                />
+                <img src={photo} alt='' />
               </div>
               <div className='input col-sm-12'>
                 <form action=''>
@@ -97,4 +79,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default PostCard;

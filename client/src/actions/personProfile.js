@@ -1,7 +1,11 @@
 import axios from "axios";
 
 import { setAlert } from "./alert";
-import { GET_PROFILE, PROFILE_ERROR, GET_PROFILES } from "./types";
+import {
+  GET_PERSON_PROFILE,
+  PROFILE_PERSON_ERROR,
+  GET_PERSON_PROFILES,
+} from "./types";
 
 //GET current user profile
 export const getPersonCurrentProfile = () => async (dispatch) => {
@@ -11,12 +15,12 @@ export const getPersonCurrentProfile = () => async (dispatch) => {
     );
 
     dispatch({
-      type: GET_PROFILE,
+      type: GET_PERSON_PROFILE,
       payload: res.data,
     });
   } catch (err) {
     dispatch({
-      type: PROFILE_ERROR,
+      type: PROFILE_PERSON_ERROR,
       payload: {
         msg: err.response.statusText,
         status: err.response.status,
@@ -26,17 +30,17 @@ export const getPersonCurrentProfile = () => async (dispatch) => {
 };
 
 // Get all profiles
-export const getProfiles = () => async (dispatch) => {
+export const getPersonProfiles = () => async (dispatch) => {
   try {
     const res = await axios.get(`${process.env.REACT_APP_API_URL}api/person`);
 
     dispatch({
-      type: GET_PROFILES,
+      type: GET_PERSON_PROFILES,
       payload: res.data,
     });
   } catch (err) {
     dispatch({
-      type: PROFILE_ERROR,
+      type: PROFILE_PERSON_ERROR,
       payload: {
         msg: err.response.statusText,
         status: err.response.status,
@@ -53,12 +57,12 @@ export const getProfileById = (personId) => async (dispatch) => {
     );
 
     dispatch({
-      type: GET_PROFILE,
+      type: GET_PERSON_PROFILE,
       payload: res.data,
     });
   } catch (err) {
     dispatch({
-      type: PROFILE_ERROR,
+      type: PROFILE_PERSON_ERROR,
       payload: {
         msg: err.response.statusText,
         status: err.response.status,
@@ -84,7 +88,7 @@ export const createPersonProfile = (formData, history, edit = false) => async (
       config
     );
     dispatch({
-      type: GET_PROFILE,
+      type: GET_PERSON_PROFILE,
       payload: res.data,
     });
 
@@ -106,7 +110,7 @@ export const createPersonProfile = (formData, history, edit = false) => async (
     }
 
     dispatch({
-      type: PROFILE_ERROR,
+      type: PROFILE_PERSON_ERROR,
       payload: {
         msg: err.response.statusText,
         status: err.response.status,

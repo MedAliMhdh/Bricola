@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import './App.css';
 import Register from './components/Register';
@@ -16,6 +17,8 @@ import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 import Navb from './components/Navb';
 import PrivateRoute from './components/routing/PrivateRoute';
+
+
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -52,7 +55,6 @@ const App = () => {
           path={`/personprofile/me`}
           component={PersonProfile}
         />
-        <Route path='/post' component={Post} />
         <PrivateRoute exact path='/create-profile' component={CreateProfile} />
         <PrivateRoute exact path='/edit-profile' component={EditProfile} />
         <PrivateRoute
