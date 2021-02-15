@@ -14,56 +14,79 @@ import {
 const EditProfile = () => {
   const userRole = useSelector((state) => state.auth.user.role);
 
-  const [city, setCity] = useState("");
-  const [street, setStreet] = useState("");
-  const [zipcode, setZipcode] = useState("");
-  const [bio, setBio] = useState("");
-  const [equipment, setEquipment] = useState("");
+  const [city, setCity] = useState('');
+  const [street, setStreet] = useState('');
+  const [zipcode, setZipcode] = useState('');
+  const [bio, setBio] = useState('');
+  const [equipment, setEquipment] = useState('');
+
 
   const dispatch = useDispatch();
   const history = useHistory();
-
-  const Profile = useSelector((state) => state.artisan);
-
-  const { profile, loading } = Profile;
+  const ProfileArtisan = useSelector((state) => state.artisan);
+  const ProfilePerson = useSelector((state) => state.person);
 
   useEffect(() => {
-    if (Profile.profile.user.role === "Artisan") {
-      dispatch(getArtisanCurrentProfile());
-      setCity(loading || !profile.city ? "" : profile.city);
-      setStreet(loading || !profile.street ? "" : profile.street);
-      setZipcode(loading || !profile.zipcode ? "" : profile.zipcode);
-      setBio(loading || !profile.bio ? "" : profile.bio);
-      setEquipment(loading || !profile.equipment ? "" : profile.equipment);
-    } else {
-      dispatch(getPersonCurrentProfile());
-      setCity(loading || !profile.city ? "" : profile.city);
-      setStreet(loading || !profile.street ? "" : profile.street);
-      setZipcode(loading || !profile.zipcode ? "" : profile.zipcode);
-    }
-  }, [
-    dispatch,
-    loading,
-    profile.city,
-    profile.street,
-    profile.zipcode,
-    profile.bio,
-    profile.equipment,
-  ]);
 
-  // const onClick = async () => {
-  //   dispatch(
-  //     createArtisanProfile(
-  //       { city, street, zipcode, bio, equipment },
-  //       history,
-  //       true
-  //     )
-  //   );
-  // };
+    if (userRole === 'Artisan') {
+      dispatch(getArtisanCurrentProfile());
+      setCity(
+        ProfileArtisan.loading || !ProfileArtisan.profile.city
+          ? ''
+          : ProfileArtisan.profile.city
+      );
+      setStreet(
+        ProfileArtisan.loading || !ProfileArtisan.profile.street
+          ? ''
+          : ProfileArtisan.profile.street
+      );
+      setZipcode(
+        ProfileArtisan.loading || !ProfileArtisan.profile.zipcode
+          ? ''
+          : ProfileArtisan.profile.zipcode
+      );
+      setBio(
+        ProfileArtisan.loading || !ProfileArtisan.profile.bio
+          ? ''
+          : ProfileArtisan.profile.bio
+      );
+      setEquipment(
+        ProfileArtisan.loading || !ProfileArtisan.profile.equipment
+          ? ''
+          : ProfileArtisan.profile.equipment
+      );
+
+    }
+  }, []);
+
+  useEffect(() => {
+    if (userRole === 'Person') {
+      dispatch(getPersonCurrentProfile());
+      setCity(
+        ProfilePerson.loading || !ProfilePerson.profile.city
+          ? ''
+          : ProfilePerson.profile.city
+      );
+      setStreet(
+        ProfilePerson.loading || !ProfilePerson.profile.street
+          ? ''
+          : ProfilePerson.profile.street
+      );
+      setZipcode(
+        ProfilePerson.loading || !ProfilePerson.profile.zipcode
+          ? ''
+          : ProfilePerson.profile.zipcode
+      );
+    }
+  }, []);
 
   return (
     <div>
-      {userRole === "Artisan" ? (
+
+      {ProfileArtisan.profile &&
+      ProfileArtisan.profile.user &&
+      ProfileArtisan.profile.user.role === 'Artisan' ? (
+
         <div>
           <h1 className='large text-primary'>Create Your Profile</h1>
           <p className='lead'>
@@ -241,7 +264,7 @@ const EditProfile = () => {
               </small>
             </div>
 
-            <Link to='/artisanprofile/me'>
+            <Link to='/personprofile/me'>
               <button
                 className='btn btn-primary'
                 onClick={() => {

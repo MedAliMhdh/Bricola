@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
-import { setAlert } from "./alert";
+import { setAlert } from './alert';
 import {
   GET_PERSON_PROFILE,
   PROFILE_PERSON_ERROR,
   GET_PERSON_PROFILES,
-} from "./types";
+} from './types';
 
 //GET current user profile
 export const getPersonCurrentProfile = () => async (dispatch) => {
@@ -78,7 +78,7 @@ export const createPersonProfile = (formData, history, edit = false) => async (
   try {
     const config = {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     };
 
@@ -94,18 +94,18 @@ export const createPersonProfile = (formData, history, edit = false) => async (
 
     dispatch(
       setAlert({
-        msg: edit ? "Profile Updated" : "Profile Cretated",
-        alertType: "success",
+        msg: edit ? 'Profile Updated' : 'Profile Cretated',
+        alertType: 'success',
       })
     );
 
-    history.push("/personprofile/me");
+    history.push('/personprofile/me');
   } catch (err) {
     const errors = err.response.data.errors;
 
     if (errors) {
       errors.forEach((error) => {
-        dispatch(setAlert({ msg: error.msg, alertType: "danger" }));
+        dispatch(setAlert({ msg: error.msg, alertType: 'danger' }));
       });
     }
 
