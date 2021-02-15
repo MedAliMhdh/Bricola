@@ -3,7 +3,7 @@ import {
   GET_PERSON_PROFILE,
   CLEAR_PERSON_PROFILE,
   GET_PERSON_PROFILES,
-} from "../actions/types";
+} from '../actions/types';
 
 const initialState = {
   profile: null,
