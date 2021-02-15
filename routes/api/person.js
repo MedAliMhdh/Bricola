@@ -67,7 +67,7 @@ router.get("/:user_id", auth, async (req, res) => {
   try {
     const person = await Person.findOne({
       user: req.params.user_id,
-    }).populate("user", ["name", "avatar"]);
+    }).populate("user", ["name", "avatar, email, phone"]);
 
     if (!person) res.status(400).json({ message: "Profile not found" });
 
@@ -100,11 +100,16 @@ router.delete("/", auth, async (req, res) => {
 });
 
 //@route    GET api/person/
-//@desc     Get all users
+//@desc     Get all persons
 //@access   Private
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const persons = await Person.find().populate("user", ["name", "avatar"]);
+    const persons = await Person.find().populate("user", [
+      "name",
+      "avatar",
+      "phone",
+      "email",
+    ]);
     res.json(persons);
   } catch (error) {
     console.log(error);
