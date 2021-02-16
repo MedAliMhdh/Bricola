@@ -10,12 +10,12 @@ const ArtisanCard = ({
     rate.length > 0
       ? rate.reduce((acc, rate) => acc + rate.value, 0) / rate.length
       : 0;
-  const myId = useSelector((state) => state.auth.user._id);
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   return (
     <Link
       to={
-        user._id === myId
+        auth.user && user._id === auth.user._id
           ? '/artisanprofile/me'
           : `/visitedartisanprofile/${user._id}`
       }

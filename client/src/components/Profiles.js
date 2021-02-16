@@ -7,22 +7,19 @@ const Profiles = () => {
   const artisan = useSelector((state) => state.artisan);
   return (
     <div>
-      {artisan &&
-        (artisan.loading ? (
-          <div>
-            <Spinner />
-          </div>
-        ) : (
-          <div>
-            {artisan.profiles.length > 0 ? (
-              artisan.profiles.map((artisan) => (
-                <ArtisanCard key={artisan._id} artisan={artisan} />
-              ))
-            ) : (
-              <h1>No profiles found</h1>
-            )}
-          </div>
-        ))}
+      {artisan.loading || !artisan.profiles ? (
+        <div>
+          <Spinner />
+        </div>
+      ) : artisan.profiles ? (
+        <div>
+          {artisan.profiles.map((artisan) => (
+            <ArtisanCard key={artisan._id} artisan={artisan} />
+          ))}
+        </div>
+      ) : (
+        <h1>No profiles found</h1>
+      )}
     </div>
   );
 };
