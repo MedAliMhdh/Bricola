@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getArtisanCurrentProfile } from '../../actions/artisanProfile';
 
+import { getPersonCurrentProfile } from '../../actions/personProfile';
 import DeleteButton from './DeleteButton';
 import Spinner from '../Spinner';
 
@@ -11,11 +12,21 @@ const ArtisanProfile = () => {
   const dispatch = useDispatch();
   const artisanProfile = useSelector((store) => store.artisan);
   const personProfile = useSelector((store) => store.person);
-  const auth = useSelector((store) => store.auth);
+
+  const userRole = useSelector((state) => state.auth.user.role);
 
   useEffect(() => {
-    dispatch(getArtisanCurrentProfile());
+    if (userRole === 'Artisan') {
+      dispatch(getArtisanCurrentProfile());
+    }
   }, []);
+
+  useEffect(() => {
+    if (userRole === 'Person') {
+      dispatch(getPersonCurrentProfile());
+    }
+  }, []);
+
   return (
     <div>
       {artisanProfile.loading && personProfile.loading ? (

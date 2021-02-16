@@ -26,12 +26,6 @@ const EditProfile = () => {
   const ProfileArtisan = useSelector((state) => state.artisan);
   const ProfilePerson = useSelector((state) => state.person);
 
-  const auth = useSelector((store) => store.auth);
-
-  useEffect(() => {
-    dispatch(getArtisanCurrentProfile());
-  }, []);
-
   useEffect(() => {
     if (ProfileArtisan.profile) {
       dispatch(getPosts(ProfileArtisan.profile.user._id));
@@ -216,7 +210,7 @@ const EditProfile = () => {
                     className='btn btn-primary'
                     onClick={() => {
                       dispatch(
-                        createArtisanProfile(
+                        createPersonProfile(
                           { city, street, zipcode },
                           history,
                           true
