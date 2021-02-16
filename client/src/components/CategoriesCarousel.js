@@ -19,7 +19,7 @@ const CategoriiesCarousel = () => {
         data-ride='carousel'
       >
         <div className='carousel-inner w-100' role='listbox'>
-          <div className='carousel-item row no-gutters active'>
+          <div className='carousel-item row  no-gutters active'>
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
               <Link to='/masonry'>
                 <img alt='' className='img-fluid' src={maçon} />
@@ -67,7 +67,7 @@ const CategoriiesCarousel = () => {
               </Link>
             </div>
           </div>
-          <div className='carousel-item row no-gutters'>
+          <div className='carousel-item row no-gutters '>
             <div className='col-sm-3 float-left hover hover-2 text-white rounded'>
               <Link to='/welding'>
                 <img alt='' className='img-fluid' src={welder} />
