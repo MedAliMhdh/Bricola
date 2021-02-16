@@ -8,6 +8,7 @@ import {
   LOGIN_FAIL,
   LOG_OUT,
   CLEAR_PROFILE,
+  CLEAR_PERSON_PROFILE,
 } from './types';
 import { setAlert } from './alert';
 
@@ -37,6 +38,7 @@ export const register = (
   { name, email, password, role, job, phone },
   history
 ) => async (dispatch) => {
+  dispatch({ type: CLEAR_PROFILE });
   const config = {
     header: {
       'Content-Type': 'application/json',
@@ -80,6 +82,7 @@ export const register = (
 
 // Login User
 export const login = ({ email, password }) => async (dispatch) => {
+  dispatch({ type: CLEAR_PROFILE });
   const config = {
     header: {
       'Content-Type': 'application/json',
@@ -118,5 +121,6 @@ export const login = ({ email, password }) => async (dispatch) => {
 //Log out user/ clkear profile
 export const logout = () => (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
+  dispatch({ type: CLEAR_PERSON_PROFILE });
   dispatch({ type: LOG_OUT });
 };

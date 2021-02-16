@@ -58,7 +58,6 @@ const CreateProfile = () => {
                 <option value='Tunis'>Tunis</option>
                 <option value='Zaghouane'>Zaghouane</option>
               </select>
-              <small className='form-text'>ekteb 7aja 3a choix de city</small>
             </div>
             <div className='form-group'>
               <input
@@ -68,7 +67,6 @@ const CreateProfile = () => {
                 value={street}
                 onChange={(e) => setStreet(e.target.value)}
               />
-              <small className='form-text'>ekteb 7aja 3a choix de street</small>
             </div>
             <div className='form-group'>
               <input
@@ -78,9 +76,6 @@ const CreateProfile = () => {
                 value={zipcode}
                 onChange={(e) => setZipcode(e.target.value)}
               />
-              <small className='form-text'>
-                ekteb 7aja 3a choix de zipcode
-              </small>
             </div>
             <div className='form-group'>
               <select
@@ -93,7 +88,6 @@ const CreateProfile = () => {
                 <option value='true'>With equipment</option>
                 <option value='false'>Without equipment</option>
               </select>
-              <small className='form-text'>ekteb 7aja 3a equipment</small>
             </div>
 
             <div className='form-group'>
@@ -103,11 +97,8 @@ const CreateProfile = () => {
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
               ></textarea>
-              <small className='form-text'>
-                Tell us a little about yourself
-              </small>
             </div>
-            <Link to='/personprofile/me'>
+            <Link to='/artisonprofile/me'>
               <button
                 className='btn btn-primary'
                 onClick={() => {
@@ -175,7 +166,6 @@ const CreateProfile = () => {
                 <option value='Tunis'>Tunis</option>
                 <option value='Zaghouane'>Zaghouane</option>
               </select>
-              <small className='form-text'>ekteb 7aja 3a choix de city</small>
             </div>
             <div className='form-group'>
               <input
@@ -195,9 +185,6 @@ const CreateProfile = () => {
                 value={zipcode}
                 onChange={(e) => setZipcode(e.target.value)}
               />
-              <small className='form-text'>
-                ekteb 7aja 3a choix de zipcode
-              </small>
             </div>
             <Link to='/personprofile/me'>
               <button

@@ -5,6 +5,9 @@ import {
   GET_PERSON_PROFILE,
   PROFILE_PERSON_ERROR,
   GET_PERSON_PROFILES,
+  CLEAR_PROFILE,
+  LOG_OUT,
+  PROFILE_ERROR,
 } from './types';
 
 //GET current user profile
@@ -111,6 +114,24 @@ export const createPersonProfile = (formData, history, edit = false) => async (
 
     dispatch({
       type: PROFILE_PERSON_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+      },
+    });
+  }
+};
+
+// Delete profile
+export const deletePersonProfile = (history) => async (dispatch) => {
+  try {
+    await axios.delete(`${process.env.REACT_APP_API_URL}api/person/`);
+    dispatch({ type: CLEAR_PROFILE });
+    dispatch({ type: LOG_OUT });
+    history.push('/');
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
       payload: {
         msg: err.response.statusText,
         status: err.response.status,

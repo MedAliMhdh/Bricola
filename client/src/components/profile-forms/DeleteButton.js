@@ -1,8 +1,10 @@
-import { useDispatch } from 'react-redux';
 import { deleteProfile } from '../../actions/artisanProfile';
+import { deletePersonProfile } from '../../actions/personProfile';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 const DeleteButton = () => {
+  const userRole = useSelector((state) => state.auth.user.role);
   const dispatch = useDispatch();
   const history = useHistory();
   return (
@@ -54,7 +56,13 @@ const DeleteButton = () => {
                 type='button'
                 class='btn btn-danger'
                 data-dismiss='modal'
-                onClick={() => dispatch(deleteProfile(history))}
+                onClick={() =>
+                  dispatch(
+                    userRole === 'Artisan'
+                      ? deleteProfile(history)
+                      : userRole === 'Person' && deletePersonProfile(history)
+                  )
+                }
               >
                 Yes
               </button>
