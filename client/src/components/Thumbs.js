@@ -4,15 +4,11 @@ const Thumbs = ({ rate, setRate }) => {
     for (let i = 1; i <= 5; i++) {
       if (i <= x) {
         array.push(
-          <span onClick={() => setRate(i)} key={i}>
-            ★
-          </span>
+          <i onClick={() => setRate(i)} key={i} className='fas fa-star' />
         );
       } else {
         array.push(
-          <span onClick={() => setRate(i)} key={i}>
-            ☆
-          </span>
+          <i className='far fa-star' onClick={() => setRate(i)} key={i} />
         );
       }
     }
