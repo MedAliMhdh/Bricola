@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getProfileById, getProfiles } from "../actions/artisanProfile";
-import PostCard from "./PostCard";
-import Spinner from "./Spinner";
-import { getPosts } from "../actions/post";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProfileById, getProfiles } from '../actions/artisanProfile';
+import PostCard from './PostCard';
+import Spinner from './Spinner';
+import { getPosts } from '../actions/post';
 
 const VisitedProfile = ({ profileId }) => {
   const dispatch = useDispatch();
@@ -67,15 +67,15 @@ const VisitedProfile = ({ profileId }) => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{" "}
+                      <span>Address </span>:{' '}
                       {` ${profile.profile.street}, ${profile.profile.city}, ${profile.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{" "}
-                      {profile.profile.equipment ? "Yes" : "No"}
+                      <span>Equipments </span>:{' '}
+                      {profile.profile.equipment ? 'Yes' : 'No'}
                     </p>
                   </div>
                 </div>
@@ -83,21 +83,21 @@ const VisitedProfile = ({ profileId }) => {
               <div className='panel'>
                 <div className='bio-graph-heading'>{profile.profile.bio}</div>
               </div>
+              {posts.posts ? (
+                posts.posts.map((post) => (
+                  <PostCard
+                    key={post._id}
+                    photo={profile.profile.user.avatar}
+                    fullName={profile.profile.user.name}
+                    text={post.text}
+                  />
+                ))
+              ) : (
+                <Spinner />
+              )}
             </div>
           </div>
         </div>
-      )}
-      {posts.posts ? (
-        posts.posts.map((post) => (
-          <PostCard
-            key={post._id}
-            photo={profile.profile.user.avatar}
-            fullName={profile.profile.user.name}
-            text={post.text}
-          />
-        ))
-      ) : (
-        <Spinner />
       )}
     </div>
   );
