@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react';
 import Spinner from './Spinner';
 import ArtisanCard from './ArtisanCard';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { filterProfiles } from '../actions/artisanProfile';
 
-const Profiles = () => {
+const Profiles = ({ rate, job, equipment, city }) => {
   const artisan = useSelector((state) => state.artisan);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(filterProfiles({ job, equipment, city, rate }));
+  }, []);
+
   return (
     <div>
       {artisan.loading || !artisan.profiles ? (
