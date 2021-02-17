@@ -1,26 +1,26 @@
-import Spinner from '../Spinner';
-import PostCard from '../PostCard';
-import { getPosts } from '../../actions/post';
-import { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import Spinner from "../Spinner";
+import PostCard from "../PostCard";
+import { getPosts } from "../../actions/post";
+import { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   createArtisanProfile,
   getArtisanCurrentProfile,
-} from '../../actions/artisanProfile';
+} from "../../actions/artisanProfile";
 
 import {
   createPersonProfile,
   getPersonCurrentProfile,
-} from '../../actions/personProfile';
+} from "../../actions/personProfile";
 
 const EditProfile = () => {
   const userRole = useSelector((state) => state.auth.user.role);
-  const [city, setCity] = useState('');
-  const [street, setStreet] = useState('');
-  const [zipcode, setZipcode] = useState('');
-  const [bio, setBio] = useState('');
-  const [equipment, setEquipment] = useState('');
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [bio, setBio] = useState("");
+  const [equipment, setEquipment] = useState("");
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -42,52 +42,52 @@ const EditProfile = () => {
   }, [artisanProfileState.profile]);
 
   useEffect(() => {
-    if (userRole === 'Artisan') {
+    if (userRole === "Artisan") {
       dispatch(getArtisanCurrentProfile());
       setCity(
         ProfileArtisan.loading || !ProfileArtisan.profile.city
-          ? ''
+          ? ""
           : ProfileArtisan.profile.city
       );
       setStreet(
         ProfileArtisan.loading || !ProfileArtisan.profile.street
-          ? ''
+          ? ""
           : ProfileArtisan.profile.street
       );
       setZipcode(
         ProfileArtisan.loading || !ProfileArtisan.profile.zipcode
-          ? ''
+          ? ""
           : ProfileArtisan.profile.zipcode
       );
       setBio(
         ProfileArtisan.loading || !ProfileArtisan.profile.bio
-          ? ''
+          ? ""
           : ProfileArtisan.profile.bio
       );
       setEquipment(
         ProfileArtisan.loading || !ProfileArtisan.profile.equipment
-          ? ''
+          ? ""
           : ProfileArtisan.profile.equipment
       );
     }
   }, []);
 
   useEffect(() => {
-    if (userRole === 'Person') {
+    if (userRole === "Person") {
       dispatch(getPersonCurrentProfile());
       setCity(
         ProfilePerson.loading || !ProfilePerson.profile.city
-          ? ''
+          ? ""
           : ProfilePerson.profile.city
       );
       setStreet(
         ProfilePerson.loading || !ProfilePerson.profile.street
-          ? ''
+          ? ""
           : ProfilePerson.profile.street
       );
       setZipcode(
         ProfilePerson.loading || !ProfilePerson.profile.zipcode
-          ? ''
+          ? ""
           : ProfilePerson.profile.zipcode
       );
     }
@@ -134,7 +134,7 @@ const EditProfile = () => {
                   </li>
                   <li className='nav-item d-block  text-white w-100 '>
                     <Link className='nav-link' to='/delete-profile'>
-                      <i class='fas fa-trash-alt'></i> Delete profile
+                      <i className='fas fa-trash-alt'></i> Delete profile
                       <span className='label label-warning r-activity'></span>
                     </Link>
                   </li>
@@ -148,41 +148,41 @@ const EditProfile = () => {
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-                      <span>Full Name </span>:{' '}
+                      <span>Full Name </span>:{" "}
                       {artisanProfileState.profile.user.name}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Profession </span>:{' '}
+                      <span>Profession </span>:{" "}
                       {artisanProfileState.profile.user.job}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Mobile </span>:{' '}
+                      <span>Mobile </span>:{" "}
                       {artisanProfileState.profile.user.phone}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>E-mail </span>:{' '}
+                      <span>E-mail </span>:{" "}
                       {artisanProfileState.profile.user.email}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{' '}
+                      <span>Address </span>:{" "}
                       {` ${artisanProfileState.profile.street}, ${artisanProfileState.profile.city}, ${artisanProfileState.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{' '}
-                      {artisanProfileState.profile.equipment ? 'Yes' : 'No'}
+                      <span>Equipments </span>:{" "}
+                      {artisanProfileState.profile.equipment ? "Yes" : "No"}
                     </p>
                   </div>
                 </div>
@@ -194,7 +194,7 @@ const EditProfile = () => {
               </div>
               {ProfileArtisan.profile &&
               ProfileArtisan.profile.user &&
-              ProfileArtisan.profile.user.role === 'Artisan' ? (
+              ProfileArtisan.profile.user.role === "Artisan" ? (
                 <div>
                   <h1 className='large text-primary'>Create Your Profile</h1>
                   <p className='lead'>

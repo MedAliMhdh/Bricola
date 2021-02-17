@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { deleteProfile } from '../../actions/artisanProfile';
-import { useHistory } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { deleteProfile } from "../../actions/artisanProfile";
+import { useHistory } from "react-router-dom";
 
 const DeleteButton = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const DeleteButton = () => {
     <div>
       <button
         type='button'
-        class='btn btn-danger'
+        className='btn btn-danger'
         data-toggle='modal'
         data-target='#exampleModal'
       >
@@ -17,42 +17,42 @@ const DeleteButton = () => {
       </button>
 
       <div
-        class='modal fade'
+        className='modal fade'
         id='exampleModal'
         tabindex='-1'
         role='dialog'
         aria-labelledby='exampleModalLabel'
         aria-hidden='true'
       >
-        <div class='modal-dialog' role='document'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <h5 class='modal-title' id='exampleModalLabel'>
+        <div className='modal-dialog' role='document'>
+          <div className='modal-content'>
+            <div className='modal-header'>
+              <h5 className='modal-title' id='exampleModalLabel'>
                 Delete your profile
               </h5>
               <button
                 type='button'
-                class='close'
+                className='close'
                 data-dismiss='modal'
                 aria-label='Close'
               >
                 <span aria-hidden='true'>&times;</span>
               </button>
             </div>
-            <div class='modal-body'>
+            <div className='modal-body'>
               Are you sure you want to delete your profile
             </div>
-            <div class='modal-footer'>
+            <div className='modal-footer'>
               <button
                 type='button'
-                class='btn btn-success'
+                className='btn btn-success'
                 data-dismiss='modal'
               >
                 No
               </button>
               <button
                 type='button'
-                class='btn btn-danger'
+                className='btn btn-danger'
                 data-dismiss='modal'
                 onClick={() => dispatch(deleteProfile(history))}
               >

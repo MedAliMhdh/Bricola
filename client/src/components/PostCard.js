@@ -1,6 +1,10 @@
 import React from "react";
+import { updateLikes } from "../actions/post";
+import { useDispatch, useSelector } from "react-redux";
 
-const PostCard = ({ photo, fullName, text }) => {
+const PostCard = ({ photo, fullName, text, id }) => {
+  const dispatch = useDispatch();
+  const artisanProfile = useSelector((state) => state.artisan.profile);
   return (
     <div className='container postContainer col-md-6'>
       {/* <!-- begin tab-content --> */}
@@ -41,9 +45,12 @@ const PostCard = ({ photo, fullName, text }) => {
               </div>
             </div>
             <div className='timeline-footer'>
-              <a href='/' className='m-r-15 text-inverse-lighter mr-1'>
+              <button
+                className='m-r-15 text-inverse-lighter mr-1'
+                onClick={() => dispatch(updateLikes(id))}
+              >
                 <i className='fa fa-thumbs-up fa-fw fa-lg m-r-3'></i>Like
-              </a>
+              </button>
               <a href='/' className='m-r-15 text-inverse-lighter ml-1'>
                 <i className='fa fa-comments fa-fw fa-lg m-r-3'></i>Comment
               </a>

@@ -22,3 +22,4 @@ export const SELECT_EQUIPMENT = "SELECT_EQUIPMENT";
 export const SELECT_CITY = "SELECT_CITY";
 export const SELECT_RATE = "SELECT_RATE";
 export const ADD_POST = "ADD_POST";
+export const UPDATE_LIKES = "UPDATE_LIKES";
