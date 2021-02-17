@@ -1,10 +1,11 @@
 import React from "react";
-import { updateLikes } from "../actions/post";
+import { updateLikes, deletePost } from "../actions/post";
 import { useDispatch, useSelector } from "react-redux";
 
-const PostCard = ({ photo, fullName, text, id }) => {
+const PostCard = ({ photo, fullName, text, id, userId }) => {
   const dispatch = useDispatch();
-  const artisanProfile = useSelector((state) => state.artisan.profile);
+  const auth = useSelector((state) => state.auth);
+  const post = useSelector((state) => state.post);
   return (
     <div className='container postContainer col-md-6'>
       {/* <!-- begin tab-content --> */}
@@ -26,7 +27,16 @@ const PostCard = ({ photo, fullName, text, id }) => {
               <span className='username'>
                 <a href='/'>{fullName}</a> <small></small>
               </span>
-              <span className='pull-right text-muted'>18 Views</span>
+              {auth.user && auth.user._id === userId && (
+                <button
+                  type='button'
+                  class='close'
+                  aria-label='Close'
+                  onClick={() => dispatch(deletePost(id))}
+                >
+                  <span aria-hidden='true'>&times;</span>
+                </button>
+              )}
             </div>
             <div className='timeline-content'>
               <p>{text}</p>
