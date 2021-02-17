@@ -174,6 +174,7 @@ const ArtisanProfile = () => {
                     fullName={post.name}
                     text={post.text}
                     id={post._id}
+                    userId={post.user}
                   />
                 ))
               ) : (
