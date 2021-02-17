@@ -1,6 +1,5 @@
-import axios from "axios";
-import { ADD_POST, GET_POSTS, POST_ERROR } from "./types";
-import { useSelector } from "react-redux";
+import axios from 'axios';
+import { ADD_POST, GET_POSTS, POST_ERROR } from './types';
 
 //Get posts
 export const getPosts = (userId) => async (dispatch) => {
@@ -22,7 +21,7 @@ export const getPosts = (userId) => async (dispatch) => {
 export const addPost = (formData) => async (dispatch) => {
   const config = {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   };
 

@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import Thumbs from "./Thumbs";
-import { useDispatch } from "react-redux";
-import { filterProfiles } from "../actions/artisanProfile";
+import React, { useState, useEffect } from 'react';
+import Thumbs from './Thumbs';
 
-const Search = ({ setSearch }) => {
-  const [rate, setRate] = useState(0);
-  const [job, setJob] = useState("");
-  const [equipment, setEquipment] = useState("");
-  const [city, setCity] = useState("");
-
-  const dispatch = useDispatch();
-
-  const search = () => {
-    dispatch(filterProfiles({ job, equipment, city, rate }));
+const Search = ({
+  setSearch,
+  rate,
+  setRate,
+  job,
+  setJob,
+  equipment,
+  setEquipment,
+  city,
+  setCity,
+}) => {
+  const searchAction = () => {
     setSearch(true);
   };
 
@@ -40,9 +40,9 @@ const Search = ({ setSearch }) => {
           className='col-md-12 searchInput'
           value={equipment}
           onChange={(e) => {
-            e.target.value === "true"
+            e.target.value === 'true'
               ? setEquipment(true)
-              : e.target.value === "false"
+              : e.target.value === 'false'
               ? setEquipment(false)
               : setEquipment(e.target.value);
           }}
@@ -95,7 +95,7 @@ const Search = ({ setSearch }) => {
         <button
           type='button'
           className='btn btn-dark col-md-3'
-          onClick={() => search()}
+          onClick={() => searchAction()}
         >
           Search
         </button>
