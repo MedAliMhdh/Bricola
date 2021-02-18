@@ -27,7 +27,7 @@ const Home = () => {
       {search ? (
         <Profiles rate={rate} job={job} equipment={equipment} city={city} />
       ) : (
-        <CategoriesCarousel />
+        <CategoriesCarousel setSearch={setSearch} setJob={setJob} />
       )}
     </div>
   );
