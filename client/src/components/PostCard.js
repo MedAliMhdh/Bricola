@@ -1,11 +1,11 @@
-import React from "react";
-import { updateLikes, deletePost } from "../actions/post";
+import React, { useState } from "react";
+import { updateLikes, deletePost, addComment } from "../actions/post";
 import { useDispatch, useSelector } from "react-redux";
 
-const PostCard = ({ photo, fullName, text, id, userId }) => {
+const PostCard = ({ photo, fullName, content, id, userId }) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
-  const post = useSelector((state) => state.post);
+  const [text, setText] = useState("");
   return (
     <div className='container postContainer col-md-6'>
       {/* <!-- begin tab-content --> */}
@@ -30,7 +30,7 @@ const PostCard = ({ photo, fullName, text, id, userId }) => {
               {auth.user && auth.user._id === userId && (
                 <button
                   type='button'
-                  class='close'
+                  className='close'
                   aria-label='Close'
                   onClick={() => dispatch(deletePost(id))}
                 >
@@ -39,7 +39,7 @@ const PostCard = ({ photo, fullName, text, id, userId }) => {
               )}
             </div>
             <div className='timeline-content'>
-              <p>{text}</p>
+              <p>{content}</p>
               <img alt=''></img>
             </div>
             <div className='timeline-likes'>
@@ -76,11 +76,17 @@ const PostCard = ({ photo, fullName, text, id, userId }) => {
                       type='text'
                       className='form-control rounded-corner mr-3'
                       placeholder='Write a comment...'
+                      value={text}
+                      onChange={(e) => setText(e.target.value)}
                     />
                     <span className='input-group-btn p-l-10'>
                       <button
                         className='btn btn-primary f-s-12 rounded-corner mr-3'
                         type='button'
+                        onClick={() => {
+                          dispatch(addComment({ postId: id, formData: text }));
+                          setText("");
+                        }}
                       >
                         Comment
                       </button>

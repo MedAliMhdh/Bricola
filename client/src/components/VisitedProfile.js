@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProfileById, getProfiles } from "../actions/artisanProfile";
+import { getProfileById } from "../actions/artisanProfile";
 import PostCard from "./PostCard";
 import Spinner from "./Spinner";
 import { getPosts } from "../actions/post";
@@ -89,7 +89,7 @@ const VisitedProfile = ({ profileId }) => {
                     key={post._id}
                     photo={profile.profile.user.avatar}
                     fullName={profile.profile.user.name}
-                    text={post.text}
+                    content={post.text}
                     id={post._id}
                   />
                 ))

@@ -1,9 +1,8 @@
-
-import Spinner from '../Spinner';
-import { getPosts } from '../../actions/post';
-import { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import Spinner from "../Spinner";
+import { getPosts } from "../../actions/post";
+import { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   createArtisanProfile,
@@ -130,29 +129,25 @@ const EditProfile = () => {
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-
                       <span>Full Name </span>: {ProfilePerson.profile.user.name}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-
                       <span>Mobile </span>: {ProfilePerson.profile.user.phone}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-
                       <span>E-mail </span>: {ProfilePerson.profile.user.email}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-
-                      <span>Address </span>:{' '}
+                      <span>Address </span>:{" "}
                       {`${ProfilePerson.profile.street}, ${ProfilePerson.profile.city}, ${ProfilePerson.profile.zipcode}`}
                     </p>
                   </div>
@@ -260,7 +255,7 @@ const EditProfile = () => {
                     </li>
                     <li className='nav-item d-block  text-white w-100 '>
                       <Link className='nav-link' to='/delete-profile'>
-                        <i class='fas fa-trash-alt'></i> Delete profile
+                        <i className='fas fa-trash-alt'></i> Delete profile
                         <span className='label label-warning r-activity'></span>
                       </Link>
                     </li>
@@ -274,41 +269,41 @@ const EditProfile = () => {
                   <div className='row'>
                     <div className='bio-row'>
                       <p>
-                        <span>Full Name </span>:{' '}
+                        <span>Full Name </span>:{" "}
                         {ProfileArtisan.profile.user.name}
                       </p>
                     </div>
                     <div className='bio-row'>
                       <p>
-                        <span>Profession </span>:{' '}
+                        <span>Profession </span>:{" "}
                         {ProfileArtisan.profile.user.job}
                       </p>
                     </div>
                     <div className='bio-row'>
                       <p>
-                        <span>Mobile </span>:{' '}
+                        <span>Mobile </span>:{" "}
                         {ProfileArtisan.profile.user.phone}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>E-mail </span>:{' '}
+                        <span>E-mail </span>:{" "}
                         {ProfileArtisan.profile.user.email}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>Address </span>:{' '}
+                        <span>Address </span>:{" "}
                         {` ${ProfileArtisan.profile.street}, ${ProfileArtisan.profile.city}, ${ProfileArtisan.profile.zipcode} `}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>Equipments </span>:{' '}
-                        {ProfileArtisan.profile.equipment ? 'Yes' : 'No'}
+                        <span>Equipments </span>:{" "}
+                        {ProfileArtisan.profile.equipment ? "Yes" : "No"}
                       </p>
                     </div>
                   </div>
