@@ -1,12 +1,10 @@
-
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getArtisanCurrentProfile } from '../actions/artisanProfile';
-import Spinner from './Spinner';
-import PostCard from './PostCard';
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getArtisanCurrentProfile } from "../actions/artisanProfile";
+import Spinner from "./Spinner";
+import PostCard from "./PostCard";
 import { getPosts, addPost } from "../actions/post";
-
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
@@ -66,7 +64,7 @@ const ArtisanProfile = () => {
                   </li>
                   <li className='nav-item d-block  text-white w-100 '>
                     <Link className='nav-link' to='/delete-profile'>
-                      <i class='fas fa-trash-alt'></i> Delete profile
+                      <i className='fas fa-trash-alt'></i> Delete profile
                       <span className='label label-warning r-activity'></span>
                     </Link>
                   </li>
@@ -80,41 +78,41 @@ const ArtisanProfile = () => {
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-                      <span>Full Name </span>:{' '}
+                      <span>Full Name </span>:{" "}
                       {artisanProfileState.profile.user.name}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Profession </span>:{' '}
+                      <span>Profession </span>:{" "}
                       {artisanProfileState.profile.user.job}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Mobile </span>:{' '}
+                      <span>Mobile </span>:{" "}
                       {artisanProfileState.profile.user.phone}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>E-mail </span>:{' '}
+                      <span>E-mail </span>:{" "}
                       {artisanProfileState.profile.user.email}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{' '}
+                      <span>Address </span>:{" "}
                       {` ${artisanProfileState.profile.street}, ${artisanProfileState.profile.city}, ${artisanProfileState.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{' '}
-                      {artisanProfileState.profile.equipment ? 'Yes' : 'No'}
+                      <span>Equipments </span>:{" "}
+                      {artisanProfileState.profile.equipment ? "Yes" : "No"}
                     </p>
                   </div>
                 </div>
@@ -128,7 +126,7 @@ const ArtisanProfile = () => {
                 <form>
                   <textarea
                     placeholder='Whats in your mind today?'
-                    rows='5'
+                    rows='2'
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     className='form-control input-lg p-text-area'
@@ -172,9 +170,11 @@ const ArtisanProfile = () => {
                 posts.posts.map((post) => (
                   <PostCard
                     key={post._id}
-                    photo={artisanProfileState.profile.user.avatar}
-                    fullName={artisanProfileState.profile.user.name}
-                    text={post.text}
+                    photo={post.avatar}
+                    fullName={post.name}
+                    content={post.text}
+                    id={post._id}
+                    userId={post.user}
                   />
                 ))
               ) : (

@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { updateLikes, deletePost, addComment } from "../actions/post";
+import { useDispatch, useSelector } from "react-redux";
 
-const PostCard = ({ photo, fullName, text }) => {
+const PostCard = ({ photo, fullName, content, id, userId }) => {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+  const [text, setText] = useState("");
   return (
     <div className='container postContainer col-md-6'>
       {/* <!-- begin tab-content --> */}
@@ -22,10 +27,19 @@ const PostCard = ({ photo, fullName, text }) => {
               <span className='username'>
                 <a href='/'>{fullName}</a> <small></small>
               </span>
-              <span className='pull-right text-muted'>18 Views</span>
+              {auth.user && auth.user._id === userId && (
+                <button
+                  type='button'
+                  className='close'
+                  aria-label='Close'
+                  onClick={() => dispatch(deletePost(id))}
+                >
+                  <span aria-hidden='true'>&times;</span>
+                </button>
+              )}
             </div>
             <div className='timeline-content'>
-              <p>{text}</p>
+              <p>{content}</p>
               <img alt=''></img>
             </div>
             <div className='timeline-likes'>
@@ -41,9 +55,12 @@ const PostCard = ({ photo, fullName, text }) => {
               </div>
             </div>
             <div className='timeline-footer'>
-              <a href='/' className='m-r-15 text-inverse-lighter mr-1'>
+              <button
+                className='m-r-15 text-inverse-lighter mr-1'
+                onClick={() => dispatch(updateLikes(id))}
+              >
                 <i className='fa fa-thumbs-up fa-fw fa-lg m-r-3'></i>Like
-              </a>
+              </button>
               <a href='/' className='m-r-15 text-inverse-lighter ml-1'>
                 <i className='fa fa-comments fa-fw fa-lg m-r-3'></i>Comment
               </a>
@@ -59,11 +76,17 @@ const PostCard = ({ photo, fullName, text }) => {
                       type='text'
                       className='form-control rounded-corner mr-3'
                       placeholder='Write a comment...'
+                      value={text}
+                      onChange={(e) => setText(e.target.value)}
                     />
                     <span className='input-group-btn p-l-10'>
                       <button
                         className='btn btn-primary f-s-12 rounded-corner mr-3'
                         type='button'
+                        onClick={() => {
+                          dispatch(addComment({ postId: id, formData: text }));
+                          setText("");
+                        }}
                       >
                         Comment
                       </button>
