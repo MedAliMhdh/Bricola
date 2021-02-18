@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   ADD_POST,
   GET_POSTS,
@@ -7,8 +7,8 @@ import {
   DELETE_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
-} from "./types";
-import { setAlert } from "./alert";
+} from './types';
+import { setAlert } from './alert';
 
 //Get posts
 export const getPosts = (userId) => async (dispatch) => {
@@ -30,7 +30,7 @@ export const getPosts = (userId) => async (dispatch) => {
 export const addPost = (formData) => async (dispatch) => {
   const config = {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   };
 
@@ -44,7 +44,7 @@ export const addPost = (formData) => async (dispatch) => {
       type: ADD_POST,
       payload: res.data,
     });
-    dispatch(setAlert("Post added", "success"));
+    dispatch(setAlert('Post added', 'success'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
@@ -83,7 +83,7 @@ export const deletePost = (postId) => async (dispatch) => {
       payload: postId,
     });
 
-    dispatch(setAlert("Post Removed", "success"));
+    dispatch(setAlert('Post Removed', 'success'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
@@ -96,7 +96,7 @@ export const deletePost = (postId) => async (dispatch) => {
 export const addComment = ({ postId, formData }) => async (dispatch) => {
   const config = {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   };
 
@@ -109,10 +109,10 @@ export const addComment = ({ postId, formData }) => async (dispatch) => {
 
     dispatch({
       type: ADD_COMMENT,
-      payload: res.data,
+      payload: { id: postId, comments: res.data },
     });
 
-    dispatch(setAlert("Comment added", "success"));
+    dispatch(setAlert('Comment added', 'success'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
@@ -122,16 +122,16 @@ export const addComment = ({ postId, formData }) => async (dispatch) => {
 };
 
 //Delete Comment
-export const deleteComment = (postId, commentId) => async (dispatch) => {
+export const deleteComment = ({ postId, commentId }) => async (dispatch) => {
   try {
-    const res = await axios.delete(
+    await axios.delete(
       `${process.env.REACT_APP_API_URL}api/posts/comment/${postId}/${commentId}`
     );
     dispatch({
       type: REMOVE_COMMENT,
-      payload: commentId,
+      payload: { postId, commentId },
     });
-    dispatch(setAlert("Comment deleted", "success"));
+    dispatch(setAlert('Comment deleted', 'success'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
