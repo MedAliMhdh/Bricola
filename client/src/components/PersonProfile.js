@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPersonCurrentProfile } from '../actions/personProfile';
-import Spinner from './Spinner';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getPersonCurrentProfile } from "../actions/personProfile";
+import Spinner from "./Spinner";
 
 const PersonProfile = () => {
   const dispatch = useDispatch();
@@ -53,7 +53,7 @@ const PersonProfile = () => {
                   </li>
                   <li className='nav-item d-block  text-white w-100 '>
                     <Link className='nav-link' to='/delete-profile'>
-                      <i class='fas fa-trash-alt'></i> Delete profile
+                      <i className='fas fa-trash-alt'></i> Delete profile
                       <span className='label label-warning r-activity'></span>
                     </Link>
                   </li>
@@ -85,7 +85,7 @@ const PersonProfile = () => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{' '}
+                      <span>Address </span>:{" "}
                       {`${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode}`}
                     </p>
                   </div>

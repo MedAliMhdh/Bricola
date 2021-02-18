@@ -172,7 +172,7 @@ const ArtisanProfile = () => {
                     key={post._id}
                     photo={post.avatar}
                     fullName={post.name}
-                    text={post.text}
+                    content={post.text}
                     id={post._id}
                     userId={post.user}
                   />

@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
-
 const auth = require("../../middlewares/auth");
 const Post = require("../../models/Post");
 const User = require("../../models/User");
@@ -203,7 +202,7 @@ router.post(
         avatar: user.avatar,
         user: req.user.id,
       };
-      post.comments.push(newComment);
+      post.comments.unshift(newComment);
 
       await post.save();
 
