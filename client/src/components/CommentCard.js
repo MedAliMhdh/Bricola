@@ -23,19 +23,19 @@ const CommentCard = ({
           </div>
           <span>{name}</span>
           <span className='input-group-btn p-l-10'>
-            {(auth.user && auth.user._id === postWriter) ||
-              (auth.user && auth.user._id === commentWriter && (
-                <button
-                  type='button'
-                  className='close'
-                  aria-label='Close'
-                  onClick={() => {
-                    dispatch(deleteComment({ postId, commentId }));
-                  }}
-                >
-                  <span aria-hidden='true'>&times;</span>
-                </button>
-              ))}
+            {((auth.user && auth.user.role === 'Admin') ||
+              (auth.user && auth.user.role === commentWriter)) && (
+              <button
+                type='button'
+                className='close'
+                aria-label='Close'
+                onClick={() => {
+                  dispatch(deleteComment({ postId, commentId }));
+                }}
+              >
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            )}
           </span>
         </div>
 

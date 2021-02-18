@@ -47,7 +47,8 @@ const PostCard = ({
               <span className='username'>
                 <a href='/'>{fullName}</a> <small></small>
               </span>
-              {auth.user && auth.user._id === userId && (
+              {((auth.user && auth.user.role === 'Admin') ||
+                (auth.user && auth.user._id === userId)) && (
                 <button
                   type='button'
                   className='close'
