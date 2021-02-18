@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Navb from './Navb';
-import Search from './Search';
-import CategoriesCarousel from './CategoriesCarousel';
-import Profiles from './Profiles';
+import React, { useState, useEffect } from "react";
+import Navb from "./Navb";
+import Search from "./Search";
+import CategoriesCarousel from "./CategoriesCarousel";
+import Profiles from "./Profiles";
 const Home = () => {
   const [search, setSearch] = useState(false);
   const [rate, setRate] = useState(0);
-  const [job, setJob] = useState('');
-  const [equipment, setEquipment] = useState('');
-  const [city, setCity] = useState('');
+  const [job, setJob] = useState("");
+  const [equipment, setEquipment] = useState("");
+  const [city, setCity] = useState("");
 
   return (
     <div className='container-fluid mx-0 px-0'>

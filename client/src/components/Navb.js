@@ -20,7 +20,7 @@ const Navb = () => {
       <form className=' d-flex  '>
         <Link to='/register'>
           <button
-            className='btn btn-outline-success nav-item col-11 px-4 mx-2'
+            className='btn logRegBtn nav-item col-11 px-4 mx-2'
             type='submit'
           >
             Register
@@ -28,10 +28,7 @@ const Navb = () => {
         </Link>
 
         <Link to='/login'>
-          <button
-            className='btn btn-outline-success col-12 px-4 mx-2'
-            type='submit'
-          >
+          <button className='btn logRegBtn col-12 px-4 mx-2' type='submit'>
             Log In
           </button>
         </Link>
@@ -44,10 +41,11 @@ const Navb = () => {
       className='collapse navbar-collapse d-flex justify-content-end  d-sm-none d-md-block'
       id='navbarNav'
     >
-      <i class='far fa-comment-alt fa-2x mx-2'></i>
+      <i class='far fa-bell fa-2x mx-4'></i>
+      <i class='far fa-comment-alt fa-2x mx-4'></i>
       <form className='d-flex'>
         {" "}
-        <div className='dropdown drpdwnMenuBtn mx-2'>
+        <div className='dropdown drpdwnMenuBtn ml-4'>
           <button
             className='btn dropdown-toggle px-0 py-0'
             type='button'
@@ -62,7 +60,7 @@ const Navb = () => {
                   ? profileState.profile.user.avatar
                   : defaultImg
               }
-              className=' rounded-circle mr-3'
+              className=' rounded-circle mr-3 '
               width='40'
               alt='hihihi'
             />
@@ -99,7 +97,7 @@ const Navb = () => {
 
   return (
     <div>
-      <nav className='navbar navbar-expand-md fixed-top navbar-light bg-light mx-0'>
+      <nav className='navbar navBarContainer navbar-expand-md fixed-top  mx-0'>
         <div className='container-fluid d-felx align-content-around mx-0'>
           <Link to='/' className='navbar-brand'>
             Bricola

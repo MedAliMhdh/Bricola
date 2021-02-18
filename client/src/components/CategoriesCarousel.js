@@ -1,12 +1,12 @@
-import React from 'react';
-import maçon from '../images/maçon.png';
-import architecte from '../images/architcte.png';
-import carpender from '../images/carpender.png';
-import electrician from '../images/electrician.png';
-import jardinier from '../images/jardinier.png';
-import painter from '../images/painter.png';
-import plambier from '../images/plambier.png';
-import welder from '../images/welder.png';
+import React from "react";
+import maçon from "../images/maçon.png";
+import architecte from "../images/architcte.png";
+import carpender from "../images/carpender.png";
+import electrician from "../images/electrician.png";
+import jardinier from "../images/jardinier.png";
+import painter from "../images/painter.png";
+import plambier from "../images/plambier.png";
+import welder from "../images/welder.png";
 
 const CategoriesCarousel = ({ setSearch, setJob }) => {
   const setAction = (jobValue) => {
@@ -21,14 +21,14 @@ const CategoriesCarousel = ({ setSearch, setJob }) => {
         data-ride='carousel'
       >
         <div className='carousel-inner w-100' role='listbox'>
-          <div className='carousel-item row  no-gutters active'>
+          <div className='carousel-item row no-gutters active'>
             <div
-              className='col-sm-3 float-left hover hover-2 text-white rounded'
-              onClick={() => setAction('Bricklayer')}
+              className='col-3 float-left hover hover-2 text-white rounded'
+              onClick={() => setAction("Bricklayer")}
             >
-              <img alt='' className='img-fluid' src={maçon} />
+              <img alt='' className='img-fluid mr-3' src={maçon} />
               <div className='hover-2-content px-5 py-1'>
-                {' '}
+                {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
                   Masonry <br />
                 </p>
@@ -36,12 +36,12 @@ const CategoriesCarousel = ({ setSearch, setJob }) => {
             </div>
 
             <div
-              className='col-sm-3 float-left hover hover-2 text-white rounded'
-              onClick={() => setAction('Electrician')}
+              className='col-3 float-left hover hover-2 text-white rounded'
+              onClick={() => setAction("Electrician")}
             >
               <img alt='' className='img-fluid' src={electrician} />
               <div className='hover-2-content px-5 py-1'>
-                {' '}
+                {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
                   Electricity <br />
                 </p>
@@ -49,24 +49,24 @@ const CategoriesCarousel = ({ setSearch, setJob }) => {
             </div>
 
             <div
-              className='col-sm-3 float-left hover hover-2 text-white rounded'
-              onClick={() => setAction('Plumber')}
+              className='col-3 float-left hover hover-2 text-white rounded'
+              onClick={() => setAction("Plumber")}
             >
               <img alt='' className='img-fluid' src={plambier} />
               <div className='hover-2-content px-5 py-1'>
-                {' '}
+                {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
                   Plumbing <br />
                 </p>
               </div>
             </div>
             <div
-              className='col-sm-3 float-left hover hover-2 text-white rounded'
-              onClick={() => setAction('Carpenter')}
+              className='col-3 float-left hover hover-2 text-white rounded'
+              onClick={() => setAction("Carpenter")}
             >
               <img alt='' className='img-fluid' src={carpender} />
               <div className='hover-2-content px-5 py-1'>
-                {' '}
+                {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
                   Carpentry <br />
                 </p>
@@ -75,12 +75,12 @@ const CategoriesCarousel = ({ setSearch, setJob }) => {
           </div>
           <div className='carousel-item row no-gutters '>
             <div
-              className='col-sm-3 float-left hover hover-2 text-white rounded'
-              onClick={() => setAction('Welder')}
+              className='col-3 float-left hover hover-2 text-white rounded'
+              onClick={() => setAction("Welder")}
             >
               <img alt='' className='img-fluid' src={welder} />
               <div className='hover-2-content px-5 py-1'>
-                {' '}
+                {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
                   Welding
                 </p>
@@ -88,12 +88,12 @@ const CategoriesCarousel = ({ setSearch, setJob }) => {
             </div>
 
             <div
-              className='col-sm-3 float-left hover hover-2 text-white rounded'
-              onClick={() => setAction('Painter')}
+              className='col-3 float-left hover hover-2 text-white rounded'
+              onClick={() => setAction("Painter")}
             >
               <img alt='' className='img-fluid' src={painter} />
               <div className='hover-2-content px-5 py-1'>
-                {' '}
+                {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
                   Painting
                 </p>
@@ -101,12 +101,12 @@ const CategoriesCarousel = ({ setSearch, setJob }) => {
             </div>
 
             <div
-              className='col-sm-3 float-left hover hover-2 text-white rounded'
-              onClick={() => setAction('Architect')}
+              className='col-3 float-left hover hover-2 text-white rounded'
+              onClick={() => setAction("Architect")}
             >
               <img alt='' className='img-fluid' src={architecte} />
               <div className='hover-2-content px-5 py-1'>
-                {' '}
+                {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
                   Architecture
                 </p>
@@ -114,12 +114,12 @@ const CategoriesCarousel = ({ setSearch, setJob }) => {
             </div>
 
             <div
-              className='col-sm-3 float-left hover hover-2 text-white rounded'
-              onClick={() => setAction('Gardener')}
+              className='col-3 float-left hover hover-2 text-white rounded'
+              onClick={() => setAction("Gardener")}
             >
               <img alt='' className='img-fluid' src={jardinier} />
               <div className='hover-2-content px-5 py-1'>
-                {' '}
+                {" "}
                 <p className='hover-2-description text-uppercase mb-0'>
                   Gardening
                 </p>
