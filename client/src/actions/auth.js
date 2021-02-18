@@ -9,6 +9,7 @@ import {
   LOG_OUT,
   CLEAR_PROFILE,
   CLEAR_PERSON_PROFILE,
+  UPDATE_FAIL,
 } from './types';
 import { setAlert } from './alert';
 
@@ -118,9 +119,30 @@ export const login = ({ email, password }) => async (dispatch) => {
   }
 };
 
-//Log out user/ clkear profile
+// Log out user/ clear profile
 export const logout = () => (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
   dispatch({ type: CLEAR_PERSON_PROFILE });
   dispatch({ type: LOG_OUT });
+};
+
+// Update user
+export const updateUser = (formData) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const res = await axios.put(
+      `${process.env.REACT_APP_API_URL}api/user/update`,
+      formData,
+      config
+    );
+
+    dispatch(loadUser());
+  } catch (err) {
+    dispatch({ type: UPDATE_FAIL });
+  }
 };

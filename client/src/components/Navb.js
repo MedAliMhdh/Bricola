@@ -7,7 +7,6 @@ import { logout } from "../actions/auth";
 const Navb = () => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
-  const profileState = useSelector((state) => state.artisan);
 
   const defaultImg =
     "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
@@ -56,8 +55,8 @@ const Navb = () => {
           >
             <img
               src={
-                !!(profileState.profile && !profileState.loading)
-                  ? profileState.profile.user.avatar
+                !!(authState && authState.user)
+                  ? authState.user.avatar
                   : defaultImg
               }
               className=' rounded-circle mr-3 '

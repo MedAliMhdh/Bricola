@@ -1,26 +1,30 @@
-import Spinner from "../Spinner";
-import { getPosts } from "../../actions/post";
-import { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import Spinner from '../Spinner';
+import { getPosts } from '../../actions/post';
+import { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { updateUser } from '../../actions/auth';
 import {
   createArtisanProfile,
   getArtisanCurrentProfile,
-} from "../../actions/artisanProfile";
+} from '../../actions/artisanProfile';
 
 import {
   createPersonProfile,
   getPersonCurrentProfile,
-} from "../../actions/personProfile";
+} from '../../actions/personProfile';
 
 const EditProfile = () => {
   const userRole = useSelector((state) => state.auth.user.role);
-  const [city, setCity] = useState("");
-  const [street, setStreet] = useState("");
-  const [zipcode, setZipcode] = useState("");
-  const [bio, setBio] = useState("");
-  const [equipment, setEquipment] = useState("");
+  const [city, setCity] = useState('');
+  const [street, setStreet] = useState('');
+  const [zipcode, setZipcode] = useState('');
+  const [bio, setBio] = useState('');
+  const [equipment, setEquipment] = useState('');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [job, setJob] = useState('');
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -34,53 +38,83 @@ const EditProfile = () => {
   }, [ProfileArtisan.profile]);
 
   useEffect(() => {
-    if (userRole === "Artisan") {
+    if (userRole === 'Artisan') {
       dispatch(getArtisanCurrentProfile());
       setCity(
         ProfileArtisan.loading || !ProfileArtisan.profile.city
-          ? ""
+          ? ''
           : ProfileArtisan.profile.city
       );
       setStreet(
         ProfileArtisan.loading || !ProfileArtisan.profile.street
-          ? ""
+          ? ''
           : ProfileArtisan.profile.street
       );
       setZipcode(
         ProfileArtisan.loading || !ProfileArtisan.profile.zipcode
-          ? ""
+          ? ''
           : ProfileArtisan.profile.zipcode
       );
       setBio(
         ProfileArtisan.loading || !ProfileArtisan.profile.bio
-          ? ""
+          ? ''
           : ProfileArtisan.profile.bio
       );
       setEquipment(
         ProfileArtisan.loading || !ProfileArtisan.profile.equipment
-          ? ""
+          ? ''
           : ProfileArtisan.profile.equipment
+      );
+      setName(
+        ProfileArtisan.loading || !ProfileArtisan.profile.user.name
+          ? ''
+          : ProfileArtisan.profile.user.name
+      );
+      setPhone(
+        ProfileArtisan.loading || !ProfileArtisan.profile.user.phone
+          ? ''
+          : ProfileArtisan.profile.user.phone
+      );
+      setJob(
+        ProfileArtisan.loading || !ProfileArtisan.profile.user.job
+          ? ''
+          : ProfileArtisan.profile.user.job
       );
     }
   }, []);
 
   useEffect(() => {
-    if (userRole === "Person") {
+    if (userRole === 'Person') {
       dispatch(getPersonCurrentProfile());
       setCity(
         ProfilePerson.loading || !ProfilePerson.profile.city
-          ? ""
+          ? ''
           : ProfilePerson.profile.city
       );
       setStreet(
         ProfilePerson.loading || !ProfilePerson.profile.street
-          ? ""
+          ? ''
           : ProfilePerson.profile.street
       );
       setZipcode(
         ProfilePerson.loading || !ProfilePerson.profile.zipcode
-          ? ""
+          ? ''
           : ProfilePerson.profile.zipcode
+      );
+      setName(
+        ProfilePerson.loading || !ProfilePerson.profile.user.name
+          ? ''
+          : ProfilePerson.profile.user.name
+      );
+      setPhone(
+        ProfilePerson.loading || !ProfilePerson.profile.user.phone
+          ? ''
+          : ProfilePerson.profile.user.phone
+      );
+      setJob(
+        ProfilePerson.loading || !ProfilePerson.profile.user.job
+          ? ''
+          : ProfilePerson.profile.user.job
       );
     }
   }, []);
@@ -147,13 +181,39 @@ const EditProfile = () => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{" "}
+                      <span>Address </span>:{' '}
                       {`${ProfilePerson.profile.street}, ${ProfilePerson.profile.city}, ${ProfilePerson.profile.zipcode}`}
                     </p>
                   </div>
                 </div>
               </div>
               <form className='form'>
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='Name'
+                    name='name'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className='form-group'>
+                  <select
+                    name='job'
+                    value={job}
+                    onChange={(e) => setJob(e.target.value)}
+                  >
+                    <option value='select'> Select job type *</option>
+                    <option value='Bricklayer'>Bricklayer</option>
+                    <option value='Electrician'>Electrician</option>
+                    <option value='Painter'>Painter</option>
+                    <option value='Plumber'>Plumber</option>
+                    <option value='Mechanic'>Mechanic </option>
+                    <option value='Welder'>Welder</option>
+                    <option value='Carpenter'>Carpenter</option>
+                    <option value='Architect'>Architect</option>
+                  </select>
+                </div>
                 <div className='form-group'>
                   <select
                     name='city'
@@ -205,6 +265,15 @@ const EditProfile = () => {
                     onChange={(e) => setZipcode(e.target.value)}
                   />
                 </div>
+                <div className='form-group'>
+                  <input
+                    type='number'
+                    placeholder='Phone'
+                    name='phone'
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                </div>
 
                 <Link to='/artisanprofile/me'>
                   <button
@@ -212,11 +281,12 @@ const EditProfile = () => {
                     onClick={() => {
                       dispatch(
                         createPersonProfile(
-                          { city, street, zipcode },
+                          { city, street, zipcode, phone },
                           history,
                           true
                         )
                       );
+                      //dispatch(updateUser({ name, job, phone }));
                     }}
                     type='submit'
                   >
@@ -269,41 +339,41 @@ const EditProfile = () => {
                   <div className='row'>
                     <div className='bio-row'>
                       <p>
-                        <span>Full Name </span>:{" "}
+                        <span>Full Name </span>:{' '}
                         {ProfileArtisan.profile.user.name}
                       </p>
                     </div>
                     <div className='bio-row'>
                       <p>
-                        <span>Profession </span>:{" "}
+                        <span>Profession </span>:{' '}
                         {ProfileArtisan.profile.user.job}
                       </p>
                     </div>
                     <div className='bio-row'>
                       <p>
-                        <span>Mobile </span>:{" "}
+                        <span>Mobile </span>:{' '}
                         {ProfileArtisan.profile.user.phone}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>E-mail </span>:{" "}
+                        <span>E-mail </span>:{' '}
                         {ProfileArtisan.profile.user.email}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>Address </span>:{" "}
+                        <span>Address </span>:{' '}
                         {` ${ProfileArtisan.profile.street}, ${ProfileArtisan.profile.city}, ${ProfileArtisan.profile.zipcode} `}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>Equipments </span>:{" "}
-                        {ProfileArtisan.profile.equipment ? "Yes" : "No"}
+                        <span>Equipments </span>:{' '}
+                        {ProfileArtisan.profile.equipment ? 'Yes' : 'No'}
                       </p>
                     </div>
                   </div>
@@ -315,6 +385,32 @@ const EditProfile = () => {
                 </div>
                 <div>
                   <form className='form'>
+                    <div className='form-group'>
+                      <input
+                        type='text'
+                        placeholder='Name'
+                        name='name'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    <div className='form-group'>
+                      <select
+                        name='job'
+                        value={job}
+                        onChange={(e) => setJob(e.target.value)}
+                      >
+                        <option value='select'> Select job type *</option>
+                        <option value='Bricklayer'>Bricklayer</option>
+                        <option value='Electrician'>Electrician</option>
+                        <option value='Painter'>Painter</option>
+                        <option value='Plumber'>Plumber</option>
+                        <option value='Mechanic'>Mechanic </option>
+                        <option value='Welder'>Welder</option>
+                        <option value='Carpenter'>Carpenter</option>
+                        <option value='Architect'>Architect</option>
+                      </select>
+                    </div>
                     <div className='form-group'>
                       <select
                         name='city'
@@ -367,6 +463,15 @@ const EditProfile = () => {
                       />
                     </div>
                     <div className='form-group'>
+                      <input
+                        type='number'
+                        placeholder='Phone'
+                        name='phone'
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                      />
+                    </div>
+                    <div className='form-group'>
                       <select
                         type='boolean'
                         name='equipment'
@@ -398,6 +503,7 @@ const EditProfile = () => {
                               true
                             )
                           );
+                          //dispatch(updateUser({ name, job, phone }));
                         }}
                         type='submit'
                       >
