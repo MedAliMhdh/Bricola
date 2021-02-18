@@ -6,7 +6,7 @@ import {
   DELETE_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
-} from "../actions/types";
+} from '../actions/types';
 
 const initialState = {
   posts: [],
@@ -40,6 +40,13 @@ const post_Reducer = (state = initialState, action) => {
         error: payload,
       };
 
+    case DELETE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter((post) => post._id !== payload),
+        loading: false,
+      };
+
     case UPDATE_LIKES:
       return {
         ...state,
@@ -49,17 +56,11 @@ const post_Reducer = (state = initialState, action) => {
         loading: false,
       };
 
-    case DELETE_POST:
-      return {
-        ...state,
-        posts: state.posts.filter((post) => post._id !== payload),
-        loading: false,
-      };
     case ADD_COMMENT:
       return {
         ...state,
         posts: state.posts.map((post) =>
-          post._id === payload.postId
+          post._id === payload.id
             ? { ...post, comments: payload.comments }
             : post
         ),
@@ -68,12 +69,17 @@ const post_Reducer = (state = initialState, action) => {
     case REMOVE_COMMENT:
       return {
         ...state,
-        post: {
-          ...state.post,
-          comments: state.post.comments.filter(
-            (comment) => comment._id !== payload
-          ),
-        },
+        posts: state.posts.map((post) =>
+          post._id === payload.postId
+            ? {
+                ...post,
+                comments: post.comments.filter(
+                  (comment) => comment._id !== payload.commentId
+                ),
+              }
+            : post
+        ),
+
         loading: false,
       };
     default:

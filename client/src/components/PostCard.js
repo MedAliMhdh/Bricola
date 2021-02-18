@@ -1,11 +1,31 @@
-import React, { useState } from "react";
-import { updateLikes, deletePost, addComment } from "../actions/post";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { updateLikes, deletePost, addComment } from '../actions/post';
+import { useDispatch, useSelector } from 'react-redux';
 
-const PostCard = ({ photo, fullName, content, id, userId }) => {
+import CommentCard from './CommentCard';
+
+const PostCard = ({
+  photo,
+  fullName,
+  content,
+  comments,
+  likes,
+  id,
+  userId,
+}) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
-  const [text, setText] = useState("");
+
+  const [text, setText] = useState('');
+  const [showComments, setShowComments] = useState(false);
+
+  var commentsNumber = comments.length;
+  var likesNumber = likes.length;
+
+  useEffect(() => {
+    commentsNumber = comments.length;
+    likesNumber = likes.length;
+  }, [comments, likes]);
   return (
     <div className='container postContainer col-md-6'>
       {/* <!-- begin tab-content --> */}
@@ -43,15 +63,18 @@ const PostCard = ({ photo, fullName, content, id, userId }) => {
               <img alt=''></img>
             </div>
             <div className='timeline-likes'>
-              <div className='stats-right'>
-                <span className='stats-text'>21 Comments</span>
+              <div
+                className='stats-right'
+                onClick={() => setShowComments(true)}
+              >
+                <span className='stats-text'>{commentsNumber} Comments</span>
               </div>
               <div className='stats'>
                 <span className='fa-stack fa-fw stats-icon'>
                   <i className='fa fa-circle fa-stack-2x text-primary'></i>
                   <i className='fa fa-thumbs-up fa-stack-1x fa-inverse'></i>
                 </span>
-                <span className='stats-total'>4.3k</span>
+                <span className='stats-total'>{likesNumber}</span>
               </div>
             </div>
             <div className='timeline-footer'>
@@ -85,7 +108,8 @@ const PostCard = ({ photo, fullName, content, id, userId }) => {
                         type='button'
                         onClick={() => {
                           dispatch(addComment({ postId: id, formData: text }));
-                          setText("");
+                          setText('');
+                          setShowComments(true);
                         }}
                       >
                         Comment
@@ -97,6 +121,19 @@ const PostCard = ({ photo, fullName, content, id, userId }) => {
             </div>
           </div>
         </div>
+        {showComments &&
+          comments.map((comment, i) => (
+            <CommentCard
+              key={i}
+              postWriter={userId}
+              commentWriter={comment.user}
+              name={comment.name}
+              photo={comment.avatar}
+              comment={comment.text}
+              commentId={comment._id}
+              postId={id}
+            />
+          ))}
       </div>
     </div>
   );
