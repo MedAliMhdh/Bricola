@@ -4,11 +4,11 @@ import Search from './Search';
 import CategoriesCarousel from './CategoriesCarousel';
 import Profiles from './Profiles';
 const Home = () => {
-  const [search, setSearch] = useStickyState(false, 'search');
-  const [rate, setRate] = useStickyState(0, 'rate');
-  const [job, setJob] = useStickyState('', 'job');
-  const [equipment, setEquipment] = useStickyState('', 'equipment');
-  const [city, setCity] = useStickyState('', 'city');
+  const [search, setSearch] = useState(false);
+  const [rate, setRate] = useState(0);
+  const [job, setJob] = useState('');
+  const [equipment, setEquipment] = useState('');
+  const [city, setCity] = useState('');
 
   return (
     <div className='container-fluid mx-0 px-0'>
@@ -35,14 +35,14 @@ const Home = () => {
 
 export default Home;
 
-function useStickyState(defaultValue, key) {
-  const [value, setValue] = useState(() => {
-    const stickyValue = window.localStorage.getItem(key);
-    return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
-  });
+// function useStickyState(defaultValue, key) {
+//   const [value, setValue] = useState(() => {
+//     const stickyValue = window.localStorage.getItem(key);
+//     return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+//   });
 
-  useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  }, [key, value]);
-  return [value, setValue];
-}
+//   useEffect(() => {
+//     window.localStorage.setItem(key, JSON.stringify(value));
+//   }, [key, value]);
+//   return [value, setValue];
+// }
