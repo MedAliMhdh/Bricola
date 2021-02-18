@@ -44,9 +44,10 @@ const Navb = () => {
       className='collapse navbar-collapse d-flex justify-content-end  d-sm-none d-md-block'
       id='navbarNav'
     >
+      <i class='far fa-comment-alt fa-2x mx-2'></i>
       <form className='d-flex'>
         {" "}
-        <div className='dropdown drpdwnMenuBtn'>
+        <div className='dropdown drpdwnMenuBtn mx-2'>
           <button
             className='btn dropdown-toggle px-0 py-0'
             type='button'
