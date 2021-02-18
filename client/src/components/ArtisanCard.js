@@ -62,11 +62,7 @@ const ArtisanCard = ({
                   <Thumbs rate={rating} />
                 </div>
               </div>
-              <div>
-                <span>
-                  {city}/{street}
-                </span>
-              </div>
+
               <div>
                 {' '}
                 <button
@@ -80,13 +76,18 @@ const ArtisanCard = ({
                 </button>{' '}
               </div>
             </div>
-            <div className='md-col-6 px-3'>
-              <span>{bio}</span>
+            <div
+              className='md-col-6 '
+              style={{ maxWidth: '300px', maxHeight: '100px' }}
+            >
+              <span maxlength='5'>{bio}</span>
             </div>
           </div>
         </div>
         <hr className='line-color' />
-        <h6>{zipcode}</h6>
+        <h6>
+          {city} - {street}
+        </h6>
       </div>
     </div>
   );
