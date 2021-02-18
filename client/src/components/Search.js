@@ -12,10 +12,6 @@ const Search = ({
   city,
   setCity,
 }) => {
-  const searchAction = () => {
-    setSearch(true);
-  };
-
   return (
     <div className='container myContainer d-flelx align-content-between d-flex justify-content-center flex-wrap p-5 p'>
       <div className='col-lg-3 col-sm-3 p-1 m-0'>
@@ -32,6 +28,7 @@ const Search = ({
           <option value='Mechanic'>Mechanic </option>
           <option value='Welder'>Welder</option>
           <option value='Carpenter'>Carpenter</option>
+          <option value='Architect'>Architect</option>
         </select>
       </div>
 
@@ -95,7 +92,7 @@ const Search = ({
         <button
           type='button'
           className='btn btn-dark col-md-3'
-          onClick={() => searchAction()}
+          onClick={() => setSearch(true)}
         >
           Search
         </button>
