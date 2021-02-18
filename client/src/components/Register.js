@@ -140,6 +140,7 @@ const Register = () => {
                     <option value='Mechanic'>Mechanic </option>
                     <option value='Welder'>Welder</option>
                     <option value='Carpenter'>Carpenter</option>
+                    <option value='Architect'>Architect</option>
                   </select>
                 </div>
               )}
