@@ -27,7 +27,6 @@ router.post(
       } else {
         return true;
       }
-      // return body('job', 'Job is required').not().isEmpty();
     } else {
       return true;
     }
@@ -90,5 +89,39 @@ router.post(
     }
   }
 );
+
+//@route    PUT api/user/update
+//@desc     Update user
+//@access   Public
+
+router.put('/update', async (req, res) => {
+  const { avatar, name, job, phone } = req.body;
+
+  const userFields = {};
+  userFields.email = req.user.email;
+
+  if (avatar) userFields.avatar = avatar;
+  if (name) userFields.name = name;
+  if (job) userFields.job = job;
+  if (phone) userFields.phone = phone;
+  try {
+    //See if user not exists
+    let user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ errors: [{ msg: 'User not exists' }] });
+    }
+
+    user = await User.findOneAndUpdate(
+      { email: email },
+      { $set: userFields },
+      { new: false }
+    );
+    return res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    console.log(err);
+    res.status(500).send('Server error');
+  }
+});
 
 module.exports = router;

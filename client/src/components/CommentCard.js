@@ -24,7 +24,7 @@ const CommentCard = ({
           <span>{name}</span>
           <span className='input-group-btn p-l-10'>
             {((auth.user && auth.user.role === 'Admin') ||
-              (auth.user && auth.user.role === commentWriter)) && (
+              (auth.user && auth.user._id === commentWriter)) && (
               <button
                 type='button'
                 className='close'

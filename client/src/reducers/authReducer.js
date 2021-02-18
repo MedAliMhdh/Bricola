@@ -6,6 +6,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOG_OUT,
+  UPDATE_FAIL,
 } from '../actions/types';
 
 const initialState = {
@@ -31,6 +32,7 @@ const authReducer = (state = initialState, action) => {
         user: payload,
       };
 
+    case UPDATE_FAIL:
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
