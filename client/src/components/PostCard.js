@@ -16,6 +16,8 @@ const PostCard = ({
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
 
+  const defaultImg =
+    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
   const [text, setText] = useState('');
   const [showComments, setShowComments] = useState(false);
 
@@ -41,7 +43,7 @@ const PostCard = ({
           </div>
           <div className='timeline-body'>
             <div className='timeline-header'>
-              <span className='userimage'>
+              <span className='user'>
                 <img src={photo} alt='' />
               </span>
               <span className='username'>
@@ -91,7 +93,10 @@ const PostCard = ({
             </div>
             <div className='timeline-comment-box col-md-11'>
               <div className='user'>
-                <img src={photo} alt='' />
+                <img
+                  src={!!(auth && auth.user) ? auth.user.avatar : defaultImg}
+                  alt=''
+                />
               </div>
               <div className='input col-sm-12'>
                 <form action=''>

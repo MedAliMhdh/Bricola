@@ -80,7 +80,7 @@ const ArtisanCard = ({
               className='md-col-6 '
               style={{ maxWidth: '300px', maxHeight: '100px' }}
             >
-              <span maxlength='5'>{bio}</span>
+              <span maxLength='5'>{bio}</span>
             </div>
           </div>
         </div>

@@ -1,16 +1,15 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import Alert from "./Alert";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../actions/auth";
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import Alert from './Alert';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../actions/auth';
 
 const Navb = () => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
-  const profileState = useSelector((state) => state.artisan);
 
   const defaultImg =
-    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
+    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
 
   const guestLinks = (
     <div
@@ -45,7 +44,7 @@ const Navb = () => {
       id='navbarNav'
     >
       <form className='d-flex'>
-        {" "}
+        {' '}
         <div className='dropdown drpdwnMenuBtn'>
           <button
             className='btn dropdown-toggle px-0 py-0'
@@ -57,8 +56,8 @@ const Navb = () => {
           >
             <img
               src={
-                !!(profileState.profile && !profileState.loading)
-                  ? profileState.profile.user.avatar
+                !!(authState && authState.user)
+                  ? authState.user.avatar
                   : defaultImg
               }
               className=' rounded-circle mr-3'
@@ -71,7 +70,7 @@ const Navb = () => {
             aria-labelledby='dropdownMenuButton'
           >
             {authState.user ? (
-              authState.user.role === "Artisan" ? (
+              authState.user.role === 'Artisan' ? (
                 <Link className='dropdown-item px-3' to='/artisanprofile/me'>
                   View profile
                 </Link>
