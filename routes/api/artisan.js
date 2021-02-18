@@ -1,25 +1,25 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const Artisan = require("../../models/Artisan");
-const User = require("../../models/User");
-const auth = require("../../middlewares/auth");
-const { body, validationResult } = require("express-validator");
+const Artisan = require('../../models/Artisan');
+const User = require('../../models/User');
+const auth = require('../../middlewares/auth');
+const { body, validationResult } = require('express-validator');
 
 // @route    GET  api/artisan/me
 // @desc     get current user profile
 // @access   Private
-router.get("/me", auth, async (req, res) => {
+router.get('/me', auth, async (req, res) => {
   try {
     const myProfile = await Artisan.findOne({
       user: req.user.id,
-    }).populate("user", ["avatar", "name", "email", "role", "job", "phone"]);
+    }).populate('user', ['avatar', 'name', 'email', 'role', 'job', 'phone']);
     if (!myProfile) {
-      res.status(400).json({ message: "There is no profile for this user" });
+      res.status(400).json({ message: 'There is no profile for this user' });
     }
     res.json(myProfile);
   } catch (error) {
     console.error(error);
-    res.status(500).json("Server Error");
+    res.status(500).json('Server Error');
   }
 });
 
@@ -27,13 +27,13 @@ router.get("/me", auth, async (req, res) => {
 // @desc     Post/update artisan profile
 // @access   Private
 router.post(
-  "/",
+  '/',
   [
     auth,
 
-    body("street", "Street is required").not().isEmpty(),
-    body("zipcode", "Zipcode is required").not().isEmpty(),
-    body("city", "City is required").not().isEmpty(),
+    body('street', 'Street is required').not().isEmpty(),
+    body('zipcode', 'Zipcode is required').not().isEmpty(),
+    body('city', 'City is required').not().isEmpty(),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -71,7 +71,7 @@ router.post(
       res.json(artisan);
     } catch (error) {
       console.error(error.message);
-      res.status(500).send("Server Error");
+      res.status(500).send('Server Error');
     }
   }
 );
@@ -79,57 +79,57 @@ router.post(
 // @route    get  api/artisan
 // @desc     get all artisan's profiles
 // @access   Public
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const artisans = await Artisan.find().populate("user", [
-      "avatar",
-      "name",
-      "email",
-      "role",
-      "job",
-      "phone",
+    const artisans = await Artisan.find().populate('user', [
+      'avatar',
+      'name',
+      'email',
+      'role',
+      'job',
+      'phone',
     ]);
     res.json(artisans);
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Server Error");
+    res.status(500).send('Server Error');
   }
 });
 
 // @route    get  api/artisan/:artisan_id
 // @desc     get specific artisan'sprofile
 // @access   Public
-router.get("/:user_id", async (req, res) => {
+router.get('/:user_id', async (req, res) => {
   try {
     const artisan = await Artisan.findOne({
       user: req.params.user_id,
-    }).populate("user", ["avatar", "name", "email", "role", "job", "phone"]);
+    }).populate('user', ['avatar', 'name', 'email', 'role', 'job', 'phone']);
 
-    if (!artisan) res.status(400).json({ message: "Profile not found" });
+    if (!artisan) res.status(400).json({ message: 'Profile not found' });
 
     res.json(artisan);
   } catch (error) {
-    if (error.kind === "ObjectId") {
-      res.status(400).json({ message: "Profile not found" });
+    if (error.kind === 'ObjectId') {
+      res.status(400).json({ message: 'Profile not found' });
     }
     console.error(error.message);
-    res.status(500).send("Server Error");
+    res.status(500).send('Server Error');
   }
 });
 
 // @route    delete  api/artisan/
 // @desc     delete artisan's profile and user
 // @access   Private
-router.delete("/", auth, async (req, res) => {
+router.delete('/', auth, async (req, res) => {
   try {
     //deleting artisan's profile
     await Artisan.findOneAndRemove({ user: req.user.id });
     //deleting user
     await User.findOneAndRemove({ _id: req.user.id });
 
-    res.json({ message: "User successfullyu deleted" });
+    res.json({ message: 'User successfullyu deleted' });
   } catch (error) {
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: 'Server Error' });
   }
 });
 
