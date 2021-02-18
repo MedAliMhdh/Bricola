@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-import { getArtisanCurrentProfile } from '../../actions/artisanProfile';
+import { getArtisanCurrentProfile } from "../../actions/artisanProfile";
+
 
 import { getPersonCurrentProfile } from '../../actions/personProfile';
 import DeleteButton from './DeleteButton';
 import Spinner from '../Spinner';
+
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
@@ -58,7 +60,7 @@ const ArtisanProfile = () => {
                   </li>
                   <li className='nav-item d-block text-white active w-100'>
                     <Link className='nav-link' to='/delete-profile'>
-                      <i class='fas fa-trash-alt'></i> Delete profile
+                      <i className='fas fa-trash-alt'></i> Delete profile
                       <span className='label label-warning r-activity'></span>
                     </Link>
                   </li>
