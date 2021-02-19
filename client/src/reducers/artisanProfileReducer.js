@@ -7,6 +7,8 @@ import {
   SELECT_EQUIPMENT,
   SELECT_CITY,
   SELECT_RATE,
+  EVALUATE_ARTISAN,
+  UPDATE_EVALUATION,
 } from '../actions/types';
 
 const initialState = {
@@ -78,6 +80,30 @@ export const artisanProfileReducer = (state = initialState, action) => {
       return {
         ...state,
         profiles: state.profiles.filter((artisan, i) => rate[i] >= payload),
+      };
+
+    case EVALUATE_ARTISAN:
+      return {
+        ...state,
+        profiles: state.profiles.map((profile) =>
+          profile.user._id === payload.profileId
+            ? { ...profile, rate: payload.newRate }
+            : profile
+        ),
+      };
+    case UPDATE_EVALUATION:
+      return {
+        ...state,
+        profiles: state.profiles.map((profile) =>
+          profile.user._id === payload.profileId
+            ? {
+                ...profile,
+                rate: profile.rate.map((rate) =>
+                  rate.user === payload.userId ? payload.newRate : rate
+                ),
+              }
+            : profile
+        ),
       };
 
     default:

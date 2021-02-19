@@ -10,6 +10,8 @@ import {
   SELECT_RATE,
   CLEAR_PROFILE,
   LOG_OUT,
+  EVALUATE_ARTISAN,
+  UPDATE_EVALUATION,
 } from './types';
 
 //GET current user profile
@@ -180,6 +182,24 @@ export const filterProfiles = ({ job, equipment, city, rate }) => async (
         payload: rate,
       });
     }
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+      },
+    });
+  }
+};
+
+// Evaluate Artisan
+
+export const EvaluateArtisan = ({ userId, profileId }) => async (dispatch) => {
+  try {
+    const res = await axios.get(
+      `${process.env.REACT_APP_API_URL}evaluate/${profileId}`
+    );
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,

@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProfileById } from '../actions/artisanProfile';
 import PostCard from './PostCard';
 import Spinner from './Spinner';
 import { getPosts } from '../actions/post';
+import Thumbs from './Thumbs';
 
 const VisitedProfile = ({ profileId }) => {
   const dispatch = useDispatch();
   const profile = useSelector((store) => store.artisan);
   const posts = useSelector((state) => state.post);
+  const [rate, setRate] = useState(0);
 
   useEffect(() => {
     dispatch(getProfileById(profileId));
@@ -38,6 +40,7 @@ const VisitedProfile = ({ profileId }) => {
                   <p>{profile.profile.user.email}</p>
                 </div>
               </div>
+              <Thumbs rate={rate} setRate={setRate} />
             </div>
 
             <div className='profile-info col-lg-9'>

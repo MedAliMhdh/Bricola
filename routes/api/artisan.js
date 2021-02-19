@@ -65,7 +65,7 @@ router.post(
         return res.json(artisan);
       }
 
-      //create profie it deosn't exist
+      //create profile it deosn't exist
       artisan = new Artisan(artisanFields);
       await artisan.save();
       res.json(artisan);
@@ -117,8 +117,8 @@ router.get('/:user_id', async (req, res) => {
   }
 });
 
-// @route    delete  api/artisan/
-// @desc     delete artisan's profile and user
+// @route    DELETE  api/artisan/
+// @desc     Delete artisan's profile and user
 // @access   Private
 router.delete('/', auth, async (req, res) => {
   try {
@@ -128,6 +128,38 @@ router.delete('/', auth, async (req, res) => {
     await User.findOneAndRemove({ _id: req.user.id });
 
     res.json({ message: 'User successfullyu deleted' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+// @route    POST  api/artisan/evaluate
+// @desc     Evaluate an artisan
+// @access   Private
+router.post('/evaluate/:user_profile_id', auth, async (req, res) => {
+  try {
+    const { rateValue } = req.body;
+    const artisan = await Artisan.findOne({ user: req.params.user_profile_id });
+
+    // Check if artisan not found
+    if (!artisan) res.status(400).json({ message: 'Profile not found' });
+
+    // Check if user evaluate artisan
+
+    if (!artisan.rate.filter((rate) => rate.user === req.user.id).length > 0) {
+      artisan.rate.unshift({ user: req.user.id, value: rateValue });
+      await artisan.save();
+      return res.json(artisan.rate);
+    }
+    {
+      user = req.params.evaluator;
+    }
+    artisan.rate.findOneAndUpdate(
+      { user: req.user.id },
+      { $set: { value: rateValue } },
+      { new: false }
+    );
+    return res.json(artisan);
   } catch (error) {
     res.status(500).json({ message: 'Server Error' });
   }

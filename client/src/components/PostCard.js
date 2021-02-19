@@ -43,12 +43,10 @@ const PostCard = ({
           </div>
           <div className='timeline-body'>
             <div className='timeline-header'>
-              <span className='user'>
+              <span className='userimage'>
                 <img src={photo} alt='' />
               </span>
-              <span className='username'>
-                <a href='/'>{fullName}</a> <small></small>
-              </span>
+              <span className='username'>{fullName}</span>
               {((auth.user && auth.user.role === 'Admin') ||
                 (auth.user && auth.user._id === userId)) && (
                 <button
@@ -87,9 +85,7 @@ const PostCard = ({
               >
                 <i className='fa fa-thumbs-up fa-fw fa-lg m-r-3'></i>Like
               </button>
-              <a href='/' className='m-r-15 text-inverse-lighter ml-1'>
-                <i className='fa fa-comments fa-fw fa-lg m-r-3'></i>Comment
-              </a>
+              <i className='fa fa-comments fa-fw fa-lg m-r-3'></i>Comment
             </div>
             <div className='timeline-comment-box col-md-11'>
               <div className='user'>
@@ -113,7 +109,10 @@ const PostCard = ({
                         className='btn btn-primary f-s-12 rounded-corner mr-3'
                         type='button'
                         onClick={() => {
-                          dispatch(addComment({ postId: id, formData: text }));
+                          text &&
+                            dispatch(
+                              addComment({ postId: id, formData: text })
+                            );
                           setText('');
                           setShowComments(true);
                         }}
