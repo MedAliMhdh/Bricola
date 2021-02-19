@@ -1,5 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+
 const { body, validationResult } = require('express-validator');
 const auth = require('../../middlewares/auth');
 const bcrypt = require('bcryptjs');
@@ -8,23 +9,25 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const User = require('../../models/User');
 
+
+
 //@route    POST api/user
 //@desc     Register user
 //@access   Public
 
 router.post(
-  '/',
-  body('name', 'Name is required').not().isEmpty(),
-  body('email', 'Please include a valid email').isEmail(),
+  "/",
+  body("name", "Name is required").not().isEmpty(),
+  body("email", "Please include a valid email").isEmail(),
   body(
-    'password',
-    'Please enter a password with 8 or more characters'
+    "password",
+    "Please enter a password with 8 or more characters"
   ).isLength({ min: 8 }),
 
-  body('role').custom((value, { req }) => {
-    if (value === 'Artisan') {
-      if (req.body.job === '') {
-        throw new Error('Job is required');
+  body("role").custom((value, { req }) => {
+    if (value === "Artisan") {
+      if (req.body.job === "") {
+        throw new Error("Job is required");
       } else {
         return true;
       }
@@ -46,11 +49,11 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ errors: [{ msg: 'User already exists' }] });
+          .json({ errors: [{ msg: "User already exists" }] });
       }
 
       //Get users gravitor
-      const avatar = gravatar.url(email, { s: 200, r: 'pg', d: 'mm' });
+      const avatar = gravatar.url(email, { s: 200, r: "pg", d: "mm" });
 
       user = new User({
         name,
@@ -76,7 +79,7 @@ router.post(
       };
       jwt.sign(
         payload,
-        config.get('jwtSecret'),
+        config.get("jwtSecret"),
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
@@ -86,7 +89,7 @@ router.post(
     } catch (err) {
       console.error(err.message);
       console.log(err);
-      res.status(500).send('Server error');
+      res.status(500).send("Server error");
     }
   }
 );
@@ -95,7 +98,9 @@ router.post(
 //@desc     Update user
 //@access   Public
 
+
 router.put('/update', auth, async (req, res) => {
+
   const { avatar, name, job, phone } = req.body;
   console.log(req.user._id, 'email');
   const userFields = {};
@@ -109,7 +114,7 @@ router.put('/update', auth, async (req, res) => {
     //See if user not exists
     let user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ errors: [{ msg: 'User not exists' }] });
+      return res.status(400).json({ errors: [{ msg: "User not exists" }] });
     }
 
     user = await User.findOneAndUpdate(
@@ -121,7 +126,7 @@ router.put('/update', auth, async (req, res) => {
   } catch (err) {
     console.error(err.message);
     console.log(err);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 });
 
