@@ -660,6 +660,10 @@ footer .post {
   margin-top: 20px;
   background: #eee;
 }
+.postContainer div,
+.postContainer span {
+  background: #eee;
+}
 
 .profile-content {
   padding: 25px;
