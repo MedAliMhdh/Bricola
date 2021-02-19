@@ -75,7 +75,7 @@ router.get('/post/:id', async (req, res) => {
 //@access   Public
 router.get('/user/:id', async (req, res) => {
   try {
-    const posts = await Post.find({ user: req.params.id });
+    const posts = await Post.find({ user: req.params.id }).sort({ date: -1 });
 
     if (!posts) {
       return res.status(404).json({ msg: 'You have no Posts' });
