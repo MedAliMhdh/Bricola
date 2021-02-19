@@ -12,14 +12,14 @@ const Search = ({
   setCity,
 }) => {
   return (
-    <div className='container myContainer d-flelx align-content-between d-flex justify-content-center flex-wrap p-5 p'>
+    <div className='container col-md-7 myContainer d-flelx align-content-between d-flex justify-content-center flex-wrap py-5 px-2'>
       <div className='col-lg-3 col-sm-3 p-1 m-0'>
         <select
           className='col-md-12 searchInput '
           value={job}
           onChange={(e) => setJob(e.target.value)}
         >
-          <option value=''> Select job type </option>
+          <option value=''> Job type </option>
           <option value='Bricklayer'>Bricklayer</option>
           <option value='Electrician'>Electrician</option>
           <option value='Painter'>Painter</option>
@@ -90,7 +90,7 @@ const Search = ({
       <div className='col-md-12 p-3 row d-flex no-wrap align-items-end justify-content-center '>
         <button
           type='button'
-          className='btn btn-dark col-md-3'
+          className='btn searchBtn col-md-3'
           onClick={() => setSearch(true)}
         >
           Search
