@@ -25,6 +25,7 @@ const VisitedProfile = ({ profileId }) => {
     setRate(
       profile.profile &&
         profile.profile.rate &&
+        auth.user &&
         profile.profile.rate.find((rate) => rate.user === auth.user._id)
         ? profile.profile.rate.find((rate) => rate.user === auth.user._id).value
         : 0
@@ -60,23 +61,23 @@ const VisitedProfile = ({ profileId }) => {
                 </div>
               </div>
 
-              {yourRate ? (
-                auth.user &&
-                (rate ? (
-                  <Thumbs rate={rate} />
-                ) : (
-                  <Thumbs rate={rate} setRate={setRate} evaluate={true} />
-                ))
-              ) : (
-                <button
-                  className='btn post'
-                  onClick={() => {
-                    setYourRate(true);
-                  }}
-                >
-                  Evaluate Artisan
-                </button>
-              )}
+              {yourRate
+                ? auth.user &&
+                  (rate ? (
+                    <Thumbs rate={rate} />
+                  ) : (
+                    <Thumbs rate={rate} setRate={setRate} evaluate={true} />
+                  ))
+                : auth.user && (
+                    <button
+                      className='btn post'
+                      onClick={() => {
+                        setYourRate(true);
+                      }}
+                    >
+                      Evaluate Artisan
+                    </button>
+                  )}
             </div>
 
             <div className='profile-info col-lg-9'>
