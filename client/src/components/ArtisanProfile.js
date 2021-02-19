@@ -119,7 +119,7 @@ const ArtisanProfile = () => {
               </div>
               <div className='panel'>
                 <div className='bio-graph-heading'>
-                  {artisanProfileState.profile.bio}
+                  {artisanProfileState.profile.bio || "Bio"}
                 </div>
               </div>
               <div className='panel'>
@@ -134,7 +134,7 @@ const ArtisanProfile = () => {
                 </form>
                 <footer className='panel-footer d-flex flex-row-reverse justify-content-between align-items-center'>
                   <button
-                    className='btn btn-warning'
+                    className='btn post'
                     onClick={() => {
                       dispatch(addPost({ text }));
                       setText('');
@@ -145,22 +145,30 @@ const ArtisanProfile = () => {
                   <ul className='nav nav-pills'>
                     <li>
                       <Link to='/'>
-                        <i className='fa fa-map-marker mx-1'></i>
+                        <button className='btn'>
+                          <i className='fa fa-map-marker mx-1'></i>
+                        </button>
                       </Link>
                     </li>
                     <li>
                       <Link to='/'>
-                        <i className='fa fa-camera mx-1'></i>
+                        <button className='btn'>
+                          <i className='fa fa-camera mx-1'></i>
+                        </button>
                       </Link>
                     </li>
                     <li>
                       <Link to='/'>
-                        <i className=' fa fa-film mx-1'></i>
+                        <button className='btn'>
+                          <i className=' fa fa-film mx-1'></i>
+                        </button>
                       </Link>
                     </li>
                     <li>
                       <Link to='/'>
-                        <i className='fa fa-microphone mx-1'></i>
+                        <button className='btn'>
+                          <i className='fa fa-microphone mx-1'></i>
+                        </button>
                       </Link>
                     </li>
                   </ul>

@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 :root {
   --primary-color: #17a2b8;
   --dark-color: #343a40;
@@ -15,14 +16,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: "Raleway", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+  background: whitesmoke;
 }
 
 a {
@@ -49,12 +43,38 @@ button.btn.btn-outline-success {
   margin-left: 15px;
 }
 
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+}
+
 .drpdwnMenuBtn {
   position: absolute;
 }
 
 .nvbDropdow {
   position: relative;
+}
+
+.navBarContainer {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  background-color: #ffccbc;
+}
+.navBarContainer div,
+.navBarContainer i,
+.navBarContainer form {
+  background-color: #ffccbc;
+}
+
+img.rounded-circle.mr-3 {
+  border: black;
+  border-width: 10px;
+}
+
+button.btn.logRegBtn.col-12.px-4.mx-2,
+button.btn.logRegBtn.nav-item.col-11.px-4.mx-2 {
+  background-color: #00887a;
+  color: white;
 }
 
 /************Login************/
@@ -73,6 +93,11 @@ button.btn.btn-outline-success {
   margin-top: 120px;
   height: 250px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  background-color: white;
+}
+
+.myContainer div {
+  background-color: white;
 }
 
 .rowContainer {
@@ -85,9 +110,13 @@ button.btn.btn-outline-success {
   height: 40%;
 }
 
-select,
-span {
+select {
   cursor: pointer;
+  background: white;
+}
+
+button.btn.searchBtn.col-md-3 {
+  background-color: #ffccbc;
 }
 
 .searchInput {
@@ -137,6 +166,7 @@ span {
   text-align: center;
   z-index: 99;
   transition: all 0.3s;
+  background-color: transparent;
 }
 
 .hover-2:hover .hover-2-title {
@@ -146,11 +176,18 @@ span {
 .hover-2:hover .hover-2-description {
   bottom: 0.5rem;
   opacity: 1;
+  background-color: transparent;
 }
 
 .hover-2:hover .hover-overlay {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
 }
+
+.img-fluid {
+  padding: 5px;
+  border-radius: 6%;
+}
+
 /******************** ArtisanCard *********************/
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
@@ -160,8 +197,26 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.artisanCard {
+#artisanCard {
   height: 200px;
+  background-color: #77a6f7;
+  color: white;
+}
+
+.artisanCard span,
+.artisanCard div,
+.artisanCard h6,
+div.sm-col-6.px-3 div i {
+  background-color: #77a6f7;
+}
+
+.artisanCard button i,
+.artisanCard i {
+  background: white;
+}
+
+.artisanCard .first {
+  color: white;
 }
 
 .card {
@@ -216,7 +271,7 @@ body {
 }
 
 .profile-nav .user-heading {
-  background: #fbc02d;
+  background: #77a6f7;
   color: #fff;
   border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px 4px 0 0;
@@ -242,10 +297,12 @@ body {
   font-size: 22px;
   font-weight: 300;
   margin-bottom: 5px;
+  background-color: transparent;
 }
 
 .profile-nav .user-heading p {
   font-size: 12px;
+  background-color: transparent;
 }
 
 .profile-nav ul {
@@ -273,7 +330,7 @@ body {
 .profile-nav ul > li > a:focus,
 .profile-nav ul li.active a {
   background: #f8f7f5 !important;
-  border-left: 5px solid #fbc02d;
+  border-left: 5px solid #77a6f7;
   color: #89817f !important;
 }
 
@@ -325,7 +382,7 @@ li.active {
 }
 
 .bio-graph-heading {
-  background: #fbc02d;
+  background: #77a6f7;
   color: #fff;
   text-align: center;
   font-style: italic;
@@ -593,9 +650,18 @@ ul.summary-list > li:last-child {
   margin-right: 0px;
 }
 
+footer .post {
+  background-color: #77a6f7;
+  color: white;
+}
+
 /************************* Artisan post************************/
 .postContainer {
   margin-top: 20px;
+  background: #eee;
+}
+.postContainer div,
+.postContainer span {
   background: #eee;
 }
 

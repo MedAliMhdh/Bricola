@@ -43,8 +43,13 @@ const PostCard = ({
           </div>
           <div className='timeline-body'>
             <div className='timeline-header'>
-              <span className='userimage'>
-                <img src={photo} alt='' />
+              <span>
+                <img
+                  className='rounded-circle mr-2'
+                  width='40'
+                  src={photo}
+                  alt=''
+                />
               </span>
               <span className='username'>{fullName}</span>
               {((auth.user && auth.user.role === 'Admin') ||
@@ -80,7 +85,7 @@ const PostCard = ({
             </div>
             <div className='timeline-footer'>
               <button
-                className='m-r-15 text-inverse-lighter mr-1'
+                className='btn m-r-15 text-inverse-lighter mr-1'
                 onClick={() => dispatch(updateLikes(id))}
               >
                 <i className='fa fa-thumbs-up fa-fw fa-lg m-r-3'></i>Like
@@ -114,6 +119,7 @@ const PostCard = ({
                               addComment({ postId: id, formData: text })
                             );
                           setText('');
+
                           setShowComments(true);
                         }}
                       >

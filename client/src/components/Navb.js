@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import Alert from './Alert';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../actions/auth';
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
+import Alert from "./Alert";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../actions/auth";
 
 const Navb = () => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
 
   const defaultImg =
-    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
+    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
 
   const guestLinks = (
     <div
@@ -19,7 +19,7 @@ const Navb = () => {
       <form className=' d-flex  '>
         <Link to='/register'>
           <button
-            className='btn btn-outline-success nav-item col-11 px-4 mx-2'
+            className='btn logRegBtn nav-item col-11 px-4 mx-2'
             type='submit'
           >
             Register
@@ -27,10 +27,7 @@ const Navb = () => {
         </Link>
 
         <Link to='/login'>
-          <button
-            className='btn btn-outline-success col-12 px-4 mx-2'
-            type='submit'
-          >
+          <button className='btn logRegBtn col-12 px-4 mx-2' type='submit'>
             Log In
           </button>
         </Link>
@@ -43,9 +40,11 @@ const Navb = () => {
       className='collapse navbar-collapse d-flex justify-content-end  d-sm-none d-md-block'
       id='navbarNav'
     >
+      <i class='far fa-bell fa-2x mx-4'></i>
+      <i class='far fa-comment-alt fa-2x mx-4'></i>
       <form className='d-flex'>
-        {' '}
-        <div className='dropdown drpdwnMenuBtn'>
+        {" "}
+        <div className='dropdown drpdwnMenuBtn ml-4'>
           <button
             className='btn dropdown-toggle px-0 py-0'
             type='button'
@@ -60,7 +59,7 @@ const Navb = () => {
                   ? authState.user.avatar
                   : defaultImg
               }
-              className=' rounded-circle mr-3'
+              className=' rounded-circle mr-3 '
               width='40'
               alt='hihihi'
             />
@@ -70,7 +69,7 @@ const Navb = () => {
             aria-labelledby='dropdownMenuButton'
           >
             {authState.user ? (
-              authState.user.role === 'Artisan' ? (
+              authState.user.role === "Artisan" ? (
                 <Link className='dropdown-item px-3' to='/artisanprofile/me'>
                   View profile
                 </Link>
@@ -97,7 +96,7 @@ const Navb = () => {
 
   return (
     <div>
-      <nav className='navbar navbar-expand-md fixed-top navbar-light bg-light mx-0'>
+      <nav className='navbar navBarContainer navbar-expand-md fixed-top  mx-0'>
         <div className='container-fluid d-felx align-content-around mx-0'>
           <Link to='/' className='navbar-brand'>
             Bricola

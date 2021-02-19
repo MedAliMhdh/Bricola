@@ -138,12 +138,9 @@ router.delete('/', auth, async (req, res) => {
 // @access   Private
 router.post('/evaluate/:user_profile_id', auth, async (req, res) => {
   try {
-    console.log('user id', req.user.id);
     const { rateValue } = req.body;
-    console.log('rate valaue', rateValue);
+
     const artisan = await Artisan.findOne({ user: req.params.user_profile_id });
-    console.log('moula l profile', req.params.user_profile_id);
-    console.log('artisan', artisan.rate);
 
     // Check if artisan not found
     if (!artisan) res.status(400).json({ message: 'Profile not found' });
