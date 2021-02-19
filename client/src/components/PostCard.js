@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { updateLikes, deletePost, addComment } from "../actions/post";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { updateLikes, deletePost, addComment } from '../actions/post';
+import { useDispatch, useSelector } from 'react-redux';
 
-import CommentCard from "./CommentCard";
+import CommentCard from './CommentCard';
 
 const PostCard = ({
   photo,
@@ -17,8 +17,8 @@ const PostCard = ({
   const auth = useSelector((state) => state.auth);
 
   const defaultImg =
-    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
-  const [text, setText] = useState("");
+    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
+  const [text, setText] = useState('');
   const [showComments, setShowComments] = useState(false);
 
   var commentsNumber = comments.length;
@@ -51,10 +51,8 @@ const PostCard = ({
                   alt=''
                 />
               </span>
-              <span className='username'>
-                <a href='/'>{fullName}</a> <small></small>
-              </span>
-              {((auth.user && auth.user.role === "Admin") ||
+              <span className='username'>{fullName}</span>
+              {((auth.user && auth.user.role === 'Admin') ||
                 (auth.user && auth.user._id === userId)) && (
                 <button
                   type='button'
@@ -73,7 +71,7 @@ const PostCard = ({
             <div className='timeline-likes'>
               <div
                 className='stats-right'
-                onClick={() => setShowComments(true)}
+                onClick={() => setShowComments(!showComments)}
               >
                 <span className='stats-text'>{commentsNumber} Comments</span>
               </div>
@@ -92,9 +90,7 @@ const PostCard = ({
               >
                 <i className='fa fa-thumbs-up fa-fw fa-lg m-r-3'></i>Like
               </button>
-              <a href='/' className='m-r-15 text-inverse-lighter ml-1'>
-                <i className='fa fa-comments fa-fw fa-lg m-r-3'></i>Comment
-              </a>
+              <i className='fa fa-comments fa-fw fa-lg m-r-3'></i>Comment
             </div>
             <div className='timeline-comment-box col-md-11'>
               <div className='user'>
@@ -118,8 +114,12 @@ const PostCard = ({
                         className='btn btn-primary f-s-12 rounded-corner mr-3'
                         type='button'
                         onClick={() => {
-                          dispatch(addComment({ postId: id, formData: text }));
-                          setText("");
+                          text &&
+                            dispatch(
+                              addComment({ postId: id, formData: text })
+                            );
+                          setText('');
+
                           setShowComments(true);
                         }}
                       >

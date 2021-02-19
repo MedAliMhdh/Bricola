@@ -5,7 +5,7 @@ import { getProfileById } from "../actions/artisanProfile";
 import { useState } from "react";
 
 const ArtisanCard = ({
-  artisan: { bio, city, profession, rate, street, user, zipcode },
+  artisan: { bio, city, profession, rate, street, user },
 }) => {
   const rating =
     rate.length > 0
