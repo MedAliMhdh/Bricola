@@ -1,15 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProfileById } from '../actions/artisanProfile';
 import PostCard from './PostCard';
 import Spinner from './Spinner';
 import { getPosts } from '../actions/post';
+import Thumbs from './Thumbs';
 
 const VisitedProfile = ({ profileId }) => {
   const dispatch = useDispatch();
+  const auth = useSelector((store) => store.auth);
   const profile = useSelector((store) => store.artisan);
   const posts = useSelector((state) => state.post);
+  const [rate, setRate] = useState(0);
+  const [yourRate, setYourRate] = useState(false);
+
+  const rateAverage =
+    profile.profile && profile.profile.rate.length > 0
+      ? profile.profile.rate.reduce((acc, rate) => acc + rate.value, 0) /
+        profile.profile.rate.length
+      : 0;
+
+  useEffect(() => {
+    setRate(
+      profile.profile &&
+        profile.profile.rate &&
+        profile.profile.rate.find((rate) => rate.user === auth.user._id)
+        ? profile.profile.rate.find((rate) => rate.user === auth.user._id).value
+        : 0
+    );
+  }, [profile]);
 
   useEffect(() => {
     dispatch(getProfileById(profileId));
@@ -36,8 +56,27 @@ const VisitedProfile = ({ profileId }) => {
                   </Link>
                   <h1>{profile.profile.user.name}</h1>
                   <p>{profile.profile.user.email}</p>
+                  <Thumbs rate={rateAverage} />
                 </div>
               </div>
+
+              {yourRate ? (
+                auth.user &&
+                (rate ? (
+                  <Thumbs rate={rate} />
+                ) : (
+                  <Thumbs rate={rate} setRate={setRate} evaluate={true} />
+                ))
+              ) : (
+                <button
+                  className='btn post'
+                  onClick={() => {
+                    setYourRate(true);
+                  }}
+                >
+                  Evaluate Artisan
+                </button>
+              )}
             </div>
 
             <div className='profile-info col-lg-9'>

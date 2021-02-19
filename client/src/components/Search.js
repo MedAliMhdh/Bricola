@@ -1,4 +1,6 @@
-import Thumbs from "./Thumbs";
+import Thumbs from './Thumbs';
+import { filterProfiles } from '../actions/artisanProfile';
+import { useDispatch } from 'react-redux';
 
 const Search = ({
   setSearch,
@@ -11,6 +13,7 @@ const Search = ({
   city,
   setCity,
 }) => {
+  const dispatch = useDispatch();
   return (
     <div className='container col-md-7 myContainer d-flelx align-content-between d-flex justify-content-center flex-wrap py-5 px-2'>
       <div className='col-lg-3 col-sm-3 p-1 m-0'>
@@ -36,9 +39,9 @@ const Search = ({
           className='col-md-12 searchInput'
           value={equipment}
           onChange={(e) => {
-            e.target.value === "true"
+            e.target.value === 'true'
               ? setEquipment(true)
-              : e.target.value === "false"
+              : e.target.value === 'false'
               ? setEquipment(false)
               : setEquipment(e.target.value);
           }}
@@ -91,7 +94,10 @@ const Search = ({
         <button
           type='button'
           className='btn searchBtn col-md-3'
-          onClick={() => setSearch(true)}
+          onClick={() => {
+            dispatch(filterProfiles({ job, equipment, city, rate }));
+            setSearch(true);
+          }}
         >
           Search
         </button>
