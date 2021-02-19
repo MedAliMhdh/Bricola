@@ -66,7 +66,7 @@ const PostCard = ({
             <div className='timeline-likes'>
               <div
                 className='stats-right'
-                onClick={() => setShowComments(true)}
+                onClick={() => setShowComments(!showComments)}
               >
                 <span className='stats-text'>{commentsNumber} Comments</span>
               </div>

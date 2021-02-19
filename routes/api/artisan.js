@@ -138,28 +138,27 @@ router.delete('/', auth, async (req, res) => {
 // @access   Private
 router.post('/evaluate/:user_profile_id', auth, async (req, res) => {
   try {
+    console.log('user id', req.user.id);
     const { rateValue } = req.body;
+    console.log('rate valaue', rateValue);
     const artisan = await Artisan.findOne({ user: req.params.user_profile_id });
+    console.log('moula l profile', req.params.user_profile_id);
+    console.log('artisan', artisan.rate);
 
     // Check if artisan not found
     if (!artisan) res.status(400).json({ message: 'Profile not found' });
 
     // Check if user evaluate artisan
+    if (artisan.rate.filter((rate) => rate.user == req.user.id).length > 0) {
+      res
+        .status(400)
+        .json({ message: 'You have already evaluate this artisan' });
+    }
 
-    if (!artisan.rate.filter((rate) => rate.user === req.user.id).length > 0) {
-      artisan.rate.unshift({ user: req.user.id, value: rateValue });
-      await artisan.save();
-      return res.json(artisan.rate);
-    }
-    {
-      user = req.params.evaluator;
-    }
-    artisan.rate.findOneAndUpdate(
-      { user: req.user.id },
-      { $set: { value: rateValue } },
-      { new: false }
-    );
-    return res.json(artisan);
+    artisan.rate.unshift({ user: req.user.id, value: rateValue });
+    await artisan.save();
+
+    return res.json(artisan.rate);
   } catch (error) {
     res.status(500).json({ message: 'Server Error' });
   }
