@@ -14,7 +14,7 @@ const Thumbs = ({ rate, setRate }) => {
     }
     return array;
   };
-  return <div>{stars(rate)}</div>;
+  return <div className='d-flex no-wrap'>{stars(rate)}</div>;
 };
 
 Thumbs.defaultProps = {

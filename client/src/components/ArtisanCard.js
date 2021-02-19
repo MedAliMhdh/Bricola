@@ -58,7 +58,7 @@ const ArtisanCard = ({
                 >
                   <span>{user.name}</span>
                 </Link>
-                <div className='ratings ml-2'>
+                <div className='ratings ml-2 mt-1'>
                   {" "}
                   <Thumbs rate={rating} />
                 </div>
@@ -78,7 +78,7 @@ const ArtisanCard = ({
               </div>
             </div>
             <div
-              className='md-col-6 px-3'
+              className='md-col-6 sm-col-3 col- px-3'
               style={{ maxWidth: "300px", maxHeight: "100px" }}
             >
               <span maxLength='5'>{bio}</span>
@@ -86,7 +86,7 @@ const ArtisanCard = ({
           </div>
         </div>
 
-        <span>
+        <span className='mt-4'>
           {city} - {street}
         </span>
       </div>
