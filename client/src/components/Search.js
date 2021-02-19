@@ -86,7 +86,7 @@ const Search = ({
         </select>
       </div>
 
-      <div className='col-5 col-lg-2 d-flex no-wrap justify-content-sm-center'>
+      <div className='col-5 col-lg-2 d-flex  justify-content-center mt-2'>
         <Thumbs setRate={setRate} rate={rate} />
       </div>
 
