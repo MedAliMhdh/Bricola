@@ -11,7 +11,6 @@ import {
   CLEAR_PROFILE,
   LOG_OUT,
   EVALUATE_ARTISAN,
-  UPDATE_EVALUATION,
 } from './types';
 
 //GET current user profile
@@ -195,11 +194,25 @@ export const filterProfiles = ({ job, equipment, city, rate }) => async (
 
 // Evaluate Artisan
 
-export const EvaluateArtisan = ({ userId, profileId }) => async (dispatch) => {
+export const evaluateArtisan = ({ rate, profileId }) => async (dispatch) => {
   try {
-    const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}evaluate/${profileId}`
+    console.log(profileId, 'profileid');
+    console.log(rate);
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const res = await axios.post(
+      `${process.env.REACT_APP_API_URL}api/artisan/evaluate/${profileId}`,
+      { rateValue: rate },
+      config
     );
+
+    dispatch({
+      type: EVALUATE_ARTISAN,
+      payload: { profileId, rates: res.data },
+    });
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
