@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
+const auth = require('../../middlewares/auth');
 const bcrypt = require('bcryptjs');
 const gravatar = require('gravatar');
 const jwt = require('jsonwebtoken');
@@ -94,9 +95,9 @@ router.post(
 //@desc     Update user
 //@access   Public
 
-router.put('/update', async (req, res) => {
+router.put('/update', auth, async (req, res) => {
   const { avatar, name, job, phone } = req.body;
-
+  console.log(req.user._id, 'email');
   const userFields = {};
   userFields.email = req.user.email;
 
