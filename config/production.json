@@ -1,0 +1,5 @@
+{
+  "PORT": "5000",
+  "jwtSecret": "mysecrettoken",
+  "mongoURI": "mongodb+srv://med_a:abdd1244@cluster0.alr9g.mongodb.net/Bricola?retryWrites=true&w=majority"
+}
