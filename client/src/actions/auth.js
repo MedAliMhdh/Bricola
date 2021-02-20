@@ -21,7 +21,7 @@ export const loadUser = () => async (dispatch) => {
     setAuthToken(localStorage.token);
   }
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}api/auth`);
+    const res = await axios.get(`/api/auth`);
 
     dispatch({
       type: USER_LOADED,
@@ -48,11 +48,7 @@ export const register = (
   const body = { name, email, password, role, job, phone };
 
   try {
-    const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/user`,
-      body,
-      config
-    );
+    const res = await axios.post(`/api/user`, body, config);
 
     dispatch({
       type: REGISTER_SUCCESS,
@@ -131,11 +127,7 @@ export const updateUser = (formData) => async (dispatch) => {
       },
     };
 
-    const res = await axios.put(
-      `${process.env.REACT_APP_API_URL}api/user/update`,
-      formData,
-      config
-    );
+    const res = await axios.put(`/api/user/update`, formData, config);
 
     dispatch(loadUser());
   } catch (err) {

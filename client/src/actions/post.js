@@ -13,9 +13,7 @@ import { setAlert } from './alert';
 //Get posts
 export const getPosts = (userId) => async (dispatch) => {
   try {
-    const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}api/posts/user/${userId}`
-    );
+    const res = await axios.get(`/api/posts/user/${userId}`);
 
     dispatch({ type: GET_POSTS, payload: res.data });
   } catch (err) {
@@ -35,11 +33,7 @@ export const addPost = (formData) => async (dispatch) => {
   };
 
   try {
-    const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/posts`,
-      formData,
-      config
-    );
+    const res = await axios.post(`/api/posts`, formData, config);
     dispatch({
       type: ADD_POST,
       payload: res.data,
@@ -56,9 +50,7 @@ export const addPost = (formData) => async (dispatch) => {
 //Add Likes
 export const updateLikes = (postId) => async (dispatch) => {
   try {
-    const res = await axios.put(
-      `${process.env.REACT_APP_API_URL}api/posts/like/${postId}`
-    );
+    const res = await axios.put(`/api/posts/like/${postId}`);
 
     dispatch({
       type: UPDATE_LIKES,
@@ -75,9 +67,7 @@ export const updateLikes = (postId) => async (dispatch) => {
 //Delete Post
 export const deletePost = (postId) => async (dispatch) => {
   try {
-    const res = await axios.delete(
-      `${process.env.REACT_APP_API_URL}api/posts/${postId}`
-    );
+    const res = await axios.delete(`/api/posts/${postId}`);
     dispatch({
       type: DELETE_POST,
       payload: postId,
@@ -102,7 +92,7 @@ export const addComment = ({ postId, formData }) => async (dispatch) => {
 
   try {
     const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/posts/comment/${postId}`,
+      `/api/posts/comment/${postId}`,
       { text: formData },
       config
     );
@@ -124,9 +114,7 @@ export const addComment = ({ postId, formData }) => async (dispatch) => {
 //Delete Comment
 export const deleteComment = ({ postId, commentId }) => async (dispatch) => {
   try {
-    await axios.delete(
-      `${process.env.REACT_APP_API_URL}api/posts/comment/${postId}/${commentId}`
-    );
+    await axios.delete(`/api/posts/comment/${postId}/${commentId}`);
     dispatch({
       type: REMOVE_COMMENT,
       payload: { postId, commentId },
