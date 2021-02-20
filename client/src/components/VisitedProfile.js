@@ -57,7 +57,9 @@ const VisitedProfile = ({ profileId }) => {
                   </Link>
                   <h1>{profile.profile.user.name}</h1>
                   <p>{profile.profile.user.email}</p>
-                  <Thumbs rate={rateAverage} />
+                  <div className='ratingInProfile d-flex justify-content-center'>
+                    <Thumbs rate={rateAverage} />
+                  </div>
                 </div>
               </div>
 

@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { evaluateArtisan } from '../actions/artisanProfile';
+import { useDispatch, useSelector } from "react-redux";
+import { evaluateArtisan } from "../actions/artisanProfile";
 
 const Thumbs = ({ rate, setRate, evaluate = false }) => {
   const profile = useSelector((store) => store.artisan);
@@ -27,7 +27,9 @@ const Thumbs = ({ rate, setRate, evaluate = false }) => {
     }
     return array;
   };
-  return <div className='d-flex no-wrap'>{stars(rate)}</div>;
+  return (
+    <div className='d-flex nowrap justify-content-center'>{stars(rate)}</div>
+  );
 };
 
 Thumbs.defaultProps = {

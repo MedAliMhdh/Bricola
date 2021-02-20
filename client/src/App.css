@@ -4,6 +4,18 @@
   padding: 0;
 }
 
+div.d-flex.nowrap {
+  background: transparent;
+}
+
+div.d-flex.nowrap i {
+  background: transparent;
+}
+
+.ratingInProfile {
+  background: #00887a;
+}
+
 :root {
   --primary-color: #17a2b8;
   --dark-color: #343a40;
@@ -326,6 +338,10 @@ div.ratings.ml-2 i {
 
 .profile-nav ul > li:last-child {
   border-bottom: none;
+}
+
+.ratingInProfile {
+  background: #00887a;
 }
 
 .profile-nav ul li a {
