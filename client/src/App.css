@@ -942,10 +942,11 @@ select.form-control:not([size]):not([multiple]) {
   display: block;
 }
 
-.timeline-content {
+.timeline-content p {
+  background-color: #eee;
   letter-spacing: 0.25px;
   line-height: 18px;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .timeline-content:after,
@@ -953,10 +954,6 @@ select.form-control:not([size]):not([multiple]) {
   content: "";
   display: table;
   clear: both;
-}
-
-.timeline-title {
-  margin-top: 0;
 }
 
 .timeline-footer {

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { updateLikes, deletePost, addComment } from '../actions/post';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { updateLikes, deletePost, addComment } from "../actions/post";
+import { useDispatch, useSelector } from "react-redux";
 
-import CommentCard from './CommentCard';
+import CommentCard from "./CommentCard";
 
 const PostCard = ({
   photo,
@@ -17,8 +17,8 @@ const PostCard = ({
   const auth = useSelector((state) => state.auth);
 
   const defaultImg =
-    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
-  const [text, setText] = useState('');
+    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
+  const [text, setText] = useState("");
   const [showComments, setShowComments] = useState(false);
 
   var commentsNumber = comments.length;
@@ -29,7 +29,7 @@ const PostCard = ({
     likesNumber = likes.length;
   }, [comments, likes]);
   return (
-    <div className='container postContainer col-md-6'>
+    <div className='container postContainer col-md-12'>
       {/* <!-- begin tab-content --> */}
 
       <div className='tab-content p-0'>
@@ -52,7 +52,7 @@ const PostCard = ({
                 />
               </span>
               <span className='username'>{fullName}</span>
-              {((auth.user && auth.user.role === 'Admin') ||
+              {((auth.user && auth.user.role === "Admin") ||
                 (auth.user && auth.user._id === userId)) && (
                 <button
                   type='button'
@@ -118,7 +118,7 @@ const PostCard = ({
                             dispatch(
                               addComment({ postId: id, formData: text })
                             );
-                          setText('');
+                          setText("");
 
                           setShowComments(true);
                         }}
