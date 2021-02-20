@@ -92,11 +92,7 @@ export const login = ({ email, password }) => async (dispatch) => {
   const body = { email, password };
 
   try {
-    const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/auth`,
-      body,
-      config
-    );
+    const res = await axios.post(`/api/auth`, body, config);
 
     dispatch({
       type: LOGIN_SUCCESS,
