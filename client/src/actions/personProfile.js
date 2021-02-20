@@ -13,9 +13,7 @@ import {
 //GET current user profile
 export const getPersonCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}api/person/me`
-    );
+    const res = await axios.get(`/api/person/me`);
 
     dispatch({
       type: GET_PERSON_PROFILE,
@@ -35,7 +33,7 @@ export const getPersonCurrentProfile = () => async (dispatch) => {
 // Get all profiles
 export const getPersonProfiles = () => async (dispatch) => {
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}api/person`);
+    const res = await axios.get(`/api/person`);
 
     dispatch({
       type: GET_PERSON_PROFILES,
@@ -55,9 +53,7 @@ export const getPersonProfiles = () => async (dispatch) => {
 // Get profile by ID
 export const getProfileById = (personId) => async (dispatch) => {
   try {
-    const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}api/person/${personId}`
-    );
+    const res = await axios.get(`/api/person/${personId}`);
 
     dispatch({
       type: GET_PERSON_PROFILE,
@@ -85,11 +81,7 @@ export const createPersonProfile = (formData, history, edit = false) => async (
       },
     };
 
-    const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/person`,
-      formData,
-      config
-    );
+    const res = await axios.post(`/api/person`, formData, config);
     dispatch({
       type: GET_PERSON_PROFILE,
       payload: res.data,
@@ -125,7 +117,7 @@ export const createPersonProfile = (formData, history, edit = false) => async (
 // Delete profile
 export const deletePersonProfile = (history) => async (dispatch) => {
   try {
-    await axios.delete(`${process.env.REACT_APP_API_URL}api/person/`);
+    await axios.delete(`/api/person/`);
     dispatch({ type: CLEAR_PROFILE });
     dispatch({ type: LOG_OUT });
     history.push('/');

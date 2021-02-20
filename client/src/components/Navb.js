@@ -1,15 +1,15 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import Alert from "./Alert";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../actions/auth";
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import Alert from './Alert';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../actions/auth';
 
 const Navb = () => {
   const dispatch = useDispatch();
   const authState = useSelector((state) => state.auth);
 
   const defaultImg =
-    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
+    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
 
   const guestLinks = (
     <div
@@ -43,7 +43,7 @@ const Navb = () => {
       <i class='far fa-bell fa-2x mx-4'></i>
       <i class='far fa-comment-alt fa-2x mx-4'></i>
       <form className='d-flex'>
-        {" "}
+        {' '}
         <div className='dropdown drpdwnMenuBtn ml-4'>
           <button
             className='btn dropdown-toggle px-0 py-0'
@@ -69,7 +69,7 @@ const Navb = () => {
             aria-labelledby='dropdownMenuButton'
           >
             {authState.user ? (
-              authState.user.role === "Artisan" ? (
+              authState.user.role === 'Artisan' ? (
                 <Link className='dropdown-item px-3' to='/artisanprofile/me'>
                   View profile
                 </Link>
@@ -114,9 +114,7 @@ const Navb = () => {
             <span className='navbar-toggler-icon'></span>
           </button>
           {!authState.loading && (
-            <Fragment>
-              {authState.isAuthenticated ? authLinks : guestLinks}
-            </Fragment>
+            <div>{authState.isAuthenticated ? authLinks : guestLinks}</div>
           )}
         </div>
       </nav>

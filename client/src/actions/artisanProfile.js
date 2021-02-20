@@ -16,9 +16,7 @@ import {
 //GET current user profile
 export const getArtisanCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}api/artisan/me`
-    );
+    const res = await axios.get(`/api/artisan/me`);
 
     dispatch({
       type: GET_PROFILE,
@@ -38,7 +36,7 @@ export const getArtisanCurrentProfile = () => async (dispatch) => {
 // Get all profiles
 export const getProfiles = () => async (dispatch) => {
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}api/artisan`);
+    const res = await axios.get(`/api/artisan`);
 
     dispatch({
       type: GET_PROFILES,
@@ -58,9 +56,7 @@ export const getProfiles = () => async (dispatch) => {
 // Get profile by ID
 export const getProfileById = (artisanId) => async (dispatch) => {
   try {
-    const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}api/artisan/${artisanId}`
-    );
+    const res = await axios.get(`/api/artisan/${artisanId}`);
 
     dispatch({
       type: GET_PROFILE,
@@ -88,11 +84,7 @@ export const createArtisanProfile = (formData, history, edit = false) => async (
       },
     };
 
-    const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/artisan`,
-      formData,
-      config
-    );
+    const res = await axios.post(`/api/artisan`, formData, config);
     dispatch({
       type: GET_PROFILE,
       payload: res.data,
@@ -128,7 +120,7 @@ export const createArtisanProfile = (formData, history, edit = false) => async (
 // Delete profile
 export const deleteProfile = (history) => async (dispatch) => {
   try {
-    await axios.delete(`${process.env.REACT_APP_API_URL}api/artisan/`);
+    await axios.delete(`/api/artisan/`);
     dispatch({ type: CLEAR_PROFILE });
     dispatch({ type: LOG_OUT });
     history.push('/');
@@ -148,7 +140,7 @@ export const filterProfiles = ({ job, equipment, city, rate }) => async (
   dispatch
 ) => {
   try {
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}api/artisan`);
+    const res = await axios.get(`/api/artisan`);
 
     dispatch({
       type: GET_PROFILES,
@@ -204,7 +196,7 @@ export const evaluateArtisan = ({ rate, profileId }) => async (dispatch) => {
       },
     };
     const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}api/artisan/evaluate/${profileId}`,
+      `/api/artisan/evaluate/${profileId}`,
       { rateValue: rate },
       config
     );
