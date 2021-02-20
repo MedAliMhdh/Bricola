@@ -328,7 +328,7 @@ div.ratings.ml-2 i {
   border-bottom: none;
 }
 
-.profile-nav ul > li > a {
+.profile-nav ul li a {
   border-radius: 0;
   -webkit-border-radius: 0;
   color: #89817f;
