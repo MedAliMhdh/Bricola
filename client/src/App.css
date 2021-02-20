@@ -55,14 +55,6 @@ button.btn.btn-outline-success {
   font-weight: bold;
 }
 
-.drpdwnMenuBtn {
-  position: absolute;
-}
-
-.nvbDropdow {
-  position: relative;
-}
-
 .navBarContainer {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   background-color: #ffccbc;
@@ -71,11 +63,6 @@ button.btn.btn-outline-success {
 .navBarContainer i,
 .navBarContainer form {
   background-color: #ffccbc;
-}
-
-img.rounded-circle.mr-3 {
-  border: black;
-  border-width: 10px;
 }
 
 button.btn.logRegBtn.col-12.px-4.mx-2,
