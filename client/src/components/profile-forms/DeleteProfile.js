@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { getArtisanCurrentProfile } from "../../actions/artisanProfile";
+import { getArtisanCurrentProfile } from '../../actions/artisanProfile';
 
-import { getPersonCurrentProfile } from "../../actions/personProfile";
-import DeleteButton from "./DeleteButton";
-import Spinner from "../Spinner";
+import { getPersonCurrentProfile } from '../../actions/personProfile';
+import DeleteButton from './DeleteButton';
+import Spinner from '../Spinner';
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
@@ -16,13 +16,13 @@ const ArtisanProfile = () => {
   const userRole = useSelector((state) => state.auth.user.role);
 
   useEffect(() => {
-    if (userRole === "Artisan") {
+    if (userRole === 'Artisan') {
       dispatch(getArtisanCurrentProfile());
     }
   }, []);
 
   useEffect(() => {
-    if (userRole === "Person") {
+    if (userRole === 'Person') {
       dispatch(getPersonCurrentProfile());
     }
   }, []);
@@ -37,7 +37,7 @@ const ArtisanProfile = () => {
             <div className='profile-nav col-lg-3'>
               <div className='panel'>
                 <div className='user-heading round'>
-                  <Link to='/'>
+                  <Link to='/artisanprofile/me'>
                     <img src={artisanProfile.profile.user.avatar} alt='' />
                   </Link>
                   <h1>{artisanProfile.profile.user.name}</h1>
@@ -72,13 +72,13 @@ const ArtisanProfile = () => {
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-                      <span>Full Name </span>:{" "}
+                      <span>Full Name </span>:{' '}
                       {artisanProfile.profile.user.name}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Profession </span>:{" "}
+                      <span>Profession </span>:{' '}
                       {artisanProfile.profile.user.job}
                     </p>
                   </div>
@@ -96,15 +96,15 @@ const ArtisanProfile = () => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{" "}
+                      <span>Address </span>:{' '}
                       {` ${artisanProfile.profile.street}, ${artisanProfile.profile.city}, ${artisanProfile.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{" "}
-                      {artisanProfile.profile.equipment ? "Yes" : "No"}
+                      <span>Equipments </span>:{' '}
+                      {artisanProfile.profile.equipment ? 'Yes' : 'No'}
                     </p>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ const ArtisanProfile = () => {
               <div className='profile-nav col-lg-3'>
                 <div className='panel'>
                   <div className='user-heading round'>
-                    <Link to='/'>
+                    <Link to='/personprofile/me'>
                       <img src={personProfile.profile.user.avatar} alt='' />
                     </Link>
                     <h1>{personProfile.profile.user.name}</h1>
@@ -161,7 +161,7 @@ const ArtisanProfile = () => {
                   <div className='row'>
                     <div className='bio-row'>
                       <p>
-                        <span>Full Name </span>:{" "}
+                        <span>Full Name </span>:{' '}
                         {personProfile.profile.user.name}
                       </p>
                     </div>
@@ -180,7 +180,7 @@ const ArtisanProfile = () => {
 
                     <div className='bio-row'>
                       <p>
-                        <span>Address </span>:{" "}
+                        <span>Address </span>:{' '}
                         {`${personProfile.profile.street}, ${personProfile.profile.city}, ${personProfile.profile.zipcode}`}
                       </p>
                     </div>

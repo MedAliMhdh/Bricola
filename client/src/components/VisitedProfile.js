@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getProfileById } from "../actions/artisanProfile";
-import PostCard from "./PostCard";
-import Spinner from "./Spinner";
-import { getPosts } from "../actions/post";
-import Thumbs from "./Thumbs";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProfileById } from '../actions/artisanProfile';
+import PostCard from './PostCard';
+import Spinner from './Spinner';
+import { getPosts } from '../actions/post';
+import Thumbs from './Thumbs';
 
 const VisitedProfile = ({ profileId }) => {
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const VisitedProfile = ({ profileId }) => {
             <div className='profile-nav col-lg-3'>
               <div className='panel'>
                 <div className='user-heading round'>
-                  <Link to='/'>
+                  <Link to={`/visitedartisanprofile/${profileId}`}>
                     <img src={profile.profile.user.avatar} alt='' />
                   </Link>
                   <h1>{profile.profile.user.name}</h1>
@@ -110,15 +110,15 @@ const VisitedProfile = ({ profileId }) => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{" "}
+                      <span>Address </span>:{' '}
                       {` ${profile.profile.street}, ${profile.profile.city}, ${profile.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{" "}
-                      {profile.profile.equipment ? "Yes" : "No"}
+                      <span>Equipments </span>:{' '}
+                      {profile.profile.equipment ? 'Yes' : 'No'}
                     </p>
                   </div>
                 </div>

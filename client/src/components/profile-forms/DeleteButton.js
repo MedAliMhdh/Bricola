@@ -1,9 +1,7 @@
-
 import { deleteProfile } from '../../actions/artisanProfile';
 import { deletePersonProfile } from '../../actions/personProfile';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
 
 const DeleteButton = () => {
   const userRole = useSelector((state) => state.auth.user.role);
