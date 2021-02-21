@@ -9,7 +9,7 @@ html {
 }
 
 div.container-fluid.homeContainer.mx-0.px-0 {
-  height: 100%;
+  height: 731px;
 }
 
 div.d-flex.nowrap {
@@ -108,6 +108,7 @@ button.btn.logRegBtn.nav-item.col-11.px-4.mx-2 {
   height: 250px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   background-color: white;
+  border-radius: 10px;
 }
 
 .myContainer div {
