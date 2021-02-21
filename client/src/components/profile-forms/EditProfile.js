@@ -28,57 +28,57 @@ const EditProfile = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const ProfileArtisan = useSelector((state) => state.artisan);
-  const ProfilePerson = useSelector((state) => state.person);
+  const artisanProfile = useSelector((state) => state.artisan);
+  const personProfile = useSelector((state) => state.person);
 
   useEffect(() => {
-    if (ProfileArtisan.profile) {
-      dispatch(getPosts(ProfileArtisan.profile.user._id));
+    if (artisanProfile.profile) {
+      dispatch(getPosts(artisanProfile.profile.user._id));
     }
-  }, [ProfileArtisan.profile]);
+  }, [artisanProfile.profile]);
 
   useEffect(() => {
     if (userRole === 'Artisan') {
       dispatch(getArtisanCurrentProfile());
       setCity(
-        ProfileArtisan.loading || !ProfileArtisan.profile.city
+        artisanProfile.loading || !artisanProfile.profile.city
           ? ''
-          : ProfileArtisan.profile.city
+          : artisanProfile.profile.city
       );
       setStreet(
-        ProfileArtisan.loading || !ProfileArtisan.profile.street
+        artisanProfile.loading || !artisanProfile.profile.street
           ? ''
-          : ProfileArtisan.profile.street
+          : artisanProfile.profile.street
       );
       setZipcode(
-        ProfileArtisan.loading || !ProfileArtisan.profile.zipcode
+        artisanProfile.loading || !artisanProfile.profile.zipcode
           ? ''
-          : ProfileArtisan.profile.zipcode
+          : artisanProfile.profile.zipcode
       );
       setBio(
-        ProfileArtisan.loading || !ProfileArtisan.profile.bio
+        artisanProfile.loading || !artisanProfile.profile.bio
           ? ''
-          : ProfileArtisan.profile.bio
+          : artisanProfile.profile.bio
       );
       setEquipment(
-        ProfileArtisan.loading || !ProfileArtisan.profile.equipment
+        artisanProfile.loading || !artisanProfile.profile.equipment
           ? ''
-          : ProfileArtisan.profile.equipment
+          : artisanProfile.profile.equipment
       );
       setName(
-        ProfileArtisan.loading || !ProfileArtisan.profile.user.name
+        artisanProfile.loading || !artisanProfile.profile.user.name
           ? ''
-          : ProfileArtisan.profile.user.name
+          : artisanProfile.profile.user.name
       );
       setPhone(
-        ProfileArtisan.loading || !ProfileArtisan.profile.user.phone
+        artisanProfile.loading || !artisanProfile.profile.user.phone
           ? ''
-          : ProfileArtisan.profile.user.phone
+          : artisanProfile.profile.user.phone
       );
       setJob(
-        ProfileArtisan.loading || !ProfileArtisan.profile.user.job
+        artisanProfile.loading || !artisanProfile.profile.user.job
           ? ''
-          : ProfileArtisan.profile.user.job
+          : artisanProfile.profile.user.job
       );
     }
   }, []);
@@ -87,53 +87,53 @@ const EditProfile = () => {
     if (userRole === 'Person') {
       dispatch(getPersonCurrentProfile());
       setCity(
-        ProfilePerson.loading || !ProfilePerson.profile.city
+        personProfile.loading || !personProfile.profile.city
           ? ''
-          : ProfilePerson.profile.city
+          : personProfile.profile.city
       );
       setStreet(
-        ProfilePerson.loading || !ProfilePerson.profile.street
+        personProfile.loading || !personProfile.profile.street
           ? ''
-          : ProfilePerson.profile.street
+          : personProfile.profile.street
       );
       setZipcode(
-        ProfilePerson.loading || !ProfilePerson.profile.zipcode
+        personProfile.loading || !personProfile.profile.zipcode
           ? ''
-          : ProfilePerson.profile.zipcode
+          : personProfile.profile.zipcode
       );
       setName(
-        ProfilePerson.loading || !ProfilePerson.profile.user.name
+        personProfile.loading || !personProfile.profile.user.name
           ? ''
-          : ProfilePerson.profile.user.name
+          : personProfile.profile.user.name
       );
       setPhone(
-        ProfilePerson.loading || !ProfilePerson.profile.user.phone
+        personProfile.loading || !personProfile.profile.user.phone
           ? ''
-          : ProfilePerson.profile.user.phone
+          : personProfile.profile.user.phone
       );
       setJob(
-        ProfilePerson.loading || !ProfilePerson.profile.user.job
+        personProfile.loading || !personProfile.profile.user.job
           ? ''
-          : ProfilePerson.profile.user.job
+          : personProfile.profile.user.job
       );
     }
   }, []);
 
   return (
     <div>
-      {ProfilePerson.loading && ProfileArtisan.loading ? (
+      {personProfile.loading && artisanProfile.loading ? (
         <Spinner />
-      ) : ProfilePerson.profile ? (
+      ) : personProfile.profile ? (
         <div className='container artisanProfileContainer bootstrap snippets bootdey'>
           <div className='row'>
             <div className='profile-nav col-lg-3'>
               <div className='panel'>
                 <div className='user-heading round'>
                   <Link to='/personprofile/me'>
-                    <img src={ProfilePerson.profile.user.avatar} alt='' />
+                    <img src={personProfile.profile.user.avatar} alt='' />
                   </Link>
-                  <h1>{ProfilePerson.profile.user.name}</h1>
-                  <p>{ProfilePerson.profile.user.email}</p>
+                  <h1>{personProfile.profile.user.name}</h1>
+                  <p>{personProfile.profile.user.email}</p>
                 </div>
 
                 <ul className='nav nav-pills nav-stacked '>
@@ -163,26 +163,26 @@ const EditProfile = () => {
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-                      <span>Full Name </span>: {ProfilePerson.profile.user.name}
+                      <span>Full Name </span>: {personProfile.profile.user.name}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Mobile </span>: {ProfilePerson.profile.user.phone}
+                      <span>Mobile </span>: {personProfile.profile.user.phone}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>E-mail </span>: {ProfilePerson.profile.user.email}
+                      <span>E-mail </span>: {personProfile.profile.user.email}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
                       <span>Address </span>:{' '}
-                      {`${ProfilePerson.profile.street}, ${ProfilePerson.profile.city}, ${ProfilePerson.profile.zipcode}`}
+                      {`${personProfile.profile.street}, ${personProfile.profile.city}, ${personProfile.profile.zipcode}`}
                     </p>
                   </div>
                 </div>
@@ -306,17 +306,17 @@ const EditProfile = () => {
           </div>
         </div>
       ) : (
-        ProfileArtisan.profile && (
+        artisanProfile.profile && (
           <div className='container artisanProfileContainer bootstrap snippets bootdey'>
             <div className='row'>
               <div className='profile-nav col-lg-3'>
                 <div className='panel'>
                   <div className='user-heading round'>
                     <Link to='/artisanprofile/me'>
-                      <img src={ProfileArtisan.profile.user.avatar} alt='' />
+                      <img src={artisanProfile.profile.user.avatar} alt='' />
                     </Link>
-                    <h1>{ProfileArtisan.profile.user.name}</h1>
-                    <p>{ProfileArtisan.profile.user.email}</p>
+                    <h1>{artisanProfile.profile.user.name}</h1>
+                    <p>{artisanProfile.profile.user.email}</p>
                   </div>
 
                   <ul className='nav nav-pills nav-stacked '>
@@ -348,47 +348,47 @@ const EditProfile = () => {
                     <div className='bio-row'>
                       <p>
                         <span>Full Name </span>:{' '}
-                        {ProfileArtisan.profile.user.name}
+                        {artisanProfile.profile.user.name}
                       </p>
                     </div>
                     <div className='bio-row'>
                       <p>
                         <span>Profession </span>:{' '}
-                        {ProfileArtisan.profile.user.job}
+                        {artisanProfile.profile.user.job}
                       </p>
                     </div>
                     <div className='bio-row'>
                       <p>
                         <span>Mobile </span>:{' '}
-                        {ProfileArtisan.profile.user.phone}
+                        {artisanProfile.profile.user.phone}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
                         <span>E-mail </span>:{' '}
-                        {ProfileArtisan.profile.user.email}
+                        {artisanProfile.profile.user.email}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
                         <span>Address </span>:{' '}
-                        {` ${ProfileArtisan.profile.street}, ${ProfileArtisan.profile.city}, ${ProfileArtisan.profile.zipcode} `}
+                        {` ${artisanProfile.profile.street}, ${artisanProfile.profile.city}, ${artisanProfile.profile.zipcode} `}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
                         <span>Equipments </span>:{' '}
-                        {ProfileArtisan.profile.equipment ? 'Yes' : 'No'}
+                        {artisanProfile.profile.equipment ? 'Yes' : 'No'}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className='panel'>
                   <div className='bio-graph-heading'>
-                    {ProfileArtisan.profile.bio}
+                    {artisanProfile.profile.bio}
                   </div>
                 </div>
                 <div>
