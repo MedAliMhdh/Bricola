@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -20,9 +20,13 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 const App = () => {
-  const dispatch = useDispatch();
+  const [search, setSearch] = useState(false);
+  const [rate, setRate] = useState(0);
+  const [job, setJob] = useState('');
+  const [equipment, setEquipment] = useState('');
+  const [city, setCity] = useState('');
 
-  // const userId = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadUser());
@@ -30,9 +34,29 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Navb></Navb>
+      <Navb
+        setSearch={setSearch}
+        setRate={setRate}
+        setJob={setJob}
+        setEquipment={setEquipment}
+        setCity={setCity}
+      />
       <Switch>
-        <Route exact path='/' component={Home} />
+        <Route exact path='/'>
+          {' '}
+          <Home
+            search={search}
+            setSearch={setSearch}
+            rate={rate}
+            setRate={setRate}
+            job={job}
+            setJob={setJob}
+            equipment={equipment}
+            setEquipment={setEquipment}
+            city={city}
+            setCity={setCity}
+          />
+        </Route>
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
         <Route

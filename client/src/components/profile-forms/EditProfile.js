@@ -129,7 +129,7 @@ const EditProfile = () => {
             <div className='profile-nav col-lg-3'>
               <div className='panel'>
                 <div className='user-heading round'>
-                  <Link to='/'>
+                  <Link to='/personprofile/me'>
                     <img src={ProfilePerson.profile.user.avatar} alt='' />
                   </Link>
                   <h1>{ProfilePerson.profile.user.name}</h1>
@@ -312,7 +312,7 @@ const EditProfile = () => {
               <div className='profile-nav col-lg-3'>
                 <div className='panel'>
                   <div className='user-heading round'>
-                    <Link to='/'>
+                    <Link to='/artisanprofile/me'>
                       <img src={ProfileArtisan.profile.user.avatar} alt='' />
                     </Link>
                     <h1>{ProfileArtisan.profile.user.name}</h1>

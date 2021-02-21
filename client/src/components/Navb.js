@@ -1,12 +1,21 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Alert from './Alert';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../actions/auth';
 
-const Navb = () => {
+const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
   const dispatch = useDispatch();
+
   const authState = useSelector((state) => state.auth);
+
+  const resetStates = () => {
+    setSearch(false);
+    setRate(0);
+    setJob('');
+    setEquipment('');
+    setCity('');
+  };
 
   const defaultImg =
     'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
@@ -98,8 +107,29 @@ const Navb = () => {
     <div>
       <nav className='navbar navBarContainer navbar-expand-md fixed-top  mx-0'>
         <div className='container-fluid d-felx align-content-around mx-0'>
-          <Link to='/' className='navbar-brand'>
+          <Link
+            to='/'
+            className='navbar-brand'
+            onClick={() => {
+              resetStates();
+            }}
+          >
             Bricola
+          </Link>
+          <Link to='/' className='navbar-brand'>
+            Home
+          </Link>
+          <Link to='/' className='navbar-brand'>
+            About
+          </Link>
+          <Link to='/' className='navbar-brand'>
+            Contact Us
+          </Link>
+          <Link to='/' className='navbar-brand'>
+            Our Team
+          </Link>
+          <Link to='/' className='navbar-brand'>
+            Blog
           </Link>
 
           <button

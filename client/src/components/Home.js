@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
-import Navb from "./Navb";
-import Search from "./Search";
-import CategoriesCarousel from "./CategoriesCarousel";
-import Profiles from "./Profiles";
-const Home = () => {
-  const [search, setSearch] = useState(false);
-  const [rate, setRate] = useState(0);
-  const [job, setJob] = useState("");
-  const [equipment, setEquipment] = useState("");
-  const [city, setCity] = useState("");
-
+import Search from './Search';
+import CategoriesCarousel from './CategoriesCarousel';
+import Profiles from './Profiles';
+const Home = ({
+  search,
+  setSearch,
+  rate,
+  setRate,
+  job,
+  setJob,
+  equipment,
+  setEquipment,
+  city,
+  setCity,
+}) => {
   return (
     <div className='container-fluid mx-0 px-0'>
-      <Navb />
       <Search
         setSearch={setSearch}
         rate={rate}
@@ -34,15 +36,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// function useStickyState(defaultValue, key) {
-//   const [value, setValue] = useState(() => {
-//     const stickyValue = window.localStorage.getItem(key);
-//     return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
-//   });
-
-//   useEffect(() => {
-//     window.localStorage.setItem(key, JSON.stringify(value));
-//   }, [key, value]);
-//   return [value, setValue];
-// }
