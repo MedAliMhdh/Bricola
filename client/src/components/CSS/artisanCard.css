@@ -1,12 +1,5 @@
 /******************** ArtisanCard *********************/
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-body {
-  background-color: #eee;
-  font-family: "Roboto", sans-serif;
-}
-
 #artisanCard {
   height: 200px;
   background-color: #00887a;
@@ -60,21 +53,6 @@ div.sm-col-6.px-3 div i {
   font-weight: 700;
 }
 
-.hour {
-  margin-top: 1px;
-  color: green;
-  font-size: 12px;
-}
-
-.ratings i {
-  color: #388e3c;
-}
-
 .btn {
   border-radius: 5px !important;
-}
-
-.line-color {
-  color: green;
-  height: 3px;
 }
