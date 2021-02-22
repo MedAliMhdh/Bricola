@@ -328,3 +328,7 @@ form.form.updateProfileForm.col-md-12 .form-group {
   margin-top: 30px;
   /* margin-left: 300px; */
 }
+button.btn.post {
+  background: #00887a;
+  color: white;
+}
