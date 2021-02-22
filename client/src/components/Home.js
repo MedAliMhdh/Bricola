@@ -1,6 +1,7 @@
-import Search from './Search';
-import CategoriesCarousel from './CategoriesCarousel';
-import Profiles from './Profiles';
+import Search from "./Search";
+import CategoriesCarousel from "./CategoriesCarousel";
+import Profiles from "./Profiles";
+
 const Home = ({
   search,
   setSearch,
@@ -14,7 +15,7 @@ const Home = ({
   setCity,
 }) => {
   return (
-    <div className='container-fluid mx-0 px-0'>
+    <div className='container-fluid homeContainer mx-0 px-0'>
       <Search
         setSearch={setSearch}
         rate={rate}

@@ -7,6 +7,7 @@ import jardinier from "../images/jardinier.png";
 import painter from "../images/painter.png";
 import plambier from "../images/plambier.png";
 import welder from "../images/welder.png";
+import "./CSS/carousel.css";
 
 const CategoriesCarousel = ({ setSearch, setJob }) => {
   const setAction = (jobValue) => {
