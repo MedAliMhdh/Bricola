@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPersonCurrentProfile } from "../actions/personProfile";
 import Spinner from "./Spinner";
+import "./CSS/artisanProfile.css";
 
 const PersonProfile = () => {
   const dispatch = useDispatch();

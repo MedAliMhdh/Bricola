@@ -1,6 +1,7 @@
 import Search from "./Search";
 import CategoriesCarousel from "./CategoriesCarousel";
 import Profiles from "./Profiles";
+
 const Home = ({
   search,
   setSearch,
