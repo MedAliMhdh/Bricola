@@ -38,10 +38,6 @@ div.profile-nav.col-log-3 {
   -webkit-border-radius: 50%;
 }
 
-.row .bio-row span {
-  color: #89817e;
-}
-
 .profile-nav .user-heading h1 {
   font-size: 22px;
   font-weight: 300;
@@ -52,10 +48,6 @@ div.profile-nav.col-log-3 {
 .profile-nav .user-heading p {
   font-size: 12px;
   background-color: transparent;
-}
-
-div.ratings.ml-2 i {
-  color: #ffccbc;
 }
 
 .profile-nav ul {
@@ -70,10 +62,6 @@ div.ratings.ml-2 i {
 
 .profile-nav ul > li:last-child {
   border-bottom: none;
-}
-
-.ratingInProfile {
-  background: #00887a;
 }
 
 .profile-nav ul li a {
@@ -104,17 +92,29 @@ div.ratings.ml-2 i {
   color: #bcb3aa;
 }
 
+.row .bio-row p span {
+  color: #89817e;
+}
+
+div.ratings.ml-2 i {
+  color: #ffccbc;
+}
+
+.ratingInProfile {
+  background: #00887a;
+}
+
 .nav-pills {
   width: 200px;
 }
 
 li.active {
   display: flex;
-
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
 }
+
 .r-activity {
   margin: 6px 0 0;
   font-size: 12px;
@@ -184,156 +184,6 @@ i.far.fa-star {
   display: inline-block;
 }
 
-.bio-chart,
-.bio-desk {
-  float: left;
-}
-
-.bio-chart {
-  width: 40%;
-}
-
-.bio-desk {
-  width: 60%;
-}
-
-.bio-desk h4 {
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.bio-desk h4.terques {
-  color: #4cc5cd;
-}
-
-.bio-desk h4.red {
-  color: #e26b7f;
-}
-
-.bio-desk h4.green {
-  color: #97be4b;
-}
-
-.bio-desk h4.purple {
-  color: #caa3da;
-}
-
-.file-pos {
-  margin: 6px 0 10px 0;
-}
-
-.profile-activity h5 {
-  font-weight: 300;
-  margin-top: 0;
-  color: #c3c3c3;
-}
-
-.summary-head {
-  background: #ee7272;
-  color: #fff;
-  text-align: center;
-  border-bottom: 1px solid #ee7272;
-}
-
-.summary-head h4 {
-  font-weight: 300;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-
-.summary-head p {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-ul.summary-list {
-  display: inline-block;
-  padding-left: 0;
-  width: 100%;
-  margin-bottom: 0;
-}
-
-ul.summary-list > li {
-  display: inline-block;
-  width: 19.5%;
-  text-align: center;
-}
-
-ul.summary-list > li > a > i {
-  display: block;
-  font-size: 18px;
-  padding-bottom: 5px;
-}
-
-ul.summary-list > li > a {
-  padding: 10px 0;
-  display: inline-block;
-  color: #818181;
-  text-decoration: none;
-}
-
-ul.summary-list > li {
-  border-right: 1px solid #eaeaea;
-}
-
-ul.summary-list > li:last-child {
-  border-right: none;
-}
-
-.activity {
-  width: 100%;
-  float: left;
-  margin-bottom: 10px;
-}
-
-.activity.alt {
-  width: 100%;
-  float: right;
-  margin-bottom: 10px;
-}
-
-.activity span {
-  float: left;
-}
-
-.activity.alt span {
-  float: right;
-}
-.activity span,
-.activity.alt span {
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  background: #eee;
-  text-align: center;
-  color: #fff;
-  font-size: 16px;
-}
-
-.activity .activity-desk .arrow {
-  border-right: 8px solid #f4f4f4 !important;
-}
-.activity .activity-desk .arrow {
-  border-bottom: 8px solid transparent;
-  border-top: 8px solid transparent;
-  display: block;
-  height: 0;
-  left: -7px;
-  position: absolute;
-  top: 13px;
-  width: 0;
-}
-
-.updateInput {
-  border-style: hidden;
-  border-bottom: 2px solid black;
-  background-color: whitesmoke;
-}
-form.form.updateProfileForm.col-md-12 .form-group {
-  margin-top: 30px;
-  /* margin-left: 300px; */
-}
 button.btn.post {
   background: #00887a;
   color: white;
