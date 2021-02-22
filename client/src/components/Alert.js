@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
+import "./CSS/alert.css";
 
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const Alert = () => {
   const alerts = useSelector((state) => state.alert);

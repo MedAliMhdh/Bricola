@@ -1,0 +1,25 @@
+/************Navbar************/
+button.btn.btn-outline-success {
+  margin-left: 15px;
+}
+
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+}
+
+.navBarContainer {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  background-color: #ffccbc;
+}
+.navBarContainer div,
+.navBarContainer i,
+.navBarContainer form {
+  background-color: #ffccbc;
+}
+
+button.btn.logRegBtn.col-12.px-4.mx-2,
+button.btn.logRegBtn.nav-item.col-11.px-4.mx-2 {
+  background-color: #00887a;
+  color: white;
+}

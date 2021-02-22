@@ -1,0 +1,80 @@
+/******************** ArtisanCard *********************/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+}
+
+#artisanCard {
+  height: 200px;
+  background-color: #00887a;
+  color: white;
+}
+
+.row a,
+.row span,
+.row a:hover,
+.row span:hover,
+.row a:link,
+.row span:link,
+.row span:active,
+.row a:active {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.artisanCard span,
+.artisanCard div,
+.artisanCard h6,
+div.sm-col-6.px-3 div i {
+  background-color: #00887a;
+}
+
+.artisanCard button i,
+.artisanCard button {
+  background-color: white;
+  color: white;
+  background: transparent;
+}
+
+.artisanCard button i:hover,
+.artisanCard button:hover {
+  background-color: white;
+  color: black;
+  background: transparent;
+}
+
+.artisanCard .first {
+  color: white;
+}
+
+.card {
+  background-color: #b9f6ca;
+  width: 700px;
+  border-radius: 20px;
+}
+
+.heading {
+  font-weight: 700;
+}
+
+.hour {
+  margin-top: 1px;
+  color: green;
+  font-size: 12px;
+}
+
+.ratings i {
+  color: #388e3c;
+}
+
+.btn {
+  border-radius: 5px !important;
+}
+
+.line-color {
+  color: green;
+  height: 3px;
+}

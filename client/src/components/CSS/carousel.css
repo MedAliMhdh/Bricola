@@ -1,0 +1,68 @@
+/***************Categories Carousel**************/
+
+.carousel-inner {
+  position: absolute;
+}
+
+.carousel-control-prev {
+  position: relative;
+  left: 0px;
+  top: 50%;
+}
+
+.carousel-control-next {
+  width: 10px;
+  position: relative;
+  right: 0px;
+  top: 50%;
+}
+
+.hover-2 .hover-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+}
+
+.hover-2-title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.3s;
+}
+
+.hover-2-description {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+  transition: all 0.3s;
+  background-color: transparent;
+}
+
+.hover-2:hover .hover-2-title {
+  transform: translateY(-1.5rem);
+}
+
+.hover-2:hover .hover-2-description {
+  bottom: 0.5rem;
+  opacity: 1;
+  background-color: transparent;
+}
+
+.hover-2:hover .hover-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+}
+
+.img-fluid {
+  padding: 5px;
+  border-radius: 6%;
+}
+
+i.far.fa-star,
+i.fas.fa-star {
+  background-color: white;
+}
