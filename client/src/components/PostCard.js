@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { updateLikes, deletePost, addComment } from '../actions/post';
-import { setAlert } from '../actions/alert';
-import { useDispatch, useSelector } from 'react-redux';
-import './CSS/artisanPost.css';
+import React, { useState, useEffect } from "react";
+import { updateLikes, deletePost, addComment } from "../actions/post";
+import { setAlert } from "../actions/alert";
+import { useDispatch, useSelector } from "react-redux";
+import "./CSS/artisanPost.css";
 
-import CommentCard from './CommentCard';
+import CommentCard from "./CommentCard";
 
 const PostCard = ({
   photo,
@@ -19,8 +19,8 @@ const PostCard = ({
   const auth = useSelector((state) => state.auth);
 
   const defaultImg =
-    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
-  const [text, setText] = useState('');
+    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
+  const [text, setText] = useState("");
   const [showComments, setShowComments] = useState(false);
   const [showCommentBox, setShowCommentBox] = useState(false);
 
@@ -51,7 +51,7 @@ const PostCard = ({
                 />
               </span>
               <span className='username'>{fullName}</span>
-              {((auth.user && auth.user.role === 'Admin') ||
+              {((auth.user && auth.user.role === "Admin") ||
                 (auth.user && auth.user._id === userId)) && (
                 <button
                   type='button'
@@ -70,7 +70,7 @@ const PostCard = ({
             <div className='timeline-likes d-flex justify-content-between'>
               <div>
                 <span className='fa-stack fa-fw stats-icon'>
-                  <i className='fa fa-thumbs-up fa-stack-1x fa-inverse'></i>
+                  <i className='fa fa-thumbs-up fa-2x'></i>
                 </span>
                 <span className='stats-total'>{likesNumber}</span>
               </div>
@@ -84,16 +84,17 @@ const PostCard = ({
                 onClick={() => {
                   auth.user
                     ? dispatch(updateLikes(id))
-                    : setAlert({ msg: 'Please Connect', alertType: 'danger' });
+                    : setAlert({ msg: "Please Connect", alertType: "danger" });
                 }}
               >
                 <i className='fa fa-thumbs-up fa-fw fa-lg m-r-3'></i>Like
               </button>
               <button
+                className='btn'
                 onClick={() => {
                   setShowCommentBox(auth.user ? true : false);
                   !auth.user &&
-                    setAlert({ msg: 'Please Connect', alertType: 'danger' });
+                    setAlert({ msg: "Please Connect", alertType: "danger" });
                 }}
               >
                 <i className='fa fa-comments fa-fw fa-lg m-r-3'></i>Comment
@@ -126,7 +127,7 @@ const PostCard = ({
                               dispatch(
                                 addComment({ postId: id, formData: text })
                               );
-                            setText('');
+                            setText("");
 
                             setShowComments(true);
                           }}
