@@ -49,8 +49,8 @@ const ArtisanProfile = () => {
         </div>
       ) : (
         <div className='container artisanProfileContainer bootstrap snippets bootdey'>
-          <div className='row'>
-            <div className='profile-nav col-lg-3 sticky-top'>
+          <div className='row '>
+            <div className='profile-nav col-lg-3'>
               <div className='panel'>
                 <div className='user-heading round'>
                   <Link to='/artisanprofile/me'>

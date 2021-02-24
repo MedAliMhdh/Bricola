@@ -3,18 +3,18 @@ import spinner from "./spinner.jpg";
 
 const Spinner = () => {
   return (
-    <Fragment>
+    <div className='d-flex justify-content-center align-items-center'>
       <img
         src={spinner}
         style={{
-          width: "200px",
+          width: "20px",
           margin: "auto",
           marginTop: "200px",
           display: "block",
         }}
         alt='Loading'
       />
-    </Fragment>
+    </div>
   );
 };
 
