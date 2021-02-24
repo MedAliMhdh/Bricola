@@ -2,6 +2,7 @@ import {
   PROFILE_ERROR,
   GET_PROFILE,
   CLEAR_PROFILE,
+  CLEAR_PROFILES,
   GET_PROFILES,
   SELECT_JOB,
   SELECT_EQUIPMENT,
@@ -46,6 +47,12 @@ export const artisanProfileReducer = (state = initialState, action) => {
       return {
         ...state,
         profile: null,
+        loading: false,
+      };
+    case CLEAR_PROFILES:
+      return {
+        ...state,
+        profiles: null,
         loading: false,
       };
 
