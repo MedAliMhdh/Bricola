@@ -1,8 +1,16 @@
 /************Navbar************/
 
-.navbar-brand {
-  color: white;
+.navbar-brand,
+.navbar-brand:hover {
+  color: #77a6f7;
   font-weight: bold;
+}
+
+.navbar-item,
+.navbar-item:hover,
+.dropdown-item {
+  color: white;
+  text-decoration-line: none;
 }
 
 .navBarContainer {
@@ -13,6 +21,7 @@
 .navBarContainer i,
 .navBarContainer form {
   background-color: #ffccbc;
+  color: #77a6f7;
 }
 
 button.btn.logRegBtn.col-12.px-4.mx-2,

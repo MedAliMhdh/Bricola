@@ -50,11 +50,11 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
       className='collapse navbar-collapse d-flex justify-content-end  d-sm-none d-md-block'
       id='navbarNav'
     >
-      <i class='far fa-bell fa-2x mx-4'></i>
-      <i class='far fa-comment-alt fa-2x mx-4'></i>
+      <i class='far fa-bell fa-2x mx-2'></i>
+      <i class='far fa-comment-alt fa-2x mx-2'></i>
       <form className='d-flex'>
         {" "}
-        <div className='dropdown drpdwnMenuBtn ml-4'>
+        <div className='dropdown drpdwnMenuBtn ml-2'>
           <button
             className='btn dropdown-toggle px-0 py-0'
             type='button'
@@ -93,7 +93,10 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
             )}
             <Link
               className='dropdown-item px-3'
-              onClick={() => dispatch(logout())}
+              onClick={() => {
+                dispatch(logout());
+                resetStates();
+              }}
               to='/'
             >
               Logout
@@ -106,32 +109,35 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
 
   return (
     <div>
-      <nav className='navbar navBarContainer navbar-expand-md fixed-top  mx-0'>
-        <div className='container-fluid d-felx align-content-around mx-0'>
-          <Link
-            to='/'
-            className='navbar-brand'
-            onClick={() => {
-              resetStates();
-            }}
-          >
-            Bricola
-          </Link>
-          <Link to='/' className='navbar-brand'>
-            Home
-          </Link>
-          <Link to='/' className='navbar-brand'>
-            About
-          </Link>
-          <Link to='/' className='navbar-brand'>
-            Contact Us
-          </Link>
-          <Link to='/' className='navbar-brand'>
-            Our Team
-          </Link>
-          <Link to='/' className='navbar-brand'>
-            Blog
-          </Link>
+      <nav className='navbar navBarContainer navbar-expand-md fixed-top mx-0'>
+        <div className='container-fluid mx-0'>
+          <div className='col-md-5 d-flex align-items-center'>
+            <Link
+              to='/'
+              className='navbar-brand mr-5'
+              onClick={() => {
+                resetStates();
+              }}
+            >
+              Bricola
+            </Link>
+
+            <Link to='/' className='navbar-item mx-1'>
+              Home
+            </Link>
+            <Link to='/' className='navbar-item mx-1'>
+              About
+            </Link>
+            <Link to='/' className='navbar-item mx-1'>
+              Contact Us
+            </Link>
+            <Link to='/' className='navbar-item mx-1'>
+              Our Team
+            </Link>
+            <Link to='/' className='navbar-item mx-1'>
+              Blog
+            </Link>
+          </div>
 
           <button
             className='navbar-toggler'
