@@ -34,7 +34,7 @@ const CommentCard = ({
                 dispatch(deleteComment({ postId, commentId }));
               }}
             >
-              <i class='fas fa-times'></i>
+              <i class='fas fa-times fa-xs'></i>
             </button>
           )}
         </span>

@@ -59,7 +59,7 @@ const PostCard = ({
                   aria-label='Close'
                   onClick={() => dispatch(deletePost(id))}
                 >
-                  <i class='fas fa-times'></i>
+                  <i class='fas fa-times fa-xs'></i>
                 </button>
               )}
             </div>
