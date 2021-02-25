@@ -125,16 +125,16 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
             <Link to='/' className='navbar-item mx-1'>
               Home
             </Link>
-            <Link to='/' className='navbar-item mx-1'>
+            <Link to='/about' className='navbar-item mx-1'>
               About
             </Link>
-            <Link to='/' className='navbar-item mx-1'>
+            <Link to='/contactus' className='navbar-item mx-1'>
               Contact Us
             </Link>
-            <Link to='/' className='navbar-item mx-1'>
+            <Link to='/ourteam' className='navbar-item mx-1'>
               Our Team
             </Link>
-            <Link to='/' className='navbar-item mx-1'>
+            <Link to='/blog' className='navbar-item mx-1'>
               Blog
             </Link>
           </div>
