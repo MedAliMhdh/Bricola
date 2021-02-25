@@ -181,3 +181,13 @@ button.btn.post {
   background: #00887a;
   color: white;
 }
+
+/*****************Edit Profile **********************/
+
+input.updateInput.col-sm-12,
+select.updateInput.col-sm-12,
+textarea {
+  border-style: hidden;
+  border-bottom: 2px solid black;
+  background: whitesmoke;
+}
