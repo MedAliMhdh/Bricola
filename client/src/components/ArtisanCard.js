@@ -74,7 +74,7 @@ const ArtisanCard = ({
                   {showPhone ? user.phone : <i className='fas fa-phone'></i>}
                 </button>{" "}
                 <button className='btn btn-outline-dark btn-sm'>
-                  <i class='fas fa-comment-alt'></i>
+                  <i className='fas fa-comment-alt'></i>
                 </button>{" "}
               </div>
             </div>

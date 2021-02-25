@@ -1,6 +1,6 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteComment } from '../actions/post';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteComment } from "../actions/post";
 
 const CommentCard = ({
   postWriter,
@@ -24,7 +24,7 @@ const CommentCard = ({
           <span className='commentWriterName'>{name}</span>
         </div>
         <span className='input-group-btn p-l-10'>
-          {((auth.user && auth.user.role === 'Admin') ||
+          {((auth.user && auth.user.role === "Admin") ||
             (auth.user && auth.user._id === commentWriter)) && (
             <button
               type='button'
@@ -34,7 +34,7 @@ const CommentCard = ({
                 dispatch(deleteComment({ postId, commentId }));
               }}
             >
-              <i class='fas fa-times fa-xs'></i>
+              <i className='fas fa-times fa-xs'></i>
             </button>
           )}
         </span>
