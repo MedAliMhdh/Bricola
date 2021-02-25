@@ -31,3 +31,12 @@ ul {
   margin-top: 6rem;
   margin-bottom: 3rem;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

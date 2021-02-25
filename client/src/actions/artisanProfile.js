@@ -9,6 +9,7 @@ import {
   SELECT_CITY,
   SELECT_RATE,
   CLEAR_PROFILE,
+  CLEAR_PROFILES,
   LOG_OUT,
   EVALUATE_ARTISAN,
 } from './types';
@@ -122,8 +123,24 @@ export const deleteProfile = (history) => async (dispatch) => {
   try {
     await axios.delete(`/api/artisan/`);
     dispatch({ type: CLEAR_PROFILE });
+    clearProfiles();
     dispatch({ type: LOG_OUT });
     history.push('/');
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: {
+        msg: err.response.statusText,
+        status: err.response.status,
+      },
+    });
+  }
+};
+
+// Clear profiles
+export const clearProfiles = () => async (dispatch) => {
+  try {
+    dispatch({ type: CLEAR_PROFILES });
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
