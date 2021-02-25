@@ -90,11 +90,7 @@
   color: #89817e;
 }
 
-div.ratings.ml-2 i {
-  color: #ffccbc;
-}
-
-.ratingInProfile {
+div.ratingInProfile {
   background: #00887a;
 }
 
@@ -123,13 +119,16 @@ li.active {
   font-size: 16px;
 }
 
-.ratingInProfile {
-  background: transparent;
+div.ratingInProfile i.fas.fa-star,
+div.ratingInProfile i.far.fa-star {
+  background: #00887a;
+  color: #ffccbc;
 }
 
-i.fas.fa-star,
-i.far.fa-star {
-  background: #00887a;
+div.givingRate i.fas.fa-star,
+div.givingRate i.far.fa-star {
+  background: transparent;
+  color: #00887a;
 }
 
 .profile-info .panel-footer {

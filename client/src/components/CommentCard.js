@@ -15,39 +15,37 @@ const CommentCard = ({
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <div className='timeline-comment-box col-md-11'>
-        <div>
+    <div className='timeline-comments col-md-12 px-2 py-3'>
+      <div className='d-flex justify-content-between'>
+        <div className='d-flex justify-content-start align-items-center mb-3'>
           <div className='user'>
             <img src={photo} alt='' />
           </div>
-          <span>{name}</span>
-          <span className='input-group-btn p-l-10'>
-            {((auth.user && auth.user.role === 'Admin') ||
-              (auth.user && auth.user._id === commentWriter)) && (
-              <button
-                type='button'
-                className='close'
-                aria-label='Close'
-                onClick={() => {
-                  dispatch(deleteComment({ postId, commentId }));
-                }}
-              >
-                <span aria-hidden='true'>&times;</span>
-              </button>
-            )}
-          </span>
+          <span className='commentWriterName'>{name}</span>
         </div>
+        <span className='input-group-btn p-l-10'>
+          {((auth.user && auth.user.role === 'Admin') ||
+            (auth.user && auth.user._id === commentWriter)) && (
+            <button
+              type='button'
+              className='close'
+              aria-label='Close'
+              onClick={() => {
+                dispatch(deleteComment({ postId, commentId }));
+              }}
+            >
+              <i class='fas fa-times'></i>
+            </button>
+          )}
+        </span>
+      </div>
 
-        <div className='input col-sm-12'>
-          <form action=''>
-            <div className='input-group '>
-              <span className='form-control rounded-corner mr-3'>
-                {comment}
-              </span>
-            </div>
-          </form>
-        </div>
+      <div className='input col-sm-12'>
+        <form action=''>
+          <div className='input-group timeline-content '>
+            <span className=' rounded-corner mr-3'>{comment}</span>
+          </div>
+        </form>
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getProfileById } from "../actions/artisanProfile";
-import PostCard from "./PostCard";
-import Spinner from "./Spinner";
-import { getPosts } from "../actions/post";
-import Thumbs from "./Thumbs";
-import "./CSS/artisanProfile.css";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProfileById } from '../actions/artisanProfile';
+import PostCard from './PostCard';
+import Spinner from './Spinner';
+import { getPosts } from '../actions/post';
+import Thumbs from './Thumbs';
+import './CSS/artisanProfile.css';
 
 const VisitedProfile = ({ profileId }) => {
   const dispatch = useDispatch();
@@ -67,9 +67,13 @@ const VisitedProfile = ({ profileId }) => {
                 {yourRate
                   ? auth.user &&
                     (rate ? (
-                      <Thumbs rate={rate} />
+                      <div className='givingRate'>
+                        <Thumbs rate={rate} />
+                      </div>
                     ) : (
-                      <Thumbs rate={rate} setRate={setRate} evaluate={true} />
+                      <div className='givingRate'>
+                        <Thumbs rate={rate} setRate={setRate} evaluate={true} />
+                      </div>
                     ))
                   : auth.user && (
                       <button
@@ -112,15 +116,15 @@ const VisitedProfile = ({ profileId }) => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{" "}
+                      <span>Address </span>:{' '}
                       {` ${profile.profile.street}, ${profile.profile.city}, ${profile.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{" "}
-                      {profile.profile.equipment ? "Yes" : "No"}
+                      <span>Equipments </span>:{' '}
+                      {profile.profile.equipment ? 'Yes' : 'No'}
                     </p>
                   </div>
                 </div>
