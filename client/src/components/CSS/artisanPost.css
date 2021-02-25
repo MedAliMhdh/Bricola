@@ -42,6 +42,11 @@ span.stats-text {
   text-decoration: none;
 }
 
+span.username,
+span.username:hover {
+  color: black;
+}
+
 .timeline-content p {
   background-color: #eee;
   letter-spacing: 0.25px;
@@ -118,9 +123,14 @@ span.stats-text {
   max-height: 100%;
 }
 
-span.commentWriterName {
+span.commentWriterName,
+span.commentWriterName:hover {
   color: #000;
-  background-color: transparent;
+}
+
+span.rounded-corner.mr-3,
+span.rounded-corner.mr-3:hover {
+  color: #000;
 }
 
 button.btn.post {

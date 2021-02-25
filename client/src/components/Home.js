@@ -18,7 +18,7 @@ const Home = ({
   return (
     <div className='container-fluid homeContainer mx-0 px-0'>
       <h3 className='col-7 mx-auto' style={{ textAlign: "center" }}>
-        Having technical trouble in your house? Find the artisan that you need
+        Having technical trouble in your house? Find the artisan that you need.
       </h3>
       <Search
         setSearch={setSearch}
