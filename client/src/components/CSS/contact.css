@@ -1,0 +1,67 @@
+* {
+  background-color: transparent;
+}
+/*Contact sectiom*/
+.content-header {
+  font-family: 'Oleo Script', cursive;
+  color: #fcc500;
+  font-size: 45px;
+}
+
+.section-content {
+  text-align: center;
+}
+#contact {
+  margin-top: 75px;
+  font-family: 'Teko', sans-serif;
+  padding-top: 50px;
+  width: 80%;
+  height: 550px;
+  border-radius: 20px;
+  background: #3a6186; /* fallback for old browsers */
+  color: #fff;
+}
+.contact-section {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+.contact-section .col-md-6 {
+  width: 50%;
+}
+.theContainer {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+.form-line {
+  border-right: 1px solid #b29999;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+label {
+  font-size: 1.3em;
+  line-height: 1em;
+  font-weight: normal;
+}
+.form-control {
+  font-size: 1.3em;
+  color: #080808;
+}
+textarea.form-control {
+  height: 135px;
+  /* margin-top: px;*/
+}
+
+.btn.btn-default.submit {
+  font-size: 1.1em;
+  float: right;
+  width: 170px;
+  background-color: #fcc500;
+  color: #fff;
+}
+
+i {
+  background-color: transparent;
+  color: #fff;
+}
