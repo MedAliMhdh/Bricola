@@ -111,8 +111,8 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
   return (
     <div>
       <nav className='navbar navBarContainer navbar-expand-md fixed-top mx-0'>
-        <div className='container-fluid mx-0'>
-          <div className='col-md-5 d-flex align-items-center'>
+        <div className='container-fluid mx-0 d-flex justify-content-between align-items-center'>
+          <div className='col-md-8 d-flex align-items-center'>
             <Link
               to='/'
               className='navbar-brand mr-5'
@@ -121,40 +121,42 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
                 dispatch(clearProfiles());
               }}
             >
-              Bricola
+              <img alt='' src='/logo.png' className='logo' />
             </Link>
-
-            <Link to='/' className='navbar-item mx-1'>
-              Home
-            </Link>
-            <Link to='/about' className='navbar-item mx-1'>
-              About
-            </Link>
-            <Link to='/contactus' className='navbar-item mx-1'>
-              Contact Us
-            </Link>
-            <Link to='/ourteam' className='navbar-item mx-1'>
-              Our Team
-            </Link>
-            <Link to='/blog' className='navbar-item mx-1'>
-              Blog
-            </Link>
+            <div className='d-flex flex-nowrap align-items-center'>
+              <Link to='/' className='navbar-item mx-1'>
+                Home
+              </Link>
+              <Link to='/about' className='navbar-item mx-1'>
+                About
+              </Link>
+              <Link to='/contactus' className='navbar-item mx-1'>
+                Contact Us
+              </Link>
+              <Link to='/ourteam' className='navbar-item mx-1'>
+                Our Team
+              </Link>
+              <Link to='/blog' className='navbar-item mx-1'>
+                Blog
+              </Link>
+            </div>
           </div>
-
-          <button
-            className='navbar-toggler'
-            type='button'
-            data-toggle='collapse'
-            data-target='#navbarNav'
-            aria-controls='navbarNav'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon'></span>
-          </button>
-          {!authState.loading && (
-            <div>{authState.isAuthenticated ? authLinks : guestLinks}</div>
-          )}
+          <div>
+            <button
+              className='navbar-toggler'
+              type='button'
+              data-toggle='collapse'
+              data-target='#navbarNav'
+              aria-controls='navbarNav'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
+            >
+              <span className='navbar-toggler-icon'></span>
+            </button>
+            {!authState.loading && (
+              <div>{authState.isAuthenticated ? authLinks : guestLinks}</div>
+            )}
+          </div>
         </div>
       </nav>
       <Alert className='alerts' />

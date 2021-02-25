@@ -29,3 +29,8 @@ button.btn.logRegBtn.nav-item.col-11.px-4.mx-2 {
   background-color: #00887a;
   color: white;
 }
+
+.logo {
+  width: 30px;
+  background-color: transparent;
+}
