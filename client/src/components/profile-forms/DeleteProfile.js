@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getArtisanCurrentProfile } from '../../actions/artisanProfile';
 
 import { getPersonCurrentProfile } from '../../actions/personProfile';
+import Thumbs from '../Thumbs';
 import DeleteButton from './DeleteButton';
 import Spinner from '../Spinner';
 
@@ -13,16 +14,22 @@ const ArtisanProfile = () => {
   const artisanProfile = useSelector((store) => store.artisan);
   const personProfile = useSelector((store) => store.person);
 
-  const userRole = useSelector((state) => state.auth.user.role);
+  const user = useSelector((state) => state.auth.user);
+
+  const rateAverage =
+    artisanProfile.profile && artisanProfile.profile.rate.length > 0
+      ? artisanProfile.profile.rate.reduce((acc, rate) => acc + rate.value, 0) /
+        artisanProfile.profile.rate.length
+      : 0;
 
   useEffect(() => {
-    if (userRole === 'Artisan') {
+    if (user.role === 'Artisan') {
       dispatch(getArtisanCurrentProfile());
     }
   }, []);
 
   useEffect(() => {
-    if (userRole === 'Person') {
+    if (user.role === 'Person') {
       dispatch(getPersonCurrentProfile());
     }
   }, []);
@@ -42,6 +49,9 @@ const ArtisanProfile = () => {
                   </Link>
                   <h1>{artisanProfile.profile.user.name}</h1>
                   <p>{artisanProfile.profile.user.email}</p>
+                  <div className='ratingInProfile d-flex justify-content-center'>
+                    <Thumbs rate={rateAverage} />
+                  </div>
                 </div>
 
                 <ul className='nav nav-pills nav-stacked '>
@@ -114,7 +124,7 @@ const ArtisanProfile = () => {
                   {artisanProfile.profile.bio}
                 </div>
               </div>
-              <div className='panel'>
+              <div className='panel d-flex justify-content-center mt-3'>
                 <DeleteButton />
               </div>
             </div>
@@ -186,7 +196,7 @@ const ArtisanProfile = () => {
                     </div>
                   </div>
                 </div>
-                <div className='panel'>
+                <div className='panel d-flex justify-content-center mt-3'>
                   <DeleteButton />
                 </div>
               </div>

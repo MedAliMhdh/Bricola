@@ -3,13 +3,12 @@ import { getPosts } from '../../actions/post';
 import { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { updateUser } from '../../actions/auth';
+import Thumbs from '../Thumbs';
 import {
   createArtisanProfile,
   getArtisanCurrentProfile,
 } from '../../actions/artisanProfile';
-
 import {
   createPersonProfile,
   getPersonCurrentProfile,
@@ -30,6 +29,12 @@ const EditProfile = () => {
   const history = useHistory();
   const artisanProfile = useSelector((state) => state.artisan);
   const personProfile = useSelector((state) => state.person);
+
+  const rateAverage =
+    artisanProfile.profile && artisanProfile.profile.rate.length > 0
+      ? artisanProfile.profile.rate.reduce((acc, rate) => acc + rate.value, 0) /
+        artisanProfile.profile.rate.length
+      : 0;
 
   useEffect(() => {
     if (artisanProfile.profile) {
@@ -317,6 +322,9 @@ const EditProfile = () => {
                     </Link>
                     <h1>{artisanProfile.profile.user.name}</h1>
                     <p>{artisanProfile.profile.user.email}</p>
+                    <div className='ratingInProfile d-flex justify-content-center'>
+                      <Thumbs rate={rateAverage} />
+                    </div>
                   </div>
 
                   <ul className='nav nav-pills nav-stacked '>
