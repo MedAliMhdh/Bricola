@@ -1,7 +1,7 @@
 /********************************** Alert *****************************/
 
 .alert {
-  margin-top: 10px;
+  margin-top: 100px;
   padding: 0.8rem;
   margin: 1rem 0;
   opacity: 0.9;
@@ -10,31 +10,37 @@
 }
 
 .alert-primary {
+  margin-top: 100px;
   background: var(--primary-color);
   color: #fff;
 }
 
 .alert-light {
+  margin-top: 100px;
   background: var(--light-color);
   color: #333;
 }
 
 .alert-dark {
+  margin-top: 100px;
   background: var(--dark-color);
   color: #fff;
 }
 
 .alert-danger {
+  margin-bottom: 0px;
   background: var(--danger-color);
   color: #fff;
 }
 
 .alert-success {
+  margin-top: 100px;
   background: var(--success-color);
   color: #fff;
 }
 
 .alert-white {
+  margin-top: 100px;
   background: #fff;
   color: #333;
   border: #ccc solid 1px;
