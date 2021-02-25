@@ -1,20 +1,25 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import Register from './components/Register';
-import Login from './components/Login';
-import { useDispatch } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
-import Home from './components/Home';
-import ArtisanProfile from './components/ArtisanProfile';
-import PersonProfile from './components/PersonProfile';
-import VisitedProfile from './components/VisitedProfile';
-import CreateProfile from './components/profile-forms/CreateProfile';
-import EditProfile from './components/profile-forms/EditProfile';
-import DeleteProfile from './components/profile-forms/DeleteProfile';
-import { loadUser } from './actions/auth';
-import setAuthToken from './utils/setAuthToken';
-import Navb from './components/Navb';
-import PrivateRoute from './components/routing/PrivateRoute';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import { useDispatch } from "react-redux";
+import { Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
+import ArtisanProfile from "./components/ArtisanProfile";
+import PersonProfile from "./components/PersonProfile";
+import VisitedProfile from "./components/VisitedProfile";
+import About from "./components/navPages/About";
+import Blog from "./components/navPages/Blog";
+import ContactUs from "./components/navPages/ContactUs";
+import Team from "./components/navPages/Team";
+
+import CreateProfile from "./components/profile-forms/CreateProfile";
+import EditProfile from "./components/profile-forms/EditProfile";
+import DeleteProfile from "./components/profile-forms/DeleteProfile";
+import { loadUser } from "./actions/auth";
+import setAuthToken from "./utils/setAuthToken";
+import Navb from "./components/Navb";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -22,9 +27,9 @@ if (localStorage.token) {
 const App = () => {
   const [search, setSearch] = useState(false);
   const [rate, setRate] = useState(0);
-  const [job, setJob] = useState('');
-  const [equipment, setEquipment] = useState('');
-  const [city, setCity] = useState('');
+  const [job, setJob] = useState("");
+  const [equipment, setEquipment] = useState("");
+  const [city, setCity] = useState("");
 
   const dispatch = useDispatch();
 
@@ -43,7 +48,7 @@ const App = () => {
       />
       <Switch>
         <Route exact path='/'>
-          {' '}
+          {" "}
           <Home
             search={search}
             setSearch={setSearch}
@@ -59,6 +64,10 @@ const App = () => {
         </Route>
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
+        <Route path='/about' component={About} />
+        <Route path='/contactus' component={ContactUs} />
+        <Route path='/blog' component={Blog} />
+        <Route path='/ourteam' component={Team} />
         <Route
           path='/visitedartisanprofile/:profileId'
           render={(props) => (
