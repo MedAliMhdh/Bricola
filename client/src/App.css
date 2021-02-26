@@ -1,5 +1,8 @@
 /***********root***************/
+
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap");
 * {
+  font-family: Be Vietnam;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
