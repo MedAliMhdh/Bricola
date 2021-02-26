@@ -1,5 +1,9 @@
 /***************Categories Carousel**************/
 
+div.container.text-center.my-4 {
+  background: transparent;
+}
+
 .carousel-inner {
   position: absolute;
 }
@@ -35,9 +39,10 @@
   background-color: transparent;
 }
 
-.img-fluid {
+img.img-fluid {
   padding: 5px;
   border-radius: 6%;
+  background: transparent;
 }
 
 i.fas.fa-chevron-left,
