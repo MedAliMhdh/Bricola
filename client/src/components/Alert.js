@@ -1,20 +1,25 @@
-import React from "react";
-import "./CSS/alert.css";
+import React from 'react';
+import './CSS/alert.css';
+import { useDispatch } from 'react-redux';
+import { deleteAlert } from '../actions/alert';
 
-import { useSelector } from "react-redux";
+const Alert = ({ alerts }) => {
+  const dispatch = useDispatch();
 
-const Alert = () => {
-  const alerts = useSelector((state) => state.alert);
-
-  if (alerts !== null && alerts.length > 0) {
-    return alerts.map((alert) => (
-      <div key={alert.id} className={`alert alert-${alert.alertType}`}>
-        {alert.msg}
-      </div>
-    ));
-  } else {
-    return <></>;
-  }
+  return alerts.map((alert) => (
+    <div key={alert.id} className={`alert alert-${alert.alertType}`}>
+      <button
+        type='button'
+        class='close'
+        data-dismiss='alert'
+        aria-hidden='true'
+        onClick={() => dispatch(deleteAlert({ id: alert.id }))}
+      >
+        ×
+      </button>
+      <span>{alert.msg}</span>
+    </div>
+  ));
 };
 
 export default Alert;
