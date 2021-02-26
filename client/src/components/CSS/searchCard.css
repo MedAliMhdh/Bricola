@@ -1,4 +1,7 @@
 /************searchCard************/
+.searchContainer h3 {
+  color: #00887a;
+}
 div.searchContainer.background {
   background: url(../../images/worker-tools-measures-plans.jpg) no-repeat center
     center fixed;
@@ -33,9 +36,6 @@ button.btn.searchBtn.col-md-3 {
   background-color: #ffccbc;
 }
 
-.searchInput {
-}
-
-div.col-5.col-lg-2.d-flex.justify-content -center i {
+div.col-5.col-lg-2.d-flex.justify-content-center i {
   background: white;
 }

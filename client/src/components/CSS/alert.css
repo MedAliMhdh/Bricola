@@ -1,46 +1,55 @@
 /********************************** Alert *****************************/
 
-.alert {
-  margin-top: 100px;
-  padding: 0.8rem;
-  margin: 1rem 0;
+div.alert.alert-primary {
+  position: absolute;
+  top: 0px;
   opacity: 0.9;
-  background: var(--light-color);
-  color: #333;
-}
-
-.alert-primary {
-  margin-top: 100px;
+  width: 100%;
   background: var(--primary-color);
   color: #fff;
 }
 
-.alert-light {
-  margin-top: 100px;
+div.alert.alert-light {
+  position: absolute;
+  top: 0px;
+  opacity: 0.9;
+  width: 100%;
   background: var(--light-color);
   color: #333;
 }
 
-.alert-dark {
-  margin-top: 100px;
+div.alert.alert-dark {
+  position: absolute;
+  top: 0px;
+  opacity: 0.9;
+  width: 100%;
   background: var(--dark-color);
   color: #fff;
 }
 
-.alert-danger {
-  margin-bottom: 0px;
+div.alert.alert-danger {
+  position: absolute;
+  top: 0px;
+  opacity: 0.9;
+  width: 100%;
   background: var(--danger-color);
   color: #fff;
 }
 
-.alert-success {
-  margin-top: 100px;
+div.alert.alert-success {
+  position: absolute;
+  top: 0px;
+  opacity: 0.9;
+  width: 100%;
   background: var(--success-color);
   color: #fff;
 }
 
-.alert-white {
-  margin-top: 100px;
+div.alert.alert-white {
+  position: absolute;
+  top: 0px;
+  opacity: 0.9;
+  width: 100%;
   background: #fff;
   color: #333;
   border: #ccc solid 1px;
