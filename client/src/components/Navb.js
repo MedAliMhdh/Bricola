@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Alert from "./Alert";
-import { clearProfiles } from "../actions/artisanProfile";
-import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../actions/auth";
-import "./CSS/navbar.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Alert from './Alert';
+import { clearProfiles } from '../actions/artisanProfile';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../actions/auth';
+import './CSS/navbar.css';
 
 const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
   const dispatch = useDispatch();
@@ -14,13 +14,13 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
   const resetStates = () => {
     setSearch(false);
     setRate(0);
-    setJob("");
-    setEquipment("");
-    setCity("");
+    setJob('');
+    setEquipment('');
+    setCity('');
   };
 
   const defaultImg =
-    "http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm";
+    'http://www.gravatar.com/avatar/c1a276b8587995e9f29e1b7fe9148169?s=200&r=pg&d=mm';
 
   const guestLinks = (
     <div
@@ -54,7 +54,7 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
       <i className='far fa-bell fa-2x mx-2'></i>
       <i className='far fa-comment-alt fa-2x mx-2'></i>
       <form className='d-flex'>
-        {" "}
+        {' '}
         <div className='dropdown drpdwnMenuBtn ml-2'>
           <button
             className='btn dropdown-toggle px-0 py-0'
@@ -80,7 +80,7 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
             aria-labelledby='dropdownMenuButton'
           >
             {authState.user ? (
-              authState.user.role === "Artisan" ? (
+              authState.user.role === 'Artisan' ? (
                 <Link className='dropdown-item px-3' to='/artisanprofile/me'>
                   View profile
                 </Link>
