@@ -1,36 +1,40 @@
 /************Navbar************/
-
-.navbar-brand,
-.navbar-brand:hover {
-  color: #77a6f7;
-  font-weight: bold;
+.navBarContainer {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  background-color: #ececec;
 }
 
-.navbar-item,
-.navbar-item:hover,
-.dropdown-item {
-  color: white;
+.dropdown-menu.dropdown-menu-right {
+  background-color: #ececec;
+}
+
+.navbar-item.mx-1,
+a.dropdown-item {
+  color: black;
   text-decoration-line: none;
 }
 
-.navBarContainer {
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
-  background-color: #ffccbc;
+.navbar-item.mx-1:hover {
+  color: #817979;
 }
-.navBarContainer div,
-.navBarContainer i,
-.navBarContainer form {
-  background-color: #ffccbc;
-  color: white;
+
+a.dropdown-item:hover {
+  background-color: #817979;
+  color: #fff;
 }
 
 button.btn.logRegBtn.col-12.px-4.mx-2,
 button.btn.logRegBtn.nav-item.col-11.px-4.mx-2 {
-  background-color: #00887a;
+  background-color: #5da2d5;
   color: white;
 }
 
 .logo {
   width: 30px;
   background-color: transparent;
+}
+
+i.far.fa-bell,
+i.far.fa-comment-alt {
+  color: #000;
 }

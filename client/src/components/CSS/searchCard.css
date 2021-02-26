@@ -1,6 +1,9 @@
 /************searchCard************/
 .searchContainer h3 {
-  color: #00887a;
+  color: #5da2d5;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'Teko', sans-serif;
 }
 div.searchContainer.background {
   background: url(../../images/worker-tools-measures-plans.jpg) no-repeat center
@@ -12,6 +15,7 @@ div.searchContainer.background {
 }
 .myContainer {
   margin-top: 30px;
+  margin-bottom: 20px;
   height: 250px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   background-color: transparent;
@@ -33,7 +37,8 @@ select {
 }
 
 button.btn.searchBtn.col-md-3 {
-  background-color: #ffccbc;
+  background-color: #5da2d5;
+  color: #fff;
 }
 
 div.col-5.col-lg-2.d-flex.justify-content-center i {

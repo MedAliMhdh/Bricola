@@ -10,14 +10,16 @@
   background: #eee;
 }
 
-i {
-  color: #00887a;
+.fas.fa-times,
+.fa.fa-thumbs-up,
+.fa.fa-comments {
+  color: #5da2d5;
   background: #eee;
 }
 
 span.stats-total,
 span.stats-text {
-  color: #00887a;
+  color: #5da2d5;
 }
 
 .timeline-header {
@@ -134,6 +136,6 @@ span.rounded-corner.mr-3:hover {
 }
 
 button.btn.post {
-  background: #00887a;
+  background: #5da2d5;
   color: white;
 }

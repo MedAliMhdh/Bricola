@@ -9,7 +9,7 @@
 }
 
 .profile-nav .user-heading {
-  background: #00887a;
+  background: #5da2d5;
   color: #fff;
   border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px 4px 0 0;
@@ -70,7 +70,7 @@
 .profile-nav ul > li > a:focus,
 .profile-nav ul li.active a {
   background: #f8f7f5 !important;
-  border-left: 5px solid #00887a;
+  border-left: 5px solid #5da2d5;
   color: #89817f !important;
   text-decoration: none;
 }
@@ -86,12 +86,25 @@
   color: #bcb3aa;
 }
 
+.profile-nav ul > li > a > i.fa.fa-user,
+.profile-nav ul > li > a > i.fa.fa-edit,
+.profile-nav ul > li > a > i.fas.fa-trash-alt {
+  color: #bcb3aa;
+}
+
+.fa.fa-map-marker,
+.fa.fa-camera,
+.fa.fa-film,
+.fa.fa-microphone {
+  color: #bcb3aa;
+}
+
 .row .bio-row p span {
   color: #89817e;
 }
 
 div.ratingInProfile {
-  background: #00887a;
+  background: #5da2d5;
 }
 
 .nav-pills {
@@ -121,14 +134,14 @@ li.active {
 
 div.ratingInProfile i.fas.fa-star,
 div.ratingInProfile i.far.fa-star {
-  background: #00887a;
-  color: #ffccbc;
+  background: #5da2d5;
+  color: #f78888;
 }
 
 div.givingRate i.fas.fa-star,
 div.givingRate i.far.fa-star {
   background: transparent;
-  color: #00887a;
+  color: #5da2d5;
 }
 
 .profile-info .panel-footer {
@@ -144,7 +157,7 @@ div.givingRate i.far.fa-star {
 }
 
 .bio-graph-heading {
-  background: #00887a;
+  background: #5da2d5;
   color: #fff;
   text-align: center;
   font-style: italic;
@@ -178,8 +191,9 @@ div.givingRate i.far.fa-star {
 }
 
 button.btn.post {
-  background: #00887a;
+  background: #5da2d5;
   color: white;
+  margin-bottom: 10px;
 }
 
 /*****************Edit Profile **********************/
@@ -189,5 +203,5 @@ select.updateInput.col-sm-12,
 textarea {
   border-style: hidden;
   border-bottom: 2px solid black;
-  background: whitesmoke;
+  background: white;
 }

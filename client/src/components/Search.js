@@ -1,7 +1,7 @@
-import Thumbs from "./Thumbs";
-import { filterProfiles } from "../actions/artisanProfile";
-import { useDispatch } from "react-redux";
-import "./CSS/searchCard.css";
+import Thumbs from './Thumbs';
+import { filterProfiles } from '../actions/artisanProfile';
+import { useDispatch } from 'react-redux';
+import './CSS/searchCard.css';
 
 const Search = ({
   setSearch,
@@ -44,9 +44,9 @@ const Search = ({
             className='col-md-12 searchInput'
             value={equipment}
             onChange={(e) => {
-              e.target.value === "true"
+              e.target.value === 'true'
                 ? setEquipment(true)
-                : e.target.value === "false"
+                : e.target.value === 'false'
                 ? setEquipment(false)
                 : setEquipment(e.target.value);
             }}
