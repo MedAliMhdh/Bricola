@@ -12,6 +12,7 @@ import About from "./components/navPages/About";
 import Blog from "./components/navPages/Blog";
 import ContactUs from "./components/navPages/ContactUs";
 import Team from "./components/navPages/Team";
+import Alert from "./components/Alert";
 
 import CreateProfile from "./components/profile-forms/CreateProfile";
 import EditProfile from "./components/profile-forms/EditProfile";
@@ -46,6 +47,9 @@ const App = () => {
         setEquipment={setEquipment}
         setCity={setCity}
       />
+      <div className='alertsContainer'>
+        <Alert className='alerts' />
+      </div>
       <Switch>
         <Route exact path='/'>
           {" "}

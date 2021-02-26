@@ -159,7 +159,6 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
           </div>
         </div>
       </nav>
-      <Alert className='alerts' />
     </div>
   );
 };
