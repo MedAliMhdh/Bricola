@@ -2,7 +2,7 @@
 
 #artisanCard {
   height: 200px;
-  background-color: #00887a;
+  background-color: #5da2d5;
   color: white;
 }
 
@@ -22,21 +22,19 @@
 .artisanCard div,
 .artisanCard h6,
 div.sm-col-6.px-3 div i {
-  background-color: #00887a;
+  background-color: transparent;
 }
 
 .artisanCard button i,
 .artisanCard button {
-  background-color: white;
-  color: white;
-  background: transparent;
+  background-color: #f78888;
+  color: #ececec;
 }
 
 .artisanCard button i:hover,
 .artisanCard button:hover {
-  background-color: white;
-  color: black;
-  background: transparent;
+  background-color: #ececec;
+  color: #f78888;
 }
 
 .artisanCard .first {
@@ -54,9 +52,9 @@ div.sm-col-6.px-3 div i {
 }
 
 div.ratings.ml-2 i {
-  color: #ffccbc;
+  color: #f78888;
 }
 
-.btn {
+.btn.btn-sm {
   border-radius: 5px !important;
 }

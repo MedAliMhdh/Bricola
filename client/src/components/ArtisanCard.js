@@ -1,9 +1,9 @@
-import Thumbs from "./Thumbs";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getProfileById } from "../actions/artisanProfile";
-import { useState } from "react";
-import "./CSS/artisanCard.css";
+import Thumbs from './Thumbs';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProfileById } from '../actions/artisanProfile';
+import { useState } from 'react';
+import './CSS/artisanCard.css';
 
 const ArtisanCard = ({
   artisan: { bio, city, profession, rate, street, user },
@@ -25,7 +25,7 @@ const ArtisanCard = ({
           <Link
             to={
               auth.user && user._id === auth.user._id
-                ? "/artisanprofile/me"
+                ? '/artisanprofile/me'
                 : `/visitedartisanprofile/${user._id}`
             }
             onClick={() => {
@@ -33,24 +33,24 @@ const ArtisanCard = ({
             }}
           >
             <div className='image mr-3 d-flex flex-column align-items-center'>
-              {" "}
+              {' '}
               <img
                 src={user.avatar}
                 className='rounded-circle'
                 width='60'
                 alt=''
-              />{" "}
+              />{' '}
             </div>
           </Link>
 
           <div className='row'>
             <div className='sm-col-6 px-3'>
               <div className='d-flex flex-row mb-3 mr-3'>
-                {" "}
+                {' '}
                 <Link
                   to={
                     auth.user && user._id === auth.user._id
-                      ? "/artisanprofile/me"
+                      ? '/artisanprofile/me'
                       : `/visitedartisanprofile/${user._id}`
                   }
                   onClick={() => {
@@ -60,27 +60,27 @@ const ArtisanCard = ({
                   <span>{user.name}</span>
                 </Link>
                 <div className='ratings ml-2 mt-1'>
-                  {" "}
+                  {' '}
                   <Thumbs rate={rating} />
                 </div>
               </div>
 
               <div>
-                {" "}
+                {' '}
                 <button
-                  className='btn btn-outline-dark btn-sm'
+                  className='btn btn-sm'
                   onClick={() => setShowPhone(!showPhone)}
                 >
                   {showPhone ? user.phone : <i className='fas fa-phone'></i>}
-                </button>{" "}
-                <button className='btn btn-outline-dark btn-sm'>
+                </button>{' '}
+                <button className='btn btn-sm'>
                   <i className='fas fa-comment-alt'></i>
-                </button>{" "}
+                </button>{' '}
               </div>
             </div>
             <div
               className='md-col-6 sm-col-3 col- px-3'
-              style={{ maxWidth: "300px", maxHeight: "100px" }}
+              style={{ maxWidth: '300px', maxHeight: '100px' }}
             >
               <span maxLength='5'>{bio}</span>
             </div>

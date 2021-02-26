@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Alert from './Alert';
 import { clearProfiles } from '../actions/artisanProfile';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../actions/auth';
@@ -72,15 +71,15 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
               }
               className=' rounded-circle mr-3 '
               width='40'
-              alt='hihihi'
+              alt=''
             />
           </button>
           <div
-            className='dropdown-menu nvbDropdow'
+            className='dropdown-menu dropdown-menu-right'
             aria-labelledby='dropdownMenuButton'
           >
-            {authState.user ? (
-              authState.user.role === 'Artisan' ? (
+            {authState.user &&
+              (authState.user.role === 'Artisan' ? (
                 <Link className='dropdown-item px-3' to='/artisanprofile/me'>
                   View profile
                 </Link>
@@ -88,10 +87,7 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
                 <Link className='dropdown-item px-3' to='/personprofile/me'>
                   View profile
                 </Link>
-              )
-            ) : (
-              <div></div>
-            )}
+              ))}
             <Link
               className='dropdown-item px-3'
               onClick={() => {
@@ -114,7 +110,7 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
         <div className='col-md-8 d-flex align-items-center'>
           <Link
             to='/'
-            className='navbar-brand mr-5'
+            className=' mr-5'
             onClick={() => {
               resetStates();
               dispatch(clearProfiles());
@@ -126,15 +122,19 @@ const Navb = ({ setSearch, setRate, setJob, setEquipment, setCity }) => {
             <Link to='/' className='navbar-item mx-1'>
               Home
             </Link>
+
             <Link to='/about' className='navbar-item mx-1'>
               About
             </Link>
+
             <Link to='/contactus' className='navbar-item mx-1'>
               Contact Us
             </Link>
+
             <Link to='/ourteam' className='navbar-item mx-1'>
               Our Team
             </Link>
+
             <Link to='/blog' className='navbar-item mx-1'>
               Blog
             </Link>

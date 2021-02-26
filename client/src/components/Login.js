@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Navb from "./Navb";
-import { Link, Redirect } from "react-router-dom";
-import { login } from "../actions/auth";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from 'react';
+import Navb from './Navb';
+import { Link, Redirect } from 'react-router-dom';
+import { login } from '../actions/auth';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   // const userId = useSelector((state) => state.auth);
@@ -15,7 +15,7 @@ const Login = () => {
     if (state.auth.user) {
       return state.auth.user.role;
     }
-    return "";
+    return '';
   });
 
   const dispatch = useDispatch();
@@ -25,17 +25,17 @@ const Login = () => {
 
     dispatch(login({ email, password }));
 
-    setEmail("");
-    setPassword("");
+    setEmail('');
+    setPassword('');
   };
 
   // Redirect if Logged in
 
   if (isAuthenticated) {
-    if (role === "Artisan") {
+    if (role === 'Artisan') {
       return <Redirect to={`/artisanprofile/me`} />;
     }
-    if (role === "Person") {
+    if (role === 'Person') {
       return <Redirect to='/' />;
     }
   }
@@ -49,15 +49,15 @@ const Login = () => {
         <br />
 
         <div className='card bg-light'>
-          <article className='card-body mx-auto' style={{ maxWidth: "400" }}>
+          <article className='card-body mx-auto' style={{ maxWidth: '400' }}>
             <h4 className='card-title mt-3 text-center'>Log In</h4>
 
             <form onSubmit={(e) => onSubmit(e)}>
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-envelope'></i>{" "}
+                    {' '}
+                    <i className='fa fa-envelope'></i>{' '}
                   </span>
                 </div>
                 <input
@@ -75,8 +75,8 @@ const Login = () => {
               <div className='form-group input-group'>
                 <div className='input-group-prepend'>
                   <span className='input-group-text'>
-                    {" "}
-                    <i className='fa fa-lock'></i>{" "}
+                    {' '}
+                    <i className='fa fa-lock'></i>{' '}
                   </span>
                 </div>
                 <input
@@ -91,13 +91,13 @@ const Login = () => {
               {/* <!-- form-group// --> */}
 
               <div className='form-group'>
-                <button type='submit' className='btn btn-primary btn-block'>
+                <button type='submit' className='btn btn-block'>
                   Log In
                 </button>
               </div>
               {/* <!-- form-group// -->       */}
               <p className='text-center'>
-                Not registred yet? <Link to='/register'>Register</Link>{" "}
+                Not registred yet? <Link to='/register'>Register</Link>{' '}
               </p>
             </form>
           </article>

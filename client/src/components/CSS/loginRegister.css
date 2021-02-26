@@ -12,5 +12,24 @@ article h4 {
 
 /************Signin************/
 .registerContainer {
-  margin-top: 120px;
+  margin-top: 70px;
+}
+
+/******************************/
+.card-title.mt-3.text-center {
+  color: #f78888;
+}
+
+.fa.fa-envelope,
+.fa.fa-lock,
+.fa.fa-user,
+.fa.fa-phone,
+.fas.fa-user-tag,
+.fas.fa-paint-roller {
+  color: #5da2d5;
+}
+
+.btn.btn-block {
+  background-color: #5da2d5;
+  color: #fff;
 }

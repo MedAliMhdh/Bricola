@@ -4,13 +4,14 @@
 /*Contact sectiom*/
 .content-header {
   font-family: 'Oleo Script', cursive;
-  color: #fcc500;
+  color: #5da2d5;
   font-size: 45px;
 }
 
 .section-content {
   text-align: center;
 }
+
 #contact {
   margin-top: 75px;
   font-family: 'Teko', sans-serif;
@@ -18,7 +19,7 @@
   width: 80%;
   height: 550px;
   border-radius: 20px;
-  background: #3a6186; /* fallback for old browsers */
+  background: #f3d250; /* fallback for old browsers */
   color: #fff;
 }
 .contact-section {
@@ -57,7 +58,7 @@ textarea.form-control {
   font-size: 1.1em;
   float: right;
   width: 170px;
-  background-color: #fcc500;
+  background-color: #5da2d5;
   color: #fff;
 }
 
