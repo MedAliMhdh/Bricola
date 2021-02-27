@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import Spinner from './Spinner';
-import ArtisanCard from './ArtisanCard';
-import { useSelector, useDispatch } from 'react-redux';
-import { filterProfiles } from '../actions/artisanProfile';
+import React, { useEffect } from "react";
+import Spinner from "./Spinner";
+import ArtisanCard from "./ArtisanCard";
+import { useSelector, useDispatch } from "react-redux";
+import { filterProfiles } from "../actions/artisanProfile";
 
 const Profiles = ({ rate, job, equipment, city }) => {
   const artisan = useSelector((state) => state.artisan);
