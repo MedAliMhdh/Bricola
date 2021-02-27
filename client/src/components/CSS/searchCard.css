@@ -1,9 +1,13 @@
 /************searchCard************/
+.searchContainer {
+  height: 440px;
+}
+
 .searchContainer h3 {
   color: #5da2d5;
   font-size: 35px;
   font-weight: bold;
-  font-family: 'Teko', sans-serif;
+  font-family: "Teko", sans-serif;
 }
 div.searchContainer.background {
   background: url(../../images/worker-tools-measures-plans.jpg) no-repeat center
@@ -19,7 +23,7 @@ div.searchContainer.background {
   height: 250px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   background-color: transparent;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(4px);
   border-radius: 10px;
 }
 
