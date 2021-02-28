@@ -1,7 +1,23 @@
 .aboutContainer {
   margin-top: 100px;
+  position: relative;
 }
 
 .section1 {
-  margin-top: 50px;
+  margin-top: 100px;
+}
+
+.section2:before {
+  z-index: 0;
+  transform: skewY(-3deg);
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  display: block;
+  content: "";
+  background-color: #84a8cb;
+}
+
+.section2 {
+  margin: 100px 0;
 }

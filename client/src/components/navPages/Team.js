@@ -1,5 +1,6 @@
-import React from 'react';
-import '../CSS/team.css';
+import React from "react";
+import "../CSS/team.css";
+import Footer from "../Footer";
 
 const Team = () => {
   return (
@@ -10,8 +11,8 @@ const Team = () => {
             <h3 className='mb-3'>Experienced & Professional Team</h3>
             <h4 className='subtitle'>
               You can relay on our amazing features list and also our customer
-              services will be great experience for you without doubt and in
-              no-time
+              services will be great experience <br />
+              for you without doubt and in no-time
             </h4>
           </div>
         </div>
@@ -112,6 +113,7 @@ const Team = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -2,11 +2,12 @@ import React from "react";
 import "../CSS/about.css";
 import artisanOnPc from "../../images/artisanOnPc.png";
 import artisanWithClient from "../../images/artisanWithClient.png";
+import Footer from "../Footer";
 
 const About = () => {
   return (
-    <div className='container aboutContainer'>
-      <div className='section1 container d-flex flex-wrap'>
+    <div className='container-fluid aboutContainer'>
+      <div className='section1 container d-flex flex-wrap align-items-center'>
         <div className='col-lg-6'>
           <h1>what?</h1>
           <p>
@@ -20,7 +21,7 @@ const About = () => {
         </div>
         <img src={artisanOnPc} className='col-lg-5'></img>
       </div>
-      <div className='section1 container-fluid d-flex flex-wrap flex-sm-reverse'>
+      <div className='section2 container-fluid d-flex flex-wrap flex-sm-reverse'>
         <img src={artisanWithClient} className='col-lg-5'></img>
         <div className='col-lg-6'>
           <h1>How?</h1>
@@ -41,6 +42,7 @@ const About = () => {
           </ul>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
