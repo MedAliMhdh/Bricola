@@ -47,8 +47,8 @@ const Footer = () => {
           <div class='row'>
             <div class='col-md-8 col-sm-6 col-xs-12'>
               <p class='copyright-text'>
-                Copyright &copy; 2017 All Rights Reserved by
-                <Link to='/'>Bricola</Link>.
+                Copyright &copy; 2021 All Rights Reserved by
+                <Link to='/'> Bricola</Link>.
               </p>
             </div>
 
