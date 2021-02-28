@@ -1,18 +1,30 @@
 .aboutContainer {
   margin-top: 100px;
   position: relative;
+  padding: 0;
 }
 
 .section1 {
   margin-top: 100px;
 }
 
+.aboutContainer h1 {
+  font-family: "Be Vietnam";
+  font-weight: 600;
+}
+
+.section2 h1,
+.section2 ul {
+  color: white;
+}
+
 .section2:before {
   z-index: 0;
-  transform: skewY(-3deg);
+  transform: skewY(-5deg);
   height: 300px;
   width: 100%;
   position: absolute;
+  top: 400px;
   display: block;
   content: "";
   background-color: #84a8cb;
