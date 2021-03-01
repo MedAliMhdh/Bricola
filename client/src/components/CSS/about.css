@@ -9,13 +9,18 @@
 }
 
 .aboutContainer h1 {
-  font-family: 'Be Vietnam';
+  font-family: "Be Vietnam";
   font-weight: 600;
 }
 
 .section2 h1,
 .section2 ul {
   color: white;
+}
+
+.section2 {
+  margin: 100px 0;
+  padding: 0;
 }
 
 .section2:before {
@@ -26,10 +31,6 @@
   position: absolute;
   top: 400px;
   display: block;
-  content: '';
+  content: "";
   background-color: #5da2d5;
-}
-
-.section2 {
-  margin: 100px 0;
 }
