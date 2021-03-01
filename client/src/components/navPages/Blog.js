@@ -2,6 +2,10 @@ import React from 'react';
 import '../CSS/blog.css';
 import Footer from '../Footer';
 
+import plumbing from '../../images/plumbing.jpg';
+import welder from '../../images/welder.jpg';
+import mechanic from '../../images/mechanic.jpg';
+
 const Blog = () => {
   return (
     <div>
@@ -21,7 +25,9 @@ const Blog = () => {
             <div className='blog-post rounded border'>
               <div className='blog-img d-block overflow-hidden position-relative'>
                 <img
-                  src='https://via.placeholder.com/350x280/FF7F50/000000'
+                  src={plumbing}
+                  height='280'
+                  width='350'
                   className='img-fluid'
                   alt=''
                 />
@@ -78,7 +84,9 @@ const Blog = () => {
             <div className='blog-post rounded border'>
               <div className='blog-img d-block overflow-hidden position-relative'>
                 <img
-                  src='https://via.placeholder.com/350x280/6495ED/000000'
+                  src={welder}
+                  height='280'
+                  width='350'
                   className='img-fluid'
                   alt=''
                 />
@@ -135,7 +143,9 @@ const Blog = () => {
             <div className='blog-post rounded border'>
               <div className='blog-img d-block overflow-hidden position-relative'>
                 <img
-                  src='https://via.placeholder.com/350x280/FF1493/000000'
+                  src={mechanic}
+                  height='280'
+                  width='350'
                   className='img-fluid'
                   alt=''
                 />
