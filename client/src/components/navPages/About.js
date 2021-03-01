@@ -1,8 +1,8 @@
-import React from 'react';
-import '../CSS/about.css';
-import artisanOnPc from '../../images/artisanOnPc.png';
-import artisanWithClient from '../../images/artisanWithClient.png';
-import Footer from '../Footer';
+import React from "react";
+import "../CSS/about.css";
+import artisanOnPc from "../../images/artisanOnPc.png";
+import artisanWithClient from "../../images/artisanWithClient.png";
+import Footer from "../Footer";
 
 const About = () => {
   return (
@@ -22,7 +22,7 @@ const About = () => {
           </div>
           <img src={artisanOnPc} className='col-lg-5'></img>
         </div>
-        <div className='section2 container-fluid d-flex flex-wrap'>
+        <div className='section2 container-fluid d-flex flex-wrap px-0'>
           <div className='section2-body container d-flex align-items-center justify-content-around'>
             <img src={artisanWithClient} className='col-lg-5'></img>
             <div className='col-lg-6'>
@@ -34,7 +34,7 @@ const About = () => {
                 </li>
                 <li>
                   Visit artisan's profile, you may have informations and posts,
-                  so you can know if he is the right person for your job{' '}
+                  so you can know if he is the right person for your job{" "}
                 </li>
                 <li>
                   Send real time message to any artisan you want, in order to
