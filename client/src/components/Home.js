@@ -2,6 +2,7 @@ import Search from "./Search";
 import CategoriesCarousel from "./CategoriesCarousel";
 import Profiles from "./Profiles";
 import "./CSS/home.css";
+import Footer from "./Footer";
 
 const Home = ({
   search,
@@ -33,6 +34,7 @@ const Home = ({
       ) : (
         <CategoriesCarousel setSearch={setSearch} setJob={setJob} />
       )}
+      <Footer />
     </div>
   );
 };
