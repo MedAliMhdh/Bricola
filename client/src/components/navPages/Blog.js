@@ -39,20 +39,23 @@ const Blog = () => {
                 </div>
               </div>
               <div className='content p-3'>
-                <small className='text-muted p float-right'>19th Oct, 19</small>
+                <small className='text-muted p float-right'>1st Mar, 21</small>
                 <small>
                   <a href='javascript:void(0)' className='text-primary'>
-                    Marketing
+                    Plumbing
                   </a>
                 </small>
                 <h4 className='mt-2'>
-                  <a href='javascript:void(0)' className='text-dark title'>
-                    Quick guide on business with friends.
+                  <a
+                    href='https://www.raincitymaids.com/simple-guide-easily-clean-maintain-kitchen-sink/'
+                    className='text-dark title'
+                  >
+                    Simple Guide to Easily Clean and Maintain Your Kitchen Sink
                   </a>
                 </h4>
                 <p className='text-muted mt-2'>
-                  There is now an abundance of readable dummy texts. These are
-                  usually used when a text is required purely to fill a space.
+                  Considering the number of times you use it, you would think
+                  that your kitchen sink is relatively clean.
                 </p>
                 <div className='pt-3 mt-3 border-top d-flex'>
                   <img
@@ -92,20 +95,24 @@ const Blog = () => {
                 </div>
               </div>
               <div className='content p-3'>
-                <small className='text-muted p float-right'>19th Oct, 19</small>
+                <small className='text-muted p float-right'>19th Jan, 21</small>
                 <small>
                   <a href='javascript:void(0)' className='text-primary'>
-                    Event
+                    Welding
                   </a>
                 </small>
                 <h4 className='mt-2'>
-                  <a href='javascript:void(0)' className='text-dark title'>
-                    Become more money-minded
+                  <a
+                    href='https://www.thefabricator.com/thewelder/article/aluminumwelding/aluminum-etc-why-i-love-aluminum-welding'
+                    className='text-dark title'
+                  >
+                    Why I love aluminum welding
                   </a>
                 </h4>
                 <p className='text-muted mt-2'>
-                  There is now an abundance of readable dummy texts. These are
-                  usually used when a text is required purely to fill a space.
+                  I get excited about aluminum. Some folks might find that
+                  weird, but in my opinion, more people should be interested in
+                  and excited about it.
                 </p>
                 <div className='pt-3 mt-3 border-top d-flex'>
                   <img
@@ -145,20 +152,24 @@ const Blog = () => {
                 </div>
               </div>
               <div className='content p-3'>
-                <small className='text-muted p float-right'>19th Oct, 19</small>
+                <small className='text-muted p float-right'>1st Jan, 21</small>
                 <small>
                   <a href='javascript:void(0)' className='text-primary'>
-                    Software
+                    Mechanic
                   </a>
                 </small>
                 <h4 className='mt-2'>
-                  <a href='javascript:void(0)' className='text-dark title'>
-                    Quick guide on business with friends.
+                  <a
+                    href='https://www.caranddriver.com/features/a27104161/how-to-clean-engine/'
+                    className='text-dark title'
+                  >
+                    How to Clean Your Car's Engine
                   </a>
                 </h4>
                 <p className='text-muted mt-2'>
-                  There is now an abundance of readable dummy texts. These are
-                  usually used when a text is required purely to fill a space.
+                  Don't you feel good when your car is clean and all shined up?
+                  A well-kept car looks great rolling down the street or sitting
+                  in your driveway, and you'd swear it even drives better.
                 </p>
                 <div className='pt-3 mt-3 border-top d-flex'>
                   <img
