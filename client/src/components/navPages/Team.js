@@ -5,7 +5,7 @@ import Footer from "../Footer";
 const Team = () => {
   return (
     <div className='team4'>
-      <div className='container'>
+      <div className='container teamContainer'>
         <div className='row justify-content-center mb-4'>
           <div className='col-md-7 text-center'>
             <h3 className='mb-3'>Experienced & Professional Team</h3>

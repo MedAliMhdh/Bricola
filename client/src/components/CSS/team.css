@@ -4,7 +4,10 @@
   color: #8d97ad;
   font-weight: 300;
   margin-top: 70px;
-  margin-bottom: 100px;
+}
+
+.teamContainer {
+  margin-bottom: 50px;
 }
 
 h3 {
@@ -72,20 +75,13 @@ div.row.d-flex.justify-content-around:before {
 
   position: absolute;
   z-index: 0;
-
   left: -100px;
   top: 150px;
-
   height: 450px;
-
-  width: 1000px;
-
+  width: 60%;
   background-color: #90ccf4;
-
   display: block;
-
   content: " ";
-
   border-top-right-radius: 210px; /* 100px of height + 10px of border */
   border-bottom-right-radius: 210px; /* 100px of height + 10px of border */
 }

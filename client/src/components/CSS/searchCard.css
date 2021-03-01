@@ -3,6 +3,11 @@
   height: 440px;
 }
 
+.col-7-mx-auto h3 {
+  font-family: "Be Vietnam";
+  font-weight: 600;
+}
+
 .top-background {
   position: relative;
   text-align: center;
@@ -10,6 +15,7 @@
   background: #f3d250 0% 0% no-repeat padding-box;
   opacity: 1;
 }
+
 svg {
   position: absolute;
   height: 300px;
