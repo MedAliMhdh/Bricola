@@ -1,5 +1,6 @@
 .blogContainer {
   margin-top: 70px;
+  margin-bottom: 50px;
 }
 .blog-post {
   -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
