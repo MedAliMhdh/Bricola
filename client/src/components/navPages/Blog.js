@@ -24,13 +24,7 @@ const Blog = () => {
           <div className='col-lg-4 col-md-6 mt-4 pt-2'>
             <div className='blog-post rounded border'>
               <div className='blog-img d-block overflow-hidden position-relative'>
-                <img
-                  src={plumbing}
-                  height='280'
-                  width='350'
-                  className='img-fluid'
-                  alt=''
-                />
+                <img src={plumbing} height='280' width='350' alt='' />
                 <div className='overlay rounded-top bg-dark'></div>
                 <div className='post-meta'>
                   <a
@@ -83,13 +77,7 @@ const Blog = () => {
           <div className='col-lg-4 col-md-6 mt-4 pt-2'>
             <div className='blog-post rounded border'>
               <div className='blog-img d-block overflow-hidden position-relative'>
-                <img
-                  src={welder}
-                  height='280'
-                  width='350'
-                  className='img-fluid'
-                  alt=''
-                />
+                <img src={welder} height='280' width='350' alt='' />
                 <div className='overlay rounded-top bg-dark'></div>
                 <div className='post-meta'>
                   <a
@@ -142,13 +130,7 @@ const Blog = () => {
           <div className='col-lg-4 col-md-6 mt-4 pt-2'>
             <div className='blog-post rounded border'>
               <div className='blog-img d-block overflow-hidden position-relative'>
-                <img
-                  src={mechanic}
-                  height='280'
-                  width='350'
-                  className='img-fluid'
-                  alt=''
-                />
+                <img src={mechanic} height='280' width='350' alt='' />
                 <div className='overlay rounded-top bg-dark'></div>
                 <div className='post-meta'>
                   <a
