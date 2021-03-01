@@ -9,7 +9,7 @@
 }
 
 .profile-nav .user-heading {
-  background: #5da2d5;
+  background: #f3d250;
   color: #fff;
   border-radius: 4px 4px 0 0;
   -webkit-border-radius: 4px 4px 0 0;
@@ -70,7 +70,7 @@
 .profile-nav ul > li > a:focus,
 .profile-nav ul li.active a {
   background: #f8f7f5 !important;
-  border-left: 5px solid #5da2d5;
+  border-left: 5px solid #f3d250;
   color: #89817f !important;
   text-decoration: none;
 }
@@ -104,7 +104,7 @@
 }
 
 div.ratingInProfile {
-  background: #5da2d5;
+  background: #f3d250;
 }
 
 .nav-pills {
@@ -134,14 +134,14 @@ li.active {
 
 div.ratingInProfile i.fas.fa-star,
 div.ratingInProfile i.far.fa-star {
-  background: #5da2d5;
+  background: #f3d250;
   color: #f78888;
 }
 
 div.givingRate i.fas.fa-star,
 div.givingRate i.far.fa-star {
   background: transparent;
-  color: #5da2d5;
+  color: #f3d250;
 }
 
 .profile-info .panel-footer {
@@ -157,7 +157,7 @@ div.givingRate i.far.fa-star {
 }
 
 .bio-graph-heading {
-  background: #5da2d5;
+  background: #f3d250;
   color: #fff;
   text-align: center;
   font-style: italic;
@@ -191,7 +191,7 @@ div.givingRate i.far.fa-star {
 }
 
 button.btn.post {
-  background: #5da2d5;
+  background: #f3d250;
   color: white;
   margin-bottom: 10px;
 }
