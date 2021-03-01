@@ -3,11 +3,11 @@
 }
 
 div.contactUsContainer.d-flex.justify-content-center {
-  height: 100%;
+  height: 660px;
 }
 
 .demi {
-  padding-top: 60px;
+  padding-top: 70px;
   width: 100%;
   display: flex; /* contexte sur le parent */
   flex-direction: column; /* direction d'affichage verticale */
@@ -20,7 +20,7 @@ div.contactUsContainer.d-flex.justify-content-center {
 
 /****************Talk**************/
 .talk {
-  font-family: "Teko", sans-serif;
+  font-family: 'Teko', sans-serif;
 }
 
 .talk h3,
@@ -34,7 +34,7 @@ div.contactUsContainer.d-flex.justify-content-center {
 
 /***************Contact***********/
 div.demi.contact.col-md-6.px-0 {
-  font-family: "Teko", sans-serif;
+  font-family: 'Teko', sans-serif;
   background: url(../../images/pc.jpg) no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;

@@ -1,6 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Montserrat:300,500);
 .team4 {
-  font-family: "Teko", sans-serif;
+  font-family: 'Teko', sans-serif;
   color: #8d97ad;
   font-weight: 300;
   margin-top: 70px;
@@ -11,7 +11,7 @@
 }
 
 h3 {
-  font-family: "Teko", sans-serif;
+  font-family: 'Teko', sans-serif;
   color: black;
 }
 
@@ -60,7 +60,7 @@ h3 {
 .fas.fa-at,
 .fab.fa-twitter,
 .fab.fa-linkedin-in {
-  color: #f78888;
+  color: #5da2d5;
 }
 
 img.img-fluid.rounded-circle {
@@ -78,10 +78,12 @@ div.row.d-flex.justify-content-around:before {
   left: -100px;
   top: 150px;
   height: 450px;
+
   width: 60%;
   background-color: #90ccf4;
   display: block;
-  content: " ";
+  content: ' ';
+
   border-top-right-radius: 210px; /* 100px of height + 10px of border */
   border-bottom-right-radius: 210px; /* 100px of height + 10px of border */
 }
