@@ -13,13 +13,13 @@
 .fas.fa-times,
 .fa.fa-thumbs-up,
 .fa.fa-comments {
-  color: #5da2d5;
+  color: #f3d250;
   background: #eee;
 }
 
 span.stats-total,
 span.stats-text {
-  color: #5da2d5;
+  color: #f3d250;
 }
 
 .timeline-header {
@@ -91,7 +91,7 @@ span.username:hover {
 }
 
 .timeline-likes .stats-text:hover {
-  color: #095850;
+  color: #f3d250;
   cursor: pointer;
 }
 
@@ -136,6 +136,6 @@ span.rounded-corner.mr-3:hover {
 }
 
 button.btn.post {
-  background: #5da2d5;
+  background: #f3d250;
   color: white;
 }
