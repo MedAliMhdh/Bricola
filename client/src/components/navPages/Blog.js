@@ -1,10 +1,10 @@
-import React from 'react';
-import '../CSS/blog.css';
-import Footer from '../Footer';
+import React from "react";
+import "../CSS/blog.css";
+import Footer from "../Footer";
 
-import plumbing from '../../images/plumbing.jpg';
-import welder from '../../images/welder.jpg';
-import mechanic from '../../images/mechanic.jpg';
+import plumbing from "../../images/plumbing.jpg";
+import welder from "../../images/welder.jpg";
+import mechanic from "../../images/mechanic.jpg";
 
 const Blog = () => {
   return (
