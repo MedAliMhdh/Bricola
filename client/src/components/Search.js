@@ -17,7 +17,6 @@ const Search = ({
   const dispatch = useDispatch();
   return (
     <div>
-      {" "}
       <div className='top-background'>
         <h3 className='col-7 mx-auto'>
           Having technical trouble in your house? Find the artisan that you
