@@ -22,7 +22,7 @@ svg {
 .top-background h3 {
   color: white;
   font-size: 35px;
-  font-family: "Be Vietnam";
+  font-family: 'Be Vietnam';
   font-weight: 600;
 }
 
@@ -46,7 +46,9 @@ div.col-5.col-lg-2.d-flex.justify-content-center.mt-2 i {
 
 select {
   cursor: pointer;
-  background: white;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid black;
 }
 
 button.btn.searchBtn.col-md-3 {
@@ -56,4 +58,14 @@ button.btn.searchBtn.col-md-3 {
 
 div.col-5.col-lg-2.d-flex.justify-content-center i {
   background: white;
+}
+
+.searchInput .serchItem {
+  background-color: #ececec;
+  color: #000;
+}
+
+.searchInput .serchItem:hover {
+  background-color: #f3d250 !important;
+  color: #fff !important;
 }

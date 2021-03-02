@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getPersonCurrentProfile } from "../actions/personProfile";
-import Spinner from "./Spinner";
-import "./CSS/artisanProfile.css";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPersonCurrentProfile } from '../actions/personProfile';
+import Spinner from './Spinner';
+import './CSS/artisanProfile.css';
 
 const PersonProfile = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const PersonProfile = () => {
           <p>
             <i className='fas fa user' /> Welcome {auth.user && auth.user.name}
           </p>
-          <p>You have not yet a profile, please add some info</p>
+          <p>You have not yet a profile, please add some information</p>
           <Link to='/create-profile' className='btn btn-primary my-1'>
             Create profile
           </Link>
@@ -86,7 +86,7 @@ const PersonProfile = () => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{" "}
+                      <span>Address </span>:{' '}
                       {`${profileState.profile.street}, ${profileState.profile.city}, ${profileState.profile.zipcode}`}
                     </p>
                   </div>
