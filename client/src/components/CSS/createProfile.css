@@ -1,0 +1,15 @@
+.createProfile {
+  margin-top: 70px;
+}
+
+.btn.submitButton {
+  background-color: #f3d250;
+  color: white;
+  margin-right: 20px;
+}
+
+.btn.submitButton:hover {
+  background-color: #f6d13e;
+  color: white;
+  margin-right: 20px;
+}
