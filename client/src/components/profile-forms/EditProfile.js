@@ -205,7 +205,6 @@ const EditProfile = () => {
                 </div>
                 <div className='form-group'>
                   <select
-                    style={{ background: 'whitesmoke' }}
                     className='updateInput col-sm-12'
                     name='job'
                     value={job}
@@ -225,7 +224,6 @@ const EditProfile = () => {
                 <div className='form-group'>
                   <select
                     className='updateInput col-sm-12'
-                    style={{ background: 'whitesmoke' }}
                     name='city'
                     value={city}
                     onChange={(e) => setCity(e.target.value)}

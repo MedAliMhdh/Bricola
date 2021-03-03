@@ -60,12 +60,12 @@ div.col-5.col-lg-2.d-flex.justify-content-center i {
   background: white;
 }
 
-.searchInput .serchItem {
+.searchInput option {
   background-color: #ececec;
   color: #000;
 }
 
-.searchInput .serchItem:hover {
+.searchInput option:hover {
   background-color: #f3d250 !important;
   color: #fff !important;
 }
