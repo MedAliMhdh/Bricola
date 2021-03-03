@@ -36,34 +36,15 @@ const Search = ({
                 value={job}
                 onChange={(e) => setJob(e.target.value)}
               >
-                <option className='serchItem' value=''>
-                  {' '}
-                  Job type{' '}
-                </option>
-                <option className='serchItem' value='Bricklayer'>
-                  Bricklayer
-                </option>
-                <option className='serchItem' value='Electrician'>
-                  Electrician
-                </option>
-                <option className='serchItem' value='Painter'>
-                  Painter
-                </option>
-                <option className='serchItem' value='Plumber'>
-                  Plumber
-                </option>
-                <option className='serchItem' value='Mechanic'>
-                  Mechanic{' '}
-                </option>
-                <option className='serchItem' value='Welder'>
-                  Welder
-                </option>
-                <option className='serchItem' value='Carpenter'>
-                  Carpenter
-                </option>
-                <option className='serchItem' value='Architect'>
-                  Architect
-                </option>
+                <option value=''> Job type </option>
+                <option value='Bricklayer'>Bricklayer</option>
+                <option value='Electrician'>Electrician</option>
+                <option value='Painter'>Painter</option>
+                <option value='Plumber'>Plumber</option>
+                <option value='Mechanic'>Mechanic </option>
+                <option value='Welder'>Welder</option>
+                <option value='Carpenter'>Carpenter</option>
+                <option value='Architect'>Architect</option>
               </select>
             </div>
 
@@ -79,16 +60,9 @@ const Search = ({
                     : setEquipment(e.target.value);
                 }}
               >
-                <option className='serchItem' value=''>
-                  {' '}
-                  equipment{' '}
-                </option>
-                <option className='serchItem' value='true'>
-                  With materiel
-                </option>
-                <option className='serchItem' value='false'>
-                  Without materiel
-                </option>
+                <option value=''> equipment </option>
+                <option value='true'>With materiel</option>
+                <option value='false'>Without materiel</option>
               </select>
             </div>
 
@@ -98,82 +72,31 @@ const Search = ({
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
               >
-                <option className='serchItem' value=''>
-                  {' '}
-                  city{' '}
-                </option>
-                <option className='serchItem' value='Ariana'>
-                  Ariana
-                </option>
-                <option className='serchItem' value='Beja'>
-                  Beja
-                </option>
-                <option className='serchItem' value='Ben Arous'>
-                  Ben Arous
-                </option>
-                <option className='serchItem' value='Bizerte'>
-                  Bizerte
-                </option>
-                <option className='serchItem' value='Gabes'>
-                  Gabes{' '}
-                </option>
-                <option className='serchItem' value='Gafsa'>
-                  Gafsa
-                </option>
-                <option className='serchItem' value='Jendouba'>
-                  Jendouba
-                </option>
-                <option className='serchItem' value='Kairouane'>
-                  Kairouane
-                </option>
-                <option className='serchItem' value='Kasserine'>
-                  Kasserine
-                </option>
-                <option className='serchItem' value='kébili'>
-                  kébili
-                </option>
-                <option className='serchItem' value='Kef'>
-                  Kef
-                </option>
-                <option className='serchItem' value='Mahdia'>
-                  Mahdia
-                </option>
-                <option className='serchItem' value='Manouba'>
-                  Manouba
-                </option>
-                <option className='serchItem' value='Médenine'>
-                  Médenine
-                </option>
-                <option className='serchItem' value='Monastir'>
-                  Monastir
-                </option>
-                <option className='serchItem' value='Nabeul'>
-                  Nabeul
-                </option>
-                <option className='serchItem' value='Sfax'>
-                  Sfax
-                </option>
-                <option className='serchItem' value='Sidi bouzid'>
-                  Sidi bouzid
-                </option>
-                <option className='serchItem' value='Siliana'>
-                  Siliana
-                </option>
-                <option className='serchItem' value='Sousse'>
-                  Sousse
-                </option>
-                <option className='serchItem' value='Tataouine'>
-                  Tataouine
-                </option>
-                <option className='serchItem' value='Tozeur'>
-                  Tozeur
-                </option>
-                <option className='serchItem' value='Tunis'>
-                  Tunis
-                </option>
-                <option className='serchItem' value='Zaghouane'>
-                  Zaghouane
-                </option>
+                <option value=''> city </option>
+                <option value='Ariana'>Ariana</option>
+                <option value='Beja'>Beja</option>
+                <option value='Ben Arous'>Ben Arous</option>
+                <option value='Bizerte'>Bizerte</option>
+                <option value='Gabes'>Gabes </option>
+                <option value='Gafsa'>Gafsa</option>
+                <option value='Jendouba'>Jendouba</option>
+                <option value='Kairouane'>Kairouane</option>
+                <option value='Kasserine'>Kasserine</option>
+                <option value='kébili'>kébili</option>
+                <option value='Kef'>Kef</option>
+                <option value='Mahdia'>Mahdia</option>
+                <option value='Manouba'>Manouba</option>
+                <option value='Médenine'>Médenine</option>
+                <option value='Monastir'>Monastir</option>
+                <option value='Nabeul'>Nabeul</option>
+                <option value='Sfax'>Sfax</option>
+                <option value='Sidi bouzid'>Sidi bouzid</option>
+                <option value='Siliana'>Siliana</option>
+                <option value='Sousse'>Sousse</option>
+                <option value='Tataouine'>Tataouine</option>
+                <option value='Tozeur'>Tozeur</option>
+                <option value='Tunis'>Tunis</option>
+                <option value='Zaghouane'>Zaghouane</option>
               </select>
             </div>
 

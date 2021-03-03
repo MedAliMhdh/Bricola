@@ -1,8 +1,8 @@
 /***********root***************/
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,600;1,700&display=swap');
 
 * {
-  font-family: "Be Vietnam";
+  font-family: 'Be Vietnam';
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
@@ -11,29 +11,29 @@
 
 h1,
 h2 {
-  font-family: "Be Vietnam";
+  font-family: 'Be Vietnam';
   font-weight: 700;
 }
 
 h3,
 h4 {
-  font-family: "Be Vietnam";
+  font-family: 'Be Vietnam';
   font-weight: 400;
 }
 
 h5,
 h6 {
-  font-family: "Be Vietnam";
+  font-family: 'Be Vietnam';
   font-weight: 400;
 }
 
 p {
-  font-family: "Be Vietnam";
+  font-family: 'Be Vietnam';
   font-weight: 100;
 }
 
 span {
-  font-family: "Be Vietnam";
+  font-family: 'Be Vietnam';
   font-weight: 300;
 }
 
@@ -63,4 +63,9 @@ button:hover {
 *:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+
+select option:hover,
+select option:active {
+  cursor: pointer;
 }
