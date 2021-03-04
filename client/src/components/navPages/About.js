@@ -20,11 +20,11 @@ const About = () => {
               convenience and that of the artisans.
             </p>
           </div>
-          <img src={artisanOnPc} className='col-lg-5'></img>
+          <img src={artisanOnPc} className='col-lg-5' alt='artisan' />
         </div>
         <div className='section2 container-fluid d-flex flex-wrap px-0'>
           <div className='section2-body container d-flex align-items-center justify-content-around'>
-            <img src={artisanWithClient} className='col-lg-5'></img>
+            <img src={artisanWithClient} className='col-lg-5' alt='artisan' />
             <div className='col-lg-6'>
               <h1>How?</h1>
               <ul>

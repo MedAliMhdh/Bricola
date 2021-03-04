@@ -10,7 +10,7 @@ const Profiles = ({ rate, job, equipment, city }) => {
 
   useEffect(() => {
     dispatch(filterProfiles({ job, equipment, city, rate }));
-  }, []);
+  });
 
   return (
     <div>
