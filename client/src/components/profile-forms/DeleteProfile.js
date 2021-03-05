@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-import { getArtisanCurrentProfile } from '../../actions/artisanProfile';
+import { getArtisanCurrentProfile } from "../../actions/artisanProfile";
 
-import { getPersonCurrentProfile } from '../../actions/personProfile';
-import Thumbs from '../Thumbs';
-import DeleteButton from './DeleteButton';
-import Spinner from '../Spinner';
+import { getPersonCurrentProfile } from "../../actions/personProfile";
+import Thumbs from "../Thumbs";
+import DeleteButton from "./DeleteButton";
+import Spinner from "../Spinner";
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
@@ -23,16 +23,16 @@ const ArtisanProfile = () => {
       : 0;
 
   useEffect(() => {
-    if (user.role === 'Artisan') {
+    if (user.role === "Artisan") {
       dispatch(getArtisanCurrentProfile());
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
-    if (user.role === 'Person') {
+    if (user.role === "Person") {
       dispatch(getPersonCurrentProfile());
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
@@ -82,13 +82,13 @@ const ArtisanProfile = () => {
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-                      <span>Full Name </span>:{' '}
+                      <span>Full Name </span>:{" "}
                       {artisanProfile.profile.user.name}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Profession </span>:{' '}
+                      <span>Profession </span>:{" "}
                       {artisanProfile.profile.user.job}
                     </p>
                   </div>
@@ -106,15 +106,15 @@ const ArtisanProfile = () => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{' '}
+                      <span>Address </span>:{" "}
                       {` ${artisanProfile.profile.street}, ${artisanProfile.profile.city}, ${artisanProfile.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{' '}
-                      {artisanProfile.profile.equipment ? 'Yes' : 'No'}
+                      <span>Equipments </span>:{" "}
+                      {artisanProfile.profile.equipment ? "Yes" : "No"}
                     </p>
                   </div>
                 </div>
@@ -171,7 +171,7 @@ const ArtisanProfile = () => {
                   <div className='row'>
                     <div className='bio-row'>
                       <p>
-                        <span>Full Name </span>:{' '}
+                        <span>Full Name </span>:{" "}
                         {personProfile.profile.user.name}
                       </p>
                     </div>
@@ -190,7 +190,7 @@ const ArtisanProfile = () => {
 
                     <div className='bio-row'>
                       <p>
-                        <span>Address </span>:{' '}
+                        <span>Address </span>:{" "}
                         {`${personProfile.profile.street}, ${personProfile.profile.city}, ${personProfile.profile.zipcode}`}
                       </p>
                     </div>

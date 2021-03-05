@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getArtisanCurrentProfile } from '../actions/artisanProfile';
-import Spinner from './Spinner';
-import PostCard from './PostCard';
-import { getPosts, addPost } from '../actions/post';
-import Thumbs from './Thumbs';
-import './CSS/artisanProfile.css';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getArtisanCurrentProfile } from "../actions/artisanProfile";
+import Spinner from "./Spinner";
+import PostCard from "./PostCard";
+import { getPosts, addPost } from "../actions/post";
+import Thumbs from "./Thumbs";
+import "./CSS/artisanProfile.css";
 
 const ArtisanProfile = () => {
   const dispatch = useDispatch();
   const artisanProfileState = useSelector((store) => store.artisan);
   const posts = useSelector((state) => state.post);
   const auth = useSelector((store) => store.auth);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
   const rateAverage =
     artisanProfileState.profile && artisanProfileState.profile.rate.length > 0
@@ -25,13 +25,13 @@ const ArtisanProfile = () => {
 
   useEffect(() => {
     dispatch(getArtisanCurrentProfile());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (artisanProfileState.profile) {
       dispatch(getPosts(artisanProfileState.profile.user._id));
     }
-  }, [artisanProfileState.profile]);
+  }, [dispatch, artisanProfileState.profile]);
 
   return (
     <div>
@@ -91,48 +91,48 @@ const ArtisanProfile = () => {
                 <div className='row'>
                   <div className='bio-row'>
                     <p>
-                      <span>Full Name </span>:{' '}
+                      <span>Full Name </span>:{" "}
                       {artisanProfileState.profile.user.name}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Profession </span>:{' '}
+                      <span>Profession </span>:{" "}
                       {artisanProfileState.profile.user.job}
                     </p>
                   </div>
                   <div className='bio-row'>
                     <p>
-                      <span>Mobile </span>:{' '}
+                      <span>Mobile </span>:{" "}
                       {artisanProfileState.profile.user.phone}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>E-mail </span>:{' '}
+                      <span>E-mail </span>:{" "}
                       {artisanProfileState.profile.user.email}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{' '}
+                      <span>Address </span>:{" "}
                       {` ${artisanProfileState.profile.street}, ${artisanProfileState.profile.city}, ${artisanProfileState.profile.zipcode} `}
                     </p>
                   </div>
 
                   <div className='bio-row'>
                     <p>
-                      <span>Equipments </span>:{' '}
-                      {artisanProfileState.profile.equipment ? 'Yes' : 'No'}
+                      <span>Equipments </span>:{" "}
+                      {artisanProfileState.profile.equipment ? "Yes" : "No"}
                     </p>
                   </div>
                 </div>
               </div>
               <div className='panel'>
                 <div className='bio-graph-heading'>
-                  {artisanProfileState.profile.bio || 'Bio'}
+                  {artisanProfileState.profile.bio || "Bio"}
                 </div>
               </div>
               <div className='panel'>
@@ -150,7 +150,7 @@ const ArtisanProfile = () => {
                     className='btn post'
                     onClick={() => {
                       dispatch(addPost({ text }));
-                      setText('');
+                      setText("");
                     }}
                   >
                     Post

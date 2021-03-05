@@ -1,7 +1,7 @@
-import Thumbs from './Thumbs';
-import { filterProfiles } from '../actions/artisanProfile';
-import { useDispatch } from 'react-redux';
-import './CSS/searchCard.css';
+import Thumbs from "./Thumbs";
+import { filterProfiles } from "../actions/artisanProfile";
+import { useDispatch } from "react-redux";
+import "./CSS/searchCard.css";
 
 const Search = ({
   setSearch,
@@ -15,6 +15,7 @@ const Search = ({
   setCity,
 }) => {
   const dispatch = useDispatch();
+
   return (
     <div>
       <div className='top-background'>
@@ -25,7 +26,7 @@ const Search = ({
         <svg viewBox='0 0 500 150' preserveAspectRatio='none'>
           <path
             d='M-3.72,80.23 C180.81,257.85 356.31,46.67 500.00,49.99 L500.00,150.00 L0.00,150.00 Z'
-            style={{ stroke: 'none', fill: '#fff' }}
+            style={{ stroke: "none", fill: "#fff" }}
           ></path>
         </svg>
         <div className='searchContainer background'>
@@ -53,9 +54,9 @@ const Search = ({
                 className='col-md-12 searchInput'
                 value={equipment}
                 onChange={(e) => {
-                  e.target.value === 'true'
+                  e.target.value === "true"
                     ? setEquipment(true)
-                    : e.target.value === 'false'
+                    : e.target.value === "false"
                     ? setEquipment(false)
                     : setEquipment(e.target.value);
                 }}

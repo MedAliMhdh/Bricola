@@ -28,12 +28,15 @@ const Blog = () => {
                 <div className='overlay rounded-top bg-dark'></div>
                 <div className='post-meta'>
                   <a
-                    href='javascript:void(0)'
+                    href='https://www.raincitymaids.com/simple-guide-easily-clean-maintain-kitchen-sink/'
                     className='text-light d-block text-right like'
                   >
                     <i class='far fa-heart'></i> 33
                   </a>
-                  <a href='javascript:void(0)' className='text-light read-more'>
+                  <a
+                    href='https://www.raincitymaids.com/simple-guide-easily-clean-maintain-kitchen-sink/'
+                    className='text-light read-more'
+                  >
                     Read More <i class='fas fa-chevron-right fa-xs'></i>
                   </a>
                 </div>
@@ -41,7 +44,10 @@ const Blog = () => {
               <div className='content p-3'>
                 <small className='text-muted p float-right'>1st Mar, 21</small>
                 <small>
-                  <a href='javascript:void(0)' className='text-primary'>
+                  <a
+                    href='https://www.raincitymaids.com/simple-guide-easily-clean-maintain-kitchen-sink/'
+                    className='text-primary'
+                  >
                     Plumbing
                   </a>
                 </small>
@@ -65,7 +71,7 @@ const Blog = () => {
                   />
                   <div className='author mt-2'>
                     <h6 className='mb-0'>
-                      <a href='javascript:void(0)' className='text-dark name'>
+                      <a href='/register' className='text-dark name'>
                         Lisa Marvel
                       </a>
                     </h6>
@@ -84,12 +90,15 @@ const Blog = () => {
                 <div className='overlay rounded-top bg-dark'></div>
                 <div className='post-meta'>
                   <a
-                    href='javascript:void(0)'
+                    href='https://www.thefabricator.com/thewelder/article/aluminumwelding/aluminum-etc-why-i-love-aluminum-welding'
                     className='text-light d-block text-right like'
                   >
                     <i class='far fa-heart'></i> 50
                   </a>
-                  <a href='javascript:void(0)' className='text-light read-more'>
+                  <a
+                    href='https://www.thefabricator.com/thewelder/article/aluminumwelding/aluminum-etc-why-i-love-aluminum-welding'
+                    className='text-light read-more'
+                  >
                     Read More <i class='fas fa-chevron-right fa-xs'></i>
                   </a>
                 </div>
@@ -97,7 +106,10 @@ const Blog = () => {
               <div className='content p-3'>
                 <small className='text-muted p float-right'>19th Jan, 21</small>
                 <small>
-                  <a href='javascript:void(0)' className='text-primary'>
+                  <a
+                    href='https://www.thefabricator.com/thewelder/article/aluminumwelding/aluminum-etc-why-i-love-aluminum-welding'
+                    className='text-primary'
+                  >
                     Welding
                   </a>
                 </small>
@@ -122,7 +134,10 @@ const Blog = () => {
                   />
                   <div className='author mt-2'>
                     <h6 className='mb-0'>
-                      <a href='javascript:void(0)' className='text-dark name'>
+                      <a
+                        href='https://www.caranddriver.com/features/a27104161/how-to-clean-engine/'
+                        className='text-dark name'
+                      >
                         Joya Aafri
                       </a>
                     </h6>
@@ -141,12 +156,15 @@ const Blog = () => {
                 <div className='overlay rounded-top bg-dark'></div>
                 <div className='post-meta'>
                   <a
-                    href='javascript:void(0)'
+                    href='https://www.caranddriver.com/features/a27104161/how-to-clean-engine/'
                     className='text-light d-block text-right like'
                   >
                     <i class='far fa-heart'></i> 20
                   </a>
-                  <a href='javascript:void(0)' className='text-light read-more'>
+                  <a
+                    href='https://www.caranddriver.com/features/a27104161/how-to-clean-engine/'
+                    className='text-light read-more'
+                  >
                     Read More <i class='fas fa-chevron-right fa-xs'></i>
                   </a>
                 </div>
@@ -154,7 +172,10 @@ const Blog = () => {
               <div className='content p-3'>
                 <small className='text-muted p float-right'>1st Jan, 21</small>
                 <small>
-                  <a href='javascript:void(0)' className='text-primary'>
+                  <a
+                    href='https://www.caranddriver.com/features/a27104161/how-to-clean-engine/'
+                    className='text-primary'
+                  >
                     Mechanic
                   </a>
                 </small>
@@ -179,7 +200,10 @@ const Blog = () => {
                   />
                   <div className='author mt-2'>
                     <h6 className='mb-0'>
-                      <a href='javascript:void(0)' className='text-dark name'>
+                      <a
+                        href='https://www.caranddriver.com/features/a27104161/how-to-clean-engine/'
+                        className='text-dark name'
+                      >
                         Martin Sobhe
                       </a>
                     </h6>

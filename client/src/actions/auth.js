@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
@@ -10,10 +10,10 @@ import {
   CLEAR_PROFILE,
   CLEAR_PERSON_PROFILE,
   UPDATE_FAIL,
-} from './types';
-import { setAlert } from './alert';
+} from "./types";
+import { setAlert } from "./alert";
 
-import setAuthToken from '../utils/setAuthToken';
+import setAuthToken from "../utils/setAuthToken";
 
 // Load User
 export const loadUser = () => async (dispatch) => {
@@ -42,7 +42,7 @@ export const register = (
   dispatch({ type: CLEAR_PROFILE });
   const config = {
     header: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
   const body = { name, email, password, role, job, phone };
@@ -57,17 +57,17 @@ export const register = (
 
     dispatch(loadUser());
 
-    if (role === 'Artisan') {
-      history.push('/artisanprofile/me');
+    if (role === "Artisan") {
+      history.push("/artisanprofile/me");
     } else {
-      history.push('/');
+      history.push("/");
     }
   } catch (err) {
     const errors = err.response.data.errors;
 
     if (errors) {
       errors.forEach((error) => {
-        dispatch(setAlert({ msg: error.msg, alertType: 'danger' }));
+        dispatch(setAlert({ msg: error.msg, alertType: "danger" }));
       });
     }
 
@@ -82,7 +82,7 @@ export const login = ({ email, password }) => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
   const config = {
     header: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
   const body = { email, password };
@@ -101,7 +101,7 @@ export const login = ({ email, password }) => async (dispatch) => {
 
     if (errors) {
       errors.forEach((error) => {
-        dispatch(setAlert({ msg: error.msg, alertType: 'danger' }));
+        dispatch(setAlert({ msg: error.msg, alertType: "danger" }));
       });
     }
 
@@ -123,11 +123,11 @@ export const updateUser = (formData) => async (dispatch) => {
   try {
     const config = {
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     };
 
-    const res = await axios.put(`/api/user/update`, formData, config);
+    await axios.put(`/api/user/update`, formData, config);
 
     dispatch(loadUser());
   } catch (err) {

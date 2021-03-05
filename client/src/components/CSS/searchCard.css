@@ -22,7 +22,7 @@ svg {
 .top-background h3 {
   color: white;
   font-size: 35px;
-  font-family: 'Be Vietnam';
+  font-family: "Be Vietnam";
   font-weight: 600;
 }
 
@@ -66,6 +66,6 @@ div.col-5.col-lg-2.d-flex.justify-content-center i {
 }
 
 .searchInput option:hover {
-  background-color: #f3d250 !important;
+  background: #f3d250 !important;
   color: #fff !important;
 }

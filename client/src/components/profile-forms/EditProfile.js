@@ -1,29 +1,29 @@
-import Spinner from '../Spinner';
-import { getPosts } from '../../actions/post';
-import { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateUser } from '../../actions/auth';
-import Thumbs from '../Thumbs';
+import Spinner from "../Spinner";
+import { getPosts } from "../../actions/post";
+import { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { updateUser } from "../../actions/auth";
+import Thumbs from "../Thumbs";
 import {
   createArtisanProfile,
   getArtisanCurrentProfile,
-} from '../../actions/artisanProfile';
+} from "../../actions/artisanProfile";
 import {
   createPersonProfile,
   getPersonCurrentProfile,
-} from '../../actions/personProfile';
+} from "../../actions/personProfile";
 
 const EditProfile = () => {
   const userRole = useSelector((state) => state.auth.user.role);
-  const [city, setCity] = useState('');
-  const [street, setStreet] = useState('');
-  const [zipcode, setZipcode] = useState('');
-  const [bio, setBio] = useState('');
-  const [equipment, setEquipment] = useState('');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [job, setJob] = useState('');
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [bio, setBio] = useState("");
+  const [equipment, setEquipment] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [job, setJob] = useState("");
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -43,82 +43,82 @@ const EditProfile = () => {
   }, [artisanProfile.profile]);
 
   useEffect(() => {
-    if (userRole === 'Artisan') {
+    if (userRole === "Artisan") {
       dispatch(getArtisanCurrentProfile());
       setCity(
         artisanProfile.loading || !artisanProfile.profile.city
-          ? ''
+          ? ""
           : artisanProfile.profile.city
       );
       setStreet(
         artisanProfile.loading || !artisanProfile.profile.street
-          ? ''
+          ? ""
           : artisanProfile.profile.street
       );
       setZipcode(
         artisanProfile.loading || !artisanProfile.profile.zipcode
-          ? ''
+          ? ""
           : artisanProfile.profile.zipcode
       );
       setBio(
         artisanProfile.loading || !artisanProfile.profile.bio
-          ? ''
+          ? ""
           : artisanProfile.profile.bio
       );
       setEquipment(
         artisanProfile.loading || !artisanProfile.profile.equipment
-          ? ''
+          ? ""
           : artisanProfile.profile.equipment
       );
       setName(
         artisanProfile.loading || !artisanProfile.profile.user.name
-          ? ''
+          ? ""
           : artisanProfile.profile.user.name
       );
       setPhone(
         artisanProfile.loading || !artisanProfile.profile.user.phone
-          ? ''
+          ? ""
           : artisanProfile.profile.user.phone
       );
       setJob(
         artisanProfile.loading || !artisanProfile.profile.user.job
-          ? ''
+          ? ""
           : artisanProfile.profile.user.job
       );
     }
-  }, []);
+  });
 
   useEffect(() => {
-    if (userRole === 'Person') {
+    if (userRole === "Person") {
       dispatch(getPersonCurrentProfile());
       setCity(
         personProfile.loading || !personProfile.profile.city
-          ? ''
+          ? ""
           : personProfile.profile.city
       );
       setStreet(
         personProfile.loading || !personProfile.profile.street
-          ? ''
+          ? ""
           : personProfile.profile.street
       );
       setZipcode(
         personProfile.loading || !personProfile.profile.zipcode
-          ? ''
+          ? ""
           : personProfile.profile.zipcode
       );
       setName(
         personProfile.loading || !personProfile.profile.user.name
-          ? ''
+          ? ""
           : personProfile.profile.user.name
       );
       setPhone(
         personProfile.loading || !personProfile.profile.user.phone
-          ? ''
+          ? ""
           : personProfile.profile.user.phone
       );
       setJob(
         personProfile.loading || !personProfile.profile.user.job
-          ? ''
+          ? ""
           : personProfile.profile.user.job
       );
     }
@@ -186,7 +186,7 @@ const EditProfile = () => {
 
                   <div className='bio-row'>
                     <p>
-                      <span>Address </span>:{' '}
+                      <span>Address </span>:{" "}
                       {`${personProfile.profile.street}, ${personProfile.profile.city}, ${personProfile.profile.zipcode}`}
                     </p>
                   </div>
@@ -353,41 +353,41 @@ const EditProfile = () => {
                   <div className='row'>
                     <div className='bio-row'>
                       <p>
-                        <span>Full Name </span>:{' '}
+                        <span>Full Name </span>:{" "}
                         {artisanProfile.profile.user.name}
                       </p>
                     </div>
                     <div className='bio-row'>
                       <p>
-                        <span>Profession </span>:{' '}
+                        <span>Profession </span>:{" "}
                         {artisanProfile.profile.user.job}
                       </p>
                     </div>
                     <div className='bio-row'>
                       <p>
-                        <span>Mobile </span>:{' '}
+                        <span>Mobile </span>:{" "}
                         {artisanProfile.profile.user.phone}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>E-mail </span>:{' '}
+                        <span>E-mail </span>:{" "}
                         {artisanProfile.profile.user.email}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>Address </span>:{' '}
+                        <span>Address </span>:{" "}
                         {` ${artisanProfile.profile.street}, ${artisanProfile.profile.city}, ${artisanProfile.profile.zipcode} `}
                       </p>
                     </div>
 
                     <div className='bio-row'>
                       <p>
-                        <span>Equipments </span>:{' '}
-                        {artisanProfile.profile.equipment ? 'Yes' : 'No'}
+                        <span>Equipments </span>:{" "}
+                        {artisanProfile.profile.equipment ? "Yes" : "No"}
                       </p>
                     </div>
                   </div>

@@ -1,6 +1,6 @@
-import React from 'react';
-import './CSS/footer.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./CSS/footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -55,22 +55,22 @@ const Footer = () => {
             <div className='col-md-4 col-sm-6 col-xs-12'>
               <ul className='social-icons'>
                 <li>
-                  <a className='facebook' href='#'>
+                  <a className='facebook' href='http://facebook.com'>
                     <i className='fa fa-facebook'></i>
                   </a>
                 </li>
                 <li>
-                  <a className='twitter' href='#'>
+                  <a className='twitter' href='http://twitter.com'>
                     <i className='fa fa-twitter'></i>
                   </a>
                 </li>
                 <li>
-                  <a className='dribbble' href='#'>
+                  <a className='dribbble' href='http://dribbble.com'>
                     <i className='fa fa-dribbble'></i>
                   </a>
                 </li>
                 <li>
-                  <a className='linkedin' href='#'>
+                  <a className='linkedin' href='http://linkedin.com'>
                     <i className='fa fa-linkedin'></i>
                   </a>
                 </li>
